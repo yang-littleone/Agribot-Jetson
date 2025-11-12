@@ -1,0 +1,4 @@
+source;share/centerline_extraction/local_setup.bash
+source;share/centerline_extraction/local_setup.dsv
+source;share/centerline_extraction/local_setup.sh
+source;share/centerline_extraction/local_setup.zsh
