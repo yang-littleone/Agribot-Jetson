@@ -1,0 +1,58 @@
+[0.055s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/turn_on_agribot -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot
+[0.229s] -- The C compiler identification is GNU 11.4.0
+[0.415s] -- The CXX compiler identification is GNU 11.4.0
+[0.447s] -- Detecting C compiler ABI info
+[0.617s] -- Detecting C compiler ABI info - done
+[0.640s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.650s] -- Detecting C compile features
+[0.652s] -- Detecting C compile features - done
+[0.664s] -- Detecting CXX compiler ABI info
+[0.845s] -- Detecting CXX compiler ABI info - done
+[0.867s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.868s] -- Detecting CXX compile features
+[0.869s] -- Detecting CXX compile features - done
+[0.926s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.451s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.192s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[2.616s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.686s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.769s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.878s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.016s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.430s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.485s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.943s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[4.032s] -- Found FastRTPS: /opt/ros/humble/include  
+[4.165s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.272s] -- Looking for pthread.h
+[4.433s] -- Looking for pthread.h - found
+[4.434s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[4.620s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[4.625s] -- Found Threads: TRUE  
+[4.928s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.354s] -- Added test 'lint_cmake' to check CMake code style
+[5.370s] -- Added test 'xmllint' to check XML markup files
+[5.380s] -- Configuring done
+[5.391s] -- Generating done
+[5.396s] -- Build files have been written to: /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot
+[5.420s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/turn_on_agribot -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot
+[5.424s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot -- -j8 -l8
+[5.502s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot -- -j8 -l8
+[5.506s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot
+[5.520s] -- Install configuration: ""
+[5.521s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/ament_index/resource_index/package_run_dependencies/turn_on_agribot
+[5.521s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/ament_index/resource_index/parent_prefix_path/turn_on_agribot
+[5.522s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/environment/ament_prefix_path.sh
+[5.522s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/environment/ament_prefix_path.dsv
+[5.522s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/environment/path.sh
+[5.522s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/environment/path.dsv
+[5.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/local_setup.bash
+[5.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/local_setup.sh
+[5.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/local_setup.zsh
+[5.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/local_setup.dsv
+[5.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/package.dsv
+[5.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/ament_index/resource_index/packages/turn_on_agribot
+[5.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/cmake/turn_on_agribotConfig.cmake
+[5.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/cmake/turn_on_agribotConfig-version.cmake
+[5.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/turn_on_agribot/share/turn_on_agribot/package.xml
+[5.532s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot

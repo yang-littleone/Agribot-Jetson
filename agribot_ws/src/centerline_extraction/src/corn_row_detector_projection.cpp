@@ -198,7 +198,7 @@ PointCloudXYZPtr CornRowDetectorProjection::preprocess_point_cloud(PointCloudXYZ
     pcl::PassThrough<pcl::PointXYZ> pass_y;
     pass_y.setInputCloud(filter_cloud);
     pass_y.setFilterFieldName("y");
-    pass_y.setFilterLimits(-0.5f, 0.5f);
+    pass_y.setFilterLimits(-0.8f, 0.8f);
     pass_y.filter(*filter_cloud);
 
     // voxel grid
@@ -337,56 +337,57 @@ std::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr clo
 
 nav_msgs::msg::Path CornRowDetectorProjection::create_path(float slope, float intercept, const std_msgs::msg::Header &header)
 {
-    nav_msgs::msg::Path path_odom; // 存储odom坐标系下的路径（用于控制逻辑）
-    path_odom.header = header;     // 原header（如odom坐标系）
+    nav_msgs::msg::Path path; 
+    path.header.frame_id = "base_link";  // 直接在base_link坐标系下生成路径
+    path.header.stamp = header.stamp;
 
-    // 1. 生成odom坐标系下的动态路径（当前x到x+5米，同之前的逻辑）
-    float x_start = robot_current_x_;
-    float x_end = robot_current_x_ + ceneterline_length_;
-    for (float x = x_start; x <= x_end; x += 0.05)
-    {
-        geometry_msgs::msg::PoseStamped pose_odom;
-        pose_odom.header = header;
-        pose_odom.pose.position.x = x;
-        pose_odom.pose.position.y = slope * x + intercept;
-        pose_odom.pose.position.z = 0.0;
-        // 计算朝向（略，同之前）
-        path_odom.poses.push_back(pose_odom);
+    // 在小车前方生成中心线点 (从x=0.1到ceneterline_length_)
+    float x_start = 0.1;  // 小车前方0.1米开始
+    float x_end = ceneterline_length_;
+    for (float x = x_start; x <= x_end; x += 0.05) {
+        geometry_msgs::msg::PoseStamped pose;
+        pose.header = path.header;
+        pose.pose.position.x = x;
+        pose.pose.position.y = slope * x + intercept;  // 根据拟合的直线方程计算y值
+        pose.pose.position.z = 0.0;
+        
+        // 计算朝向
+        double yaw = atan2(slope * (x + 0.05) + intercept - (slope * x + intercept), 0.05);
+        tf2::Quaternion q;
+        q.setRPY(0, 0, yaw);
+        pose.pose.orientation = tf2::toMsg(q);
+        
+        path.poses.push_back(pose);
     }
 
-    // 2. 将路径从odom坐标系转换到base_link坐标系（用于可视化）
-    nav_msgs::msg::Path path_base_link;
-    path_base_link.header.frame_id = "base_link"; // 小车本体坐标系
-    // path_base_link.header.stamp = this->now();
-    path_base_link.header.stamp = path_odom.header.stamp;
-
-    try
-    {
-        // 获取odom到base_link的变换（小车在odom中的位姿）
+    // 同时发布到odom坐标系下的路径（如果需要用于其他目的）
+    nav_msgs::msg::Path path_odom = path;
+    path_odom.header.frame_id = "odom_combined";
+    
+    try {
         geometry_msgs::msg::TransformStamped transform = tf_buffer_->lookupTransform(
-            "base_link", "odom_combined", tf2::TimePointZero); // 从odom到base_link
-
-        for (const auto &pose_odom : path_odom.poses)
-        {
-            geometry_msgs::msg::PoseStamped pose_base_link;
-            // 坐标转换：odom下的点 -> base_link下的点
-            tf2::doTransform(pose_odom, pose_base_link, transform);
-            path_base_link.poses.push_back(pose_base_link);
+            "odom_combined", "base_link", tf2::TimePointZero);
+            
+        for (auto& pose : path_odom.poses) {
+            pose.header = path_odom.header;
+            geometry_msgs::msg::PoseStamped temp_pose;
+            temp_pose.header.frame_id = "base_link";
+            temp_pose.header.stamp = pose.header.stamp;
+            temp_pose.pose = pose.pose;
+            tf2::doTransform(temp_pose, pose, transform);
         }
-    }
-    catch (tf2::TransformException &ex)
-    {
+    } catch (tf2::TransformException &ex) {
         RCLCPP_WARN(this->get_logger(), "TF转换失败: %s", ex.what());
-        return path_odom; // 转换失败时返回原odom坐标系路径
     }
-
-    // 3. 发布转换后的base_link坐标系路径（用于RViz可视化）
-    // 注意：控制逻辑仍需使用odom坐标系的路径，因此需新增一个可视化专用发布者
-    // 在类中新增发布者：rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr center_line_viz_pub_;
-    center_line_viz_pub_->publish(path_base_link);
-
-    // 返回odom坐标系的路径（供PID控制器使用，不影响控制逻辑）
-    return path_odom;
+    
+    // 发布base_link坐标系下的路径（用于控制和可视化）
+    center_line_viz_pub_->publish(path);
+    
+    // 如果需要odom坐标系下的路径用于其他用途，也可以发布
+    // center_line_pub_->publish(path_odom);  // 或者根据需要决定是否发布
+    
+    // 返回base_link坐标系下的路径
+    return path;
 }
 
 nav_msgs::msg::Path CornRowDetectorProjection::smooth_path(const nav_msgs::msg::Path &raw_path)
