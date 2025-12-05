@@ -25,9 +25,9 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
 
     // 声明并初始化参数
     this->declare_parameter("target_distance", 0.4);   // 目标跟随距离（米）
-    this->declare_parameter("max_linear_speed", 0.4);  // 最大线速度（米/秒）
+    this->declare_parameter("max_linear_speed", 0.2);  // 最大线速度（米/秒）
     this->declare_parameter("min_linear_speed", 0.1);  // 最小线速度（米/秒）
-    this->declare_parameter("max_angular_speed", 0.5); // 最大角速度（弧度/秒）
+    this->declare_parameter("max_angular_speed", 0.2); // 最大角速度（弧度/秒）
 
     // 横向PID参数
     this->declare_parameter("lateral_kp", 60.0);  // 比例系数

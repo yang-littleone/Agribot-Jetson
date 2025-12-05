@@ -1,0 +1,15 @@
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:[m[K In member function ‘[01m[Kstd::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr)[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:283:83:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  283 | std::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr cloud[01;36m[K)[m[K
+      |                                                                                   [01;36m[K^[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:291:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kn[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  291 |     size_t [01;35m[Kn[m[K = cloud->points.size();
+      |            [01;35m[K^[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:[m[K In member function ‘[01m[Knav_msgs::msg::Path CornRowDetectorProjection::create_path(float, float, const Header&)[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:321:119:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kheader[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  321 | nav_msgs::msg::Path CornRowDetectorProjection::create_path(float slope, float intercept, [01;35m[Kconst std_msgs::msg::Header &header[m[K)
+      |                                                                                          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:[m[K In member function ‘[01m[Kvoid CornRowDetectorProjection::publish_empty_path(const Header&)[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:530:81:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kheader[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  530 | void CornRowDetectorProjection::publish_empty_path([01;35m[Kconst std_msgs::msg::Header &header[m[K)
+      |                                                    [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
