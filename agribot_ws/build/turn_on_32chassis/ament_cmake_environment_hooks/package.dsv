@@ -1,0 +1,4 @@
+source;share/turn_on_32chassis/local_setup.bash
+source;share/turn_on_32chassis/local_setup.dsv
+source;share/turn_on_32chassis/local_setup.sh
+source;share/turn_on_32chassis/local_setup.zsh

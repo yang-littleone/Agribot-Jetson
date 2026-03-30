@@ -1,0 +1,291 @@
+[0.073s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/livox_sdk2': /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/Livox-SDK2 -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/livox_sdk2
+[0.191s] -- The C compiler identification is GNU 11.4.0
+[0.321s] -- The CXX compiler identification is GNU 11.4.0
+[0.342s] -- Detecting C compiler ABI info
+[0.476s] -- Detecting C compiler ABI info - done
+[0.507s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.507s] -- Detecting C compile features
+[0.509s] -- Detecting C compile features - done
+[0.520s] -- Detecting CXX compiler ABI info
+[0.675s] -- Detecting CXX compiler ABI info - done
+[0.705s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.705s] -- Detecting CXX compile features
+[0.707s] -- Detecting CXX compile features - done
+[0.709s] -- main project dir: /home/wheeltec/agribot/agribot_ws/src/Livox-SDK2
+[0.713s] -- main project dir: /home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/samples
+[0.719s] -- Configuring done
+[0.768s] -- Generating done
+[0.786s] -- Build files have been written to: /home/wheeltec/agribot/agribot_ws/build/livox_sdk2
+[0.795s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/livox_sdk2' returned '0': /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/Livox-SDK2 -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/livox_sdk2
+[0.798s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/livox_sdk2': /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/livox_sdk2 -- -j8 -l8
+[0.887s] [  3%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/livox_lidar_sdk.cpp.o[0m
+[0.889s] [  3%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/livox_lidar_sdk.cpp.o[0m
+[0.892s] [  3%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/__/3rdparty/FastCRC/FastCRCsw.cpp.o[0m
+[0.893s] [  4%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/__/3rdparty/FastCRC/FastCRCsw.cpp.o[0m
+[0.894s] [  6%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/device_manager.cpp.o[0m
+[0.904s] [  7%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/params_check.cpp.o[0m
+[0.908s] [  8%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/params_check.cpp.o[0m
+[0.913s] [  9%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/device_manager.cpp.o[0m
+[1.178s] [ 10%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/parse_cfg_file.cpp.o[0m
+[1.381s] [ 12%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/parse_cfg_file.cpp.o[0m
+[9.963s] [ 13%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade_manager.cpp.o[0m
+[11.196s] [ 14%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/io_loop.cpp.o[0m
+[11.285s] [ 15%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade_manager.cpp.o[0m
+[11.507s] [ 16%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/io_loop.cpp.o[0m
+[11.599s] [ 18%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/thread_base.cpp.o[0m
+[12.516s] [ 19%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/thread_base.cpp.o[0m
+[12.627s] [ 20%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/io_thread.cpp.o[0m
+[13.122s] [ 21%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/logging.cpp.o[0m
+[13.275s] [ 22%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/io_thread.cpp.o[0m
+[13.327s] [ 24%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/network/unix/network_util.cpp.o[0m
+[13.347s] [ 25%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_base.cpp.o[0m
+[13.949s] [ 26%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/logging.cpp.o[0m
+[13.970s] [ 27%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_epoll.cpp.o[0m
+[14.004s] [ 28%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_poll.cpp.o[0m
+[14.338s] [ 30%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_select.cpp.o[0m
+[14.674s] [ 31%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/network/unix/network_util.cpp.o[0m
+[14.791s] [ 32%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_kqueue.cpp.o[0m
+[14.943s] [ 33%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/wake_up/unix/wake_up_pipe.cpp.o[0m
+[14.959s] [ 34%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/comm_port.cpp.o[0m
+[15.152s] [ 36%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/sdk_protocol.cpp.o[0m
+[15.319s] [ 37%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_base.cpp.o[0m
+[15.373s] [ 38%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/generate_seq.cpp.o[0m
+[15.427s] [ 39%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade/firmware.cpp.o[0m
+[15.541s] [ 40%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade/livox_lidar_upgrader.cpp.o[0m
+[15.799s] [ 42%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/logger_manager.cpp.o[0m
+[16.146s] [ 43%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_epoll.cpp.o[0m
+[16.343s] [ 44%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/logger_handler.cpp.o[0m
+[17.418s] [ 45%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_poll.cpp.o[0m
+[17.923s] [ 46%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_select.cpp.o[0m
+[18.040s] [ 48%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/file_manager.cpp.o[0m
+[18.499s] [ 49%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_kqueue.cpp.o[0m
+[18.790s] [ 50%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/data_handler/data_handler.cpp.o[0m
+[19.100s] [ 51%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/wake_up/unix/wake_up_pipe.cpp.o[0m
+[19.128s] [ 53%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/comm_port.cpp.o[0m
+[19.351s] [ 54%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/sdk_protocol.cpp.o[0m
+[19.600s] [ 55%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/generate_seq.cpp.o[0m
+[19.692s] [ 56%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade/firmware.cpp.o[0m
+[20.094s] [ 57%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade/livox_lidar_upgrader.cpp.o[0m
+[20.643s] [ 59%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/logger_manager.cpp.o[0m
+[22.067s] [ 60%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/logger_handler.cpp.o[0m
+[25.192s] [ 61%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/command_impl.cpp.o[0m
+[25.248s] [ 62%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/general_command_handler.cpp.o[0m
+[25.551s] [ 63%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/hap_command_handler.cpp.o[0m
+[25.919s] [ 65%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/file_manager.cpp.o[0m
+[26.164s] [ 66%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/mid360_command_handler.cpp.o[0m
+[26.906s] [ 67%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/build_request.cpp.o[0m
+[28.764s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[28.764s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[28.764s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[28.764s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[28.764s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[28.764s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/hap_command_handler.cpp:37[m[K:
+[28.765s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[28.765s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[28.765s]       |                             [01;35m[K^~~~~~~[m[K
+[28.765s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[28.765s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[28.765s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[28.765s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[28.766s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[28.766s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[28.766s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[28.766s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[28.766s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[28.779s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[28.780s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[28.780s]       |                             [01;36m[K^~~~~~~[m[K
+[28.780s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[28.780s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[28.780s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[28.781s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[28.781s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[28.781s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[28.781s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[28.781s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[28.781s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[29.479s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[29.479s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[29.479s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[29.479s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[29.479s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[29.480s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/mid360_command_handler.cpp:37[m[K:
+[29.480s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[29.480s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[29.480s]       |                             [01;35m[K^~~~~~~[m[K
+[29.480s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[29.480s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[29.481s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[29.481s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[29.481s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[29.481s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[29.481s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[29.481s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[29.481s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[29.488s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[29.488s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[29.488s]       |                             [01;36m[K^~~~~~~[m[K
+[29.488s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[29.488s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[29.489s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[29.489s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[29.489s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[29.489s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[29.489s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[29.489s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[29.489s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[31.110s] [ 68%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/data_handler/data_handler.cpp.o[0m
+[32.033s] [ 69%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/command_impl.cpp.o[0m
+[34.182s] [ 71%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/general_command_handler.cpp.o[0m
+[34.575s] [ 72%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/parse_lidar_state_info.cpp.o[0m
+[34.917s] [ 73%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/debug_point_cloud_handler/debug_point_cloud_manager.cpp.o[0m
+[35.412s] [ 74%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/debug_point_cloud_handler/debug_point_cloud_handler.cpp.o[0m
+[35.855s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[35.855s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[35.855s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[35.856s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[35.856s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[35.856s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.cpp:2[m[K:
+[35.856s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[35.856s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[35.857s]       |                             [01;35m[K^~~~~~~[m[K
+[35.857s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[35.857s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[35.857s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[35.857s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[35.857s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[35.857s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[35.857s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[35.858s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[35.858s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[35.860s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[35.860s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[35.860s]       |                             [01;36m[K^~~~~~~[m[K
+[35.861s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[35.861s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[35.861s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[35.861s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[35.862s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[35.862s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[35.862s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[35.862s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[35.863s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[36.434s] [ 75%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/hap_command_handler.cpp.o[0m
+[36.802s] [ 77%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/mid360_command_handler.cpp.o[0m
+[39.109s] [ 78%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/build_request.cpp.o[0m
+[39.353s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[39.353s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[39.353s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[39.354s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[39.354s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[39.354s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/hap_command_handler.cpp:37[m[K:
+[39.354s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[39.354s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[39.354s]       |                             [01;35m[K^~~~~~~[m[K
+[39.355s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[39.355s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[39.355s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[39.355s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[39.355s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[39.355s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[39.355s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[39.356s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[39.356s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[39.363s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[39.363s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[39.363s]       |                             [01;36m[K^~~~~~~[m[K
+[39.364s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[39.364s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[39.364s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[39.364s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[39.364s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[39.365s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[39.365s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[39.365s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[39.365s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[40.051s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[40.052s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[40.052s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[40.052s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[40.052s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[40.053s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/mid360_command_handler.cpp:37[m[K:
+[40.053s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[40.053s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[40.053s]       |                             [01;35m[K^~~~~~~[m[K
+[40.053s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[40.053s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[40.053s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[40.058s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[40.058s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[40.059s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[40.059s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[40.059s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[40.059s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[40.059s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[40.059s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[40.059s]       |                             [01;36m[K^~~~~~~[m[K
+[40.060s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[40.060s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[40.060s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[40.060s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[40.060s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[40.060s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[40.061s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[40.061s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[40.061s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[41.307s] [ 79%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/parse_lidar_state_info.cpp.o[0m
+[42.741s] In file included from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/stream.h:19[m[K,
+[42.742s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/memorystream.h:22[m[K,
+[42.742s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/encodedstream.h:22[m[K,
+[42.743s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/document.h:26[m[K,
+[42.743s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.h:38[m[K,
+[42.743s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/command_handler/parse_lidar_state_info.cpp:2[m[K:
+[42.743s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;35m[Kwarning: [m[Kunknown option after ‘[01m[K#pragma GCC diagnostic[m[K’ kind [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpragmas-Wpragmas]8;;[m[K]
+[42.743s]   542 | #define RAPIDJSON_PRAGMA(x) [01;35m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[42.743s]       |                             [01;35m[K^~~~~~~[m[K
+[42.744s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[42.744s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[42.744s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[42.744s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[42.744s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[42.744s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[42.745s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[42.745s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[42.745s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[42.751s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29:[m[K [01;36m[Knote: [m[Kdid you mean ‘[01m[K-Warray-bounds[m[K’?
+[42.751s]   542 | #define RAPIDJSON_PRAGMA(x) [01;36m[K_Pragma[m[K(RAPIDJSON_STRINGIFY(x))
+[42.751s]       |                             [01;36m[K^~~~~~~[m[K
+[42.751s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_PRAGMA[m[K’
+[42.751s]   543 | #define RAPIDJSON_DIAG_PRAGMA(x) [01;36m[KRAPIDJSON_PRAGMA[m[K(GCC diagnostic x)
+[42.752s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[42.752s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_PRAGMA[m[K’
+[42.752s]   545 |   [01;36m[KRAPIDJSON_DIAG_PRAGMA[m[K(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+[42.752s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[42.752s] [01m[K/home/wheeltec/agribot/agribot_ws/src/Livox-SDK2/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KRAPIDJSON_DIAG_OFF[m[K’
+[42.752s]    36 | [01;36m[KRAPIDJSON_DIAG_OFF[m[K(array - bounds)  // some gcc versions generate wrong warnings
+[42.753s]       | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[43.034s] [ 80%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/debug_point_cloud_handler/debug_point_cloud_manager.cpp.o[0m
+[43.463s] [ 81%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/debug_point_cloud_handler/debug_point_cloud_handler.cpp.o[0m
+[44.281s] [ 83%] [32m[1mLinking CXX static library liblivox_lidar_sdk_static.a[0m
+[45.468s] [ 83%] Built target livox_lidar_sdk_static
+[45.523s] [ 84%] [32mBuilding CXX object samples/multi_lidars_upgrade/CMakeFiles/multi_lidars_upgrade.dir/main.cpp.o[0m
+[45.527s] [ 85%] [32mBuilding CXX object samples/logger/CMakeFiles/logger.dir/main.cpp.o[0m
+[45.541s] [ 86%] [32mBuilding CXX object samples/livox_lidar_quick_start/CMakeFiles/livox_lidar_quick_start.dir/main.cpp.o[0m
+[46.355s] [ 87%] [32mBuilding CXX object samples/debug_point_cloud/CMakeFiles/debug_point_cloud.dir/main.cpp.o[0m
+[46.383s] [ 89%] [32m[1mLinking CXX executable livox_lidar_quick_start[0m
+[46.561s] [ 90%] [32m[1mLinking CXX executable logger[0m
+[46.758s] [ 91%] [32m[1mLinking CXX executable multi_lidars_upgrade[0m
+[47.547s] [ 92%] [32mBuilding CXX object samples/lidar_cmd_observer/CMakeFiles/lidar_cmd_observer.dir/main.cpp.o[0m
+[47.606s] [ 93%] [32m[1mLinking CXX executable debug_point_cloud[0m
+[48.155s] [ 93%] Built target livox_lidar_quick_start
+[48.286s] [ 95%] [32mBuilding CXX object samples/livox_lidar_rmc_time_sync/CMakeFiles/livox_lidar_rmc_time_sync.dir/main.cpp.o[0m
+[48.290s] [ 96%] [32m[1mLinking CXX executable lidar_cmd_observer[0m
+[48.539s] [ 96%] Built target multi_lidars_upgrade
+[48.573s] [ 97%] [32mBuilding CXX object samples/livox_lidar_rmc_time_sync/CMakeFiles/livox_lidar_rmc_time_sync.dir/linux/synchro.cpp.o[0m
+[48.628s] [ 97%] Built target logger
+[49.302s] [ 97%] Built target debug_point_cloud
+[49.751s] [ 98%] [32m[1mLinking CXX executable livox_lidar_rmc_time_sync[0m
+[49.822s] [ 98%] Built target lidar_cmd_observer
+[51.216s] [ 98%] Built target livox_lidar_rmc_time_sync
+[51.730s] [100%] [32m[1mLinking CXX shared library liblivox_lidar_sdk_shared.so[0m
+[53.012s] [100%] Built target livox_lidar_sdk_shared

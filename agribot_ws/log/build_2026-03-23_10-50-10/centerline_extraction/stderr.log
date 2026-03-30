@@ -1,0 +1,34 @@
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:5[m[K:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:109:61:[m[K [01;31m[Kerror: [m[Kcannot capture ‘[01m[Krclcpp::Node::now() const()[m[K’ by reference
+  109 |         RCLCPP_DEBUG_THROTTLE(this->get_logger(), this->now([01;31m[K)[m[K, 1000, "No valid path available");
+      |                                                             [01;31m[K^[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In lambda function:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+  109 |         [01;31m[KRCLCPP_DEBUG_THROTTLE[m[K(this->get_logger(), this->now(), 1000, "No valid path available");
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:133:73:[m[K [01;31m[Kerror: [m[Kcannot capture ‘[01m[Krclcpp::Clock::now()()[m[K’ by reference
+  133 |         RCLCPP_WARN_THROTTLE(this->get_logger(), this->get_clock()->now([01;31m[K)[m[K, 1000, "Could not find lookahead point");
+      |                                                                         [01;31m[K^[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In lambda function:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:133:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+  133 |         [01;31m[KRCLCPP_WARN_THROTTLE[m[K(this->get_logger(), this->get_clock()->now(), 1000, "Could not find lookahead point");
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:119:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdt[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  119 |     double [01;35m[Kdt[m[K = (current_time - last_time_).seconds();
+      |            [01;35m[K^~[m[K
+gmake[2]: *** [CMakeFiles/pure_pursuit_controller.dir/build.make:76：CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:167：CMakeFiles/pure_pursuit_controller.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

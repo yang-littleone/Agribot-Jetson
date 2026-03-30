@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="agribot">
+    <!-- 基础组件 base_link -->
+    <!-- <xacro:include filename="$(find agribot_simulation)/urdf/agribot/mini_4wd_robot.urdf.xacro" /> -->
+
+
+    <!-- mid360雷达 -->
+    <!-- <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro" /> -->
+    <!-- Gazebo相关配置 -->
+    <!-- <xacro:include filename="$(find agribot_simulation)/urdf/agribot/agribot.gazebo.xacro" /> -->
+
+    <!-- ROS2 Control配置 -->
+    <!-- <xacro:include filename="$(find agribot_simulation)/urdf/agribot/agribot.ros2_control.xacro" /> -->
+
+    <!-- Gazebo传感器插件 -->
+    <!-- <xacro:include
+        filename="$(find agribot_simulation)/urdf/agribot/plugins/gazebo_sensor_plugin.xacro" /> -->
+
+    <!-- Gazebo控制插件 -->
+    <!-- <xacro:include filename="$(find
+    agribot_simulation)/urdf/agribot/plugins/gazebo_control_plugin.xacro"/> -->
+
+    <xacro:mini_4wd_robot_xacro />
+    <!-- <xacro:imu_xacro xyz="0 0 0" /> -->
+
+    <!-- <xacro:mid360 name="livox" parent="base_link" topic="mid360">
+        <origin xyz="0.1 0 0.1" rpy="0 0 0" />
+    </xacro:mid360> -->
+
+    <!-- <xacro:agribot_ros2_control /> -->
+
+    <!-- 使用gazebo传感器插件宏 -->
+    <!-- <xacro:gazebo_sensor_plugin /> -->
+
+    <!-- 使用gazebo_control_plugin宏
+    <xacro:gazebo_control_plugin /> -->
+
+</robot>

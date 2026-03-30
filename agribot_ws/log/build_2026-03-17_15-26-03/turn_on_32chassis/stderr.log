@@ -1,0 +1,10 @@
+[01m[K/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp:[m[K In constructor ‘[01m[KTurnOn32Chassis::TurnOn32Chassis()[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp:22:11:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of type ‘[01m[Kusing Imu = struct sensor_msgs::msg::Imu_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct sensor_msgs::msg::Imu_<std::allocator<void> >[m[K’} with no trivial copy-assignment; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+   22 |     [01;35m[Kmemset(&imu_msg_, 0, sizeof(imu_msg_))[m[K;
+      |     [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp:7[m[K,
+                 from [01m[K/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include/turn_on_32chassis/turn_on_32chassis.hpp:9[m[K,
+                 from [01m[K/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp:42:8:[m[K [01;36m[Knote: [m[K‘[01m[Kusing Imu = struct sensor_msgs::msg::Imu_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct sensor_msgs::msg::Imu_<std::allocator<void> >[m[K’} declared here
+   42 | struct [01;36m[KImu_[m[K
+      |        [01;36m[K^~~~[m[K

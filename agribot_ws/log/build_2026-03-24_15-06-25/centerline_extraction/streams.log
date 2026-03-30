@@ -1,0 +1,37 @@
+[0.096s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8
+[0.202s] [35m[1mConsolidate compiler generated dependencies of target pure_pursuit_controller[0m
+[0.242s] [ 14%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o[0m
+[0.269s] [ 42%] Built target corn_row_detector_projection
+[0.282s] [ 71%] Built target pure_pursuit_controller
+[30.244s] [ 85%] [32m[1mLinking CXX executable cornfield_navigation_node[0m
+[33.290s] [100%] Built target cornfield_navigation_node
+[33.319s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8
+[33.324s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/centerline_extraction
+[33.338s] -- Install configuration: ""
+[33.339s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node
+[33.358s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node" to ""
+[33.359s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection
+[33.359s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/pure_pursuit_controller
+[33.359s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include
+[33.360s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction
+[33.360s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller.hpp
+[33.360s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector_projection.hpp
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pid_controller.hpp
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/launch
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/launch/pure_pursuit.launch.py
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/package_run_dependencies/centerline_extraction
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/parent_prefix_path/centerline_extraction
+[33.361s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.sh
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.dsv
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.sh
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.dsv
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.bash
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.sh
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.zsh
+[33.362s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.dsv
+[33.363s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.dsv
+[33.363s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/packages/centerline_extraction
+[33.363s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig.cmake
+[33.363s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig-version.cmake
+[33.363s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.xml
+[33.367s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/centerline_extraction

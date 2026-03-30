@@ -25,19 +25,19 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
 
     // 声明并初始化参数
     this->declare_parameter("target_distance", 0.4);   // 目标跟随距离（米）
-    this->declare_parameter("max_linear_speed", 0.2);  // 最大线速度（米/秒）
+    this->declare_parameter("max_linear_speed", 0.5);  // 最大线速度（米/秒）
     this->declare_parameter("min_linear_speed", 0.1);  // 最小线速度（米/秒）
     this->declare_parameter("max_angular_speed", 0.2); // 最大角速度（弧度/秒）
 
     // 横向PID参数
-    this->declare_parameter("lateral_kp", 60.0);  // 比例系数
-    this->declare_parameter("lateral_ki", 1.0); // 积分系数
-    this->declare_parameter("lateral_kd", 10.0); // 微分系数
+    this->declare_parameter("lateral_kp", 8.0); // 比例系数
+    this->declare_parameter("lateral_ki", 0.0);  // 积分系数
+    this->declare_parameter("lateral_kd", 2.3); // 微分系数
 
     // 航向PID参数
-    this->declare_parameter("heading_kp", 60.0); // 比例系数
-    this->declare_parameter("heading_ki", 1.0); // 积分系数
-    this->declare_parameter("heading_kd", 10.0); // 微分系数
+    this->declare_parameter("heading_kp", 8.0); // 比例系数
+    this->declare_parameter("heading_ki", 0.0);  // 积分系数
+    this->declare_parameter("heading_kd", 2.3); // 微分系数
 
     this->declare_parameter("debug_mode", false); // 调试模式开关
 
@@ -318,4 +318,18 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
                  target_distance_, lateral_error, heading_error, linear_speed, angular_vel);
 
     return cmd_vel;
+}
+
+PIDController::~PIDController()
+{
+    RCLCPP_INFO(this->get_logger(), "PID控制器节点正在关闭");
+    // 清理资源
+    // 速度清零
+    geometry_msgs::msg::Twist cmd_vel;
+    cmd_vel.linear.x = 0.0;
+    cmd_vel.angular.z = 0.0;
+    cmd_vel.linear.y = 0.0;
+
+    cmd_vel_pub_->publish(cmd_vel);
+    rclcpp::shutdown();
 }

@@ -223,7 +223,7 @@ corn_row_detector_projection: /opt/ros/humble/lib/libaction_msgs__rosidl_typesup
 corn_row_detector_projection: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 corn_row_detector_projection: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_cpp.so
 corn_row_detector_projection: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-corn_row_detector_projection: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+corn_row_detector_projection: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 corn_row_detector_projection: /opt/ros/humble/lib/librmw.so
 corn_row_detector_projection: /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_introspection_cpp.so
 corn_row_detector_projection: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so

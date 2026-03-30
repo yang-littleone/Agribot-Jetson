@@ -1,0 +1,40 @@
+[0.042s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8
+[0.142s] [35m[1mConsolidate compiler generated dependencies of target pure_pursuit_controller[0m
+[0.183s] [ 42%] Built target cornfield_navigation_node
+[0.187s] [ 57%] [32mBuilding CXX object CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.o[0m
+[0.194s] [ 85%] Built target corn_row_detector_projection
+[6.601s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[6.602s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[6.602s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[6.602s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[6.602s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[6.603s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[6.603s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[6.603s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[6.603s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[6.604s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[6.604s]                  from [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:5[m[K:
+[6.604s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[6.604s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:109:61:[m[K [01;31m[Kerror: [m[Kcannot capture ‘[01m[Krclcpp::Node::now() const()[m[K’ by reference
+[6.604s]   109 |         RCLCPP_DEBUG_THROTTLE(this->get_logger(), this->now([01;31m[K)[m[K, 1000, "No valid path available");
+[6.605s]       |                                                             [01;31m[K^[m[K
+[6.617s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In lambda function:
+[6.617s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+[6.618s]   109 |         [01;31m[KRCLCPP_DEBUG_THROTTLE[m[K(this->get_logger(), this->now(), 1000, "No valid path available");
+[6.618s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[6.620s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[6.621s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:133:73:[m[K [01;31m[Kerror: [m[Kcannot capture ‘[01m[Krclcpp::Clock::now()()[m[K’ by reference
+[6.621s]   133 |         RCLCPP_WARN_THROTTLE(this->get_logger(), this->get_clock()->now([01;31m[K)[m[K, 1000, "Could not find lookahead point");
+[6.621s]       |                                                                         [01;31m[K^[m[K
+[6.634s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In lambda function:
+[6.635s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:133:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+[6.635s]   133 |         [01;31m[KRCLCPP_WARN_THROTTLE[m[K(this->get_logger(), this->get_clock()->now(), 1000, "Could not find lookahead point");
+[6.635s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[6.637s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:[m[K In member function ‘[01m[Kvoid PurePursuitController::control_loop()[m[K’:
+[6.638s] [01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:119:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdt[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[6.638s]   119 |     double [01;35m[Kdt[m[K = (current_time - last_time_).seconds();
+[6.638s]       |            [01;35m[K^~[m[K
+[15.345s] gmake[2]: *** [CMakeFiles/pure_pursuit_controller.dir/build.make:76：CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.o] 错误 1
+[15.345s] gmake[1]: *** [CMakeFiles/Makefile2:167：CMakeFiles/pure_pursuit_controller.dir/all] 错误 2
+[15.346s] gmake: *** [Makefile:146：all] 错误 2
+[15.353s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8

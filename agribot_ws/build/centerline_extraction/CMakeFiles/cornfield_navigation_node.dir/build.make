@@ -250,7 +250,7 @@ cornfield_navigation_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupp
 cornfield_navigation_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 cornfield_navigation_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 cornfield_navigation_node: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-cornfield_navigation_node: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+cornfield_navigation_node: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 cornfield_navigation_node: /opt/ros/humble/lib/librmw.so
 cornfield_navigation_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
 cornfield_navigation_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so

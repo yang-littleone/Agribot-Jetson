@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target pure_pursuit_controller[0m
+[ 42%] Built target cornfield_navigation_node
+[ 57%] [32mBuilding CXX object CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.o[0m
+[ 85%] Built target corn_row_detector_projection

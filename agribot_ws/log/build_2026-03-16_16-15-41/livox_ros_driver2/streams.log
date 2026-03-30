@@ -1,0 +1,107 @@
+[0.065s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/livox_ros_driver2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2 -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/livox_ros_driver2
+[0.210s] -- The C compiler identification is GNU 11.4.0
+[0.667s] -- The CXX compiler identification is GNU 11.4.0
+[0.687s] -- Detecting C compiler ABI info
+[0.832s] -- Detecting C compiler ABI info - done
+[0.845s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.855s] -- Detecting C compile features
+[0.856s] -- Detecting C compile features - done
+[0.862s] -- Detecting CXX compiler ABI info
+[1.024s] -- Detecting CXX compiler ABI info - done
+[1.036s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.037s] -- Detecting CXX compile features
+[1.038s] -- Detecting CXX compile features - done
+[1.039s] -- livox_ros_driver2 version: 1.2.4
+[1.071s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.578s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.349s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.441s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.751s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.322s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.353s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.858s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.944s] -- Found FastRTPS: /opt/ros/humble/include  
+[4.074s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.150s] -- Looking for pthread.h
+[4.288s] -- Looking for pthread.h - found
+[4.288s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[4.448s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[4.451s] -- Found Threads: TRUE  
+[5.042s] -- Checking for module 'eigen3'
+[5.135s] --   Found eigen3, version 3.4.0
+[5.219s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[5.220s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[5.442s] -- Checking for module 'flann'
+[5.503s] --   Found flann, version 1.9.1
+[5.590s] -- Found FLANN: /usr/lib/aarch64-linux-gnu/libflann_cpp.so  
+[5.590s] -- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)
+[7.762s] -- Checking for module 'libusb-1.0'
+[7.813s] --   Found libusb-1.0, version 1.0.25
+[7.887s] -- Found libusb: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  
+[7.889s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[8.025s] -- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[8.392s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[8.400s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[8.413s] -- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[8.794s] -- Found Qhull version 8.0.2
+[9.166s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[9.523s] -- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  
+[9.525s] -- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  
+[9.526s] -- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  
+[9.528s] -- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  
+[9.530s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  
+[9.532s] -- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  
+[9.533s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[9.533s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[9.535s] -- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  
+[9.537s] -- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  
+[9.539s] -- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  
+[9.541s] -- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  
+[9.544s] -- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  
+[9.546s] -- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  
+[9.548s] -- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  
+[9.550s] -- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  
+[9.552s] -- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  
+[9.554s] -- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  
+[9.556s] -- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  
+[9.558s] -- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  
+[9.559s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[9.560s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[9.561s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[9.563s] -- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  
+[9.565s] -- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  
+[9.736s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[9.738s] -- Checking for module 'apr-1'
+[9.747s] --   No package 'apr-1' found
+[10.423s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[11.139s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[11.956s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[12.033s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[12.064s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[12.169s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[12.169s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[12.169s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[12.169s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[12.237s] -- Found PythonExtra: .so  
+[12.783s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[13.029s] -- Added test 'copyright' to check source files copyright and LICENSE
+[13.046s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[13.047s] -- Configured cppcheck include dirs: /home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2/3rdparty;/home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2/src
+[13.047s] -- Configured cppcheck exclude dirs and/or files: 
+[13.072s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[13.073s] -- Configured cpplint exclude dirs and/or files: 
+[13.079s] -- Added test 'flake8' to check Python code syntax and style conventions
+[13.086s] -- Added test 'lint_cmake' to check CMake code style
+[13.093s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[13.109s] -- Added test 'uncrustify' to check C / C++ code style
+[13.109s] -- Configured uncrustify additional arguments: 
+[13.115s] -- Added test 'xmllint' to check XML markup files
+[13.129s] -- Configuring done
+[13.145s] [0mCMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+[13.145s] Please set them or make sure they are set and tested correctly in the CMake files:
+[13.145s] /home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2/LIVOX_INTERFACES_INCLUDE_DIRECTORIES
+[13.145s]    used as include directory in directory /home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2
+[13.145s] [0m
+[13.301s] -- Generating done
+[13.308s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[13.383s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/livox_ros_driver2' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/livox_ros_driver2 -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/livox_ros_driver2

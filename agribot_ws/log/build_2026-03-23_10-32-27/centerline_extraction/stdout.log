@@ -1,0 +1,3 @@
+[ 40%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o[0m
+[ 80%] Built target corn_row_detector_projection

@@ -12,6 +12,8 @@ class PIDController : public rclcpp::Node
 {
 public:
     PIDController();
+    // 析构函数
+    ~PIDController();
 
 private:
     // 回调函数

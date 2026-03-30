@@ -1,0 +1,8 @@
+source;share/turn_on_32chassis/hook/cmake_prefix_path.ps1
+source;share/turn_on_32chassis/hook/cmake_prefix_path.dsv
+source;share/turn_on_32chassis/hook/cmake_prefix_path.sh
+source;share/turn_on_32chassis/local_setup.bash
+source;share/turn_on_32chassis/local_setup.dsv
+source;share/turn_on_32chassis/local_setup.ps1
+source;share/turn_on_32chassis/local_setup.sh
+source;share/turn_on_32chassis/local_setup.zsh

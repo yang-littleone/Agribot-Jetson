@@ -156,13 +156,6 @@ void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::Poi
 
     // Check if the rows are properly separated
     float row_separation = std::abs(left_intercept - right_intercept);
-    if (row_separation < 0.3 || row_separation > 3.0)
-    {
-        RCLCPP_WARN(this->get_logger(), "Invalid row separation: %.2f meters", row_separation);
-        // 发布空路径以清空显示
-        publish_empty_path(msg->header);
-        return;
-    }
 
     // create center line path
     nav_msgs::msg::Path center_line_path = this->create_path((left_slope + right_slope) / 2.0,
@@ -222,7 +215,7 @@ PointCloudXYZPtr CornRowDetectorProjection::preprocess_point_cloud(PointCloudXYZ
     pcl::PassThrough<pcl::PointXYZ> pass_y;
     pass_y.setInputCloud(filter_cloud);
     pass_y.setFilterFieldName("y");
-    pass_y.setFilterLimits(-3.0f, 3.0f);
+    pass_y.setFilterLimits(-0.8f, 0.8f);
     pass_y.filter(*filter_cloud);
 
     // x filter

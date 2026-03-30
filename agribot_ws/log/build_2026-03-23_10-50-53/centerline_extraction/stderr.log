@@ -1,0 +1,4 @@
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp: In member function ‘void PurePursuitController::control_loop()’:
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp:119:12: warning: unused variable ‘dt’ [-Wunused-variable]
+  119 |     double dt = (current_time - last_time_).seconds();
+      |            ^~
