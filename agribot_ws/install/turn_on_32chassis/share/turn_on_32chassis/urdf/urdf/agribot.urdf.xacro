@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="agribot">
     <!-- 基础组件 base_link -->
     <!-- <xacro:include filename="$(find agribot_simulation)/urdf/agribot/mini_4wd_robot.urdf.xacro" /> -->
+    <xacro:include filename="mini_4wd_robot.urdf.xacro" />
 
 
     <!-- mid360雷达 -->
