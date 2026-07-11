@@ -51,6 +51,17 @@
                 </geometry>
             </collision>
         </link>
+
+        <!-- H30 IMU mounting frame.
+             Replace xyz/rpy with the measured extrinsics of the sensor. -->
+        <link name="gyro_link" />
+
+        <joint name="h30_joint" type="fixed">
+            <origin xyz="0.03163 0.05 0.065" rpy="0 0 0" />
+            <parent link="base_link" />
+            <child link="gyro_link" />
+        </joint>
+
         <link
             name="lf_wheel_link">
             <inertial>

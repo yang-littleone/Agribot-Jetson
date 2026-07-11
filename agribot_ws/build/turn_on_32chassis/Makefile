@@ -210,6 +210,19 @@ turn_on_32chassis_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turn_on_32chassis_node.dir/build.make CMakeFiles/turn_on_32chassis_node.dir/build
 .PHONY : turn_on_32chassis_node/fast
 
+#=============================================================================
+# Target rules for targets named imu_source_selector_node
+
+# Build rule for target.
+imu_source_selector_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imu_source_selector_node
+.PHONY : imu_source_selector_node
+
+# fast build rule for target.
+imu_source_selector_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/build
+.PHONY : imu_source_selector_node/fast
+
 src/Quaternion_Solution.o: src/Quaternion_Solution.cpp.o
 .PHONY : src/Quaternion_Solution.o
 
@@ -233,6 +246,30 @@ src/Quaternion_Solution.s: src/Quaternion_Solution.cpp.s
 src/Quaternion_Solution.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turn_on_32chassis_node.dir/build.make CMakeFiles/turn_on_32chassis_node.dir/src/Quaternion_Solution.cpp.s
 .PHONY : src/Quaternion_Solution.cpp.s
+
+src/imu_source_selector.o: src/imu_source_selector.cpp.o
+.PHONY : src/imu_source_selector.o
+
+# target to build an object file
+src/imu_source_selector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/src/imu_source_selector.cpp.o
+.PHONY : src/imu_source_selector.cpp.o
+
+src/imu_source_selector.i: src/imu_source_selector.cpp.i
+.PHONY : src/imu_source_selector.i
+
+# target to preprocess a source file
+src/imu_source_selector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/src/imu_source_selector.cpp.i
+.PHONY : src/imu_source_selector.cpp.i
+
+src/imu_source_selector.s: src/imu_source_selector.cpp.s
+.PHONY : src/imu_source_selector.s
+
+# target to generate assembly for a file
+src/imu_source_selector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/src/imu_source_selector.cpp.s
+.PHONY : src/imu_source_selector.cpp.s
 
 src/turn_on_32chassis.o: src/turn_on_32chassis.cpp.o
 .PHONY : src/turn_on_32chassis.o
@@ -273,10 +310,14 @@ help:
 	@echo "... test"
 	@echo "... turn_on_32chassis_uninstall"
 	@echo "... uninstall"
+	@echo "... imu_source_selector_node"
 	@echo "... turn_on_32chassis_node"
 	@echo "... src/Quaternion_Solution.o"
 	@echo "... src/Quaternion_Solution.i"
 	@echo "... src/Quaternion_Solution.s"
+	@echo "... src/imu_source_selector.o"
+	@echo "... src/imu_source_selector.i"
+	@echo "... src/imu_source_selector.s"
 	@echo "... src/turn_on_32chassis.o"
 	@echo "... src/turn_on_32chassis.i"
 	@echo "... src/turn_on_32chassis.s"

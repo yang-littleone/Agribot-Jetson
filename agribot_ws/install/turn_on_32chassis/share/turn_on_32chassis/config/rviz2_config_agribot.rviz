@@ -64,7 +64,7 @@ Visualization Manager:
           Value: false
         lf_wheel_link:
           Value: false
-        odom_combined:
+        odom:
           Value: true
         rb_wheel_link:
           Value: false
@@ -76,7 +76,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        odom_combined:
+        odom:
           base_footprint:
             base_link:
               controller_link:
@@ -178,13 +178,13 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /imu/data_raw
+        Value: /imu/selected
       Value: true
       fixed_frame_orientation: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom_combined
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:

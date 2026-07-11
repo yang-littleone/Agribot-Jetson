@@ -1,0 +1,10 @@
+/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp: In constructor ‘TurnOn32Chassis::TurnOn32Chassis()’:
+/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp:22:11: warning: ‘void* memset(void*, int, size_t)’ clearing an object of type ‘using Imu = struct sensor_msgs::msg::Imu_<std::allocator<void> >’ {aka ‘struct sensor_msgs::msg::Imu_<std::allocator<void> >’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+   22 |     memset(&imu_msg_, 0, sizeof(imu_msg_));
+      |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp:7,
+                 from /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include/turn_on_32chassis/turn_on_32chassis.hpp:9,
+                 from /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/src/turn_on_32chassis.cpp:1:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp:42:8: note: ‘using Imu = struct sensor_msgs::msg::Imu_<std::allocator<void> >’ {aka ‘struct sensor_msgs::msg::Imu_<std::allocator<void> >’} declared here
+   42 | struct Imu_
+      |        ^~~~

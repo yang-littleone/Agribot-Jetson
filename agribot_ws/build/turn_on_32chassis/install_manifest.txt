@@ -1,4 +1,5 @@
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/lib/turn_on_32chassis/turn_on_32chassis_node
+/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/lib/turn_on_32chassis/imu_source_selector_node
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/launch/turn_on_32chassis.launch.py
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/urdf/mini_4wd_robot.urdf.xacro
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/urdf/agribot.urdf.xacro

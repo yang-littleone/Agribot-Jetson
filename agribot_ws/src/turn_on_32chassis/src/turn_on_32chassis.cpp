@@ -19,7 +19,7 @@ TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
     // 初始化结构体
     memset(&receive_data_, 0, sizeof(receive_data_));
     memset(&send_data_, 0, sizeof(send_data_));
-    memset(&imu_msg_, 0, sizeof(imu_msg_));
+    imu_msg_ = sensor_msgs::msg::Imu();
     memset(&robot_pos_, 0, sizeof(robot_pos_));
     memset(&robot_vel_, 0, sizeof(robot_vel_));
 
@@ -28,7 +28,7 @@ TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
     // 声明参数
     this->declare_parameter<std::string>("port_name", "/dev/agribot_serial");
     this->declare_parameter<int>("baud_rate", 115200);
-    this->declare_parameter<std::string>("odom_frame_id", "odom_combined");
+    this->declare_parameter<std::string>("odom_frame_id", "odom");
     this->declare_parameter<std::string>("robot_frame_id", "base_footprint");
     this->declare_parameter<std::string>("gyro_frame_id", "imu_link");
 
@@ -38,7 +38,7 @@ TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
     this->get_parameter("robot_frame_id", robot_frame_id); // The odometer topic corresponds to sub-TF coordinates //里程计话题对应子TF坐标
     this->get_parameter("gyro_frame_id", gyro_frame_id);   // IMU topics correspond to TF coordinates //IMU话题对应TF坐标
 
-    odom_publisher = create_publisher<nav_msgs::msg::Odometry>("odom", 2);      // Create the odometer topic publisher //创建里程计话题发布者
+    odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2); // Create the raw wheel odometry publisher //创建原始轮式里程计发布者
     imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2); // Create an IMU topic publisher //创建IMU话题发布者
 
     Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(
@@ -201,7 +201,7 @@ void TurnOn32Chassis::Publish_Odom()
     odom.header.frame_id = odom_frame_id;     // Odometer TF parent coordinates //里程计TF父坐标
     odom.pose.pose.position.x = robot_pos_.X; // Position //位置
     odom.pose.pose.position.y = robot_pos_.Y;
-    odom.pose.pose.position.z = robot_pos_.Z;
+    odom.pose.pose.position.z = 0.0; // Planar robot: robot_pos_.Z stores yaw, not height //二维机器人：robot_pos_.Z 表示偏航角，不是高度
     odom.pose.pose.orientation = odom_quat; // Posture, Quaternion converted by Z-axis rotation //姿态，通过Z轴转角转换的四元数
 
     odom.child_frame_id = robot_frame_id;      // Odometer TF subcoordinates //里程计TF子坐标

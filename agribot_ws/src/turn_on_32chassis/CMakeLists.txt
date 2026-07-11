@@ -42,6 +42,7 @@ include_directories(
 
 # 添加可执行文件
 add_executable(turn_on_32chassis_node src/turn_on_32chassis.cpp src/Quaternion_Solution.cpp)
+add_executable(imu_source_selector_node src/imu_source_selector.cpp)
 
 
 # 链接rclcpp库和serial库
@@ -57,8 +58,14 @@ ament_target_dependencies(turn_on_32chassis_node
   tf2_geometry_msgs
 )
 
+ament_target_dependencies(imu_source_selector_node
+  rclcpp
+  sensor_msgs
+)
+
 install(TARGETS
   turn_on_32chassis_node
+  imu_source_selector_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
