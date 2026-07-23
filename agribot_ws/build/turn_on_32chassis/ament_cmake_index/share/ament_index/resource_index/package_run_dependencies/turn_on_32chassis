@@ -1,1 +1,1 @@
-rclcpp;serial;sensor_msgs;nav_msgs;std_msgs;tf2;tf2_ros;geometry_msgs;tf2_geometry_msgs;python3-yaml;ament_lint_auto;ament_lint_common
+rclcpp;serial;sensor_msgs;nav_msgs;std_msgs;tf2;tf2_ros;geometry_msgs;tf2_geometry_msgs;python3-yaml;fast_lio;livox_ros_driver2;robot_localization;robot_state_publisher;joint_state_publisher;imu_filter_madgwick;rviz2;xacro;yesense_std_ros2;ament_lint_auto;ament_lint_common;ament_cmake_gtest;launch_testing_ament_cmake;launch_testing_ros;python3-pytest;rclpy

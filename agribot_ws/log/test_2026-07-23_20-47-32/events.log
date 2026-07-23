@@ -1,0 +1,1229 @@
+[0.000000] (-) TimerEvent: {}
+[0.000283] (turn_on_32chassis) JobQueued: {'identifier': 'turn_on_32chassis', 'dependencies': OrderedDict([('fast_lio', '/home/wheeltec/agribot/agribot_ws/install/fast_lio'), ('serial', '/home/wheeltec/agribot/agribot_ws/install/serial'), ('turn_on_32chassis', '/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis')])}
+[0.001317] (turn_on_32chassis) JobStarted: {'identifier': 'turn_on_32chassis'}
+[0.099323] (-) TimerEvent: {}
+[0.115295] (turn_on_32chassis) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/wheeltec'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:7898'), ('CODEX_CI', '1'), ('LANGUAGE', 'zh_CN:en_US:en'), ('CODEX_HOME', '/home/wheeltec/.codex'), ('USER', 'wheeltec'), ('SSH_CLIENT', '192.168.3.138 64163 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/wheeltec/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/tcf.json","messagesFile":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/1b6a188127eeaf9194f945eb6eb89a657e93c54c/nls.messages.json","corruptMarkerFile":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"08e3eb26a94cfe99087efc53c5a0cebc.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/tcf.json","_cacheRoot":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn","_resolvedLanguagePackCoreLocation":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/1b6a188127eeaf9194f945eb6eb89a657e93c54c","_corruptedFile":"/home/wheeltec/.vscode-server/data/clp/08e3eb26a94cfe99087efc53c5a0cebc.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/wheeltec/agribot/agribot_ws/install/fast_lio/lib:/usr/lib/aarch64-linux-gnu:/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib:/home/wheeltec/agribot/agribot_ws/install/serial/lib:/home/wheeltec/ws_livox/install/livox_sdk2/lib:/home/wheeltec/ws_livox/install/livox_ros_driver2/lib:/home/wheeltec/wheeltec_ros2/install/yesense_interface/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt/lib:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/lib:/home/wheeltec/wheeltec_ros2/install/usb_cam/lib:/home/wheeltec/wheeltec_ros2/install/ublox_gps/lib:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/lib:/home/wheeltec/wheeltec_ros2/install/serial/lib:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/lib:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping/lib:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_controller/lib:/home/wheeltec/wheeltec_ros2/install/dwb_plugins/lib:/home/wheeltec/wheeltec_ros2/install/dwb_critics/lib:/home/wheeltec/wheeltec_ros2/install/dwb_core/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils/lib:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower/lib:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors/lib:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor/lib:/home/wheeltec/wheeltec_ros2/install/costmap_queue/lib:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d/lib:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid/lib:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins/lib:/home/wheeltec/wheeltec_ros2/install/nav2_map_server/lib:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree/lib:/home/wheeltec/wheeltec_ros2/install/nav2_amcl/lib:/home/wheeltec/wheeltec_ros2/install/nav2_util/lib:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/lib:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/lib:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco_ros/lib:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco/lib:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/wheeltec/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wheeltec'), ('NO_PROXY', 'localhost,127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-83863e89-cba4-4549-8040-ff26eb061c66.sock'), ('JETSON_L4T', '36.4.7'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Orin NX Engineering Reference Developer Kit'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', ''), ('COLCON_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install:/home/wheeltec/ws_livox/install:/home/wheeltec/wheeltec_ros2/install'), ('CODEX_PERMISSION_PROFILE', ':danger-full-access'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'wheeltec'), ('JETSON_MODULE', 'NVIDIA Jetson Orin NX (16GB ram)'), ('JETSON_SERIAL_NUMBER', '1422525044003'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', ':/opt/opencv_410/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '7'), ('VSCODE_CLI_REQUIRE_TOKEN', '47940038-93be-4d87-98cf-d4d4cd879861'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/wheeltec/.codex/tmp/arg0/codex-arg0QW4pPG:/home/wheeltec/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wheeltec/.vscode-server/extensions/openai.chatgpt-26.5715.61943-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/home/wheeltec/.vscode-server'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('JETSON_SOC', 'tegra234'), ('AMENT_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019f8edf-529b-73d3-87e2-dbffe2bf6838'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('JETSON_CUDA_ARCH_BIN', '8.7'), ('PWD', '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.3.138 64163 192.168.3.195 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages:/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages:/home/wheeltec/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/yesense_interface/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/tf2_tools/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_common/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7898'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', ''), ('CMAKE_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs'), ('JETSON_P_NUMBER', 'p3767-0000')]), 'shell': False}
+[0.131802] (turn_on_32chassis) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini\n'}
+[0.132671] (turn_on_32chassis) StdoutLine: {'line': b'Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini\n'}
+[0.132900] (turn_on_32chassis) StdoutLine: {'line': b'   Site: wheeltec\n'}
+[0.133075] (turn_on_32chassis) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.133242] (turn_on_32chassis) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.133403] (turn_on_32chassis) StdoutLine: {'line': b'Create new tag: 20260723-1247 - Experimental\n'}
+[0.133550] (turn_on_32chassis) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini\n'}
+[0.134271] (turn_on_32chassis) StdoutLine: {'line': b'Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini\n'}
+[0.134459] (turn_on_32chassis) StdoutLine: {'line': b'Test project /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis\n'}
+[0.134626] (turn_on_32chassis) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.134780] (turn_on_32chassis) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.134936] (turn_on_32chassis) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.135080] (turn_on_32chassis) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.135231] (turn_on_32chassis) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.135376] (turn_on_32chassis) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.135531] (turn_on_32chassis) StdoutLine: {'line': b'test 1\n'}
+[0.135682] (turn_on_32chassis) StdoutLine: {'line': b'    Start 1: test_wheel_trust_monitor\n'}
+[0.135829] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[0.135980] (turn_on_32chassis) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cmake_gtest/test_wheel_trust_monitor.txt" "--command" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor" "--gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml"\n'}
+[0.136152] (turn_on_32chassis) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.199499] (-) TimerEvent: {}
+[0.300207] (-) TimerEvent: {}
+[0.318789] (turn_on_32chassis) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':\n"}
+[0.319333] (turn_on_32chassis) StdoutLine: {'line': b'1:  - /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor --gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml\n'}
+[0.322365] (turn_on_32chassis) StdoutLine: {'line': b'1: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.323345] (turn_on_32chassis) StdoutLine: {'line': b'1: [==========] Running 5 tests from 1 test suite.\n'}
+[0.323969] (turn_on_32chassis) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.324337] (turn_on_32chassis) StdoutLine: {'line': b'1: [----------] 5 tests from WheelTrustMonitor\n'}
+[0.324642] (turn_on_32chassis) StdoutLine: {'line': b'1: [ RUN      ] WheelTrustMonitor.KeepsConsistentWheelTrusted\n'}
+[0.324988] (turn_on_32chassis) StdoutLine: {'line': b'1: [       OK ] WheelTrustMonitor.KeepsConsistentWheelTrusted (0 ms)\n'}
+[0.325289] (turn_on_32chassis) StdoutLine: {'line': b'1: [ RUN      ] WheelTrustMonitor.RejectsPersistentSlip\n'}
+[0.325563] (turn_on_32chassis) StdoutLine: {'line': b'1: [       OK ] WheelTrustMonitor.RejectsPersistentSlip (0 ms)\n'}
+[0.325835] (turn_on_32chassis) StdoutLine: {'line': b'1: [ RUN      ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved\n'}
+[0.326106] (turn_on_32chassis) StdoutLine: {'line': b'1: [       OK ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved (0 ms)\n'}
+[0.326368] (turn_on_32chassis) StdoutLine: {'line': b'1: [ RUN      ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement\n'}
+[0.326628] (turn_on_32chassis) StdoutLine: {'line': b'1: [       OK ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement (0 ms)\n'}
+[0.326885] (turn_on_32chassis) StdoutLine: {'line': b'1: [ RUN      ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven\n'}
+[0.327141] (turn_on_32chassis) StdoutLine: {'line': b'1: [       OK ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven (0 ms)\n'}
+[0.327392] (turn_on_32chassis) StdoutLine: {'line': b'1: [----------] 5 tests from WheelTrustMonitor (0 ms total)\n'}
+[0.327651] (turn_on_32chassis) StdoutLine: {'line': b'1: \n'}
+[0.327899] (turn_on_32chassis) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[0.328195] (turn_on_32chassis) StdoutLine: {'line': b'1: [==========] 5 tests from 1 test suite ran. (0 ms total)\n'}
+[0.328462] (turn_on_32chassis) StdoutLine: {'line': b'1: [  PASSED  ] 5 tests.\n'}
+[0.329031] (turn_on_32chassis) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[0.329283] (turn_on_32chassis) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'\n"}
+[0.331979] (turn_on_32chassis) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'\n"}
+[0.355926] (turn_on_32chassis) StdoutLine: {'line': b'1/8 Test #1: test_wheel_trust_monitor ..................   Passed    0.22 sec\n'}
+[0.356442] (turn_on_32chassis) StdoutLine: {'line': b'test 2\n'}
+[0.356619] (turn_on_32chassis) StdoutLine: {'line': b'    Start 2: test_test_slip_aware_odometry_launch.py\n'}
+[0.356822] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[0.357001] (turn_on_32chassis) StdoutLine: {'line': b'2: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/launch_test/test_test_slip_aware_odometry_launch.py.txt" "--command" "/usr/bin/python3" "-m" "launch_testing.launch_test" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py" "--junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name=turn_on_32chassis"\n'}
+[0.357246] (turn_on_32chassis) StdoutLine: {'line': b'2: Test timeout computed to be: 30\n'}
+[0.400367] (-) TimerEvent: {}
+[0.500840] (-) TimerEvent: {}
+[0.511987] (turn_on_32chassis) StdoutLine: {'line': b"2: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':\n"}
+[0.512423] (turn_on_32chassis) StdoutLine: {'line': b'2:  - /usr/bin/python3 -m launch_testing.launch_test /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py --junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml --package-name=turn_on_32chassis\n'}
+[0.600969] (-) TimerEvent: {}
+[0.701316] (-) TimerEvent: {}
+[0.801686] (-) TimerEvent: {}
+[0.902102] (-) TimerEvent: {}
+[1.002517] (-) TimerEvent: {}
+[1.102888] (-) TimerEvent: {}
+[1.203257] (-) TimerEvent: {}
+[1.303625] (-) TimerEvent: {}
+[1.403981] (-) TimerEvent: {}
+[1.504341] (-) TimerEvent: {}
+[1.518400] (turn_on_32chassis) StdoutLine: {'line': b'2: [INFO] [launch]: All log files can be found below /home/wheeltec/.ros/log/2026-07-23-20-47-34-471755-wheeltec-21812\n'}
+[1.518859] (turn_on_32chassis) StdoutLine: {'line': b'2: [INFO] [launch]: Default logging verbosity is set to INFO\n'}
+[1.559672] (turn_on_32chassis) StdoutLine: {'line': b'2: test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry) ... [INFO] [slip_aware_odometry_node-1]: process started with pid [21817]\n'}
+[1.604493] (-) TimerEvent: {}
+[1.677004] (turn_on_32chassis) StdoutLine: {'line': b'2: [slip_aware_odometry_node-1] [INFO] [1784810854.679271789] [slip_aware_odometry_test]: Slip-aware odometry: wheel=/test/wheel lio=/test/lio_raw fused=/test/fused final=/test/final\n'}
+[1.704644] (-) TimerEvent: {}
+[1.805118] (-) TimerEvent: {}
+[1.905525] (-) TimerEvent: {}
+[2.005973] (-) TimerEvent: {}
+[2.106554] (-) TimerEvent: {}
+[2.207126] (-) TimerEvent: {}
+[2.307600] (-) TimerEvent: {}
+[2.403153] (turn_on_32chassis) StdoutLine: {'line': b'2: [slip_aware_odometry_node-1] [INFO] [1784810855.420587664] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom\n'}
+[2.407664] (-) TimerEvent: {}
+[2.507985] (-) TimerEvent: {}
+[2.608753] (-) TimerEvent: {}
+[2.709287] (-) TimerEvent: {}
+[2.809760] (-) TimerEvent: {}
+[2.910227] (-) TimerEvent: {}
+[3.010975] (-) TimerEvent: {}
+[3.111345] (-) TimerEvent: {}
+[3.211764] (-) TimerEvent: {}
+[3.241668] (turn_on_32chassis) StdoutLine: {'line': b'2: FAIL\n'}
+[3.242226] (turn_on_32chassis) StdoutLine: {'line': b'2: \n'}
+[3.242476] (turn_on_32chassis) StdoutLine: {'line': b'2: ======================================================================\n'}
+[3.242719] (turn_on_32chassis) StdoutLine: {'line': b'2: FAIL: test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry)\n'}
+[3.242947] (turn_on_32chassis) StdoutLine: {'line': b'2: ----------------------------------------------------------------------\n'}
+[3.243533] (turn_on_32chassis) StdoutLine: {'line': b'2: Traceback (most recent call last):\n'}
+[3.243899] (turn_on_32chassis) StdoutLine: {'line': b'2:   File "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py", line 132, in test_synthetic_slip_timeout_and_bad_lio\n'}
+[3.244213] (turn_on_32chassis) StdoutLine: {'line': b'2:     self.assertGreater(\n'}
+[3.244501] (turn_on_32chassis) StdoutLine: {'line': b'2: AssertionError: 0 not greater than 0 : wheel odometry never recovered after sustained LIO agreement\n'}
+[3.244812] (turn_on_32chassis) StdoutLine: {'line': b'2: \n'}
+[3.245126] (turn_on_32chassis) StdoutLine: {'line': b'2: ----------------------------------------------------------------------\n'}
+[3.245420] (turn_on_32chassis) StdoutLine: {'line': b'2: Ran 1 test in 1.713s\n'}
+[3.245696] (turn_on_32chassis) StdoutLine: {'line': b'2: \n'}
+[3.245969] (turn_on_32chassis) StdoutLine: {'line': b'2: FAILED (failures=1)\n'}
+[3.247025] (turn_on_32chassis) StdoutLine: {'line': b"2: [INFO] [slip_aware_odometry_node-1]: sending signal 'SIGINT' to process[slip_aware_odometry_node-1]\n"}
+[3.248031] (turn_on_32chassis) StdoutLine: {'line': b'2: [slip_aware_odometry_node-1] [INFO] [1784810856.267496261] [rclcpp]: signal_handler(SIGINT/SIGTERM)\n'}
+[3.312086] (-) TimerEvent: {}
+[3.369032] (turn_on_32chassis) StdoutLine: {'line': b'2: [INFO] [slip_aware_odometry_node-1]: process has finished cleanly [pid 21817]\n'}
+[3.370606] (turn_on_32chassis) StdoutLine: {'line': b'2: \n'}
+[3.371131] (turn_on_32chassis) StdoutLine: {'line': b'2: ----------------------------------------------------------------------\n'}
+[3.371480] (turn_on_32chassis) StdoutLine: {'line': b'2: Ran 0 tests in 0.000s\n'}
+[3.371793] (turn_on_32chassis) StdoutLine: {'line': b'2: \n'}
+[3.372100] (turn_on_32chassis) StdoutLine: {'line': b'2: OK\n'}
+[3.412287] (-) TimerEvent: {}
+[3.512726] (-) TimerEvent: {}
+[3.613175] (-) TimerEvent: {}
+[3.682737] (turn_on_32chassis) StdoutLine: {'line': b'2: -- run_test.py: return code 1\n'}
+[3.683389] (turn_on_32chassis) StdoutLine: {'line': b"2: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml'\n"}
+[3.713286] (-) TimerEvent: {}
+[3.716625] (turn_on_32chassis) StdoutLine: {'line': b'2/8 Test #2: test_test_slip_aware_odometry_launch.py ...***Failed    3.36 sec\n'}
+[3.717337] (turn_on_32chassis) StdoutLine: {'line': b'test 3\n'}
+[3.717664] (turn_on_32chassis) StdoutLine: {'line': b'    Start 3: cppcheck\n'}
+[3.717976] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[3.718262] (turn_on_32chassis) StdoutLine: {'line': b'3: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/humble/bin/ament_cppcheck" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--include_dirs" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include"\n'}
+[3.718578] (turn_on_32chassis) StdoutLine: {'line': b'3: Test timeout computed to be: 300\n'}
+[3.813478] (-) TimerEvent: {}
+[3.868417] (turn_on_32chassis) StdoutLine: {'line': b"3: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[3.869453] (turn_on_32chassis) StdoutLine: {'line': b'3:  - /opt/ros/humble/bin/ament_cppcheck --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml --include_dirs /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include\n'}
+[3.913594] (-) TimerEvent: {}
+[4.013971] (-) TimerEvent: {}
+[4.114421] (-) TimerEvent: {}
+[4.120546] (turn_on_32chassis) StdoutLine: {'line': b'3: cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.\n'}
+[4.151539] (turn_on_32chassis) StdoutLine: {'line': b'3: -- run_test.py: return code 0\n'}
+[4.152071] (turn_on_32chassis) StdoutLine: {'line': b"3: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml'\n"}
+[4.175620] (turn_on_32chassis) StdoutLine: {'line': b'3/8 Test #3: cppcheck ..................................   Passed    0.46 sec\n'}
+[4.176563] (turn_on_32chassis) StdoutLine: {'line': b'test 4\n'}
+[4.176969] (turn_on_32chassis) StdoutLine: {'line': b'    Start 4: flake8\n'}
+[4.177287] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[4.177580] (turn_on_32chassis) StdoutLine: {'line': b'4: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_flake8/flake8.txt" "--command" "/opt/ros/humble/bin/ament_flake8" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml"\n'}
+[4.177937] (turn_on_32chassis) StdoutLine: {'line': b'4: Test timeout computed to be: 60\n'}
+[4.214540] (-) TimerEvent: {}
+[4.314837] (-) TimerEvent: {}
+[4.333192] (turn_on_32chassis) StdoutLine: {'line': b"4: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[4.333631] (turn_on_32chassis) StdoutLine: {'line': b'4:  - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml\n'}
+[4.415016] (-) TimerEvent: {}
+[4.515419] (-) TimerEvent: {}
+[4.615832] (-) TimerEvent: {}
+[4.716269] (-) TimerEvent: {}
+[4.816731] (-) TimerEvent: {}
+[4.917211] (-) TimerEvent: {}
+[4.994956] (turn_on_32chassis) StdoutLine: {'line': b'4: from ament_index_python.packages import get_package_share_directory #\xe9\x80\x9a\xe8\xbf\x87\xe5\x8a\x9f\xe8\x83\xbd\xe5\x8c\x85\xe7\x9a\x84\xe5\x90\x8d\xe5\xad\x97\xe6\x89\xbe\xe5\x88\xb0 share \xe7\x9b\xae\xe5\xbd\x95\n'}
+[4.996672] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                    ^\n'}
+[4.997048] (turn_on_32chassis) StdoutLine: {'line': b'4: from ament_index_python.packages import get_package_share_directory #\xe9\x80\x9a\xe8\xbf\x87\xe5\x8a\x9f\xe8\x83\xbd\xe5\x8c\x85\xe7\x9a\x84\xe5\x90\x8d\xe5\xad\x97\xe6\x89\xbe\xe5\x88\xb0 share \xe7\x9b\xae\xe5\xbd\x95\n'}
+[4.997351] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                     ^\n'}
+[4.997612] (turn_on_32chassis) StdoutLine: {'line': b'4: from launch.launch_description_sources import PythonLaunchDescriptionSource \n'}
+[4.997879] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                            ^\n'}
+[4.998134] (turn_on_32chassis) StdoutLine: {'line': b'4: def load_bringup_config(config_path):\n'}
+[4.998372] (turn_on_32chassis) StdoutLine: {'line': b'4: ^\n'}
+[4.998619] (turn_on_32chassis) StdoutLine: {'line': b'4: def generate_launch_description():\n'}
+[4.998847] (turn_on_32chassis) StdoutLine: {'line': b'4: ^\n'}
+[4.999079] (turn_on_32chassis) StdoutLine: {'line': b"4:     default_urdf_path = os.path.join(package_share_dir, 'urdf/urdf','agribot.urdf.xacro')\n"}
+[4.999315] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                    ^\n'}
+[4.999541] (turn_on_32chassis) StdoutLine: {'line': b"4:     ekf_config = os.path.join(package_share_dir, 'config','ekf.yaml')\n"}
+[4.999768] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                          ^\n'}
+[5.000055] (turn_on_32chassis) StdoutLine: {'line': b'4:     # \xe8\x8e\xb7\xe5\x8f\x96\xe9\xbb\x98\xe8\xae\xa4\xe7\x9a\x84rviz\xe9\x85\x8d\xe7\xbd\xae\xe6\x96\x87\xe4\xbb\xb6\xe8\xb7\xaf\xe5\xbe\x84\n'}
+[5.000275] (turn_on_32chassis) StdoutLine: {'line': b'4:     ^\n'}
+[5.000758] (turn_on_32chassis) StdoutLine: {'line': b"4:     default_rviz_config_path = os.path.join(package_share_dir, 'config','rviz2_config_agribot.rviz')\n"}
+[5.001053] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                        ^\n'}
+[5.001275] (turn_on_32chassis) StdoutLine: {'line': b"4:     default_rviz_config_path = os.path.join(package_share_dir, 'config','rviz2_config_agribot.rviz')\n"}
+[5.001486] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                    ^\n'}
+[5.001732] (turn_on_32chassis) StdoutLine: {'line': b"4:         name='model',default_value=str(default_urdf_path),description='URDF\xe7\x9a\x84\xe7\xbb\x9d\xe5\xaf\xb9\xe8\xb7\xaf\xe5\xbe\x84'\n"}
+[5.001973] (turn_on_32chassis) StdoutLine: {'line': b'4:                     ^\n'}
+[5.002183] (turn_on_32chassis) StdoutLine: {'line': b"4:         name='model',default_value=str(default_urdf_path),description='URDF\xe7\x9a\x84\xe7\xbb\x9d\xe5\xaf\xb9\xe8\xb7\xaf\xe5\xbe\x84'\n"}
+[5.002409] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                          ^\n'}
+[5.002627] (turn_on_32chassis) StdoutLine: {'line': b"4:     imu_config = os.path.join(package_share_dir, 'config','imuconfig.yaml')\n"}
+[5.002851] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                          ^\n'}
+[5.003060] (turn_on_32chassis) StdoutLine: {'line': b"4:     substitutions_command_result = launch.substitutions.Command(command=['xacro ',launch.substitutions.LaunchConfiguration('model')])\n"}
+[5.003271] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                  ^\n'}
+[5.003485] (turn_on_32chassis) StdoutLine: {'line': b"4:     substitutions_command_result = launch.substitutions.Command(command=['xacro ',launch.substitutions.LaunchConfiguration('model')])\n"}
+[5.003695] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                    ^\n'}
+[5.003903] (turn_on_32chassis) StdoutLine: {'line': b'4:     robot_description_value = launch_ros.parameter_descriptions.ParameterValue(substitutions_command_result,value_type=str)\n'}
+[5.004109] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                    ^\n'}
+[5.004323] (turn_on_32chassis) StdoutLine: {'line': b'4:     robot_description_value = launch_ros.parameter_descriptions.ParameterValue(substitutions_command_result,value_type=str)\n'}
+[5.004532] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                            ^\n'}
+[5.004748] (turn_on_32chassis) StdoutLine: {'line': b"4:             package='tf2_ros', \n"}
+[5.005314] (turn_on_32chassis) StdoutLine: {'line': b'4:                               ^\n'}
+[5.005561] (turn_on_32chassis) StdoutLine: {'line': b"4:             executable='static_transform_publisher', \n"}
+[5.005770] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                     ^\n'}
+[5.005976] (turn_on_32chassis) StdoutLine: {'line': b"4:         parameters=[{'robot_description':robot_description_value}]\n"}
+[5.006185] (turn_on_32chassis) StdoutLine: {'line': b'4:                                         ^\n'}
+[5.006383] (turn_on_32chassis) StdoutLine: {'line': b'4:     imu_filter_node =  launch_ros.actions.Node(\n'}
+[5.006574] (turn_on_32chassis) StdoutLine: {'line': b'4:                      ^\n'}
+[5.006773] (turn_on_32chassis) StdoutLine: {'line': b'4:     # when using get_package_share_directory to get the share directory of a package, you must source the setup.bash file of your workspace in your .bashrc to ensure that the environment variables are set correctly.\n'}
+[5.007039] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                    ^\n'}
+[5.007245] (turn_on_32chassis) StdoutLine: {'line': b"4:         PythonLaunchDescriptionSource([get_package_share_directory('livox_ros_driver2'), '/launch_ROS2/msg_MID360_launch.py'])\n"}
+[5.007449] (turn_on_32chassis) StdoutLine: {'line': b'4:                                                                                                    ^\n'}
+[5.007650] (turn_on_32chassis) StdoutLine: {'line': b'4: 1     E222 multiple spaces after operator\n'}
+[5.007849] (turn_on_32chassis) StdoutLine: {'line': b"4: 9     E231 missing whitespace after ','\n"}
+[5.008046] (turn_on_32chassis) StdoutLine: {'line': b'4: 1     E261 at least two spaces before inline comment\n'}
+[5.008242] (turn_on_32chassis) StdoutLine: {'line': b"4: 1     E262 inline comment should start with '# '\n"}
+[5.008466] (turn_on_32chassis) StdoutLine: {'line': b'4: 2     E302 expected 2 blank lines, found 1\n'}
+[5.008666] (turn_on_32chassis) StdoutLine: {'line': b'4: 1     E303 too many blank lines (2)\n'}
+[5.008901] (turn_on_32chassis) StdoutLine: {'line': b'4: 5     E501 line too long (100 > 99 characters)\n'}
+[5.009109] (turn_on_32chassis) StdoutLine: {'line': b'4: 3     W291 trailing whitespace\n'}
+[5.009305] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.009506] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:3:68: E261 at least two spaces before inline comment\n'}
+[5.009702] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.009896] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:3:69: E262 inline comment should start with '# '\n"}
+[5.010095] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.010287] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:8:76: W291 trailing whitespace\n'}
+[5.010486] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.010680] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:10:1: E302 expected 2 blank lines, found 1\n'}
+[5.010878] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.011075] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:20:1: E302 expected 2 blank lines, found 1\n'}
+[5.011272] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.011472] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:86:68: E231 missing whitespace after ','\n"}
+[5.011670] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.011870] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:88:58: E231 missing whitespace after ','\n"}
+[5.012071] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.012263] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:93:5: E303 too many blank lines (2)\n'}
+[5.012461] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.012655] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:94:72: E231 missing whitespace after ','\n"}
+[5.013311] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.013575] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:94:100: E501 line too long (100 > 99 characters)\n'}
+[5.013805] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.014005] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:97:21: E231 missing whitespace after ','\n"}
+[5.014193] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.014380] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:97:58: E231 missing whitespace after ','\n"}
+[5.014565] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.014744] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:100:58: E231 missing whitespace after ','\n"}
+[5.014927] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.015104] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:104:82: E231 missing whitespace after ','\n"}
+[5.015285] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.015459] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:104:100: E501 line too long (133 > 99 characters)\n'}
+[5.015651] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.015835] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:106:100: E501 line too long (123 > 99 characters)\n'}
+[5.016019] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.016202] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:106:108: E231 missing whitespace after ','\n"}
+[5.016393] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.016575] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:109:31: W291 trailing whitespace\n'}
+[5.017019] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.017228] (-) TimerEvent: {}
+[5.017287] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:110:53: W291 trailing whitespace\n'}
+[5.017505] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.017688] (turn_on_32chassis) StdoutLine: {'line': b"4: ./launch/turn_on_32chassis.launch.py:129:41: E231 missing whitespace after ':'\n"}
+[5.017872] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.018053] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:146:22: E222 multiple spaces after operator\n'}
+[5.018232] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.018406] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:204:100: E501 line too long (215 > 99 characters)\n'}
+[5.018580] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.018760] (turn_on_32chassis) StdoutLine: {'line': b'4: ./launch/turn_on_32chassis.launch.py:206:100: E501 line too long (126 > 99 characters)\n'}
+[5.018938] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.019110] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.019281] (turn_on_32chassis) StdoutLine: {'line': b'4: 2 files checked\n'}
+[5.019459] (turn_on_32chassis) StdoutLine: {'line': b'4: 23 errors\n'}
+[5.019634] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.019806] (turn_on_32chassis) StdoutLine: {'line': b"4: 'E'-type errors: 20\n"}
+[5.019980] (turn_on_32chassis) StdoutLine: {'line': b"4: 'W'-type errors: 3\n"}
+[5.020156] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.020328] (turn_on_32chassis) StdoutLine: {'line': b'4: Checked files:\n'}
+[5.020500] (turn_on_32chassis) StdoutLine: {'line': b'4: \n'}
+[5.020671] (turn_on_32chassis) StdoutLine: {'line': b'4: * ./launch/turn_on_32chassis.launch.py\n'}
+[5.021238] (turn_on_32chassis) StdoutLine: {'line': b'4: * ./test/test_slip_aware_odometry_launch.py\n'}
+[5.062093] (turn_on_32chassis) StdoutLine: {'line': b'4: -- run_test.py: return code 1\n'}
+[5.062748] (turn_on_32chassis) StdoutLine: {'line': b"4: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml'\n"}
+[5.087509] (turn_on_32chassis) StdoutLine: {'line': b'4/8 Test #4: flake8 ....................................***Failed    0.91 sec\n'}
+[5.088108] (turn_on_32chassis) StdoutLine: {'line': b'test 5\n'}
+[5.088647] (turn_on_32chassis) StdoutLine: {'line': b'    Start 5: lint_cmake\n'}
+[5.088855] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[5.089080] (turn_on_32chassis) StdoutLine: {'line': b'5: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/humble/bin/ament_lint_cmake" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml"\n'}
+[5.089274] (turn_on_32chassis) StdoutLine: {'line': b'5: Test timeout computed to be: 60\n'}
+[5.117392] (-) TimerEvent: {}
+[5.217736] (-) TimerEvent: {}
+[5.252960] (turn_on_32chassis) StdoutLine: {'line': b"5: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[5.253443] (turn_on_32chassis) StdoutLine: {'line': b'5:  - /opt/ros/humble/bin/ament_lint_cmake --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml\n'}
+[5.317882] (-) TimerEvent: {}
+[5.418260] (-) TimerEvent: {}
+[5.460312] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:50: Mismatching spaces inside () after command [whitespace/mismatch]\n'}
+[5.460848] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:53: Line ends in whitespace [whitespace/eol]\n'}
+[5.461083] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:65: Line ends in whitespace [whitespace/eol]\n'}
+[5.461296] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:96: Line ends in whitespace [whitespace/eol]\n'}
+[5.461465] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:100: Line ends in whitespace [whitespace/eol]\n'}
+[5.461628] (turn_on_32chassis) StdoutLine: {'line': b'5: CMakeLists.txt:101: Line ends in whitespace [whitespace/eol]\n'}
+[5.461781] (turn_on_32chassis) StdoutLine: {'line': b'5: \n'}
+[5.461929] (turn_on_32chassis) StdoutLine: {'line': b'5: \n'}
+[5.462074] (turn_on_32chassis) StdoutLine: {'line': b'5: 6 errors\n'}
+[5.486724] (turn_on_32chassis) StdoutLine: {'line': b'5: -- run_test.py: return code 1\n'}
+[5.487209] (turn_on_32chassis) StdoutLine: {'line': b"5: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml'\n"}
+[5.512974] (turn_on_32chassis) StdoutLine: {'line': b'5/8 Test #5: lint_cmake ................................***Failed    0.42 sec\n'}
+[5.513862] (turn_on_32chassis) StdoutLine: {'line': b'test 6\n'}
+[5.514202] (turn_on_32chassis) StdoutLine: {'line': b'    Start 6: pep257\n'}
+[5.514520] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[5.514828] (turn_on_32chassis) StdoutLine: {'line': b'6: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_pep257/pep257.txt" "--command" "/opt/ros/humble/bin/ament_pep257" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml"\n'}
+[5.515184] (turn_on_32chassis) StdoutLine: {'line': b'6: Test timeout computed to be: 60\n'}
+[5.518359] (-) TimerEvent: {}
+[5.618681] (-) TimerEvent: {}
+[5.666681] (turn_on_32chassis) StdoutLine: {'line': b"6: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[5.667349] (turn_on_32chassis) StdoutLine: {'line': b'6:  - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml\n'}
+[5.718834] (-) TimerEvent: {}
+[5.819260] (-) TimerEvent: {}
+[5.919691] (-) TimerEvent: {}
+[6.020126] (-) TimerEvent: {}
+[6.052924] (turn_on_32chassis) StdoutLine: {'line': b'6: checking ./launch/turn_on_32chassis.launch.py\n'}
+[6.053591] (turn_on_32chassis) StdoutLine: {'line': b'6: checking ./test/test_slip_aware_odometry_launch.py\n'}
+[6.053947] (turn_on_32chassis) StdoutLine: {'line': b'6: No problems found\n'}
+[6.096877] (turn_on_32chassis) StdoutLine: {'line': b'6: -- run_test.py: return code 0\n'}
+[6.097475] (turn_on_32chassis) StdoutLine: {'line': b"6: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml'\n"}
+[6.120893] (turn_on_32chassis) StdoutLine: {'line': b'6/8 Test #6: pep257 ....................................   Passed    0.61 sec\n'}
+[6.121533] (-) TimerEvent: {}
+[6.121647] (turn_on_32chassis) StdoutLine: {'line': b'test 7\n'}
+[6.122009] (turn_on_32chassis) StdoutLine: {'line': b'    Start 7: uncrustify\n'}
+[6.122322] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[6.122638] (turn_on_32chassis) StdoutLine: {'line': b'7: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/humble/bin/ament_uncrustify" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml"\n'}
+[6.122951] (turn_on_32chassis) StdoutLine: {'line': b'7: Test timeout computed to be: 60\n'}
+[6.221736] (-) TimerEvent: {}
+[6.272647] (turn_on_32chassis) StdoutLine: {'line': b"7: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[6.273149] (turn_on_32chassis) StdoutLine: {'line': b'7:  - /opt/ros/humble/bin/ament_uncrustify --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml\n'}
+[6.321863] (-) TimerEvent: {}
+[6.422232] (-) TimerEvent: {}
+[6.522642] (-) TimerEvent: {}
+[6.623120] (-) TimerEvent: {}
+[6.677994] (turn_on_32chassis) StdoutLine: {'line': b"7: Code style divergence in file 'include/turn_on_32chassis/Quaternion_Solution.h':\n"}
+[6.678666] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.679019] (turn_on_32chassis) StdoutLine: {'line': b'7: --- include/turn_on_32chassis/Quaternion_Solution.h\n'}
+[6.679328] (turn_on_32chassis) StdoutLine: {'line': b'7: +++ include/turn_on_32chassis/Quaternion_Solution.h.uncrustify\n'}
+[6.679633] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -1 +0,0 @@\n'}
+[6.679936] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.680237] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -8 +6,0 @@\n'}
+[6.680516] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.680810] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -13,2 +10,0 @@\n'}
+[6.681110] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.681390] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.681660] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.681926] (turn_on_32chassis) StdoutLine: {'line': b"7: Code style divergence in file 'include/turn_on_32chassis/turn_on_32chassis.hpp':\n"}
+[6.682197] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.682475] (turn_on_32chassis) StdoutLine: {'line': b'7: --- include/turn_on_32chassis/turn_on_32chassis.hpp\n'}
+[6.682741] (turn_on_32chassis) StdoutLine: {'line': b'7: +++ include/turn_on_32chassis/turn_on_32chassis.hpp.uncrustify\n'}
+[6.683005] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -39,5 +39,5 @@\n'}
+[6.683266] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                         0, 5e-2, 0, 0, 0, 0,\n'}
+[6.683535] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                         0, 0, 1e6, 0, 0, 0,\n'}
+[6.683807] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                         0, 0, 0, 1e6, 0, 0,\n'}
+[6.684065] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                         0, 0, 0, 0, 1e6, 0,\n'}
+[6.684810] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                         0, 0, 0, 0, 0, 2e-1};\n'}
+[6.685219] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 5e-2, 0, 0, 0, 0,\n'}
+[6.685600] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 1e6, 0, 0, 0,\n'}
+[6.685942] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 1e6, 0, 0,\n'}
+[6.686242] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 1e6, 0,\n'}
+[6.686520] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 0, 2e-1};\n'}
+[6.686784] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -46,5 +46,5 @@\n'}
+[6.687073] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 1e-2, 0, 0, 0, 0,\n'}
+[6.687332] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 1e6, 0, 0, 0,\n'}
+[6.687588] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 1e6, 0, 0,\n'}
+[6.687837] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 0, 1e6, 0,\n'}
+[6.688099] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 0, 0, 5e-2};\n'}
+[6.688417] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 1e-2, 0, 0, 0, 0,\n'}
+[6.688668] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 1e6, 0, 0, 0,\n'}
+[6.688983] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 1e6, 0, 0,\n'}
+[6.689297] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 1e6, 0,\n'}
+[6.689593] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 0, 5e-2};\n'}
+[6.689862] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -53,5 +53,5 @@\n'}
+[6.690138] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 2e-2, 0, 0, 0, 0,\n'}
+[6.690406] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 1e6, 0, 0, 0,\n'}
+[6.690673] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 1e6, 0, 0,\n'}
+[6.690937] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 0, 1e6, 0,\n'}
+[6.691198] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                          0, 0, 0, 0, 0, 5e-2};\n'}
+[6.691481] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 2e-2, 0, 0, 0, 0,\n'}
+[6.691750] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 1e6, 0, 0, 0,\n'}
+[6.692013] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 1e6, 0, 0,\n'}
+[6.692271] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 1e6, 0,\n'}
+[6.692528] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 0, 5e-2};\n'}
+[6.692828] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -60,5 +60,5 @@\n'}
+[6.693118] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                           0, 2.5e-3, 0, 0, 0, 0,\n'}
+[6.693386] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                           0, 0, 1e6, 0, 0, 0,\n'}
+[6.693649] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                           0, 0, 0, 1e6, 0, 0,\n'}
+[6.693899] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                           0, 0, 0, 0, 1e6, 0,\n'}
+[6.694178] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                           0, 0, 0, 0, 0, 1e-2};\n'}
+[6.694435] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 2.5e-3, 0, 0, 0, 0,\n'}
+[6.694690] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 1e6, 0, 0, 0,\n'}
+[6.694942] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 1e6, 0, 0,\n'}
+[6.695200] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 1e6, 0,\n'}
+[6.695450] (turn_on_32chassis) StdoutLine: {'line': b'7: +  0, 0, 0, 0, 0, 1e-2};\n'}
+[6.695705] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -68,6 +68,6 @@\n'}
+[6.695966] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short accele_x_data;\n'}
+[6.696226] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short accele_y_data;\n'}
+[6.696485] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short accele_z_data;\n'}
+[6.696747] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short gyros_x_data;\n'}
+[6.697058] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short gyros_y_data;\n'}
+[6.697313] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short gyros_z_data;\n'}
+[6.697558] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short accele_x_data;\n'}
+[6.697806] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short accele_y_data;\n'}
+[6.698074] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short accele_z_data;\n'}
+[6.698332] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short gyros_x_data;\n'}
+[6.698588] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short gyros_y_data;\n'}
+[6.698852] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short gyros_z_data;\n'}
+[6.699111] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -81,9 +81,9 @@\n'}
+[6.699367] (turn_on_32chassis) StdoutLine: {'line': b'7: -    uint8_t buffer[RECEIVE_DATA_SIZE];\n'}
+[6.699624] (turn_on_32chassis) StdoutLine: {'line': b'7: -    uint8_t Flag_Stop;\n'}
+[6.699891] (turn_on_32chassis) StdoutLine: {'line': b'7: -    unsigned char Frame_Header;\n'}
+[6.700155] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float X_speed;\n'}
+[6.701395] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Y_speed;\n'}
+[6.701691] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Z_speed;\n'}
+[6.702009] (turn_on_32chassis) StdoutLine: {'line': b'7: -    IMUData_t IMUData;\n'}
+[6.702271] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Power_Voltage;\n'}
+[6.702523] (turn_on_32chassis) StdoutLine: {'line': b'7: -    unsigned char Frame_Tail;\n'}
+[6.702775] (turn_on_32chassis) StdoutLine: {'line': b'7: +  uint8_t buffer[RECEIVE_DATA_SIZE];\n'}
+[6.703036] (turn_on_32chassis) StdoutLine: {'line': b'7: +  uint8_t Flag_Stop;\n'}
+[6.703296] (turn_on_32chassis) StdoutLine: {'line': b'7: +  unsigned char Frame_Header;\n'}
+[6.703556] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float X_speed;\n'}
+[6.703809] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Y_speed;\n'}
+[6.704058] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Z_speed;\n'}
+[6.704310] (turn_on_32chassis) StdoutLine: {'line': b'7: +  IMUData_t IMUData;\n'}
+[6.704556] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Power_Voltage;\n'}
+[6.704833] (turn_on_32chassis) StdoutLine: {'line': b'7: +  unsigned char Frame_Tail;\n'}
+[6.705115] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -94,5 +94,5 @@\n'}
+[6.705374] (turn_on_32chassis) StdoutLine: {'line': b'7: -    uint8_t buffer[SEND_DATA_SIZE];\n'}
+[6.705628] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float X_speed;\n'}
+[6.705875] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Y_speed;\n'}
+[6.706121] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Z_speed;\n'}
+[6.706370] (turn_on_32chassis) StdoutLine: {'line': b'7: -    unsigned char Frame_Tail;\n'}
+[6.706617] (turn_on_32chassis) StdoutLine: {'line': b'7: +  uint8_t buffer[SEND_DATA_SIZE];\n'}
+[6.706865] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float X_speed;\n'}
+[6.707114] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Y_speed;\n'}
+[6.707369] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Z_speed;\n'}
+[6.707619] (turn_on_32chassis) StdoutLine: {'line': b'7: +  unsigned char Frame_Tail;\n'}
+[6.707863] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -103,3 +103,3 @@\n'}
+[6.708110] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float X;\n'}
+[6.708353] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Y;\n'}
+[6.708598] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float Z;\n'}
+[6.708871] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float X;\n'}
+[6.709114] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Y;\n'}
+[6.709341] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float Z;\n'}
+[6.709571] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -111,3 +111,3 @@\n'}
+[6.709797] (turn_on_32chassis) StdoutLine: {'line': b'7: -    TurnOn32Chassis(/* args */);\n'}
+[6.710033] (turn_on_32chassis) StdoutLine: {'line': b'7: -    ~TurnOn32Chassis();\n'}
+[6.710264] (turn_on_32chassis) StdoutLine: {'line': b'7: -    void run();\n'}
+[6.710492] (turn_on_32chassis) StdoutLine: {'line': b'7: +  TurnOn32Chassis(/* args */);\n'}
+[6.710721] (turn_on_32chassis) StdoutLine: {'line': b'7: +  ~TurnOn32Chassis();\n'}
+[6.710947] (turn_on_32chassis) StdoutLine: {'line': b'7: +  void run();\n'}
+[6.711172] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -115 +115 @@\n'}
+[6.711395] (turn_on_32chassis) StdoutLine: {'line': b'7: -    serial::Serial STM32_Serial;\n'}
+[6.711618] (turn_on_32chassis) StdoutLine: {'line': b'7: +  serial::Serial STM32_Serial;\n'}
+[6.711846] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -118 +118 @@\n'}
+[6.712069] (turn_on_32chassis) StdoutLine: {'line': b'7: -    uint8_t check_sum(uint8_t *data, uint8_t len);\n'}
+[6.712297] (turn_on_32chassis) StdoutLine: {'line': b'7: +  uint8_t check_sum(uint8_t * data, uint8_t len);\n'}
+[6.712526] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -120,5 +120,5 @@\n'}
+[6.712753] (turn_on_32chassis) StdoutLine: {'line': b'7: -    bool receive_row_serialdata();\n'}
+[6.713024] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short uchartoshort(uint8_t data_high, uint8_t data_low);\n'}
+[6.713261] (turn_on_32chassis) StdoutLine: {'line': b'7: -    void Publish_ImuSensor();\n'}
+[6.713497] (turn_on_32chassis) StdoutLine: {'line': b'7: -    void Publish_Odom();\n'}
+[6.713770] (turn_on_32chassis) StdoutLine: {'line': b'7: -    void Publish_Voltage();\n'}
+[6.714000] (turn_on_32chassis) StdoutLine: {'line': b'7: +  bool receive_row_serialdata();\n'}
+[6.714225] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short uchartoshort(uint8_t data_high, uint8_t data_low);\n'}
+[6.714456] (turn_on_32chassis) StdoutLine: {'line': b'7: +  void Publish_ImuSensor();\n'}
+[6.714700] (turn_on_32chassis) StdoutLine: {'line': b'7: +  void Publish_Odom();\n'}
+[6.714937] (turn_on_32chassis) StdoutLine: {'line': b'7: +  void Publish_Voltage();\n'}
+[6.715168] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -126,2 +126,2 @@\n'}
+[6.715399] (turn_on_32chassis) StdoutLine: {'line': b'7: -    void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);\n'}
+[6.715638] (turn_on_32chassis) StdoutLine: {'line': b'7: -    string port_name_ = "/dev/agribot_serial";\n'}
+[6.715870] (turn_on_32chassis) StdoutLine: {'line': b'7: +  void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);\n'}
+[6.716101] (turn_on_32chassis) StdoutLine: {'line': b'7: +  string port_name_ = "/dev/agribot_serial";\n'}
+[6.716331] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -129 +129 @@\n'}
+[6.716555] (turn_on_32chassis) StdoutLine: {'line': b'7: -    int baud_rate_ = 115200;\n'}
+[6.716800] (turn_on_32chassis) StdoutLine: {'line': b'7: +  int baud_rate_ = 115200;\n'}
+[6.717025] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -131,5 +131,5 @@\n'}
+[6.717236] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // Initialize the topic publisher //\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe8\xaf\x9d\xe9\xa2\x98\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.717481] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher;\n'}
+[6.717702] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr voltage_publisher;\n'}
+[6.717915] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher;\n'}
+[6.718127] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr Cmd_Vel_Sub; // Initialize the topic subscriber //\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe8\xaf\x9d\xe9\xa2\x98\xe8\xae\xa2\xe9\x98\x85\xe8\x80\x85\n'}
+[6.718387] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // Initialize the topic publisher //\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe8\xaf\x9d\xe9\xa2\x98\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.718606] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher;\n'}
+[6.718818] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr voltage_publisher;\n'}
+[6.719031] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher;\n'}
+[6.719240] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr Cmd_Vel_Sub;   // Initialize the topic subscriber //\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe8\xaf\x9d\xe9\xa2\x98\xe8\xae\xa2\xe9\x98\x85\xe8\x80\x85\n'}
+[6.719454] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -137,10 +137,11 @@\n'}
+[6.719674] (turn_on_32chassis) StdoutLine: {'line': b'7: -    ReceiveData_t receive_data_;\n'}
+[6.719889] (turn_on_32chassis) StdoutLine: {'line': b'7: -    SendData_t send_data_;\n'}
+[6.720091] (turn_on_32chassis) StdoutLine: {'line': b'7: -    sensor_msgs::msg::Imu Imu_Data_Pub;\n'}
+[6.720298] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::TimerBase::SharedPtr timer_;\n'}
+[6.720509] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::Time last_time_, current_time_;\n'}
+[6.720721] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float sample_time_;\n'}
+[6.720962] (turn_on_32chassis) StdoutLine: {'line': b'7: -    VelPosData_t robot_vel_;\n'}
+[6.721171] (turn_on_32chassis) StdoutLine: {'line': b'7: -    VelPosData_t robot_pos_;\n'}
+[6.721395] (turn_on_32chassis) StdoutLine: {'line': b'7: -    float odom_x_scale_ = 1.0f, odom_y_scale = 1.0f, odom_z_scale_positive = 1.0f, odom_z_scale_negative = 1.0f; // \xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe4\xbf\xae\xe6\xad\xa3\xe5\x8f\x82\xe6\x95\xb0\n'}
+[6.721607] (turn_on_32chassis) StdoutLine: {'line': b'7: -    string robot_frame_id, gyro_frame_id, odom_frame_id;                                                         // Define the related variables //\xe5\xae\x9a\xe4\xb9\x89\xe7\x9b\xb8\xe5\x85\xb3\xe5\x8f\x98\xe9\x87\x8f\n'}
+[6.721822] (turn_on_32chassis) StdoutLine: {'line': b'7: +  ReceiveData_t receive_data_;\n'}
+[6.722027] (turn_on_32chassis) StdoutLine: {'line': b'7: +  SendData_t send_data_;\n'}
+[6.722234] (turn_on_32chassis) StdoutLine: {'line': b'7: +  sensor_msgs::msg::Imu Imu_Data_Pub;\n'}
+[6.722433] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::TimerBase::SharedPtr timer_;\n'}
+[6.722626] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::Time last_time_, current_time_;\n'}
+[6.722821] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float sample_time_;\n'}
+[6.723027] (turn_on_32chassis) StdoutLine: {'line': b'7: +  VelPosData_t robot_vel_;\n'}
+[6.723216] (-) TimerEvent: {}
+[6.723276] (turn_on_32chassis) StdoutLine: {'line': b'7: +  VelPosData_t robot_pos_;\n'}
+[6.723473] (turn_on_32chassis) StdoutLine: {'line': b'7: +  float odom_x_scale_ = 1.0f, odom_y_scale = 1.0f, odom_z_scale_positive = 1.0f,\n'}
+[6.723672] (turn_on_32chassis) StdoutLine: {'line': b'7: +    odom_z_scale_negative = 1.0f;                                                                                // \xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe4\xbf\xae\xe6\xad\xa3\xe5\x8f\x82\xe6\x95\xb0\n'}
+[6.723879] (turn_on_32chassis) StdoutLine: {'line': b'7: +  string robot_frame_id, gyro_frame_id, odom_frame_id;                                                           // Define the related variables //\xe5\xae\x9a\xe4\xb9\x89\xe7\x9b\xb8\xe5\x85\xb3\xe5\x8f\x98\xe9\x87\x8f\n'}
+[6.724077] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.724273] (turn_on_32chassis) StdoutLine: {'line': b"7: Code style divergence in file 'src/Quaternion_Solution.cpp':\n"}
+[6.724476] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.724672] (turn_on_32chassis) StdoutLine: {'line': b'7: --- src/Quaternion_Solution.cpp\n'}
+[6.724905] (turn_on_32chassis) StdoutLine: {'line': b'7: +++ src/Quaternion_Solution.cpp.uncrustify\n'}
+[6.725110] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -1 +0,0 @@\n'}
+[6.725306] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.725500] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -40,2 +39 @@\n'}
+[6.725692] (turn_on_32chassis) StdoutLine: {'line': b'7: -  if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f)))\n'}
+[6.725896] (turn_on_32chassis) StdoutLine: {'line': b'7: -  {\n'}
+[6.726091] (turn_on_32chassis) StdoutLine: {'line': b'7: +  if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) {\n'}
+[6.726287] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -56,2 +54 @@\n'}
+[6.726485] (turn_on_32chassis) StdoutLine: {'line': b'7: -    if (twoKi > 0.0f)\n'}
+[6.726684] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.726879] (turn_on_32chassis) StdoutLine: {'line': b'7: +    if (twoKi > 0.0f) {\n'}
+[6.727072] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -64,3 +61 @@\n'}
+[6.727264] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.727465] (turn_on_32chassis) StdoutLine: {'line': b'7: -    else\n'}
+[6.727664] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.727879] (turn_on_32chassis) StdoutLine: {'line': b'7: +    } else {\n'}
+[6.728085] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.729215] (turn_on_32chassis) StdoutLine: {'line': b"7: Code style divergence in file 'src/slip_aware_odometry.cpp':\n"}
+[6.729485] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.729700] (turn_on_32chassis) StdoutLine: {'line': b'7: --- src/slip_aware_odometry.cpp\n'}
+[6.729902] (turn_on_32chassis) StdoutLine: {'line': b'7: +++ src/slip_aware_odometry.cpp.uncrustify\n'}
+[6.730142] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -393 +393,2 @@\n'}
+[6.730343] (turn_on_32chassis) StdoutLine: {'line': b'7: -    const double yaw_error = std::abs(normalize_angle(\n'}
+[6.730540] (turn_on_32chassis) StdoutLine: {'line': b'7: +    const double yaw_error = std::abs(\n'}
+[6.730731] (turn_on_32chassis) StdoutLine: {'line': b'7: +      normalize_angle(\n'}
+[6.730930] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.731121] (turn_on_32chassis) StdoutLine: {'line': b"7: Code style divergence in file 'src/turn_on_32chassis.cpp':\n"}
+[6.731313] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.731504] (turn_on_32chassis) StdoutLine: {'line': b'7: --- src/turn_on_32chassis.cpp\n'}
+[6.731697] (turn_on_32chassis) StdoutLine: {'line': b'7: +++ src/turn_on_32chassis.cpp.uncrustify\n'}
+[6.731880] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -7,75 +7,70 @@\n'}
+[6.732068] (turn_on_32chassis) StdoutLine: {'line': b'7: -int main(int argc, char **argv)\n'}
+[6.732260] (turn_on_32chassis) StdoutLine: {'line': b'7: -{\n'}
+[6.732440] (turn_on_32chassis) StdoutLine: {'line': b'7: -    rclcpp::init(argc, argv);\n'}
+[6.732627] (turn_on_32chassis) StdoutLine: {'line': b'7: -    TurnOn32Chassis TurnOn32Chassis;\n'}
+[6.732843] (turn_on_32chassis) StdoutLine: {'line': b'7: -    TurnOn32Chassis.run();\n'}
+[6.733036] (turn_on_32chassis) StdoutLine: {'line': b'7: -    return 0;\n'}
+[6.733216] (turn_on_32chassis) StdoutLine: {'line': b'7: -}\n'}
+[6.733389] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.733562] (turn_on_32chassis) StdoutLine: {'line': b'7: -TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")\n'}
+[6.733742] (turn_on_32chassis) StdoutLine: {'line': b'7: -{\n'}
+[6.733916] (turn_on_32chassis) StdoutLine: {'line': b'7: -    sample_time_ = 0;\n'}
+[6.734084] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.734254] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe7\xbb\x93\xe6\x9e\x84\xe4\xbd\x93\n'}
+[6.734456] (turn_on_32chassis) StdoutLine: {'line': b'7: -    memset(&receive_data_, 0, sizeof(receive_data_));\n'}
+[6.734638] (turn_on_32chassis) StdoutLine: {'line': b'7: -    memset(&send_data_, 0, sizeof(send_data_));\n'}
+[6.734814] (turn_on_32chassis) StdoutLine: {'line': b'7: -    imu_msg_ = sensor_msgs::msg::Imu();\n'}
+[6.734984] (turn_on_32chassis) StdoutLine: {'line': b'7: -    memset(&robot_pos_, 0, sizeof(robot_pos_));\n'}
+[6.735162] (turn_on_32chassis) StdoutLine: {'line': b'7: -    memset(&robot_vel_, 0, sizeof(robot_vel_));\n'}
+[6.735334] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.735503] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\xb3\xa8\xe6\x84\x8f\xef\xbc\x9a\xe4\xb8\x8d\xe8\xa6\x81\xe5\xaf\xb9 STM32_Serial \xe4\xbd\xbf\xe7\x94\xa8 memset\xef\xbc\x8c\xe5\x9b\xa0\xe4\xb8\xba\xe5\xae\x83\xe6\x98\xaf\xe4\xb8\x80\xe4\xb8\xaa C++ \xe5\xaf\xb9\xe8\xb1\xa1\n'}
+[6.735679] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.735856] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe5\xa3\xb0\xe6\x98\x8e\xe5\x8f\x82\xe6\x95\xb0\n'}
+[6.736028] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->declare_parameter<std::string>("port_name", "/dev/agribot_serial");\n'}
+[6.736200] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->declare_parameter<int>("baud_rate", 115200);\n'}
+[6.736370] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->declare_parameter<std::string>("odom_frame_id", "odom");\n'}
+[6.736545] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->declare_parameter<std::string>("robot_frame_id", "base_footprint");\n'}
+[6.736719] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->declare_parameter<std::string>("gyro_frame_id", "imu_link");\n'}
+[6.736936] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.737119] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->get_parameter<std::string>("port_name", port_name_);\n'}
+[6.737285] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->get_parameter<int>("baud_rate", baud_rate_);\n'}
+[6.737481] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->get_parameter("odom_frame_id", odom_frame_id);   // The odometer topic corresponds to the parent TF coordinate //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94\xe7\x88\xb6TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.737651] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->get_parameter("robot_frame_id", robot_frame_id); // The odometer topic corresponds to sub-TF coordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94\xe5\xad\x90TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.737859] (turn_on_32chassis) StdoutLine: {'line': b'7: -    this->get_parameter("gyro_frame_id", gyro_frame_id);   // IMU topics correspond to TF coordinates //IMU\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.738028] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.738192] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2); // Create the raw wheel odometry publisher //\xe5\x88\x9b\xe5\xbb\xba\xe5\x8e\x9f\xe5\xa7\x8b\xe8\xbd\xae\xe5\xbc\x8f\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.738365] (turn_on_32chassis) StdoutLine: {'line': b'7: -    imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2); // Create an IMU topic publisher //\xe5\x88\x9b\xe5\xbb\xbaIMU\xe8\xaf\x9d\xe9\xa2\x98\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.738543] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.738710] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(\n'}
+[6.738867] (turn_on_32chassis) StdoutLine: {'line': b'7: -        "cmd_vel", 10, std::bind(&TurnOn32Chassis::Cmd_Vel_Callback, this, std::placeholders::_1));\n'}
+[6.739053] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.739253] (turn_on_32chassis) StdoutLine: {'line': b'7: -    try\n'}
+[6.739447] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.739642] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.setPort(port_name_);\n'}
+[6.739836] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.setBaudrate(baud_rate_);\n'}
+[6.740039] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.setParity(serial::parity_none);\n'}
+[6.740236] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.setStopbits(serial::stopbits_one);\n'}
+[6.740430] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.740621] (turn_on_32chassis) StdoutLine: {'line': b'7: -        serial::Timeout _timeout = serial::Timeout::simpleTimeout(1000);\n'}
+[6.740843] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.setTimeout(_timeout);\n'}
+[6.741045] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.open();\n'}
+[6.741243] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.flushInput();\n'}
+[6.741440] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.741645] (turn_on_32chassis) StdoutLine: {'line': b'7: -    catch (const serial::IOException &e)\n'}
+[6.741842] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.742040] (turn_on_32chassis) StdoutLine: {'line': b'7: -        RCLCPP_ERROR(this->get_logger(), "Failed to open port: %s", e.what());\n'}
+[6.742268] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.742471] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.742672] (turn_on_32chassis) StdoutLine: {'line': b'7: -    if (STM32_Serial.isOpen())\n'}
+[6.742872] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.743077] (turn_on_32chassis) StdoutLine: {'line': b'7: -        RCLCPP_INFO(this->get_logger(), "Port opened successfully");\n'}
+[6.743282] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.743478] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // \xe5\x8f\x91\xe9\x80\x81\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe5\x91\xbd\xe4\xbb\xa4\n'}
+[6.743673] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x75, 0x00, 0x00, 0x00, 0x00, 0x1F, 0X7D};\n'}
+[6.743905] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // tx_data[9] = check_sum(tx_data, 9);\n'}
+[6.744103] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // STM32_Serial.write(tx_data, sizeof(tx_data));\n'}
+[6.744302] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.744496] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // // \xe5\x88\x9b\xe5\xbb\xba\xe4\xb8\x80\xe4\xb8\xaa\xe5\xae\x9a\xe6\x97\xb6\xe5\x99\xa8\xe6\x9d\xa5\xe5\xae\x9a\xe6\x9c\x9f\xe8\xaf\xbb\xe5\x8f\x96\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.744699] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // timer_ = this->create_wall_timer(\n'}
+[6.744929] (turn_on_32chassis) StdoutLine: {'line': b'7: -        //     std::chrono::milliseconds(500), // \xe6\xaf\x8f500\xe6\xaf\xab\xe7\xa7\x92\xe8\xaf\xbb\xe5\x8f\x96\xe4\xb8\x80\xe6\xac\xa1\n'}
+[6.745129] (turn_on_32chassis) StdoutLine: {'line': b'7: -        //     std::bind(&TurnOn32Chassis::receive_row_serialdata, this));\n'}
+[6.745331] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.745535] (turn_on_32chassis) StdoutLine: {'line': b'7: -    else\n'}
+[6.745732] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.745923] (turn_on_32chassis) StdoutLine: {'line': b'7: -        RCLCPP_ERROR(this->get_logger(), "Failed to open serial port");\n'}
+[6.746116] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.746316] (turn_on_32chassis) StdoutLine: {'line': b'7: +int main(int argc, char ** argv)\n'}
+[6.746510] (turn_on_32chassis) StdoutLine: {'line': b'7: +{\n'}
+[6.746698] (turn_on_32chassis) StdoutLine: {'line': b'7: +  rclcpp::init(argc, argv);\n'}
+[6.746889] (turn_on_32chassis) StdoutLine: {'line': b'7: +  TurnOn32Chassis TurnOn32Chassis;\n'}
+[6.747086] (turn_on_32chassis) StdoutLine: {'line': b'7: +  TurnOn32Chassis.run();\n'}
+[6.747279] (turn_on_32chassis) StdoutLine: {'line': b'7: +  return 0;\n'}
+[6.747475] (turn_on_32chassis) StdoutLine: {'line': b'7: +}\n'}
+[6.747668] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.747870] (turn_on_32chassis) StdoutLine: {'line': b'7: +TurnOn32Chassis::TurnOn32Chassis()\n'}
+[6.748066] (turn_on_32chassis) StdoutLine: {'line': b'7: +: rclcpp::Node("TurnOn32Chassis")\n'}
+[6.748281] (turn_on_32chassis) StdoutLine: {'line': b'7: +{\n'}
+[6.748478] (turn_on_32chassis) StdoutLine: {'line': b'7: +  sample_time_ = 0;\n'}
+[6.748676] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.748905] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe7\xbb\x93\xe6\x9e\x84\xe4\xbd\x93\n'}
+[6.749104] (turn_on_32chassis) StdoutLine: {'line': b'7: +  memset(&receive_data_, 0, sizeof(receive_data_));\n'}
+[6.749308] (turn_on_32chassis) StdoutLine: {'line': b'7: +  memset(&send_data_, 0, sizeof(send_data_));\n'}
+[6.749504] (turn_on_32chassis) StdoutLine: {'line': b'7: +  imu_msg_ = sensor_msgs::msg::Imu();\n'}
+[6.749697] (turn_on_32chassis) StdoutLine: {'line': b'7: +  memset(&robot_pos_, 0, sizeof(robot_pos_));\n'}
+[6.749890] (turn_on_32chassis) StdoutLine: {'line': b'7: +  memset(&robot_vel_, 0, sizeof(robot_vel_));\n'}
+[6.750084] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.750285] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\xb3\xa8\xe6\x84\x8f\xef\xbc\x9a\xe4\xb8\x8d\xe8\xa6\x81\xe5\xaf\xb9 STM32_Serial \xe4\xbd\xbf\xe7\x94\xa8 memset\xef\xbc\x8c\xe5\x9b\xa0\xe4\xb8\xba\xe5\xae\x83\xe6\x98\xaf\xe4\xb8\x80\xe4\xb8\xaa C++ \xe5\xaf\xb9\xe8\xb1\xa1\n'}
+[6.750497] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.750700] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe5\xa3\xb0\xe6\x98\x8e\xe5\x8f\x82\xe6\x95\xb0\n'}
+[6.750894] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->declare_parameter<std::string>("port_name", "/dev/agribot_serial");\n'}
+[6.751087] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->declare_parameter<int>("baud_rate", 115200);\n'}
+[6.751278] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->declare_parameter<std::string>("odom_frame_id", "odom");\n'}
+[6.751499] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->declare_parameter<std::string>("robot_frame_id", "base_footprint");\n'}
+[6.751693] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->declare_parameter<std::string>("gyro_frame_id", "imu_link");\n'}
+[6.751885] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.752080] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->get_parameter<std::string>("port_name", port_name_);\n'}
+[6.752279] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->get_parameter<int>("baud_rate", baud_rate_);\n'}
+[6.752470] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->get_parameter("odom_frame_id", odom_frame_id);     // The odometer topic corresponds to the parent TF coordinate //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94\xe7\x88\xb6TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.752669] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->get_parameter("robot_frame_id", robot_frame_id);   // The odometer topic corresponds to sub-TF coordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94\xe5\xad\x90TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.752908] (turn_on_32chassis) StdoutLine: {'line': b'7: +  this->get_parameter("gyro_frame_id", gyro_frame_id);     // IMU topics correspond to TF coordinates //IMU\xe8\xaf\x9d\xe9\xa2\x98\xe5\xaf\xb9\xe5\xba\x94TF\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.753109] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.753297] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2);   // Create the raw wheel odometry publisher //\xe5\x88\x9b\xe5\xbb\xba\xe5\x8e\x9f\xe5\xa7\x8b\xe8\xbd\xae\xe5\xbc\x8f\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.753489] (turn_on_32chassis) StdoutLine: {'line': b'7: +  imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2);   // Create an IMU topic publisher //\xe5\x88\x9b\xe5\xbb\xbaIMU\xe8\xaf\x9d\xe9\xa2\x98\xe5\x8f\x91\xe5\xb8\x83\xe8\x80\x85\n'}
+[6.753681] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.753861] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(\n'}
+[6.754082] (turn_on_32chassis) StdoutLine: {'line': b'7: +    "cmd_vel", 10, std::bind(&TurnOn32Chassis::Cmd_Vel_Callback, this, std::placeholders::_1));\n'}
+[6.754269] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.754452] (turn_on_32chassis) StdoutLine: {'line': b'7: +  try {\n'}
+[6.754633] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.setPort(port_name_);\n'}
+[6.754813] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.setBaudrate(baud_rate_);\n'}
+[6.754997] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.setParity(serial::parity_none);\n'}
+[6.755178] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.setStopbits(serial::stopbits_one);\n'}
+[6.755361] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.755545] (turn_on_32chassis) StdoutLine: {'line': b'7: +    serial::Timeout _timeout = serial::Timeout::simpleTimeout(1000);\n'}
+[6.755731] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.setTimeout(_timeout);\n'}
+[6.755911] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.open();\n'}
+[6.756090] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.flushInput();\n'}
+[6.756270] (turn_on_32chassis) StdoutLine: {'line': b'7: +  } catch (const serial::IOException & e) {\n'}
+[6.756456] (turn_on_32chassis) StdoutLine: {'line': b'7: +    RCLCPP_ERROR(this->get_logger(), "Failed to open port: %s", e.what());\n'}
+[6.756637] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.756845] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.757038] (turn_on_32chassis) StdoutLine: {'line': b'7: +  if (STM32_Serial.isOpen()) {\n'}
+[6.757225] (turn_on_32chassis) StdoutLine: {'line': b'7: +    RCLCPP_INFO(this->get_logger(), "Port opened successfully");\n'}
+[6.757430] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.757612] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // \xe5\x8f\x91\xe9\x80\x81\xe5\x88\x9d\xe5\xa7\x8b\xe5\x8c\x96\xe5\x91\xbd\xe4\xbb\xa4\n'}
+[6.757795] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x75, 0x00, 0x00, 0x00, 0x00, 0x1F, 0X7D};\n'}
+[6.757980] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // tx_data[9] = check_sum(tx_data, 9);\n'}
+[6.758160] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // STM32_Serial.write(tx_data, sizeof(tx_data));\n'}
+[6.758340] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.758520] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // // \xe5\x88\x9b\xe5\xbb\xba\xe4\xb8\x80\xe4\xb8\xaa\xe5\xae\x9a\xe6\x97\xb6\xe5\x99\xa8\xe6\x9d\xa5\xe5\xae\x9a\xe6\x9c\x9f\xe8\xaf\xbb\xe5\x8f\x96\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.758707] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // timer_ = this->create_wall_timer(\n'}
+[6.758891] (turn_on_32chassis) StdoutLine: {'line': b'7: +    //     std::chrono::milliseconds(500), // \xe6\xaf\x8f500\xe6\xaf\xab\xe7\xa7\x92\xe8\xaf\xbb\xe5\x8f\x96\xe4\xb8\x80\xe6\xac\xa1\n'}
+[6.759071] (turn_on_32chassis) StdoutLine: {'line': b'7: +    //     std::bind(&TurnOn32Chassis::receive_row_serialdata, this));\n'}
+[6.759256] (turn_on_32chassis) StdoutLine: {'line': b'7: +  } else {\n'}
+[6.759439] (turn_on_32chassis) StdoutLine: {'line': b'7: +    RCLCPP_ERROR(this->get_logger(), "Failed to open serial port");\n'}
+[6.759621] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.759805] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -93,3 +88,3 @@\n'}
+[6.759986] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short Temp_data = 0;\n'}
+[6.760163] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Temp_data = (data_high << 8) | data_low;\n'}
+[6.760343] (turn_on_32chassis) StdoutLine: {'line': b'7: -    return Temp_data;\n'}
+[6.760523] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short Temp_data = 0;\n'}
+[6.760712] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Temp_data = (data_high << 8) | data_low;\n'}
+[6.760926] (turn_on_32chassis) StdoutLine: {'line': b'7: +  return Temp_data;\n'}
+[6.761105] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -104,9 +99,19 @@\n'}
+[6.761275] (turn_on_32chassis) StdoutLine: {'line': b'7: -    static uint8_t ReceiveDataTemp = 0, count = 0, status = 0;\n'}
+[6.761444] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.761615] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\xa3\x80\xe6\x9f\xa5\xe6\x98\xaf\xe5\x90\xa6\xe6\x9c\x89\xe6\x95\xb0\xe6\x8d\xae\xe5\x8f\xaf\xe8\xaf\xbb\n'}
+[6.761801] (turn_on_32chassis) StdoutLine: {'line': b'7: -    if (STM32_Serial.available() > 0)\n'}
+[6.761976] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.762148] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.read(&ReceiveDataTemp, 1);\n'}
+[6.762317] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // RCLCPP_INFO(this->get_logger(), "Received byte: 0x%02X count: %d status: %d", ReceiveDataTemp, count, status);\n'}
+[6.762491] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.762663] (turn_on_32chassis) StdoutLine: {'line': b'7: -        if (count == 0 && ReceiveDataTemp == FRAME_HEADER && status == 0)\n'}
+[6.762832] (turn_on_32chassis) StdoutLine: {'line': b'7: +  static uint8_t ReceiveDataTemp = 0, count = 0, status = 0;\n'}
+[6.763000] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.763171] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\xa3\x80\xe6\x9f\xa5\xe6\x98\xaf\xe5\x90\xa6\xe6\x9c\x89\xe6\x95\xb0\xe6\x8d\xae\xe5\x8f\xaf\xe8\xaf\xbb\n'}
+[6.763340] (turn_on_32chassis) StdoutLine: {'line': b'7: +  if (STM32_Serial.available() > 0) {\n'}
+[6.763512] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.read(&ReceiveDataTemp, 1);\n'}
+[6.763679] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // RCLCPP_INFO(this->get_logger(), "Received byte: 0x%02X count: %d status: %d", ReceiveDataTemp, count, status);\n'}
+[6.763870] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.764043] (turn_on_32chassis) StdoutLine: {'line': b'7: +    if (count == 0 && ReceiveDataTemp == FRAME_HEADER && status == 0) {\n'}
+[6.764215] (turn_on_32chassis) StdoutLine: {'line': b'7: +      receive_data_.buffer[count] = ReceiveDataTemp;\n'}
+[6.764390] (turn_on_32chassis) StdoutLine: {'line': b'7: +      count++;\n'}
+[6.764571] (turn_on_32chassis) StdoutLine: {'line': b'7: +      status = 1;\n'}
+[6.764743] (turn_on_32chassis) StdoutLine: {'line': b'7: +    } else if (status == 1) {\n'}
+[6.764943] (turn_on_32chassis) StdoutLine: {'line': b'7: +      receive_data_.buffer[count] = ReceiveDataTemp;\n'}
+[6.765117] (turn_on_32chassis) StdoutLine: {'line': b'7: +      count++;\n'}
+[6.765281] (turn_on_32chassis) StdoutLine: {'line': b'7: +      if (count == 24) {\n'}
+[6.765443] (turn_on_32chassis) StdoutLine: {'line': b'7: +        status = 0;\n'}
+[6.765603] (turn_on_32chassis) StdoutLine: {'line': b'7: +        count = 0;\n'}
+[6.765768] (turn_on_32chassis) StdoutLine: {'line': b'7: +        if (receive_data_.buffer[23] == FRAME_TAIL &&\n'}
+[6.765928] (turn_on_32chassis) StdoutLine: {'line': b'7: +          check_sum(receive_data_.buffer, 22) == receive_data_.buffer[22])\n'}
+[6.766089] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -114,3 +119,46 @@\n'}
+[6.766249] (turn_on_32chassis) StdoutLine: {'line': b'7: -            receive_data_.buffer[count] = ReceiveDataTemp;\n'}
+[6.766414] (turn_on_32chassis) StdoutLine: {'line': b'7: -            count++;\n'}
+[6.766575] (turn_on_32chassis) StdoutLine: {'line': b'7: -            status = 1;\n'}
+[6.766738] (turn_on_32chassis) StdoutLine: {'line': b'7: +          // \xe8\xa7\xa3\xe6\x9e\x90\xe8\xa7\xa3\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.766899] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Frame_Header = receive_data_.buffer[0];\n'}
+[6.767064] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Flag_Stop = receive_data_.buffer[1];\n'}
+[6.767221] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.X_speed =\n'}
+[6.767383] (turn_on_32chassis) StdoutLine: {'line': b'7: +            (float)uchartoshort(receive_data_.buffer[2], receive_data_.buffer[3]) / 1000.0f;\n'}
+[6.767542] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Y_speed =\n'}
+[6.767708] (turn_on_32chassis) StdoutLine: {'line': b'7: +            (float)uchartoshort(receive_data_.buffer[4], receive_data_.buffer[5]) / 1000.0f;\n'}
+[6.767870] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Z_speed =\n'}
+[6.768028] (turn_on_32chassis) StdoutLine: {'line': b'7: +            (float)uchartoshort(receive_data_.buffer[6], receive_data_.buffer[7]) / 1000.0f;\n'}
+[6.768188] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.accele_x_data = uchartoshort(\n'}
+[6.768354] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[8],\n'}
+[6.768514] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[9]);\n'}
+[6.768675] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.accele_y_data = uchartoshort(\n'}
+[6.768871] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[10],\n'}
+[6.769039] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[11]);\n'}
+[6.769194] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.accele_z_data = uchartoshort(\n'}
+[6.769350] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[12],\n'}
+[6.769500] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[13]);\n'}
+[6.769655] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.gyros_x_data = uchartoshort(\n'}
+[6.769839] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[14],\n'}
+[6.769993] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[15]);\n'}
+[6.770167] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.gyros_y_data = uchartoshort(\n'}
+[6.770323] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[16],\n'}
+[6.770476] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[17]);\n'}
+[6.770626] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.IMUData.gyros_z_data = uchartoshort(\n'}
+[6.770780] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[18],\n'}
+[6.770933] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[19]);\n'}
+[6.771083] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Power_Voltage = (float)uchartoshort(\n'}
+[6.771233] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[20],\n'}
+[6.771390] (turn_on_32chassis) StdoutLine: {'line': b'7: +            receive_data_.buffer[21]) / 1000.0f;\n'}
+[6.771540] (turn_on_32chassis) StdoutLine: {'line': b'7: +          receive_data_.Frame_Tail = receive_data_.buffer[23];\n'}
+[6.771692] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.771843] (turn_on_32chassis) StdoutLine: {'line': b'7: +          // \xe5\xa4\x84\xe7\x90\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.771998] (turn_on_32chassis) StdoutLine: {'line': b'7: +          //  \xe5\xb0\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84\xe9\x80\x9f\xe5\xba\xa6\xe6\x95\xb0\xe6\x8d\xae\xe8\xb5\x8b\xe5\x80\xbc\xe7\xbb\x99robot_vel_\n'}
+[6.772153] (turn_on_32chassis) StdoutLine: {'line': b'7: +          robot_vel_.X = receive_data_.X_speed;\n'}
+[6.772304] (turn_on_32chassis) StdoutLine: {'line': b'7: +          robot_vel_.Y = receive_data_.Y_speed;\n'}
+[6.772452] (turn_on_32chassis) StdoutLine: {'line': b'7: +          robot_vel_.Z = receive_data_.Z_speed;\n'}
+[6.772608] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.772758] (turn_on_32chassis) StdoutLine: {'line': b'7: +          // \xe5\xb0\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84IMU\xe6\x95\xb0\xe6\x8d\xae\xe8\xb5\x8b\xe5\x80\xbc\xe7\xbb\x99imu_msg_\n'}
+[6.772940] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.linear_acceleration.x = (float)receive_data_.IMUData.accele_x_data / ACCEl_RATIO;\n'}
+[6.773088] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.linear_acceleration.y = (float)receive_data_.IMUData.accele_y_data / ACCEl_RATIO;\n'}
+[6.773257] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.linear_acceleration.z = (float)receive_data_.IMUData.accele_z_data / ACCEl_RATIO;\n'}
+[6.773412] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.angular_velocity.x = (float)receive_data_.IMUData.gyros_x_data / GYROSCOPE_RATIO;\n'}
+[6.773561] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.angular_velocity.y = (float)receive_data_.IMUData.gyros_y_data / GYROSCOPE_RATIO;\n'}
+[6.773713] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.angular_velocity.z = (float)receive_data_.IMUData.gyros_z_data / GYROSCOPE_RATIO;\n'}
+[6.773866] (turn_on_32chassis) StdoutLine: {'line': b'7: +          return true;\n'}
+[6.774013] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -118,42 +166 @@\n'}
+[6.774159] (turn_on_32chassis) StdoutLine: {'line': b'7: -        else if (status == 1)\n'}
+[6.774302] (turn_on_32chassis) StdoutLine: {'line': b'7: -        {\n'}
+[6.774451] (turn_on_32chassis) StdoutLine: {'line': b'7: -            receive_data_.buffer[count] = ReceiveDataTemp;\n'}
+[6.774602] (turn_on_32chassis) StdoutLine: {'line': b'7: -            count++;\n'}
+[6.774750] (turn_on_32chassis) StdoutLine: {'line': b'7: -            if (count == 24)\n'}
+[6.774900] (turn_on_32chassis) StdoutLine: {'line': b'7: -            {\n'}
+[6.775046] (turn_on_32chassis) StdoutLine: {'line': b'7: -                status = 0;\n'}
+[6.775191] (turn_on_32chassis) StdoutLine: {'line': b'7: -                count = 0;\n'}
+[6.775353] (turn_on_32chassis) StdoutLine: {'line': b'7: -                if (receive_data_.buffer[23] == FRAME_TAIL && check_sum(receive_data_.buffer, 22) == receive_data_.buffer[22])\n'}
+[6.775503] (turn_on_32chassis) StdoutLine: {'line': b'7: -                {\n'}
+[6.775647] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    // \xe8\xa7\xa3\xe6\x9e\x90\xe8\xa7\xa3\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.775792] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Frame_Header = receive_data_.buffer[0];\n'}
+[6.775942] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Flag_Stop = receive_data_.buffer[1];\n'}
+[6.776087] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.X_speed = (float)uchartoshort(receive_data_.buffer[2], receive_data_.buffer[3]) / 1000.0f;\n'}
+[6.776235] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Y_speed = (float)uchartoshort(receive_data_.buffer[4], receive_data_.buffer[5]) / 1000.0f;\n'}
+[6.776381] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Z_speed = (float)uchartoshort(receive_data_.buffer[6], receive_data_.buffer[7]) / 1000.0f;\n'}
+[6.776533] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.accele_x_data = uchartoshort(receive_data_.buffer[8], receive_data_.buffer[9]);\n'}
+[6.776682] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.accele_y_data = uchartoshort(receive_data_.buffer[10], receive_data_.buffer[11]);\n'}
+[6.776850] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.accele_z_data = uchartoshort(receive_data_.buffer[12], receive_data_.buffer[13]);\n'}
+[6.776996] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.gyros_x_data = uchartoshort(receive_data_.buffer[14], receive_data_.buffer[15]);\n'}
+[6.777145] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.gyros_y_data = uchartoshort(receive_data_.buffer[16], receive_data_.buffer[17]);\n'}
+[6.777286] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.IMUData.gyros_z_data = uchartoshort(receive_data_.buffer[18], receive_data_.buffer[19]);\n'}
+[6.777424] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Power_Voltage = (float)uchartoshort(receive_data_.buffer[20], receive_data_.buffer[21]) / 1000.0f;\n'}
+[6.777564] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    receive_data_.Frame_Tail = receive_data_.buffer[23];\n'}
+[6.777709] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.777848] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    // \xe5\xa4\x84\xe7\x90\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.777986] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    //  \xe5\xb0\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84\xe9\x80\x9f\xe5\xba\xa6\xe6\x95\xb0\xe6\x8d\xae\xe8\xb5\x8b\xe5\x80\xbc\xe7\xbb\x99robot_vel_\n'}
+[6.778130] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    robot_vel_.X = receive_data_.X_speed;\n'}
+[6.778277] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    robot_vel_.Y = receive_data_.Y_speed;\n'}
+[6.778416] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    robot_vel_.Z = receive_data_.Z_speed;\n'}
+[6.778553] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.778690] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    // \xe5\xb0\x86\xe4\xb8\xb2\xe5\x8f\xa3\xe6\x8e\xa5\xe6\x94\xb6\xe5\x88\xb0\xe7\x9a\x84IMU\xe6\x95\xb0\xe6\x8d\xae\xe8\xb5\x8b\xe5\x80\xbc\xe7\xbb\x99imu_msg_\n'}
+[6.778835] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.linear_acceleration.x = (float)receive_data_.IMUData.accele_x_data / ACCEl_RATIO;\n'}
+[6.779009] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.linear_acceleration.y = (float)receive_data_.IMUData.accele_y_data / ACCEl_RATIO;\n'}
+[6.779166] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.linear_acceleration.z = (float)receive_data_.IMUData.accele_z_data / ACCEl_RATIO;\n'}
+[6.779309] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.angular_velocity.x = (float)receive_data_.IMUData.gyros_x_data / GYROSCOPE_RATIO;\n'}
+[6.779457] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.angular_velocity.y = (float)receive_data_.IMUData.gyros_y_data / GYROSCOPE_RATIO;\n'}
+[6.779599] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    imu_msg_.angular_velocity.z = (float)receive_data_.IMUData.gyros_z_data / GYROSCOPE_RATIO;\n'}
+[6.779739] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    return true;\n'}
+[6.779881] (turn_on_32chassis) StdoutLine: {'line': b'7: -                }\n'}
+[6.780022] (turn_on_32chassis) StdoutLine: {'line': b'7: -            }\n'}
+[6.780177] (turn_on_32chassis) StdoutLine: {'line': b'7: -        }\n'}
+[6.780321] (turn_on_32chassis) StdoutLine: {'line': b'7: +      }\n'}
+[6.780468] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -161,2 +168,3 @@\n'}
+[6.780611] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.780750] (turn_on_32chassis) StdoutLine: {'line': b'7: -    return false;\n'}
+[6.780918] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.781070] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.781209] (turn_on_32chassis) StdoutLine: {'line': b'7: +  return false;\n'}
+[6.781349] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -171,17 +179,16 @@\n'}
+[6.781488] (turn_on_32chassis) StdoutLine: {'line': b'7: -uint8_t TurnOn32Chassis::check_sum(uint8_t *data, uint8_t len)\n'}
+[6.781635] (turn_on_32chassis) StdoutLine: {'line': b'7: -{\n'}
+[6.781776] (turn_on_32chassis) StdoutLine: {'line': b'7: -    unsigned char check_sum = 0, k;\n'}
+[6.781916] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.782055] (turn_on_32chassis) StdoutLine: {'line': b'7: -    for (k = 0; k < len; k++)\n'}
+[6.782199] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.782337] (turn_on_32chassis) StdoutLine: {'line': b'7: -        check_sum = check_sum ^ data[k]; // By bit or by bit //\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\n'}
+[6.782476] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.782616] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.782758] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // if (mode == 3)\n'}
+[6.782900] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // {\n'}
+[6.783038] (turn_on_32chassis) StdoutLine: {'line': b'7: -    //     for (k = 0; k < Count_Number; k++)\n'}
+[6.783176] (turn_on_32chassis) StdoutLine: {'line': b'7: -    //     {\n'}
+[6.783318] (turn_on_32chassis) StdoutLine: {'line': b'7: -    //         check_sum = check_sum ^ Distance_Data.rx[k]; // By bit or by bit //\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\n'}
+[6.783461] (turn_on_32chassis) StdoutLine: {'line': b'7: -    //     }\n'}
+[6.783600] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.783735] (turn_on_32chassis) StdoutLine: {'line': b'7: -    return check_sum; // Returns the bitwise XOR result //\xe8\xbf\x94\xe5\x9b\x9e\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\xe7\xbb\x93\xe6\x9e\x9c\n'}
+[6.783879] (turn_on_32chassis) StdoutLine: {'line': b'7: +uint8_t TurnOn32Chassis::check_sum(uint8_t * data, uint8_t len)\n'}
+[6.784016] (turn_on_32chassis) StdoutLine: {'line': b'7: +{\n'}
+[6.784154] (turn_on_32chassis) StdoutLine: {'line': b'7: +  unsigned char check_sum = 0, k;\n'}
+[6.784299] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.784437] (turn_on_32chassis) StdoutLine: {'line': b'7: +  for (k = 0; k < len; k++) {\n'}
+[6.784575] (turn_on_32chassis) StdoutLine: {'line': b'7: +    check_sum = check_sum ^ data[k];     // By bit or by bit //\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\n'}
+[6.784714] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.784899] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.785038] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // if (mode == 3)\n'}
+[6.785175] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // {\n'}
+[6.785308] (turn_on_32chassis) StdoutLine: {'line': b'7: +  //     for (k = 0; k < Count_Number; k++)\n'}
+[6.785444] (turn_on_32chassis) StdoutLine: {'line': b'7: +  //     {\n'}
+[6.785579] (turn_on_32chassis) StdoutLine: {'line': b'7: +  //         check_sum = check_sum ^ Distance_Data.rx[k]; // By bit or by bit //\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\n'}
+[6.785720] (turn_on_32chassis) StdoutLine: {'line': b'7: +  //     }\n'}
+[6.785857] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.785995] (turn_on_32chassis) StdoutLine: {'line': b'7: +  return check_sum;   // Returns the bitwise XOR result //\xe8\xbf\x94\xe5\x9b\x9e\xe6\x8c\x89\xe4\xbd\x8d\xe5\xbc\x82\xe6\x88\x96\xe7\xbb\x93\xe6\x9e\x9c\n'}
+[6.786129] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -192,33 +199,33 @@\n'}
+[6.786262] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // Convert the Z-axis rotation Angle into a quaternion for expression\n'}
+[6.786401] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\x8a\x8aZ\xe8\xbd\xb4\xe8\xbd\xac\xe8\xa7\x92\xe8\xbd\xac\xe6\x8d\xa2\xe4\xb8\xba\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\xe8\xbf\x9b\xe8\xa1\x8c\xe8\xa1\xa8\xe8\xbe\xbe\n'}
+[6.786536] (turn_on_32chassis) StdoutLine: {'line': b'7: -    tf2::Quaternion q;\n'}
+[6.786669] (turn_on_32chassis) StdoutLine: {'line': b'7: -    q.setRPY(0, 0, robot_pos_.Z);\n'}
+[6.786799] (turn_on_32chassis) StdoutLine: {'line': b'7: -    geometry_msgs::msg::Quaternion odom_quat = tf2::toMsg(q);\n'}
+[6.786939] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.787071] (turn_on_32chassis) StdoutLine: {'line': b'7: -    nav_msgs::msg::Odometry odom; // Instance the odometer topic data //\xe5\xae\x9e\xe4\xbe\x8b\xe5\x8c\x96\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.787206] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.header.stamp = rclcpp::Node::now();\n'}
+[6.787342] (turn_on_32chassis) StdoutLine: {'line': b'7: -    ;\n'}
+[6.787475] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.header.frame_id = odom_frame_id;     // Odometer TF parent coordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1TF\xe7\x88\xb6\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.787609] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.pose.pose.position.x = robot_pos_.X; // Position //\xe4\xbd\x8d\xe7\xbd\xae\n'}
+[6.787741] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.pose.pose.position.y = robot_pos_.Y;\n'}
+[6.787875] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.pose.pose.position.z = 0.0; // Planar robot: robot_pos_.Z stores yaw, not height //\xe4\xba\x8c\xe7\xbb\xb4\xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xba\xef\xbc\x9arobot_pos_.Z \xe8\xa1\xa8\xe7\xa4\xba\xe5\x81\x8f\xe8\x88\xaa\xe8\xa7\x92\xef\xbc\x8c\xe4\xb8\x8d\xe6\x98\xaf\xe9\xab\x98\xe5\xba\xa6\n'}
+[6.788015] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.pose.pose.orientation = odom_quat; // Posture, Quaternion converted by Z-axis rotation //\xe5\xa7\xbf\xe6\x80\x81\xef\xbc\x8c\xe9\x80\x9a\xe8\xbf\x87Z\xe8\xbd\xb4\xe8\xbd\xac\xe8\xa7\x92\xe8\xbd\xac\xe6\x8d\xa2\xe7\x9a\x84\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\n'}
+[6.788153] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.788288] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.child_frame_id = robot_frame_id;      // Odometer TF subcoordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1TF\xe5\xad\x90\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.788427] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.twist.twist.linear.x = robot_vel_.X;  // Speed in the X direction //X\xe6\x96\xb9\xe5\x90\x91\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.788563] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.twist.twist.linear.y = robot_vel_.Y;  // Speed in the Y direction //Y\xe6\x96\xb9\xe5\x90\x91\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.788697] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom.twist.twist.angular.z = robot_vel_.Z; // Angular velocity around the Z axis //\xe7\xbb\x95Z\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.788871] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.789014] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // There are two types of this matrix, which are used when the robot is at rest and when it is moving.Extended Kalman Filtering officially provides 2 matrices for the robot_pose_ekf feature pack\n'}
+[6.789158] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe8\xbf\x99\xe4\xb8\xaa\xe7\x9f\xa9\xe9\x98\xb5\xe6\x9c\x89\xe4\xb8\xa4\xe7\xa7\x8d\xef\xbc\x8c\xe5\x88\x86\xe5\x88\xab\xe5\x9c\xa8\xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xba\xe9\x9d\x99\xe6\xad\xa2\xe5\x92\x8c\xe8\xbf\x90\xe5\x8a\xa8\xe7\x9a\x84\xe6\x97\xb6\xe5\x80\x99\xe4\xbd\xbf\xe7\x94\xa8\xe3\x80\x82\xe6\x89\xa9\xe5\xb1\x95\xe5\x8d\xa1\xe5\xb0\x94\xe6\x9b\xbc\xe6\xbb\xa4\xe6\xb3\xa2\xe5\xae\x98\xe6\x96\xb9\xe6\x8f\x90\xe4\xbe\x9b\xe7\x9a\x842\xe4\xb8\xaa\xe7\x9f\xa9\xe9\x98\xb5\xef\xbc\x8c\xe7\x94\xa8\xe4\xba\x8erobot_pose_ekf\xe5\x8a\x9f\xe8\x83\xbd\xe5\x8c\x85\n'}
+[6.789305] (turn_on_32chassis) StdoutLine: {'line': b'7: -    if (robot_vel_.X == 0 && robot_vel_.Y == 0 && robot_vel_.Z == 0)\n'}
+[6.789444] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // If the velocity is zero, it means that the error of the encoder will be relatively small, and the data of the encoder will be considered more reliable\n'}
+[6.789587] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // \xe5\xa6\x82\xe6\x9e\x9cvelocity\xe6\x98\xaf\xe9\x9b\xb6\xef\xbc\x8c\xe8\xaf\xb4\xe6\x98\x8e\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe7\x9a\x84\xe8\xaf\xaf\xe5\xb7\xae\xe4\xbc\x9a\xe6\xaf\x94\xe8\xbe\x83\xe5\xb0\x8f\xef\xbc\x8c\xe8\xae\xa4\xe4\xb8\xba\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe6\x95\xb0\xe6\x8d\xae\xe6\x9b\xb4\xe5\x8f\xaf\xe9\x9d\xa0\n'}
+[6.789729] (turn_on_32chassis) StdoutLine: {'line': b'7: -        memcpy(&odom.pose.covariance, odom_pose_covariance2, sizeof(odom_pose_covariance2)),\n'}
+[6.789906] (turn_on_32chassis) StdoutLine: {'line': b'7: -            memcpy(&odom.twist.covariance, odom_twist_covariance2, sizeof(odom_twist_covariance2));\n'}
+[6.790046] (turn_on_32chassis) StdoutLine: {'line': b'7: -    else\n'}
+[6.790188] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // If the velocity of the trolley is non-zero, considering the sliding error that may be brought by the encoder in motion, the data of IMU is considered to be more reliable\n'}
+[6.790324] (turn_on_32chassis) StdoutLine: {'line': b'7: -        // \xe5\xa6\x82\xe6\x9e\x9c\xe5\xb0\x8f\xe8\xbd\xa6velocity\xe9\x9d\x9e\xe9\x9b\xb6\xef\xbc\x8c\xe8\x80\x83\xe8\x99\x91\xe5\x88\xb0\xe8\xbf\x90\xe5\x8a\xa8\xe4\xb8\xad\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe5\x8f\xaf\xe8\x83\xbd\xe5\xb8\xa6\xe6\x9d\xa5\xe7\x9a\x84\xe6\xbb\x91\xe5\x8a\xa8\xe8\xaf\xaf\xe5\xb7\xae\xef\xbc\x8c\xe8\xae\xa4\xe4\xb8\xbaimu\xe7\x9a\x84\xe6\x95\xb0\xe6\x8d\xae\xe6\x9b\xb4\xe5\x8f\xaf\xe9\x9d\xa0\n'}
+[6.790468] (turn_on_32chassis) StdoutLine: {'line': b'7: -        memcpy(&odom.pose.covariance, odom_pose_covariance, sizeof(odom_pose_covariance)),\n'}
+[6.790606] (turn_on_32chassis) StdoutLine: {'line': b'7: -            memcpy(&odom.twist.covariance, odom_twist_covariance, sizeof(odom_twist_covariance));\n'}
+[6.790745] (turn_on_32chassis) StdoutLine: {'line': b'7: -    odom_publisher->publish(odom); // Pub odometer topic //\xe5\x8f\x91\xe5\xb8\x83\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.790881] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // Convert the Z-axis rotation Angle into a quaternion for expression\n'}
+[6.791014] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\x8a\x8aZ\xe8\xbd\xb4\xe8\xbd\xac\xe8\xa7\x92\xe8\xbd\xac\xe6\x8d\xa2\xe4\xb8\xba\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\xe8\xbf\x9b\xe8\xa1\x8c\xe8\xa1\xa8\xe8\xbe\xbe\n'}
+[6.791148] (turn_on_32chassis) StdoutLine: {'line': b'7: +  tf2::Quaternion q;\n'}
+[6.791284] (turn_on_32chassis) StdoutLine: {'line': b'7: +  q.setRPY(0, 0, robot_pos_.Z);\n'}
+[6.791417] (turn_on_32chassis) StdoutLine: {'line': b'7: +  geometry_msgs::msg::Quaternion odom_quat = tf2::toMsg(q);\n'}
+[6.791566] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.791702] (turn_on_32chassis) StdoutLine: {'line': b'7: +  nav_msgs::msg::Odometry odom;   // Instance the odometer topic data //\xe5\xae\x9e\xe4\xbe\x8b\xe5\x8c\x96\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.791837] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.header.stamp = rclcpp::Node::now();\n'}
+[6.791968] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.header.frame_id = odom_frame_id;       // Odometer TF parent coordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1TF\xe7\x88\xb6\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.792100] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.pose.pose.position.x = robot_pos_.X;   // Position //\xe4\xbd\x8d\xe7\xbd\xae\n'}
+[6.792235] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.pose.pose.position.y = robot_pos_.Y;\n'}
+[6.792367] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.pose.pose.position.z = 0.0;   // Planar robot: robot_pos_.Z stores yaw, not height //\xe4\xba\x8c\xe7\xbb\xb4\xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xba\xef\xbc\x9arobot_pos_.Z \xe8\xa1\xa8\xe7\xa4\xba\xe5\x81\x8f\xe8\x88\xaa\xe8\xa7\x92\xef\xbc\x8c\xe4\xb8\x8d\xe6\x98\xaf\xe9\xab\x98\xe5\xba\xa6\n'}
+[6.792505] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.pose.pose.orientation = odom_quat;   // Posture, Quaternion converted by Z-axis rotation //\xe5\xa7\xbf\xe6\x80\x81\xef\xbc\x8c\xe9\x80\x9a\xe8\xbf\x87Z\xe8\xbd\xb4\xe8\xbd\xac\xe8\xa7\x92\xe8\xbd\xac\xe6\x8d\xa2\xe7\x9a\x84\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\n'}
+[6.792639] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.792785] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.child_frame_id = robot_frame_id;        // Odometer TF subcoordinates //\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1TF\xe5\xad\x90\xe5\x9d\x90\xe6\xa0\x87\n'}
+[6.792938] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.twist.twist.linear.x = robot_vel_.X;    // Speed in the X direction //X\xe6\x96\xb9\xe5\x90\x91\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.793077] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.twist.twist.linear.y = robot_vel_.Y;    // Speed in the Y direction //Y\xe6\x96\xb9\xe5\x90\x91\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.793214] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom.twist.twist.angular.z = robot_vel_.Z;   // Angular velocity around the Z axis //\xe7\xbb\x95Z\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.793359] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.793502] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // There are two types of this matrix, which are used when the robot is at rest and when it is moving.Extended Kalman Filtering officially provides 2 matrices for the robot_pose_ekf feature pack\n'}
+[6.793643] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe8\xbf\x99\xe4\xb8\xaa\xe7\x9f\xa9\xe9\x98\xb5\xe6\x9c\x89\xe4\xb8\xa4\xe7\xa7\x8d\xef\xbc\x8c\xe5\x88\x86\xe5\x88\xab\xe5\x9c\xa8\xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xba\xe9\x9d\x99\xe6\xad\xa2\xe5\x92\x8c\xe8\xbf\x90\xe5\x8a\xa8\xe7\x9a\x84\xe6\x97\xb6\xe5\x80\x99\xe4\xbd\xbf\xe7\x94\xa8\xe3\x80\x82\xe6\x89\xa9\xe5\xb1\x95\xe5\x8d\xa1\xe5\xb0\x94\xe6\x9b\xbc\xe6\xbb\xa4\xe6\xb3\xa2\xe5\xae\x98\xe6\x96\xb9\xe6\x8f\x90\xe4\xbe\x9b\xe7\x9a\x842\xe4\xb8\xaa\xe7\x9f\xa9\xe9\x98\xb5\xef\xbc\x8c\xe7\x94\xa8\xe4\xba\x8erobot_pose_ekf\xe5\x8a\x9f\xe8\x83\xbd\xe5\x8c\x85\n'}
+[6.793786] (turn_on_32chassis) StdoutLine: {'line': b'7: +  if (robot_vel_.X == 0 && robot_vel_.Y == 0 && robot_vel_.Z == 0) {\n'}
+[6.793922] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // If the velocity is zero, it means that the error of the encoder will be relatively small, and the data of the encoder will be considered more reliable\n'}
+[6.794059] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // \xe5\xa6\x82\xe6\x9e\x9cvelocity\xe6\x98\xaf\xe9\x9b\xb6\xef\xbc\x8c\xe8\xaf\xb4\xe6\x98\x8e\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe7\x9a\x84\xe8\xaf\xaf\xe5\xb7\xae\xe4\xbc\x9a\xe6\xaf\x94\xe8\xbe\x83\xe5\xb0\x8f\xef\xbc\x8c\xe8\xae\xa4\xe4\xb8\xba\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe6\x95\xb0\xe6\x8d\xae\xe6\x9b\xb4\xe5\x8f\xaf\xe9\x9d\xa0\n'}
+[6.794221] (turn_on_32chassis) StdoutLine: {'line': b'7: +    memcpy(&odom.pose.covariance, odom_pose_covariance2, sizeof(odom_pose_covariance2)),\n'}
+[6.794360] (turn_on_32chassis) StdoutLine: {'line': b'7: +    memcpy(&odom.twist.covariance, odom_twist_covariance2, sizeof(odom_twist_covariance2));\n'}
+[6.794495] (turn_on_32chassis) StdoutLine: {'line': b'7: +  } else {\n'}
+[6.794630] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // If the velocity of the trolley is non-zero, considering the sliding error that may be brought by the encoder in motion, the data of IMU is considered to be more reliable\n'}
+[6.794767] (turn_on_32chassis) StdoutLine: {'line': b'7: +    // \xe5\xa6\x82\xe6\x9e\x9c\xe5\xb0\x8f\xe8\xbd\xa6velocity\xe9\x9d\x9e\xe9\x9b\xb6\xef\xbc\x8c\xe8\x80\x83\xe8\x99\x91\xe5\x88\xb0\xe8\xbf\x90\xe5\x8a\xa8\xe4\xb8\xad\xe7\xbc\x96\xe7\xa0\x81\xe5\x99\xa8\xe5\x8f\xaf\xe8\x83\xbd\xe5\xb8\xa6\xe6\x9d\xa5\xe7\x9a\x84\xe6\xbb\x91\xe5\x8a\xa8\xe8\xaf\xaf\xe5\xb7\xae\xef\xbc\x8c\xe8\xae\xa4\xe4\xb8\xbaimu\xe7\x9a\x84\xe6\x95\xb0\xe6\x8d\xae\xe6\x9b\xb4\xe5\x8f\xaf\xe9\x9d\xa0\n'}
+[6.794908] (turn_on_32chassis) StdoutLine: {'line': b'7: +    memcpy(&odom.pose.covariance, odom_pose_covariance, sizeof(odom_pose_covariance)),\n'}
+[6.795049] (turn_on_32chassis) StdoutLine: {'line': b'7: +    memcpy(&odom.twist.covariance, odom_twist_covariance, sizeof(odom_twist_covariance));\n'}
+[6.795186] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.795318] (turn_on_32chassis) StdoutLine: {'line': b'7: +  odom_publisher->publish(odom);   // Pub odometer topic //\xe5\x8f\x91\xe5\xb8\x83\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.795453] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -245,3 +252,3 @@\n'}
+[6.795592] (turn_on_32chassis) StdoutLine: {'line': b'7: -    sensor_msgs::msg::Imu Imu_Data_Pub; // Instantiate IMU topic data //\xe5\xae\x9e\xe4\xbe\x8b\xe5\x8c\x96IMU\xe8\xaf\x9d\xe9\xa2\x98\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.795728] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.header.stamp = rclcpp::Node::now();\n'}
+[6.795876] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.header.frame_id = gyro_frame_id;        // IMU corresponds to TF coordinates, which is required to use the robot_pose_ekf feature pack\n'}
+[6.796014] (turn_on_32chassis) StdoutLine: {'line': b'7: +  sensor_msgs::msg::Imu Imu_Data_Pub;   // Instantiate IMU topic data //\xe5\xae\x9e\xe4\xbe\x8b\xe5\x8c\x96IMU\xe8\xaf\x9d\xe9\xa2\x98\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.796156] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.header.stamp = rclcpp::Node::now();\n'}
+[6.796314] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.header.frame_id = gyro_frame_id;          // IMU corresponds to TF coordinates, which is required to use the robot_pose_ekf feature pack\n'}
+[6.796453] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -249,17 +256,17 @@\n'}
+[6.796586] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation.x = imu_msg_.orientation.x; // A quaternion represents a three-axis attitude //\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\xe8\xa1\xa8\xe8\xbe\xbe\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\n'}
+[6.796729] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation.y = imu_msg_.orientation.y;\n'}
+[6.796897] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation.z = imu_msg_.orientation.z;\n'}
+[6.797041] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation.w = imu_msg_.orientation.w;\n'}
+[6.797176] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation_covariance[0] = 1e6; // Three-axis attitude covariance matrix //\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\xe5\x8d\x8f\xe6\x96\xb9\xe5\xb7\xae\xe7\x9f\xa9\xe9\x98\xb5\n'}
+[6.797322] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation_covariance[4] = 1e6;\n'}
+[6.797471] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.orientation_covariance[8] = 1e-6;\n'}
+[6.797606] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity.x = imu_msg_.angular_velocity.x; // Triaxial angular velocity //\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.797746] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity.y = imu_msg_.angular_velocity.y;\n'}
+[6.797881] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity.z = imu_msg_.angular_velocity.z;\n'}
+[6.798013] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity_covariance[0] = 1e6; // Triaxial angular velocity covariance matrix //\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\xe5\x8d\x8f\xe6\x96\xb9\xe5\xb7\xae\xe7\x9f\xa9\xe9\x98\xb5\n'}
+[6.798149] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity_covariance[4] = 1e6;\n'}
+[6.798308] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.angular_velocity_covariance[8] = 1e-6;\n'}
+[6.798443] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.linear_acceleration.x = imu_msg_.linear_acceleration.x; // Triaxial acceleration //\xe4\xb8\x89\xe8\xbd\xb4\xe7\xba\xbf\xe6\x80\xa7\xe5\x8a\xa0\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.798579] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.linear_acceleration.y = imu_msg_.linear_acceleration.y;\n'}
+[6.798712] (turn_on_32chassis) StdoutLine: {'line': b'7: -    Imu_Data_Pub.linear_acceleration.z = imu_msg_.linear_acceleration.z;\n'}
+[6.798853] (turn_on_32chassis) StdoutLine: {'line': b'7: -    imu_publisher->publish(Imu_Data_Pub); // Pub IMU topic //\xe5\x8f\x91\xe5\xb8\x83IMU\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.798987] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation.x = imu_msg_.orientation.x;   // A quaternion represents a three-axis attitude //\xe5\x9b\x9b\xe5\x85\x83\xe6\x95\xb0\xe8\xa1\xa8\xe8\xbe\xbe\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\n'}
+[6.799124] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation.y = imu_msg_.orientation.y;\n'}
+[6.799258] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation.z = imu_msg_.orientation.z;\n'}
+[6.799394] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation.w = imu_msg_.orientation.w;\n'}
+[6.799530] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation_covariance[0] = 1e6;   // Three-axis attitude covariance matrix //\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\xe5\x8d\x8f\xe6\x96\xb9\xe5\xb7\xae\xe7\x9f\xa9\xe9\x98\xb5\n'}
+[6.799666] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation_covariance[4] = 1e6;\n'}
+[6.799798] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.orientation_covariance[8] = 1e-6;\n'}
+[6.799939] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity.x = imu_msg_.angular_velocity.x;   // Triaxial angular velocity //\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.800074] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity.y = imu_msg_.angular_velocity.y;\n'}
+[6.800205] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity.z = imu_msg_.angular_velocity.z;\n'}
+[6.800335] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity_covariance[0] = 1e6;   // Triaxial angular velocity covariance matrix //\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\xe5\x8d\x8f\xe6\x96\xb9\xe5\xb7\xae\xe7\x9f\xa9\xe9\x98\xb5\n'}
+[6.800478] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity_covariance[4] = 1e6;\n'}
+[6.800615] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.angular_velocity_covariance[8] = 1e-6;\n'}
+[6.800748] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.linear_acceleration.x = imu_msg_.linear_acceleration.x;   // Triaxial acceleration //\xe4\xb8\x89\xe8\xbd\xb4\xe7\xba\xbf\xe6\x80\xa7\xe5\x8a\xa0\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.800928] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.linear_acceleration.y = imu_msg_.linear_acceleration.y;\n'}
+[6.801074] (turn_on_32chassis) StdoutLine: {'line': b'7: +  Imu_Data_Pub.linear_acceleration.z = imu_msg_.linear_acceleration.z;\n'}
+[6.801212] (turn_on_32chassis) StdoutLine: {'line': b'7: +  imu_publisher->publish(Imu_Data_Pub);   // Pub IMU topic //\xe5\x8f\x91\xe5\xb8\x83IMU\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.801349] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -270,35 +277,87 @@\n'}
+[6.801484] (turn_on_32chassis) StdoutLine: {'line': b'7: -    short transition; // intermediate variable //\xe4\xb8\xad\xe9\x97\xb4\xe5\x8f\x98\xe9\x87\x8f\n'}
+[6.801626] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.801760] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[0] = FRAME_HEADER; // frame head 0x7B //\xe5\xb8\xa7\xe5\xa4\xb40X7B\n'}
+[6.801898] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[1] = 0;            // set aside //\xe9\xa2\x84\xe7\x95\x99\xe4\xbd\x8d\n'}
+[6.802037] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[2] = 0;            // set aside //\xe9\xa2\x84\xe7\x95\x99\xe4\xbd\x8d\n'}
+[6.802189] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.802328] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // The target velocity of the X-axis of the robot\n'}
+[6.802463] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbax\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe7\xba\xbf\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.802599] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = 0;\n'}
+[6.802732] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = twist_aux->linear.x * 1000; // \xe5\xb0\x86\xe6\xb5\xae\xe7\x82\xb9\xe6\x95\xb0\xe6\x94\xbe\xe5\xa4\xa7\xe4\xb8\x80\xe5\x8d\x83\xe5\x80\x8d\xef\xbc\x8c\xe7\xae\x80\xe5\x8c\x96\xe4\xbc\xa0\xe8\xbe\x93\n'}
+[6.802865] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[4] = transition;       // \xe5\x8f\x96\xe6\x95\xb0\xe6\x8d\xae\xe7\x9a\x84\xe4\xbd\x8e8\xe4\xbd\x8d\n'}
+[6.803001] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[3] = transition >> 8;  // \xe5\x8f\x96\xe6\x95\xb0\xe6\x8d\xae\xe7\x9a\x84\xe9\xab\x988\xe4\xbd\x8d\n'}
+[6.803139] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.803274] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // The target velocity of the Y-axis of the robot\n'}
+[6.803406] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbay\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe7\xba\xbf\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.803538] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = 0;\n'}
+[6.803674] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = twist_aux->linear.y * 1000;\n'}
+[6.803809] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[6] = transition;\n'}
+[6.803958] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[5] = transition >> 8;\n'}
+[6.804089] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.804225] (turn_on_32chassis) StdoutLine: {'line': b"7: -    // The target angular velocity of the robot's Z axis\n"}
+[6.804359] (turn_on_32chassis) StdoutLine: {'line': b'7: -    // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbaz\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.804517] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = 0;\n'}
+[6.804651] (turn_on_32chassis) StdoutLine: {'line': b'7: -    transition = twist_aux->angular.z * 1000;\n'}
+[6.804803] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[8] = transition;\n'}
+[6.804944] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[7] = transition >> 8;\n'}
+[6.805079] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.805207] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[9] = check_sum(send_data_.buffer, 9); // For the BCC check bits, see the Check_Sum function //BCC\xe6\xa0\xa1\xe9\xaa\x8c\xe4\xbd\x8d\xef\xbc\x8c\xe8\xa7\x84\xe5\x88\x99\xe5\x8f\x82\xe8\xa7\x81Check_Sum\xe5\x87\xbd\xe6\x95\xb0\n'}
+[6.805363] (turn_on_32chassis) StdoutLine: {'line': b'7: -    send_data_.buffer[10] = FRAME_TAIL;                     // frame tail 0x7D //\xe5\xb8\xa7\xe5\xb0\xbe0X7D\n'}
+[6.805500] (turn_on_32chassis) StdoutLine: {'line': b'7: -    try\n'}
+[6.805635] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.805766] (turn_on_32chassis) StdoutLine: {'line': b'7: -        STM32_Serial.write(send_data_.buffer, sizeof(send_data_.buffer)); // Sends data to the downloader via serial port //\xe9\x80\x9a\xe8\xbf\x87\xe4\xb8\xb2\xe5\x8f\xa3\xe5\x90\x91\xe4\xb8\x8b\xe4\xbd\x8d\xe6\x9c\xba\xe5\x8f\x91\xe9\x80\x81\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.805905] (turn_on_32chassis) StdoutLine: {'line': b'7: -        RCLCPP_INFO(this->get_logger(), "Sent data: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",\n'}
+[6.806041] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    send_data_.buffer[0], send_data_.buffer[1], send_data_.buffer[2], send_data_.buffer[3], send_data_.buffer[4],\n'}
+[6.806176] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    send_data_.buffer[5], send_data_.buffer[6], send_data_.buffer[7], send_data_.buffer[8], send_data_.buffer[9], send_data_.buffer[10]);\n'}
+[6.806313] (turn_on_32chassis) StdoutLine: {'line': b'7: +  short transition;   // intermediate variable //\xe4\xb8\xad\xe9\x97\xb4\xe5\x8f\x98\xe9\x87\x8f\n'}
+[6.806450] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.806586] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[0] = FRAME_HEADER;   // frame head 0x7B //\xe5\xb8\xa7\xe5\xa4\xb40X7B\n'}
+[6.806729] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[1] = 0;              // set aside //\xe9\xa2\x84\xe7\x95\x99\xe4\xbd\x8d\n'}
+[6.806866] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[2] = 0;              // set aside //\xe9\xa2\x84\xe7\x95\x99\xe4\xbd\x8d\n'}
+[6.807000] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.807133] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // The target velocity of the X-axis of the robot\n'}
+[6.807270] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbax\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe7\xba\xbf\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.807406] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = 0;\n'}
+[6.807540] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = twist_aux->linear.x * 1000;   // \xe5\xb0\x86\xe6\xb5\xae\xe7\x82\xb9\xe6\x95\xb0\xe6\x94\xbe\xe5\xa4\xa7\xe4\xb8\x80\xe5\x8d\x83\xe5\x80\x8d\xef\xbc\x8c\xe7\xae\x80\xe5\x8c\x96\xe4\xbc\xa0\xe8\xbe\x93\n'}
+[6.807673] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[4] = transition;         // \xe5\x8f\x96\xe6\x95\xb0\xe6\x8d\xae\xe7\x9a\x84\xe4\xbd\x8e8\xe4\xbd\x8d\n'}
+[6.807812] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[3] = transition >> 8;    // \xe5\x8f\x96\xe6\x95\xb0\xe6\x8d\xae\xe7\x9a\x84\xe9\xab\x988\xe4\xbd\x8d\n'}
+[6.807945] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.808080] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // The target velocity of the Y-axis of the robot\n'}
+[6.808212] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbay\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe7\xba\xbf\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.808347] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = 0;\n'}
+[6.808480] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = twist_aux->linear.y * 1000;\n'}
+[6.808610] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[6] = transition;\n'}
+[6.808742] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[5] = transition >> 8;\n'}
+[6.808904] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.809044] (turn_on_32chassis) StdoutLine: {'line': b"7: +  // The target angular velocity of the robot's Z axis\n"}
+[6.809201] (turn_on_32chassis) StdoutLine: {'line': b'7: +  // \xe6\x9c\xba\xe5\x99\xa8\xe4\xba\xbaz\xe8\xbd\xb4\xe7\x9a\x84\xe7\x9b\xae\xe6\xa0\x87\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\n'}
+[6.809345] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = 0;\n'}
+[6.809483] (turn_on_32chassis) StdoutLine: {'line': b'7: +  transition = twist_aux->angular.z * 1000;\n'}
+[6.809620] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[8] = transition;\n'}
+[6.809755] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[7] = transition >> 8;\n'}
+[6.809895] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.810029] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[9] = check_sum(send_data_.buffer, 9);   // For the BCC check bits, see the Check_Sum function //BCC\xe6\xa0\xa1\xe9\xaa\x8c\xe4\xbd\x8d\xef\xbc\x8c\xe8\xa7\x84\xe5\x88\x99\xe5\x8f\x82\xe8\xa7\x81Check_Sum\xe5\x87\xbd\xe6\x95\xb0\n'}
+[6.810171] (turn_on_32chassis) StdoutLine: {'line': b'7: +  send_data_.buffer[10] = FRAME_TAIL;                       // frame tail 0x7D //\xe5\xb8\xa7\xe5\xb0\xbe0X7D\n'}
+[6.810333] (turn_on_32chassis) StdoutLine: {'line': b'7: +  try {\n'}
+[6.810481] (turn_on_32chassis) StdoutLine: {'line': b'7: +    STM32_Serial.write(send_data_.buffer, sizeof(send_data_.buffer));     // Sends data to the downloader via serial port //\xe9\x80\x9a\xe8\xbf\x87\xe4\xb8\xb2\xe5\x8f\xa3\xe5\x90\x91\xe4\xb8\x8b\xe4\xbd\x8d\xe6\x9c\xba\xe5\x8f\x91\xe9\x80\x81\xe6\x95\xb0\xe6\x8d\xae\n'}
+[6.810627] (turn_on_32chassis) StdoutLine: {'line': b'7: +    RCLCPP_INFO(\n'}
+[6.810766] (turn_on_32chassis) StdoutLine: {'line': b'7: +      this->get_logger(), "Sent data: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",\n'}
+[6.810900] (turn_on_32chassis) StdoutLine: {'line': b'7: +      send_data_.buffer[0], send_data_.buffer[1], send_data_.buffer[2], send_data_.buffer[3],\n'}
+[6.811053] (turn_on_32chassis) StdoutLine: {'line': b'7: +      send_data_.buffer[4],\n'}
+[6.811190] (turn_on_32chassis) StdoutLine: {'line': b'7: +      send_data_.buffer[5], send_data_.buffer[6], send_data_.buffer[7], send_data_.buffer[8],\n'}
+[6.811326] (turn_on_32chassis) StdoutLine: {'line': b'7: +      send_data_.buffer[9], send_data_.buffer[10]);\n'}
+[6.811458] (turn_on_32chassis) StdoutLine: {'line': b'7: +  } catch (serial::IOException & e) {\n'}
+[6.811599] (turn_on_32chassis) StdoutLine: {'line': b'7: +    RCLCPP_ERROR(this->get_logger(), ("Unable to send data through serial port"));     // If sending data fails, an error message is printed //\xe5\xa6\x82\xe6\x9e\x9c\xe5\x8f\x91\xe9\x80\x81\xe6\x95\xb0\xe6\x8d\xae\xe5\xa4\xb1\xe8\xb4\xa5\xef\xbc\x8c\xe6\x89\x93\xe5\x8d\xb0\xe9\x94\x99\xe8\xaf\xaf\xe4\xbf\xa1\xe6\x81\xaf\n'}
+[6.811740] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.811871] (turn_on_32chassis) StdoutLine: {'line': b'7: +}\n'}
+[6.811999] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.812136] (turn_on_32chassis) StdoutLine: {'line': b'7: +void TurnOn32Chassis::run()\n'}
+[6.812267] (turn_on_32chassis) StdoutLine: {'line': b'7: +{\n'}
+[6.812397] (turn_on_32chassis) StdoutLine: {'line': b'7: +  RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis");\n'}
+[6.812525] (turn_on_32chassis) StdoutLine: {'line': b'7: +  last_time_ = rclcpp::Node::now();\n'}
+[6.812661] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.812810] (turn_on_32chassis) StdoutLine: {'line': b'7: +  while (rclcpp::ok()) {\n'}
+[6.812951] (turn_on_32chassis) StdoutLine: {'line': b'7: +    try {\n'}
+[6.813083] (turn_on_32chassis) StdoutLine: {'line': b'7: +      current_time_ = rclcpp::Node::now();\n'}
+[6.813224] (turn_on_32chassis) StdoutLine: {'line': b'7: +      sample_time_ = (current_time_ - last_time_).seconds();\n'}
+[6.813360] (turn_on_32chassis) StdoutLine: {'line': b'7: +      // RCLCPP_INFO(this->get_logger(), "sample_time_: %f", sample_time_);\n'}
+[6.813493] (turn_on_32chassis) StdoutLine: {'line': b'7: +      // \xe9\x87\x87\xe6\xa0\xb7\xe9\xa2\x91\xe7\x8e\x87\n'}
+[6.813644] (turn_on_32chassis) StdoutLine: {'line': b'7: +      if (TurnOn32Chassis::receive_row_serialdata() == true) {\n'}
+[6.813777] (turn_on_32chassis) StdoutLine: {'line': b'7: +        // RCLCPP_INFO(this->get_logger(), "SAMPLING_FREQ: %f", 1 / sample_time_);\n'}
+[6.813909] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.814039] (turn_on_32chassis) StdoutLine: {'line': b'7: +        // \xe5\xba\x94\xe7\x94\xa8\xe7\xbc\xa9\xe6\x94\xbe\xe7\xb3\xbb\xe6\x95\xb0\n'}
+[6.814175] (turn_on_32chassis) StdoutLine: {'line': b'7: +        robot_vel_.X = robot_vel_.X * odom_x_scale_;\n'}
+[6.814305] (turn_on_32chassis) StdoutLine: {'line': b'7: +        robot_vel_.Y = robot_vel_.Y * odom_y_scale;\n'}
+[6.814437] (turn_on_32chassis) StdoutLine: {'line': b'7: +        if (robot_vel_.Z >= 0) {\n'}
+[6.814567] (turn_on_32chassis) StdoutLine: {'line': b'7: +          robot_vel_.Z = robot_vel_.Z * odom_z_scale_positive;\n'}
+[6.814725] (turn_on_32chassis) StdoutLine: {'line': b'7: +        } else {\n'}
+[6.814858] (turn_on_32chassis) StdoutLine: {'line': b'7: +          robot_vel_.Z = robot_vel_.Z * odom_z_scale_negative;\n'}
+[6.814991] (turn_on_32chassis) StdoutLine: {'line': b'7: +        }\n'}
+[6.815122] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.815255] (turn_on_32chassis) StdoutLine: {'line': b'7: +        robot_pos_.X += (robot_vel_.X * cos(robot_pos_.Z) - robot_vel_.Y * sin(robot_pos_.Z)) *\n'}
+[6.815388] (turn_on_32chassis) StdoutLine: {'line': b'7: +          sample_time_;                                                                                               // Calculate the displacement in the X direction, unit: m //\xe8\xae\xa1\xe7\xae\x97X\xe6\x96\xb9\xe5\x90\x91\xe7\x9a\x84\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9am\n'}
+[6.815527] (turn_on_32chassis) StdoutLine: {'line': b'7: +        robot_pos_.Y += (robot_vel_.X * sin(robot_pos_.Z) + robot_vel_.Y * cos(robot_pos_.Z)) *\n'}
+[6.815659] (turn_on_32chassis) StdoutLine: {'line': b'7: +          sample_time_;                                                                                               // Calculate the displacement in the Y direction, unit: m //\xe8\xae\xa1\xe7\xae\x97Y\xe6\x96\xb9\xe5\x90\x91\xe7\x9a\x84\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9am\n'}
+[6.815800] (turn_on_32chassis) StdoutLine: {'line': b'7: +        robot_pos_.Z += robot_vel_.Z * sample_time_;                                                                  // The angular displacement about the Z axis, in rad //\xe7\xbb\x95Z\xe8\xbd\xb4\xe7\x9a\x84\xe8\xa7\x92\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9arad\n'}
+[6.815936] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.816066] (turn_on_32chassis) StdoutLine: {'line': b'7: +        // \xe9\x80\x9a\xe8\xbf\x87IMU\xe7\xbb\x95\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\xe4\xb8\x8e\xe4\xb8\x89\xe8\xbd\xb4\xe5\x8a\xa0\xe9\x80\x9f\xe5\xba\xa6\xe8\xae\xa1\xe7\xae\x97\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\n'}
+[6.816198] (turn_on_32chassis) StdoutLine: {'line': b'7: +        Quaternion_Solution(\n'}
+[6.816334] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.angular_velocity.x, imu_msg_.angular_velocity.y, imu_msg_.angular_velocity.z,\n'}
+[6.816463] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.linear_acceleration.x, imu_msg_.linear_acceleration.y,\n'}
+[6.816594] (turn_on_32chassis) StdoutLine: {'line': b'7: +          imu_msg_.linear_acceleration.z);\n'}
+[6.816724] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.816881] (turn_on_32chassis) StdoutLine: {'line': b'7: +        Publish_Odom();              // Pub the speedometer topic //\xe5\x8f\x91\xe5\xb8\x83\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.817019] (turn_on_32chassis) StdoutLine: {'line': b'7: +        Publish_ImuSensor();         // Pub the IMU topic //\xe5\x8f\x91\xe5\xb8\x83IMU\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.817151] (turn_on_32chassis) StdoutLine: {'line': b'7: +        // Publish_Voltage();   // Pub the topic of power supply voltage //\xe5\x8f\x91\xe5\xb8\x83\xe7\x94\xb5\xe6\xba\x90\xe7\x94\xb5\xe5\x8e\x8b\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.817300] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.817437] (turn_on_32chassis) StdoutLine: {'line': b'7: +        last_time_ = current_time_;         // Record the time and use it to calculate the time interval //\xe8\xae\xb0\xe5\xbd\x95\xe6\x97\xb6\xe9\x97\xb4\xef\xbc\x8c\xe7\x94\xa8\xe4\xba\x8e\xe8\xae\xa1\xe7\xae\x97\xe6\x97\xb6\xe9\x97\xb4\xe9\x97\xb4\xe9\x9a\x94\n'}
+[6.817578] (turn_on_32chassis) StdoutLine: {'line': b'7: +      }\n'}
+[6.817731] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.817864] (turn_on_32chassis) StdoutLine: {'line': b'7: +      rclcpp::spin_some(this->get_node_base_interface());\n'}
+[6.817997] (turn_on_32chassis) StdoutLine: {'line': b'7: +    } catch (const rclcpp::exceptions::RCLError & e) {\n'}
+[6.818128] (turn_on_32chassis) StdoutLine: {'line': b'7: +      RCLCPP_ERROR(this->get_logger(), "unexpectedly failed whith %s", e.what());\n'}
+[6.818265] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -306,53 +365 @@\n'}
+[6.818396] (turn_on_32chassis) StdoutLine: {'line': b'7: -    catch (serial::IOException &e)\n'}
+[6.818527] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.818656] (turn_on_32chassis) StdoutLine: {'line': b'7: -        RCLCPP_ERROR(this->get_logger(), ("Unable to send data through serial port")); // If sending data fails, an error message is printed //\xe5\xa6\x82\xe6\x9e\x9c\xe5\x8f\x91\xe9\x80\x81\xe6\x95\xb0\xe6\x8d\xae\xe5\xa4\xb1\xe8\xb4\xa5\xef\xbc\x8c\xe6\x89\x93\xe5\x8d\xb0\xe9\x94\x99\xe8\xaf\xaf\xe4\xbf\xa1\xe6\x81\xaf\n'}
+[6.818798] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.818943] (turn_on_32chassis) StdoutLine: {'line': b'7: -}\n'}
+[6.819077] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.819207] (turn_on_32chassis) StdoutLine: {'line': b'7: -void TurnOn32Chassis::run()\n'}
+[6.819347] (turn_on_32chassis) StdoutLine: {'line': b'7: -{\n'}
+[6.819483] (turn_on_32chassis) StdoutLine: {'line': b'7: -    RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis");\n'}
+[6.819618] (turn_on_32chassis) StdoutLine: {'line': b'7: -    last_time_ = rclcpp::Node::now();\n'}
+[6.819754] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.819891] (turn_on_32chassis) StdoutLine: {'line': b'7: -    while (rclcpp::ok())\n'}
+[6.820020] (turn_on_32chassis) StdoutLine: {'line': b'7: -    {\n'}
+[6.820152] (turn_on_32chassis) StdoutLine: {'line': b'7: -        try\n'}
+[6.820282] (turn_on_32chassis) StdoutLine: {'line': b'7: -        {\n'}
+[6.820416] (turn_on_32chassis) StdoutLine: {'line': b'7: -            current_time_ = rclcpp::Node::now();\n'}
+[6.820546] (turn_on_32chassis) StdoutLine: {'line': b'7: -            sample_time_ = (current_time_ - last_time_).seconds();\n'}
+[6.820678] (turn_on_32chassis) StdoutLine: {'line': b'7: -            // RCLCPP_INFO(this->get_logger(), "sample_time_: %f", sample_time_);\n'}
+[6.820831] (turn_on_32chassis) StdoutLine: {'line': b'7: -            // \xe9\x87\x87\xe6\xa0\xb7\xe9\xa2\x91\xe7\x8e\x87\n'}
+[6.820970] (turn_on_32chassis) StdoutLine: {'line': b'7: -            if (TurnOn32Chassis::receive_row_serialdata() == true)\n'}
+[6.821104] (turn_on_32chassis) StdoutLine: {'line': b'7: -            {\n'}
+[6.821232] (turn_on_32chassis) StdoutLine: {'line': b'7: -                // RCLCPP_INFO(this->get_logger(), "SAMPLING_FREQ: %f", 1 / sample_time_);\n'}
+[6.821366] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.821495] (turn_on_32chassis) StdoutLine: {'line': b'7: -                // \xe5\xba\x94\xe7\x94\xa8\xe7\xbc\xa9\xe6\x94\xbe\xe7\xb3\xbb\xe6\x95\xb0\n'}
+[6.821625] (turn_on_32chassis) StdoutLine: {'line': b'7: -                robot_vel_.X = robot_vel_.X * odom_x_scale_;\n'}
+[6.821755] (turn_on_32chassis) StdoutLine: {'line': b'7: -                robot_vel_.Y = robot_vel_.Y * odom_y_scale;\n'}
+[6.821890] (turn_on_32chassis) StdoutLine: {'line': b'7: -                if (robot_vel_.Z >= 0)\n'}
+[6.822019] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    robot_vel_.Z = robot_vel_.Z * odom_z_scale_positive;\n'}
+[6.822168] (turn_on_32chassis) StdoutLine: {'line': b'7: -                else\n'}
+[6.822298] (turn_on_32chassis) StdoutLine: {'line': b'7: -                    robot_vel_.Z = robot_vel_.Z * odom_z_scale_negative;\n'}
+[6.822433] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.822562] (turn_on_32chassis) StdoutLine: {'line': b'7: -                robot_pos_.X += (robot_vel_.X * cos(robot_pos_.Z) - robot_vel_.Y * sin(robot_pos_.Z)) * sample_time_; // Calculate the displacement in the X direction, unit: m //\xe8\xae\xa1\xe7\xae\x97X\xe6\x96\xb9\xe5\x90\x91\xe7\x9a\x84\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9am\n'}
+[6.822698] (turn_on_32chassis) StdoutLine: {'line': b'7: -                robot_pos_.Y += (robot_vel_.X * sin(robot_pos_.Z) + robot_vel_.Y * cos(robot_pos_.Z)) * sample_time_; // Calculate the displacement in the Y direction, unit: m //\xe8\xae\xa1\xe7\xae\x97Y\xe6\x96\xb9\xe5\x90\x91\xe7\x9a\x84\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9am\n'}
+[6.822834] (turn_on_32chassis) StdoutLine: {'line': b'7: -                robot_pos_.Z += robot_vel_.Z * sample_time_;                                                          // The angular displacement about the Z axis, in rad //\xe7\xbb\x95Z\xe8\xbd\xb4\xe7\x9a\x84\xe8\xa7\x92\xe4\xbd\x8d\xe7\xa7\xbb\xef\xbc\x8c\xe5\x8d\x95\xe4\xbd\x8d\xef\xbc\x9arad\n'}
+[6.822973] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.823104] (turn_on_32chassis) StdoutLine: {'line': b'7: -                // \xe9\x80\x9a\xe8\xbf\x87IMU\xe7\xbb\x95\xe4\xb8\x89\xe8\xbd\xb4\xe8\xa7\x92\xe9\x80\x9f\xe5\xba\xa6\xe4\xb8\x8e\xe4\xb8\x89\xe8\xbd\xb4\xe5\x8a\xa0\xe9\x80\x9f\xe5\xba\xa6\xe8\xae\xa1\xe7\xae\x97\xe4\xb8\x89\xe8\xbd\xb4\xe5\xa7\xbf\xe6\x80\x81\n'}
+[6.823232] (-) TimerEvent: {}
+[6.823273] (turn_on_32chassis) StdoutLine: {'line': b'7: -                Quaternion_Solution(imu_msg_.angular_velocity.x, imu_msg_.angular_velocity.y, imu_msg_.angular_velocity.z,\n'}
+[6.823433] (turn_on_32chassis) StdoutLine: {'line': b'7: -                                    imu_msg_.linear_acceleration.x, imu_msg_.linear_acceleration.y, imu_msg_.linear_acceleration.z);\n'}
+[6.823572] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.823704] (turn_on_32chassis) StdoutLine: {'line': b'7: -                Publish_Odom();      // Pub the speedometer topic //\xe5\x8f\x91\xe5\xb8\x83\xe9\x87\x8c\xe7\xa8\x8b\xe8\xae\xa1\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.823836] (turn_on_32chassis) StdoutLine: {'line': b'7: -                Publish_ImuSensor(); // Pub the IMU topic //\xe5\x8f\x91\xe5\xb8\x83IMU\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.823970] (turn_on_32chassis) StdoutLine: {'line': b'7: -                // Publish_Voltage();   // Pub the topic of power supply voltage //\xe5\x8f\x91\xe5\xb8\x83\xe7\x94\xb5\xe6\xba\x90\xe7\x94\xb5\xe5\x8e\x8b\xe8\xaf\x9d\xe9\xa2\x98\n'}
+[6.824102] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.824232] (turn_on_32chassis) StdoutLine: {'line': b'7: -                last_time_ = current_time_; // Record the time and use it to calculate the time interval //\xe8\xae\xb0\xe5\xbd\x95\xe6\x97\xb6\xe9\x97\xb4\xef\xbc\x8c\xe7\x94\xa8\xe4\xba\x8e\xe8\xae\xa1\xe7\xae\x97\xe6\x97\xb6\xe9\x97\xb4\xe9\x97\xb4\xe9\x9a\x94\n'}
+[6.824365] (turn_on_32chassis) StdoutLine: {'line': b'7: -            }\n'}
+[6.824499] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.824631] (turn_on_32chassis) StdoutLine: {'line': b'7: -            rclcpp::spin_some(this->get_node_base_interface());\n'}
+[6.824773] (turn_on_32chassis) StdoutLine: {'line': b'7: -        }\n'}
+[6.824914] (turn_on_32chassis) StdoutLine: {'line': b'7: -        catch (const rclcpp::exceptions::RCLError &e)\n'}
+[6.825052] (turn_on_32chassis) StdoutLine: {'line': b'7: -        {\n'}
+[6.825183] (turn_on_32chassis) StdoutLine: {'line': b'7: -            RCLCPP_ERROR(this->get_logger(), "unexpectedly failed whith %s", e.what());\n'}
+[6.825315] (turn_on_32chassis) StdoutLine: {'line': b'7: -        }\n'}
+[6.825460] (turn_on_32chassis) StdoutLine: {'line': b'7: -    }\n'}
+[6.825597] (turn_on_32chassis) StdoutLine: {'line': b'7: +  }\n'}
+[6.825728] (turn_on_32chassis) StdoutLine: {'line': b'7: @@ -363,8 +370,8 @@\n'}
+[6.825858] (turn_on_32chassis) StdoutLine: {'line': b'7: -    RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis::~TurnOn32Chassis");\n'}
+[6.825988] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.826123] (turn_on_32chassis) StdoutLine: {'line': b'7: -    uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0X7D};\n'}
+[6.826252] (turn_on_32chassis) StdoutLine: {'line': b'7: -    tx_data[9] = check_sum(tx_data, 9);\n'}
+[6.826380] (turn_on_32chassis) StdoutLine: {'line': b'7: -    STM32_Serial.write(tx_data, sizeof(tx_data));\n'}
+[6.826510] (turn_on_32chassis) StdoutLine: {'line': b'7: -\n'}
+[6.826647] (turn_on_32chassis) StdoutLine: {'line': b'7: -    STM32_Serial.close();\n'}
+[6.826779] (turn_on_32chassis) StdoutLine: {'line': b'7: -}\n'}
+[6.826909] (turn_on_32chassis) StdoutLine: {'line': b'7: +  RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis::~TurnOn32Chassis");\n'}
+[6.827038] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.827174] (turn_on_32chassis) StdoutLine: {'line': b'7: +  uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0X7D};\n'}
+[6.827304] (turn_on_32chassis) StdoutLine: {'line': b'7: +  tx_data[9] = check_sum(tx_data, 9);\n'}
+[6.827435] (turn_on_32chassis) StdoutLine: {'line': b'7: +  STM32_Serial.write(tx_data, sizeof(tx_data));\n'}
+[6.827565] (turn_on_32chassis) StdoutLine: {'line': b'7: +\n'}
+[6.827698] (turn_on_32chassis) StdoutLine: {'line': b'7: +  STM32_Serial.close();\n'}
+[6.827828] (turn_on_32chassis) StdoutLine: {'line': b'7: +}\n'}
+[6.827959] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.828090] (turn_on_32chassis) StdoutLine: {'line': b'7: 5 files with code style divergence\n'}
+[6.828236] (turn_on_32chassis) StdoutLine: {'line': b"7: No code style divergence in file 'include/turn_on_32chassis/wheel_trust_monitor.hpp'\n"}
+[6.828369] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.828500] (turn_on_32chassis) StdoutLine: {'line': b"7: No code style divergence in file 'src/imu_source_selector.cpp'\n"}
+[6.828631] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.828775] (turn_on_32chassis) StdoutLine: {'line': b"7: No code style divergence in file 'test/test_wheel_trust_monitor.cpp'\n"}
+[6.828922] (turn_on_32chassis) StdoutLine: {'line': b'7: \n'}
+[6.829062] (turn_on_32chassis) StdoutLine: {'line': b'7: -- run_test.py: return code 1\n'}
+[6.829198] (turn_on_32chassis) StdoutLine: {'line': b"7: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml'\n"}
+[6.829332] (turn_on_32chassis) StdoutLine: {'line': b'7/8 Test #7: uncrustify ................................***Failed    0.61 sec\n'}
+[6.829465] (turn_on_32chassis) StdoutLine: {'line': b'test 8\n'}
+[6.829598] (turn_on_32chassis) StdoutLine: {'line': b'    Start 8: xmllint\n'}
+[6.829729] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[6.829858] (turn_on_32chassis) StdoutLine: {'line': b'8: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_xmllint/xmllint.txt" "--command" "/opt/ros/humble/bin/ament_xmllint" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml"\n'}
+[6.830006] (turn_on_32chassis) StdoutLine: {'line': b'8: Test timeout computed to be: 60\n'}
+[6.885856] (turn_on_32chassis) StdoutLine: {'line': b"8: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':\n"}
+[6.886324] (turn_on_32chassis) StdoutLine: {'line': b'8:  - /opt/ros/humble/bin/ament_xmllint --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml\n'}
+[6.923383] (-) TimerEvent: {}
+[7.023699] (-) TimerEvent: {}
+[7.124070] (-) TimerEvent: {}
+[7.224447] (-) TimerEvent: {}
+[7.324852] (-) TimerEvent: {}
+[7.425289] (-) TimerEvent: {}
+[7.525950] (-) TimerEvent: {}
+[7.626417] (-) TimerEvent: {}
+[7.726860] (-) TimerEvent: {}
+[7.827271] (-) TimerEvent: {}
+[7.927695] (-) TimerEvent: {}
+[8.028103] (-) TimerEvent: {}
+[8.128495] (-) TimerEvent: {}
+[8.228899] (-) TimerEvent: {}
+[8.329275] (-) TimerEvent: {}
+[8.429701] (-) TimerEvent: {}
+[8.530128] (-) TimerEvent: {}
+[8.630526] (-) TimerEvent: {}
+[8.730912] (-) TimerEvent: {}
+[8.831254] (-) TimerEvent: {}
+[8.931576] (-) TimerEvent: {}
+[9.031876] (-) TimerEvent: {}
+[9.045966] (turn_on_32chassis) StdoutLine: {'line': b"8: File 'package.xml' is valid\n"}
+[9.046548] (turn_on_32chassis) StdoutLine: {'line': b'8: \n'}
+[9.046871] (turn_on_32chassis) StdoutLine: {'line': b'8: No problems found\n'}
+[9.077195] (turn_on_32chassis) StdoutLine: {'line': b'8: -- run_test.py: return code 0\n'}
+[9.077822] (turn_on_32chassis) StdoutLine: {'line': b"8: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml'\n"}
+[9.100343] (turn_on_32chassis) StdoutLine: {'line': b'8/8 Test #8: xmllint ...................................   Passed    2.37 sec\n'}
+[9.101741] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[9.102214] (turn_on_32chassis) StdoutLine: {'line': b'50% tests passed, 4 tests failed out of 8\n'}
+[9.102548] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[9.102853] (turn_on_32chassis) StdoutLine: {'line': b'Label Time Summary:\n'}
+[9.103177] (turn_on_32chassis) StdoutLine: {'line': b'cppcheck       =   0.46 sec*proc (1 test)\n'}
+[9.103464] (turn_on_32chassis) StdoutLine: {'line': b'flake8         =   0.91 sec*proc (1 test)\n'}
+[9.103742] (turn_on_32chassis) StdoutLine: {'line': b'gtest          =   0.22 sec*proc (1 test)\n'}
+[9.104009] (turn_on_32chassis) StdoutLine: {'line': b'launch_test    =   3.36 sec*proc (1 test)\n'}
+[9.104264] (turn_on_32chassis) StdoutLine: {'line': b'lint_cmake     =   0.42 sec*proc (1 test)\n'}
+[9.104523] (turn_on_32chassis) StdoutLine: {'line': b'linter         =   5.38 sec*proc (6 tests)\n'}
+[9.104796] (turn_on_32chassis) StdoutLine: {'line': b'pep257         =   0.61 sec*proc (1 test)\n'}
+[9.105084] (turn_on_32chassis) StdoutLine: {'line': b'uncrustify     =   0.61 sec*proc (1 test)\n'}
+[9.105355] (turn_on_32chassis) StdoutLine: {'line': b'xmllint        =   2.37 sec*proc (1 test)\n'}
+[9.105605] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[9.105856] (turn_on_32chassis) StdoutLine: {'line': b'Total Test time (real) =   8.97 sec\n'}
+[9.106110] (turn_on_32chassis) StdoutLine: {'line': b'\n'}
+[9.106368] (turn_on_32chassis) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[9.106635] (turn_on_32chassis) StdoutLine: {'line': b'\t  2 - test_test_slip_aware_odometry_launch.py (Failed)\n'}
+[9.106888] (turn_on_32chassis) StdoutLine: {'line': b'\t  4 - flake8 (Failed)\n'}
+[9.107144] (turn_on_32chassis) StdoutLine: {'line': b'\t  5 - lint_cmake (Failed)\n'}
+[9.107393] (turn_on_32chassis) StdoutLine: {'line': b'\t  7 - uncrustify (Failed)\n'}
+[9.108717] (turn_on_32chassis) StderrLine: {'line': b'Errors while running CTest\n'}
+[9.109485] (turn_on_32chassis) StderrLine: {'line': b'Output from these tests are in: /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/Testing/Temporary/LastTest.log\n'}
+[9.109828] (turn_on_32chassis) StderrLine: {'line': b'Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.\n'}
+[9.113492] (turn_on_32chassis) CommandEnded: {'returncode': 8}
+[9.115014] (turn_on_32chassis) TestFailure: {'identifier': 'turn_on_32chassis'}
+[9.115348] (turn_on_32chassis) JobEnded: {'identifier': 'turn_on_32chassis', 'rc': 0}
+[9.116994] (-) EventReactorShutdown: {}

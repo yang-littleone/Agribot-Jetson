@@ -35,33 +35,33 @@ using namespace std;
 
 // Covariance matrix for speedometer topic data for robt_pose_ekf feature pack
 // 协方差矩阵，用于里程计话题数据，用于robt_pose_ekf功能包
-const double odom_pose_covariance[36] = {1e-3, 0, 0, 0, 0, 0,
-                                         0, 1e-3, 0, 0, 0, 0,
+const double odom_pose_covariance[36] = {5e-2, 0, 0, 0, 0, 0,
+                                         0, 5e-2, 0, 0, 0, 0,
                                          0, 0, 1e6, 0, 0, 0,
                                          0, 0, 0, 1e6, 0, 0,
                                          0, 0, 0, 0, 1e6, 0,
-                                         0, 0, 0, 0, 0, 1e3};
+                                         0, 0, 0, 0, 0, 2e-1};
 
-const double odom_pose_covariance2[36] = {1e-9, 0, 0, 0, 0, 0,
-                                          0, 1e-3, 1e-9, 0, 0, 0,
+const double odom_pose_covariance2[36] = {1e-2, 0, 0, 0, 0, 0,
+                                          0, 1e-2, 0, 0, 0, 0,
                                           0, 0, 1e6, 0, 0, 0,
                                           0, 0, 0, 1e6, 0, 0,
                                           0, 0, 0, 0, 1e6, 0,
-                                          0, 0, 0, 0, 0, 1e-9};
+                                          0, 0, 0, 0, 0, 5e-2};
 
-const double odom_twist_covariance[36] = {1e-3, 0, 0, 0, 0, 0,
-                                          0, 1e-3, 0, 0, 0, 0,
+const double odom_twist_covariance[36] = {2e-2, 0, 0, 0, 0, 0,
+                                          0, 2e-2, 0, 0, 0, 0,
                                           0, 0, 1e6, 0, 0, 0,
                                           0, 0, 0, 1e6, 0, 0,
                                           0, 0, 0, 0, 1e6, 0,
-                                          0, 0, 0, 0, 0, 1e3};
+                                          0, 0, 0, 0, 0, 5e-2};
 
-const double odom_twist_covariance2[36] = {1e-9, 0, 0, 0, 0, 0,
-                                           0, 1e-3, 1e-9, 0, 0, 0,
+const double odom_twist_covariance2[36] = {2.5e-3, 0, 0, 0, 0, 0,
+                                           0, 2.5e-3, 0, 0, 0, 0,
                                            0, 0, 1e6, 0, 0, 0,
                                            0, 0, 0, 1e6, 0, 0,
                                            0, 0, 0, 0, 1e6, 0,
-                                           0, 0, 0, 0, 0, 1e-9};
+                                           0, 0, 0, 0, 0, 1e-2};
 
 typedef struct
 {

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_wheel_trust_monitor.dir/test/test_wheel_trust_monitor.cpp.o -o test_wheel_trust_monitor  gtest/libgtest_main.a gtest/libgtest.a -pthread 

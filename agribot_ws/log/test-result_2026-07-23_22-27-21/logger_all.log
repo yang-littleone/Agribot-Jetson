@@ -1,0 +1,13 @@
+[0.228s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'test-result', '--verbose']
+[0.229s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test-result', test_result_base='build', all=False, result_files_only=False, verbose=True, delete=False, delete_yes=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff8bdcac50>, verb_extension=<colcon_test_result.verb.test_result.TestResultVerb object at 0xffff8bdc99c0>, main=<bound method TestResultVerb.main of <colcon_test_result.verb.test_result.TestResultVerb object at 0xffff8bdc99c0>>)
+[0.237s] Level 1:colcon.colcon_test_result.test_result:get_test_results(ctest)
+[0.268s] Level 1:colcon.colcon_test_result.test_result:get_test_results(xunit)
+[0.280s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1247/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.281s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1250/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.281s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1256/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.282s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1322/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.283s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1333/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.284s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1353/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.284s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1355/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.285s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1427/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.289s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_agribot/Testing/20260723-1256/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'

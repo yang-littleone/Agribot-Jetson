@@ -1,2 +1,1 @@
-source;share/centerline_extraction/environment/ament_prefix_path.sh
-source;share/centerline_extraction/environment/path.sh
+/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_environment_hooks/local_setup.dsv

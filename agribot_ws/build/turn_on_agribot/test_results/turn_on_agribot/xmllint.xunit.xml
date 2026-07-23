@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="turn_on_agribot.xmllint"
+  tests="1"
+  errors="0"
+  failures="0"
+  time="0.845"
+>
+  <testcase
+    name="package.xml"
+    classname="turn_on_agribot.xmllint"/>
+  <system-out>Checked files:
+* package.xml</system-out>
+</testsuite>

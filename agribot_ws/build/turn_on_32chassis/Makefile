@@ -198,6 +198,19 @@ turn_on_32chassis_uninstall/fast:
 .PHONY : turn_on_32chassis_uninstall/fast
 
 #=============================================================================
+# Target rules for targets named test_wheel_trust_monitor
+
+# Build rule for target.
+test_wheel_trust_monitor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_wheel_trust_monitor
+.PHONY : test_wheel_trust_monitor
+
+# fast build rule for target.
+test_wheel_trust_monitor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_wheel_trust_monitor.dir/build.make CMakeFiles/test_wheel_trust_monitor.dir/build
+.PHONY : test_wheel_trust_monitor/fast
+
+#=============================================================================
 # Target rules for targets named turn_on_32chassis_node
 
 # Build rule for target.
@@ -222,6 +235,45 @@ imu_source_selector_node: cmake_check_build_system
 imu_source_selector_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/build
 .PHONY : imu_source_selector_node/fast
+
+#=============================================================================
+# Target rules for targets named slip_aware_odometry_node
+
+# Build rule for target.
+slip_aware_odometry_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 slip_aware_odometry_node
+.PHONY : slip_aware_odometry_node
+
+# fast build rule for target.
+slip_aware_odometry_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slip_aware_odometry_node.dir/build.make CMakeFiles/slip_aware_odometry_node.dir/build
+.PHONY : slip_aware_odometry_node/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 src/Quaternion_Solution.o: src/Quaternion_Solution.cpp.o
 .PHONY : src/Quaternion_Solution.o
@@ -271,6 +323,30 @@ src/imu_source_selector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_source_selector_node.dir/build.make CMakeFiles/imu_source_selector_node.dir/src/imu_source_selector.cpp.s
 .PHONY : src/imu_source_selector.cpp.s
 
+src/slip_aware_odometry.o: src/slip_aware_odometry.cpp.o
+.PHONY : src/slip_aware_odometry.o
+
+# target to build an object file
+src/slip_aware_odometry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slip_aware_odometry_node.dir/build.make CMakeFiles/slip_aware_odometry_node.dir/src/slip_aware_odometry.cpp.o
+.PHONY : src/slip_aware_odometry.cpp.o
+
+src/slip_aware_odometry.i: src/slip_aware_odometry.cpp.i
+.PHONY : src/slip_aware_odometry.i
+
+# target to preprocess a source file
+src/slip_aware_odometry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slip_aware_odometry_node.dir/build.make CMakeFiles/slip_aware_odometry_node.dir/src/slip_aware_odometry.cpp.i
+.PHONY : src/slip_aware_odometry.cpp.i
+
+src/slip_aware_odometry.s: src/slip_aware_odometry.cpp.s
+.PHONY : src/slip_aware_odometry.s
+
+# target to generate assembly for a file
+src/slip_aware_odometry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slip_aware_odometry_node.dir/build.make CMakeFiles/slip_aware_odometry_node.dir/src/slip_aware_odometry.cpp.s
+.PHONY : src/slip_aware_odometry.cpp.s
+
 src/turn_on_32chassis.o: src/turn_on_32chassis.cpp.o
 .PHONY : src/turn_on_32chassis.o
 
@@ -295,6 +371,30 @@ src/turn_on_32chassis.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turn_on_32chassis_node.dir/build.make CMakeFiles/turn_on_32chassis_node.dir/src/turn_on_32chassis.cpp.s
 .PHONY : src/turn_on_32chassis.cpp.s
 
+test/test_wheel_trust_monitor.o: test/test_wheel_trust_monitor.cpp.o
+.PHONY : test/test_wheel_trust_monitor.o
+
+# target to build an object file
+test/test_wheel_trust_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_wheel_trust_monitor.dir/build.make CMakeFiles/test_wheel_trust_monitor.dir/test/test_wheel_trust_monitor.cpp.o
+.PHONY : test/test_wheel_trust_monitor.cpp.o
+
+test/test_wheel_trust_monitor.i: test/test_wheel_trust_monitor.cpp.i
+.PHONY : test/test_wheel_trust_monitor.i
+
+# target to preprocess a source file
+test/test_wheel_trust_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_wheel_trust_monitor.dir/build.make CMakeFiles/test_wheel_trust_monitor.dir/test/test_wheel_trust_monitor.cpp.i
+.PHONY : test/test_wheel_trust_monitor.cpp.i
+
+test/test_wheel_trust_monitor.s: test/test_wheel_trust_monitor.cpp.s
+.PHONY : test/test_wheel_trust_monitor.s
+
+# target to generate assembly for a file
+test/test_wheel_trust_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_wheel_trust_monitor.dir/build.make CMakeFiles/test_wheel_trust_monitor.dir/test/test_wheel_trust_monitor.cpp.s
+.PHONY : test/test_wheel_trust_monitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -310,7 +410,11 @@ help:
 	@echo "... test"
 	@echo "... turn_on_32chassis_uninstall"
 	@echo "... uninstall"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... imu_source_selector_node"
+	@echo "... slip_aware_odometry_node"
+	@echo "... test_wheel_trust_monitor"
 	@echo "... turn_on_32chassis_node"
 	@echo "... src/Quaternion_Solution.o"
 	@echo "... src/Quaternion_Solution.i"
@@ -318,9 +422,15 @@ help:
 	@echo "... src/imu_source_selector.o"
 	@echo "... src/imu_source_selector.i"
 	@echo "... src/imu_source_selector.s"
+	@echo "... src/slip_aware_odometry.o"
+	@echo "... src/slip_aware_odometry.i"
+	@echo "... src/slip_aware_odometry.s"
 	@echo "... src/turn_on_32chassis.o"
 	@echo "... src/turn_on_32chassis.i"
 	@echo "... src/turn_on_32chassis.s"
+	@echo "... test/test_wheel_trust_monitor.o"
+	@echo "... test/test_wheel_trust_monitor.i"
+	@echo "... test/test_wheel_trust_monitor.s"
 .PHONY : help
 
 

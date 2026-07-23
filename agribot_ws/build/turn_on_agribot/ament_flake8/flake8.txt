@@ -1,0 +1,14 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_agribot':
+ - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot/test_results/turn_on_agribot/flake8.xunit.xml
+
+
+1 files checked
+No problems found
+
+Checked files:
+
+* ./launch/turn_on_agribot.launch.py
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot/test_results/turn_on_agribot/flake8.xunit.xml'

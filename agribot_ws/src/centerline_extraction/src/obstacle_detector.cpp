@@ -10,6 +10,8 @@ ObstacleDetector::ObstacleDetector() : Node("obstacle_detector")
     declare_parameter("obstacle_max_height", 1.0);
     declare_parameter("obstacle_safety_distance", 0.2);
     declare_parameter("path_width", 1.0);  // 路径宽度（从中心线向两边各path_width/2）
+    const auto point_cloud_topic =
+        declare_parameter<std::string>("point_cloud_topic", "/livox/lidar");
     
     // 获取参数
     get_parameter("obstacle_detection_range", obstacle_detection_range_);
@@ -20,7 +22,7 @@ ObstacleDetector::ObstacleDetector() : Node("obstacle_detector")
     
     // 创建订阅者和发布者
     point_cloud_sub_ = create_subscription<sensor_msgs::msg::PointCloud2>(
-        "/mid360_PointCloud2", 10,
+        point_cloud_topic, 10,
         std::bind(&ObstacleDetector::pointCloudCallback, this, std::placeholders::_1)
     );
     

@@ -1,0 +1,33 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
+ - /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor --gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml
+
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from WheelTrustMonitor
+[ RUN      ] WheelTrustMonitor.KeepsConsistentWheelTrusted
+[       OK ] WheelTrustMonitor.KeepsConsistentWheelTrusted (0 ms)
+[ RUN      ] WheelTrustMonitor.RejectsPersistentSlip
+[       OK ] WheelTrustMonitor.RejectsPersistentSlip (0 ms)
+[ RUN      ] WheelTrustMonitor.RejectsPartialTranslationSlip
+[       OK ] WheelTrustMonitor.RejectsPartialTranslationSlip (0 ms)
+[ RUN      ] WheelTrustMonitor.RejectsYawSlipDuringTurning
+[       OK ] WheelTrustMonitor.RejectsYawSlipDuringTurning (0 ms)
+[ RUN      ] WheelTrustMonitor.RejectsZeroWheelWhenLioObservesExternalMotion
+[       OK ] WheelTrustMonitor.RejectsZeroWheelWhenLioObservesExternalMotion (0 ms)
+[ RUN      ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved
+[       OK ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved (0 ms)
+[ RUN      ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement
+[       OK ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement (0 ms)
+[ RUN      ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven
+[       OK ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven (0 ms)
+[----------] 8 tests from WheelTrustMonitor (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 8 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'

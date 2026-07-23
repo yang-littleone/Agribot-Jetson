@@ -1,0 +1,164 @@
+[0.073s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis': CMAKE_PREFIX_PATH=/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.084s] UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.084s] Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.085s]    Site: wheeltec
+[0.085s]    Build name: (empty)
+[0.085s]  Add coverage exclude regular expressions.
+[0.086s] Create new tag: 20260723-1250 - Experimental
+[0.086s] UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.087s] Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.087s] Test project /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis
+[0.087s] Constructing a list of tests
+[0.087s] Done constructing a list of tests
+[0.087s] Updating test list for fixtures
+[0.087s] Added 0 tests to meet fixture requirements
+[0.088s] Checking test dependency graph...
+[0.088s] Checking test dependency graph end
+[0.088s] test 1
+[0.088s]     Start 1: test_wheel_trust_monitor
+[0.089s] 
+[0.089s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cmake_gtest/test_wheel_trust_monitor.txt" "--command" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor" "--gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml"
+[0.089s] 1: Test timeout computed to be: 60
+[0.245s] 1: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
+[0.246s] 1:  - /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor --gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml
+[0.249s] 1: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[0.250s] 1: [==========] Running 5 tests from 1 test suite.
+[0.250s] 1: [----------] Global test environment set-up.
+[0.250s] 1: [----------] 5 tests from WheelTrustMonitor
+[0.250s] 1: [ RUN      ] WheelTrustMonitor.KeepsConsistentWheelTrusted
+[0.251s] 1: [       OK ] WheelTrustMonitor.KeepsConsistentWheelTrusted (0 ms)
+[0.252s] 1: [ RUN      ] WheelTrustMonitor.RejectsPersistentSlip
+[0.252s] 1: [       OK ] WheelTrustMonitor.RejectsPersistentSlip (0 ms)
+[0.252s] 1: [ RUN      ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved
+[0.252s] 1: [       OK ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved (0 ms)
+[0.253s] 1: [ RUN      ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement
+[0.253s] 1: [       OK ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement (0 ms)
+[0.254s] 1: [ RUN      ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven
+[0.254s] 1: [       OK ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven (0 ms)
+[0.254s] 1: [----------] 5 tests from WheelTrustMonitor (0 ms total)
+[0.254s] 1: 
+[0.255s] 1: [----------] Global test environment tear-down
+[0.255s] 1: [==========] 5 tests from 1 test suite ran. (0 ms total)
+[0.255s] 1: [  PASSED  ] 5 tests.
+[0.256s] 1: -- run_test.py: return code 0
+[0.256s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'
+[0.259s] 1: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'
+[0.286s] 1/7 Test #1: test_wheel_trust_monitor ..................   Passed    0.20 sec
+[0.287s] test 2
+[0.287s]     Start 2: test_test_slip_aware_odometry_launch.py
+[0.288s] 
+[0.288s] 2: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/launch_test/test_test_slip_aware_odometry_launch.py.txt" "--command" "/usr/bin/python3" "-m" "launch_testing.launch_test" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py" "--junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name=turn_on_32chassis"
+[0.288s] 2: Test timeout computed to be: 30
+[0.443s] 2: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
+[0.444s] 2:  - /usr/bin/python3 -m launch_testing.launch_test /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py --junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml --package-name=turn_on_32chassis
+[1.192s] 2: [INFO] [launch]: All log files can be found below /home/wheeltec/.ros/log/2026-07-23-20-50-43-006624-wheeltec-23029
+[1.192s] 2: [INFO] [launch]: Default logging verbosity is set to INFO
+[1.231s] 2: test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry) ... [INFO] [slip_aware_odometry_node-1]: process started with pid [23034]
+[1.282s] 2: [slip_aware_odometry_node-1] [INFO] [1784811043.155259102] [slip_aware_odometry_test]: Slip-aware odometry: wheel=/test/wheel lio=/test/lio_raw fused=/test/fused final=/test/final
+[1.671s] 2: [slip_aware_odometry_node-1] [INFO] [1784811043.542973605] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
+[1.966s] 2: [slip_aware_odometry_node-1] [WARN] [1784811043.839344508] [slip_aware_odometry_test]: Wheel trust state changed 2 -> 3 (translation residual 0.000 m, yaw residual 0.000 rad)
+[2.145s] 2: [slip_aware_odometry_node-1] [WARN] [1784811044.018585730] [slip_aware_odometry_test]: Wheel trust state changed 3 -> 0 (translation residual 0.000 m, yaw residual 0.000 rad)
+[3.105s] 2: [slip_aware_odometry_node-1] [WARN] [1784811044.978330268] [slip_aware_odometry_test]: Ignoring out-of-order FAST-LIO odometry
+[3.195s] 2: [slip_aware_odometry_node-1] [WARN] [1784811045.067984425] [slip_aware_odometry_test]: Ignoring invalid or degraded FAST-LIO odometry
+[3.277s] 2: [slip_aware_odometry_node-1] [WARN] [1784811045.149572410] [slip_aware_odometry_test]: Wheel trust state changed 0 -> 1 (translation residual 0.025 m, yaw residual 0.000 rad)
+[3.456s] 2: [slip_aware_odometry_node-1] [WARN] [1784811045.328116050] [slip_aware_odometry_test]: Wheel trust state changed 1 -> 2 (translation residual 0.050 m, yaw residual 0.000 rad)
+[4.582s] 2: [slip_aware_odometry_node-1] [ERROR] [1784811046.455498542] [slip_aware_odometry_test]: FAST-LIO timed out after 0.348 s; freezing final odometry
+[5.175s] 2: ok
+[5.175s] 2: 
+[5.177s] 2: ----------------------------------------------------------------------
+[5.177s] 2: Ran 1 test in 3.974s
+[5.178s] 2: 
+[5.178s] 2: OK
+[5.181s] 2: [INFO] [slip_aware_odometry_node-1]: sending signal 'SIGINT' to process[slip_aware_odometry_node-1]
+[5.183s] 2: [slip_aware_odometry_node-1] [INFO] [1784811047.056131763] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[5.302s] 2: [INFO] [slip_aware_odometry_node-1]: process has finished cleanly [pid 23034]
+[5.302s] 2: 
+[5.303s] 2: ----------------------------------------------------------------------
+[5.303s] 2: Ran 0 tests in 0.000s
+[5.304s] 2: 
+[5.304s] 2: OK
+[5.624s] 2: -- run_test.py: return code 0
+[5.626s] 2: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml'
+[5.660s] 2/7 Test #2: test_test_slip_aware_odometry_launch.py ...   Passed    5.37 sec
+[5.660s] test 3
+[5.660s]     Start 3: cppcheck
+[5.661s] 
+[5.661s] 3: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/humble/bin/ament_cppcheck" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--include_dirs" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include"
+[5.661s] 3: Test timeout computed to be: 300
+[5.828s] 3: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[5.829s] 3:  - /opt/ros/humble/bin/ament_cppcheck --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml --include_dirs /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include
+[6.048s] 3: cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.
+[6.081s] 3: -- run_test.py: return code 0
+[6.081s] 3: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml'
+[6.106s] 3/7 Test #3: cppcheck ..................................   Passed    0.45 sec
+[6.106s] test 4
+[6.107s]     Start 4: flake8
+[6.107s] 
+[6.107s] 4: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_flake8/flake8.txt" "--command" "/opt/ros/humble/bin/ament_flake8" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml"
+[6.108s] 4: Test timeout computed to be: 60
+[6.265s] 4: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[6.265s] 4:  - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml
+[6.781s] 4: 
+[6.781s] 4: 2 files checked
+[6.781s] 4: No problems found
+[6.782s] 4: 
+[6.782s] 4: Checked files:
+[6.783s] 4: 
+[6.783s] 4: * ./launch/turn_on_32chassis.launch.py
+[6.783s] 4: * ./test/test_slip_aware_odometry_launch.py
+[6.835s] 4: -- run_test.py: return code 0
+[6.835s] 4: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml'
+[6.863s] 4/7 Test #4: flake8 ....................................   Passed    0.76 sec
+[6.863s] test 5
+[6.863s]     Start 5: lint_cmake
+[6.864s] 
+[6.864s] 5: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/humble/bin/ament_lint_cmake" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml"
+[6.864s] 5: Test timeout computed to be: 60
+[7.021s] 5: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[7.021s] 5:  - /opt/ros/humble/bin/ament_lint_cmake --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml
+[7.207s] 5: 
+[7.208s] 5: No problems found
+[7.233s] 5: -- run_test.py: return code 0
+[7.233s] 5: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml'
+[7.257s] 5/7 Test #5: lint_cmake ................................   Passed    0.39 sec
+[7.258s] test 6
+[7.258s]     Start 6: pep257
+[7.258s] 
+[7.258s] 6: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_pep257/pep257.txt" "--command" "/opt/ros/humble/bin/ament_pep257" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml"
+[7.258s] 6: Test timeout computed to be: 60
+[7.418s] 6: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[7.419s] 6:  - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml
+[7.745s] 6: checking ./launch/turn_on_32chassis.launch.py
+[7.745s] 6: checking ./test/test_slip_aware_odometry_launch.py
+[7.745s] 6: No problems found
+[7.798s] 6: -- run_test.py: return code 0
+[7.799s] 6: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml'
+[7.823s] 6/7 Test #6: pep257 ....................................   Passed    0.57 sec
+[7.823s] test 7
+[7.824s]     Start 7: xmllint
+[7.824s] 
+[7.824s] 7: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_xmllint/xmllint.txt" "--command" "/opt/ros/humble/bin/ament_xmllint" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml"
+[7.824s] 7: Test timeout computed to be: 60
+[7.978s] 7: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[7.979s] 7:  - /opt/ros/humble/bin/ament_xmllint --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml
+[9.013s] 7: File 'package.xml' is valid
+[9.013s] 7: 
+[9.014s] 7: No problems found
+[9.042s] 7: -- run_test.py: return code 0
+[9.042s] 7: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml'
+[9.067s] 7/7 Test #7: xmllint ...................................   Passed    1.24 sec
+[9.068s] 
+[9.068s] 100% tests passed, 0 tests failed out of 7
+[9.068s] 
+[9.068s] Label Time Summary:
+[9.069s] cppcheck       =   0.45 sec*proc (1 test)
+[9.069s] flake8         =   0.76 sec*proc (1 test)
+[9.069s] gtest          =   0.20 sec*proc (1 test)
+[9.069s] launch_test    =   5.37 sec*proc (1 test)
+[9.069s] lint_cmake     =   0.39 sec*proc (1 test)
+[9.069s] linter         =   3.40 sec*proc (5 tests)
+[9.070s] pep257         =   0.57 sec*proc (1 test)
+[9.070s] xmllint        =   1.24 sec*proc (1 test)
+[9.070s] 
+[9.070s] Total Test time (real) =   8.98 sec
+[9.076s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis' returned '0': CMAKE_PREFIX_PATH=/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

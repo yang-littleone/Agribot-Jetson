@@ -1,0 +1,1133 @@
+[0.118s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis': CMAKE_PREFIX_PATH=/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.131s] UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.131s] Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.131s]    Site: wheeltec
+[0.132s]    Build name: (empty)
+[0.132s]  Add coverage exclude regular expressions.
+[0.132s] Create new tag: 20260723-1247 - Experimental
+[0.133s] UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.133s] Parse Config file:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/CTestConfiguration.ini
+[0.133s] Test project /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis
+[0.133s] Constructing a list of tests
+[0.133s] Done constructing a list of tests
+[0.133s] Updating test list for fixtures
+[0.134s] Added 0 tests to meet fixture requirements
+[0.134s] Checking test dependency graph...
+[0.134s] Checking test dependency graph end
+[0.134s] test 1
+[0.134s]     Start 1: test_wheel_trust_monitor
+[0.134s] 
+[0.135s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cmake_gtest/test_wheel_trust_monitor.txt" "--command" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor" "--gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml"
+[0.135s] 1: Test timeout computed to be: 60
+[0.318s] 1: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
+[0.318s] 1:  - /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_wheel_trust_monitor --gtest_output=xml:/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml
+[0.321s] 1: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[0.322s] 1: [==========] Running 5 tests from 1 test suite.
+[0.323s] 1: [----------] Global test environment set-up.
+[0.323s] 1: [----------] 5 tests from WheelTrustMonitor
+[0.323s] 1: [ RUN      ] WheelTrustMonitor.KeepsConsistentWheelTrusted
+[0.324s] 1: [       OK ] WheelTrustMonitor.KeepsConsistentWheelTrusted (0 ms)
+[0.324s] 1: [ RUN      ] WheelTrustMonitor.RejectsPersistentSlip
+[0.324s] 1: [       OK ] WheelTrustMonitor.RejectsPersistentSlip (0 ms)
+[0.324s] 1: [ RUN      ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved
+[0.325s] 1: [       OK ] WheelTrustMonitor.IgnoresResidualWhenNothingMoved (0 ms)
+[0.325s] 1: [ RUN      ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement
+[0.325s] 1: [       OK ] WheelTrustMonitor.RecoversOnlyAfterStableAgreement (0 ms)
+[0.325s] 1: [ RUN      ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven
+[0.326s] 1: [       OK ] WheelTrustMonitor.StartsRejectedUntilAgreementIsProven (0 ms)
+[0.326s] 1: [----------] 5 tests from WheelTrustMonitor (0 ms total)
+[0.326s] 1: 
+[0.326s] 1: [----------] Global test environment tear-down
+[0.327s] 1: [==========] 5 tests from 1 test suite ran. (0 ms total)
+[0.327s] 1: [  PASSED  ] 5 tests.
+[0.328s] 1: -- run_test.py: return code 0
+[0.328s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'
+[0.331s] 1: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_wheel_trust_monitor.gtest.xml'
+[0.355s] 1/8 Test #1: test_wheel_trust_monitor ..................   Passed    0.22 sec
+[0.355s] test 2
+[0.355s]     Start 2: test_test_slip_aware_odometry_launch.py
+[0.355s] 
+[0.356s] 2: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/launch_test/test_test_slip_aware_odometry_launch.py.txt" "--command" "/usr/bin/python3" "-m" "launch_testing.launch_test" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py" "--junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml" "--package-name=turn_on_32chassis"
+[0.356s] 2: Test timeout computed to be: 30
+[0.511s] 2: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
+[0.511s] 2:  - /usr/bin/python3 -m launch_testing.launch_test /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py --junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml --package-name=turn_on_32chassis
+[1.517s] 2: [INFO] [launch]: All log files can be found below /home/wheeltec/.ros/log/2026-07-23-20-47-34-471755-wheeltec-21812
+[1.517s] 2: [INFO] [launch]: Default logging verbosity is set to INFO
+[1.558s] 2: test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry) ... [INFO] [slip_aware_odometry_node-1]: process started with pid [21817]
+[1.676s] 2: [slip_aware_odometry_node-1] [INFO] [1784810854.679271789] [slip_aware_odometry_test]: Slip-aware odometry: wheel=/test/wheel lio=/test/lio_raw fused=/test/fused final=/test/final
+[2.402s] 2: [slip_aware_odometry_node-1] [INFO] [1784810855.420587664] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
+[3.240s] 2: FAIL
+[3.241s] 2: 
+[3.241s] 2: ======================================================================
+[3.241s] 2: FAIL: test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry)
+[3.242s] 2: ----------------------------------------------------------------------
+[3.242s] 2: Traceback (most recent call last):
+[3.243s] 2:   File "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py", line 132, in test_synthetic_slip_timeout_and_bad_lio
+[3.243s] 2:     self.assertGreater(
+[3.243s] 2: AssertionError: 0 not greater than 0 : wheel odometry never recovered after sustained LIO agreement
+[3.243s] 2: 
+[3.244s] 2: ----------------------------------------------------------------------
+[3.244s] 2: Ran 1 test in 1.713s
+[3.244s] 2: 
+[3.245s] 2: FAILED (failures=1)
+[3.246s] 2: [INFO] [slip_aware_odometry_node-1]: sending signal 'SIGINT' to process[slip_aware_odometry_node-1]
+[3.247s] 2: [slip_aware_odometry_node-1] [INFO] [1784810856.267496261] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[3.368s] 2: [INFO] [slip_aware_odometry_node-1]: process has finished cleanly [pid 21817]
+[3.369s] 2: 
+[3.370s] 2: ----------------------------------------------------------------------
+[3.370s] 2: Ran 0 tests in 0.000s
+[3.370s] 2: 
+[3.371s] 2: OK
+[3.682s] 2: -- run_test.py: return code 1
+[3.682s] 2: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml'
+[3.716s] 2/8 Test #2: test_test_slip_aware_odometry_launch.py ...***Failed    3.36 sec
+[3.716s] test 3
+[3.716s]     Start 3: cppcheck
+[3.717s] 
+[3.717s] 3: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/humble/bin/ament_cppcheck" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml" "--include_dirs" "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include"
+[3.717s] 3: Test timeout computed to be: 300
+[3.867s] 3: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[3.868s] 3:  - /opt/ros/humble/bin/ament_cppcheck --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml --include_dirs /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/include
+[4.119s] 3: cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.
+[4.150s] 3: -- run_test.py: return code 0
+[4.151s] 3: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/cppcheck.xunit.xml'
+[4.175s] 3/8 Test #3: cppcheck ..................................   Passed    0.46 sec
+[4.175s] test 4
+[4.176s]     Start 4: flake8
+[4.176s] 
+[4.176s] 4: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_flake8/flake8.txt" "--command" "/opt/ros/humble/bin/ament_flake8" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml"
+[4.177s] 4: Test timeout computed to be: 60
+[4.332s] 4: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[4.332s] 4:  - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml
+[4.995s] 4: from ament_index_python.packages import get_package_share_directory #通过功能包的名字找到 share 目录
+[4.995s] 4:                                                                    ^
+[4.996s] 4: from ament_index_python.packages import get_package_share_directory #通过功能包的名字找到 share 目录
+[4.996s] 4:                                                                     ^
+[4.996s] 4: from launch.launch_description_sources import PythonLaunchDescriptionSource 
+[4.996s] 4:                                                                            ^
+[4.997s] 4: def load_bringup_config(config_path):
+[4.997s] 4: ^
+[4.997s] 4: def generate_launch_description():
+[4.997s] 4: ^
+[4.998s] 4:     default_urdf_path = os.path.join(package_share_dir, 'urdf/urdf','agribot.urdf.xacro')
+[4.998s] 4:                                                                    ^
+[4.998s] 4:     ekf_config = os.path.join(package_share_dir, 'config','ekf.yaml')
+[4.998s] 4:                                                          ^
+[4.999s] 4:     # 获取默认的rviz配置文件路径
+[4.999s] 4:     ^
+[4.999s] 4:     default_rviz_config_path = os.path.join(package_share_dir, 'config','rviz2_config_agribot.rviz')
+[5.000s] 4:                                                                        ^
+[5.000s] 4:     default_rviz_config_path = os.path.join(package_share_dir, 'config','rviz2_config_agribot.rviz')
+[5.000s] 4:                                                                                                    ^
+[5.000s] 4:         name='model',default_value=str(default_urdf_path),description='URDF的绝对路径'
+[5.001s] 4:                     ^
+[5.001s] 4:         name='model',default_value=str(default_urdf_path),description='URDF的绝对路径'
+[5.001s] 4:                                                          ^
+[5.001s] 4:     imu_config = os.path.join(package_share_dir, 'config','imuconfig.yaml')
+[5.001s] 4:                                                          ^
+[5.002s] 4:     substitutions_command_result = launch.substitutions.Command(command=['xacro ',launch.substitutions.LaunchConfiguration('model')])
+[5.002s] 4:                                                                                  ^
+[5.002s] 4:     substitutions_command_result = launch.substitutions.Command(command=['xacro ',launch.substitutions.LaunchConfiguration('model')])
+[5.002s] 4:                                                                                                    ^
+[5.002s] 4:     robot_description_value = launch_ros.parameter_descriptions.ParameterValue(substitutions_command_result,value_type=str)
+[5.003s] 4:                                                                                                    ^
+[5.003s] 4:     robot_description_value = launch_ros.parameter_descriptions.ParameterValue(substitutions_command_result,value_type=str)
+[5.003s] 4:                                                                                                            ^
+[5.004s] 4:             package='tf2_ros', 
+[5.004s] 4:                               ^
+[5.004s] 4:             executable='static_transform_publisher', 
+[5.004s] 4:                                                     ^
+[5.005s] 4:         parameters=[{'robot_description':robot_description_value}]
+[5.005s] 4:                                         ^
+[5.005s] 4:     imu_filter_node =  launch_ros.actions.Node(
+[5.005s] 4:                      ^
+[5.005s] 4:     # when using get_package_share_directory to get the share directory of a package, you must source the setup.bash file of your workspace in your .bashrc to ensure that the environment variables are set correctly.
+[5.006s] 4:                                                                                                    ^
+[5.006s] 4:         PythonLaunchDescriptionSource([get_package_share_directory('livox_ros_driver2'), '/launch_ROS2/msg_MID360_launch.py'])
+[5.006s] 4:                                                                                                    ^
+[5.006s] 4: 1     E222 multiple spaces after operator
+[5.006s] 4: 9     E231 missing whitespace after ','
+[5.007s] 4: 1     E261 at least two spaces before inline comment
+[5.007s] 4: 1     E262 inline comment should start with '# '
+[5.007s] 4: 2     E302 expected 2 blank lines, found 1
+[5.007s] 4: 1     E303 too many blank lines (2)
+[5.007s] 4: 5     E501 line too long (100 > 99 characters)
+[5.008s] 4: 3     W291 trailing whitespace
+[5.008s] 4: 
+[5.008s] 4: ./launch/turn_on_32chassis.launch.py:3:68: E261 at least two spaces before inline comment
+[5.008s] 4: 
+[5.008s] 4: ./launch/turn_on_32chassis.launch.py:3:69: E262 inline comment should start with '# '
+[5.009s] 4: 
+[5.009s] 4: ./launch/turn_on_32chassis.launch.py:8:76: W291 trailing whitespace
+[5.009s] 4: 
+[5.009s] 4: ./launch/turn_on_32chassis.launch.py:10:1: E302 expected 2 blank lines, found 1
+[5.009s] 4: 
+[5.010s] 4: ./launch/turn_on_32chassis.launch.py:20:1: E302 expected 2 blank lines, found 1
+[5.010s] 4: 
+[5.010s] 4: ./launch/turn_on_32chassis.launch.py:86:68: E231 missing whitespace after ','
+[5.010s] 4: 
+[5.010s] 4: ./launch/turn_on_32chassis.launch.py:88:58: E231 missing whitespace after ','
+[5.011s] 4: 
+[5.011s] 4: ./launch/turn_on_32chassis.launch.py:93:5: E303 too many blank lines (2)
+[5.011s] 4: 
+[5.012s] 4: ./launch/turn_on_32chassis.launch.py:94:72: E231 missing whitespace after ','
+[5.012s] 4: 
+[5.012s] 4: ./launch/turn_on_32chassis.launch.py:94:100: E501 line too long (100 > 99 characters)
+[5.012s] 4: 
+[5.013s] 4: ./launch/turn_on_32chassis.launch.py:97:21: E231 missing whitespace after ','
+[5.013s] 4: 
+[5.013s] 4: ./launch/turn_on_32chassis.launch.py:97:58: E231 missing whitespace after ','
+[5.013s] 4: 
+[5.013s] 4: ./launch/turn_on_32chassis.launch.py:100:58: E231 missing whitespace after ','
+[5.013s] 4: 
+[5.014s] 4: ./launch/turn_on_32chassis.launch.py:104:82: E231 missing whitespace after ','
+[5.014s] 4: 
+[5.014s] 4: ./launch/turn_on_32chassis.launch.py:104:100: E501 line too long (133 > 99 characters)
+[5.014s] 4: 
+[5.014s] 4: ./launch/turn_on_32chassis.launch.py:106:100: E501 line too long (123 > 99 characters)
+[5.015s] 4: 
+[5.015s] 4: ./launch/turn_on_32chassis.launch.py:106:108: E231 missing whitespace after ','
+[5.015s] 4: 
+[5.015s] 4: ./launch/turn_on_32chassis.launch.py:109:31: W291 trailing whitespace
+[5.016s] 4: 
+[5.016s] 4: ./launch/turn_on_32chassis.launch.py:110:53: W291 trailing whitespace
+[5.016s] 4: 
+[5.016s] 4: ./launch/turn_on_32chassis.launch.py:129:41: E231 missing whitespace after ':'
+[5.016s] 4: 
+[5.017s] 4: ./launch/turn_on_32chassis.launch.py:146:22: E222 multiple spaces after operator
+[5.017s] 4: 
+[5.017s] 4: ./launch/turn_on_32chassis.launch.py:204:100: E501 line too long (215 > 99 characters)
+[5.017s] 4: 
+[5.017s] 4: ./launch/turn_on_32chassis.launch.py:206:100: E501 line too long (126 > 99 characters)
+[5.017s] 4: 
+[5.018s] 4: 
+[5.018s] 4: 2 files checked
+[5.018s] 4: 23 errors
+[5.018s] 4: 
+[5.018s] 4: 'E'-type errors: 20
+[5.019s] 4: 'W'-type errors: 3
+[5.019s] 4: 
+[5.019s] 4: Checked files:
+[5.019s] 4: 
+[5.020s] 4: * ./launch/turn_on_32chassis.launch.py
+[5.020s] 4: * ./test/test_slip_aware_odometry_launch.py
+[5.061s] 4: -- run_test.py: return code 1
+[5.061s] 4: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/flake8.xunit.xml'
+[5.086s] 4/8 Test #4: flake8 ....................................***Failed    0.91 sec
+[5.087s] test 5
+[5.087s]     Start 5: lint_cmake
+[5.087s] 
+[5.088s] 5: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/humble/bin/ament_lint_cmake" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml"
+[5.088s] 5: Test timeout computed to be: 60
+[5.252s] 5: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[5.252s] 5:  - /opt/ros/humble/bin/ament_lint_cmake --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml
+[5.459s] 5: CMakeLists.txt:50: Mismatching spaces inside () after command [whitespace/mismatch]
+[5.459s] 5: CMakeLists.txt:53: Line ends in whitespace [whitespace/eol]
+[5.460s] 5: CMakeLists.txt:65: Line ends in whitespace [whitespace/eol]
+[5.460s] 5: CMakeLists.txt:96: Line ends in whitespace [whitespace/eol]
+[5.460s] 5: CMakeLists.txt:100: Line ends in whitespace [whitespace/eol]
+[5.460s] 5: CMakeLists.txt:101: Line ends in whitespace [whitespace/eol]
+[5.460s] 5: 
+[5.460s] 5: 
+[5.461s] 5: 6 errors
+[5.485s] 5: -- run_test.py: return code 1
+[5.486s] 5: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/lint_cmake.xunit.xml'
+[5.512s] 5/8 Test #5: lint_cmake ................................***Failed    0.42 sec
+[5.513s] test 6
+[5.513s]     Start 6: pep257
+[5.513s] 
+[5.513s] 6: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_pep257/pep257.txt" "--command" "/opt/ros/humble/bin/ament_pep257" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml"
+[5.514s] 6: Test timeout computed to be: 60
+[5.666s] 6: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[5.666s] 6:  - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml
+[6.052s] 6: checking ./launch/turn_on_32chassis.launch.py
+[6.052s] 6: checking ./test/test_slip_aware_odometry_launch.py
+[6.053s] 6: No problems found
+[6.096s] 6: -- run_test.py: return code 0
+[6.096s] 6: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml'
+[6.120s] 6/8 Test #6: pep257 ....................................   Passed    0.61 sec
+[6.120s] test 7
+[6.121s]     Start 7: uncrustify
+[6.121s] 
+[6.121s] 7: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/humble/bin/ament_uncrustify" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml"
+[6.122s] 7: Test timeout computed to be: 60
+[6.271s] 7: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[6.272s] 7:  - /opt/ros/humble/bin/ament_uncrustify --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml
+[6.677s] 7: Code style divergence in file 'include/turn_on_32chassis/Quaternion_Solution.h':
+[6.677s] 7: 
+[6.678s] 7: --- include/turn_on_32chassis/Quaternion_Solution.h
+[6.678s] 7: +++ include/turn_on_32chassis/Quaternion_Solution.h.uncrustify
+[6.678s] 7: @@ -1 +0,0 @@
+[6.679s] 7: -
+[6.679s] 7: @@ -8 +6,0 @@
+[6.679s] 7: -
+[6.679s] 7: @@ -13,2 +10,0 @@
+[6.680s] 7: -
+[6.680s] 7: -
+[6.680s] 7: 
+[6.681s] 7: Code style divergence in file 'include/turn_on_32chassis/turn_on_32chassis.hpp':
+[6.681s] 7: 
+[6.681s] 7: --- include/turn_on_32chassis/turn_on_32chassis.hpp
+[6.681s] 7: +++ include/turn_on_32chassis/turn_on_32chassis.hpp.uncrustify
+[6.682s] 7: @@ -39,5 +39,5 @@
+[6.682s] 7: -                                         0, 5e-2, 0, 0, 0, 0,
+[6.682s] 7: -                                         0, 0, 1e6, 0, 0, 0,
+[6.682s] 7: -                                         0, 0, 0, 1e6, 0, 0,
+[6.683s] 7: -                                         0, 0, 0, 0, 1e6, 0,
+[6.684s] 7: -                                         0, 0, 0, 0, 0, 2e-1};
+[6.684s] 7: +  0, 5e-2, 0, 0, 0, 0,
+[6.684s] 7: +  0, 0, 1e6, 0, 0, 0,
+[6.685s] 7: +  0, 0, 0, 1e6, 0, 0,
+[6.685s] 7: +  0, 0, 0, 0, 1e6, 0,
+[6.685s] 7: +  0, 0, 0, 0, 0, 2e-1};
+[6.685s] 7: @@ -46,5 +46,5 @@
+[6.686s] 7: -                                          0, 1e-2, 0, 0, 0, 0,
+[6.686s] 7: -                                          0, 0, 1e6, 0, 0, 0,
+[6.686s] 7: -                                          0, 0, 0, 1e6, 0, 0,
+[6.686s] 7: -                                          0, 0, 0, 0, 1e6, 0,
+[6.687s] 7: -                                          0, 0, 0, 0, 0, 5e-2};
+[6.687s] 7: +  0, 1e-2, 0, 0, 0, 0,
+[6.687s] 7: +  0, 0, 1e6, 0, 0, 0,
+[6.688s] 7: +  0, 0, 0, 1e6, 0, 0,
+[6.688s] 7: +  0, 0, 0, 0, 1e6, 0,
+[6.688s] 7: +  0, 0, 0, 0, 0, 5e-2};
+[6.688s] 7: @@ -53,5 +53,5 @@
+[6.689s] 7: -                                          0, 2e-2, 0, 0, 0, 0,
+[6.689s] 7: -                                          0, 0, 1e6, 0, 0, 0,
+[6.689s] 7: -                                          0, 0, 0, 1e6, 0, 0,
+[6.690s] 7: -                                          0, 0, 0, 0, 1e6, 0,
+[6.690s] 7: -                                          0, 0, 0, 0, 0, 5e-2};
+[6.690s] 7: +  0, 2e-2, 0, 0, 0, 0,
+[6.690s] 7: +  0, 0, 1e6, 0, 0, 0,
+[6.691s] 7: +  0, 0, 0, 1e6, 0, 0,
+[6.691s] 7: +  0, 0, 0, 0, 1e6, 0,
+[6.691s] 7: +  0, 0, 0, 0, 0, 5e-2};
+[6.691s] 7: @@ -60,5 +60,5 @@
+[6.692s] 7: -                                           0, 2.5e-3, 0, 0, 0, 0,
+[6.692s] 7: -                                           0, 0, 1e6, 0, 0, 0,
+[6.692s] 7: -                                           0, 0, 0, 1e6, 0, 0,
+[6.693s] 7: -                                           0, 0, 0, 0, 1e6, 0,
+[6.693s] 7: -                                           0, 0, 0, 0, 0, 1e-2};
+[6.693s] 7: +  0, 2.5e-3, 0, 0, 0, 0,
+[6.693s] 7: +  0, 0, 1e6, 0, 0, 0,
+[6.694s] 7: +  0, 0, 0, 1e6, 0, 0,
+[6.694s] 7: +  0, 0, 0, 0, 1e6, 0,
+[6.694s] 7: +  0, 0, 0, 0, 0, 1e-2};
+[6.694s] 7: @@ -68,6 +68,6 @@
+[6.695s] 7: -    short accele_x_data;
+[6.695s] 7: -    short accele_y_data;
+[6.695s] 7: -    short accele_z_data;
+[6.695s] 7: -    short gyros_x_data;
+[6.696s] 7: -    short gyros_y_data;
+[6.696s] 7: -    short gyros_z_data;
+[6.696s] 7: +  short accele_x_data;
+[6.696s] 7: +  short accele_y_data;
+[6.697s] 7: +  short accele_z_data;
+[6.697s] 7: +  short gyros_x_data;
+[6.697s] 7: +  short gyros_y_data;
+[6.697s] 7: +  short gyros_z_data;
+[6.698s] 7: @@ -81,9 +81,9 @@
+[6.698s] 7: -    uint8_t buffer[RECEIVE_DATA_SIZE];
+[6.698s] 7: -    uint8_t Flag_Stop;
+[6.698s] 7: -    unsigned char Frame_Header;
+[6.700s] 7: -    float X_speed;
+[6.700s] 7: -    float Y_speed;
+[6.700s] 7: -    float Z_speed;
+[6.701s] 7: -    IMUData_t IMUData;
+[6.701s] 7: -    float Power_Voltage;
+[6.701s] 7: -    unsigned char Frame_Tail;
+[6.701s] 7: +  uint8_t buffer[RECEIVE_DATA_SIZE];
+[6.702s] 7: +  uint8_t Flag_Stop;
+[6.702s] 7: +  unsigned char Frame_Header;
+[6.702s] 7: +  float X_speed;
+[6.702s] 7: +  float Y_speed;
+[6.703s] 7: +  float Z_speed;
+[6.703s] 7: +  IMUData_t IMUData;
+[6.703s] 7: +  float Power_Voltage;
+[6.703s] 7: +  unsigned char Frame_Tail;
+[6.704s] 7: @@ -94,5 +94,5 @@
+[6.704s] 7: -    uint8_t buffer[SEND_DATA_SIZE];
+[6.704s] 7: -    float X_speed;
+[6.704s] 7: -    float Y_speed;
+[6.705s] 7: -    float Z_speed;
+[6.705s] 7: -    unsigned char Frame_Tail;
+[6.705s] 7: +  uint8_t buffer[SEND_DATA_SIZE];
+[6.705s] 7: +  float X_speed;
+[6.706s] 7: +  float Y_speed;
+[6.706s] 7: +  float Z_speed;
+[6.706s] 7: +  unsigned char Frame_Tail;
+[6.706s] 7: @@ -103,3 +103,3 @@
+[6.707s] 7: -    float X;
+[6.707s] 7: -    float Y;
+[6.707s] 7: -    float Z;
+[6.707s] 7: +  float X;
+[6.708s] 7: +  float Y;
+[6.708s] 7: +  float Z;
+[6.708s] 7: @@ -111,3 +111,3 @@
+[6.708s] 7: -    TurnOn32Chassis(/* args */);
+[6.709s] 7: -    ~TurnOn32Chassis();
+[6.709s] 7: -    void run();
+[6.709s] 7: +  TurnOn32Chassis(/* args */);
+[6.709s] 7: +  ~TurnOn32Chassis();
+[6.710s] 7: +  void run();
+[6.710s] 7: @@ -115 +115 @@
+[6.710s] 7: -    serial::Serial STM32_Serial;
+[6.710s] 7: +  serial::Serial STM32_Serial;
+[6.710s] 7: @@ -118 +118 @@
+[6.711s] 7: -    uint8_t check_sum(uint8_t *data, uint8_t len);
+[6.711s] 7: +  uint8_t check_sum(uint8_t * data, uint8_t len);
+[6.711s] 7: @@ -120,5 +120,5 @@
+[6.711s] 7: -    bool receive_row_serialdata();
+[6.712s] 7: -    short uchartoshort(uint8_t data_high, uint8_t data_low);
+[6.712s] 7: -    void Publish_ImuSensor();
+[6.712s] 7: -    void Publish_Odom();
+[6.712s] 7: -    void Publish_Voltage();
+[6.713s] 7: +  bool receive_row_serialdata();
+[6.713s] 7: +  short uchartoshort(uint8_t data_high, uint8_t data_low);
+[6.713s] 7: +  void Publish_ImuSensor();
+[6.713s] 7: +  void Publish_Odom();
+[6.714s] 7: +  void Publish_Voltage();
+[6.714s] 7: @@ -126,2 +126,2 @@
+[6.714s] 7: -    void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);
+[6.714s] 7: -    string port_name_ = "/dev/agribot_serial";
+[6.714s] 7: +  void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);
+[6.715s] 7: +  string port_name_ = "/dev/agribot_serial";
+[6.715s] 7: @@ -129 +129 @@
+[6.715s] 7: -    int baud_rate_ = 115200;
+[6.715s] 7: +  int baud_rate_ = 115200;
+[6.716s] 7: @@ -131,5 +131,5 @@
+[6.716s] 7: -    // Initialize the topic publisher //初始化话题发布者
+[6.716s] 7: -    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher;
+[6.716s] 7: -    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr voltage_publisher;
+[6.716s] 7: -    rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher;
+[6.717s] 7: -    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr Cmd_Vel_Sub; // Initialize the topic subscriber //初始化话题订阅者
+[6.717s] 7: +  // Initialize the topic publisher //初始化话题发布者
+[6.717s] 7: +  rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher;
+[6.717s] 7: +  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr voltage_publisher;
+[6.718s] 7: +  rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher;
+[6.718s] 7: +  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr Cmd_Vel_Sub;   // Initialize the topic subscriber //初始化话题订阅者
+[6.718s] 7: @@ -137,10 +137,11 @@
+[6.718s] 7: -    ReceiveData_t receive_data_;
+[6.718s] 7: -    SendData_t send_data_;
+[6.719s] 7: -    sensor_msgs::msg::Imu Imu_Data_Pub;
+[6.719s] 7: -    rclcpp::TimerBase::SharedPtr timer_;
+[6.719s] 7: -    rclcpp::Time last_time_, current_time_;
+[6.719s] 7: -    float sample_time_;
+[6.720s] 7: -    VelPosData_t robot_vel_;
+[6.720s] 7: -    VelPosData_t robot_pos_;
+[6.720s] 7: -    float odom_x_scale_ = 1.0f, odom_y_scale = 1.0f, odom_z_scale_positive = 1.0f, odom_z_scale_negative = 1.0f; // 里程计修正参数
+[6.720s] 7: -    string robot_frame_id, gyro_frame_id, odom_frame_id;                                                         // Define the related variables //定义相关变量
+[6.720s] 7: +  ReceiveData_t receive_data_;
+[6.721s] 7: +  SendData_t send_data_;
+[6.721s] 7: +  sensor_msgs::msg::Imu Imu_Data_Pub;
+[6.721s] 7: +  rclcpp::TimerBase::SharedPtr timer_;
+[6.721s] 7: +  rclcpp::Time last_time_, current_time_;
+[6.721s] 7: +  float sample_time_;
+[6.722s] 7: +  VelPosData_t robot_vel_;
+[6.722s] 7: +  VelPosData_t robot_pos_;
+[6.722s] 7: +  float odom_x_scale_ = 1.0f, odom_y_scale = 1.0f, odom_z_scale_positive = 1.0f,
+[6.722s] 7: +    odom_z_scale_negative = 1.0f;                                                                                // 里程计修正参数
+[6.722s] 7: +  string robot_frame_id, gyro_frame_id, odom_frame_id;                                                           // Define the related variables //定义相关变量
+[6.723s] 7: 
+[6.723s] 7: Code style divergence in file 'src/Quaternion_Solution.cpp':
+[6.723s] 7: 
+[6.723s] 7: --- src/Quaternion_Solution.cpp
+[6.723s] 7: +++ src/Quaternion_Solution.cpp.uncrustify
+[6.724s] 7: @@ -1 +0,0 @@
+[6.724s] 7: -
+[6.724s] 7: @@ -40,2 +39 @@
+[6.724s] 7: -  if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f)))
+[6.724s] 7: -  {
+[6.725s] 7: +  if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) {
+[6.725s] 7: @@ -56,2 +54 @@
+[6.725s] 7: -    if (twoKi > 0.0f)
+[6.725s] 7: -    {
+[6.725s] 7: +    if (twoKi > 0.0f) {
+[6.726s] 7: @@ -64,3 +61 @@
+[6.726s] 7: -    }
+[6.726s] 7: -    else
+[6.726s] 7: -    {
+[6.726s] 7: +    } else {
+[6.727s] 7: 
+[6.728s] 7: Code style divergence in file 'src/slip_aware_odometry.cpp':
+[6.728s] 7: 
+[6.728s] 7: --- src/slip_aware_odometry.cpp
+[6.728s] 7: +++ src/slip_aware_odometry.cpp.uncrustify
+[6.729s] 7: @@ -393 +393,2 @@
+[6.729s] 7: -    const double yaw_error = std::abs(normalize_angle(
+[6.729s] 7: +    const double yaw_error = std::abs(
+[6.729s] 7: +      normalize_angle(
+[6.729s] 7: 
+[6.730s] 7: Code style divergence in file 'src/turn_on_32chassis.cpp':
+[6.730s] 7: 
+[6.730s] 7: --- src/turn_on_32chassis.cpp
+[6.730s] 7: +++ src/turn_on_32chassis.cpp.uncrustify
+[6.730s] 7: @@ -7,75 +7,70 @@
+[6.731s] 7: -int main(int argc, char **argv)
+[6.731s] 7: -{
+[6.731s] 7: -    rclcpp::init(argc, argv);
+[6.731s] 7: -    TurnOn32Chassis TurnOn32Chassis;
+[6.731s] 7: -    TurnOn32Chassis.run();
+[6.732s] 7: -    return 0;
+[6.732s] 7: -}
+[6.732s] 7: -
+[6.732s] 7: -TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
+[6.732s] 7: -{
+[6.732s] 7: -    sample_time_ = 0;
+[6.733s] 7: -
+[6.733s] 7: -    // 初始化结构体
+[6.733s] 7: -    memset(&receive_data_, 0, sizeof(receive_data_));
+[6.733s] 7: -    memset(&send_data_, 0, sizeof(send_data_));
+[6.733s] 7: -    imu_msg_ = sensor_msgs::msg::Imu();
+[6.734s] 7: -    memset(&robot_pos_, 0, sizeof(robot_pos_));
+[6.734s] 7: -    memset(&robot_vel_, 0, sizeof(robot_vel_));
+[6.734s] 7: -
+[6.734s] 7: -    // 注意：不要对 STM32_Serial 使用 memset，因为它是一个 C++ 对象
+[6.734s] 7: -
+[6.734s] 7: -    // 声明参数
+[6.735s] 7: -    this->declare_parameter<std::string>("port_name", "/dev/agribot_serial");
+[6.735s] 7: -    this->declare_parameter<int>("baud_rate", 115200);
+[6.735s] 7: -    this->declare_parameter<std::string>("odom_frame_id", "odom");
+[6.735s] 7: -    this->declare_parameter<std::string>("robot_frame_id", "base_footprint");
+[6.735s] 7: -    this->declare_parameter<std::string>("gyro_frame_id", "imu_link");
+[6.735s] 7: -
+[6.736s] 7: -    this->get_parameter<std::string>("port_name", port_name_);
+[6.736s] 7: -    this->get_parameter<int>("baud_rate", baud_rate_);
+[6.736s] 7: -    this->get_parameter("odom_frame_id", odom_frame_id);   // The odometer topic corresponds to the parent TF coordinate //里程计话题对应父TF坐标
+[6.736s] 7: -    this->get_parameter("robot_frame_id", robot_frame_id); // The odometer topic corresponds to sub-TF coordinates //里程计话题对应子TF坐标
+[6.736s] 7: -    this->get_parameter("gyro_frame_id", gyro_frame_id);   // IMU topics correspond to TF coordinates //IMU话题对应TF坐标
+[6.737s] 7: -
+[6.737s] 7: -    odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2); // Create the raw wheel odometry publisher //创建原始轮式里程计发布者
+[6.737s] 7: -    imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2); // Create an IMU topic publisher //创建IMU话题发布者
+[6.737s] 7: -
+[6.737s] 7: -    Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(
+[6.737s] 7: -        "cmd_vel", 10, std::bind(&TurnOn32Chassis::Cmd_Vel_Callback, this, std::placeholders::_1));
+[6.738s] 7: -
+[6.738s] 7: -    try
+[6.738s] 7: -    {
+[6.738s] 7: -        STM32_Serial.setPort(port_name_);
+[6.738s] 7: -        STM32_Serial.setBaudrate(baud_rate_);
+[6.739s] 7: -        STM32_Serial.setParity(serial::parity_none);
+[6.739s] 7: -        STM32_Serial.setStopbits(serial::stopbits_one);
+[6.739s] 7: -
+[6.739s] 7: -        serial::Timeout _timeout = serial::Timeout::simpleTimeout(1000);
+[6.739s] 7: -        STM32_Serial.setTimeout(_timeout);
+[6.740s] 7: -        STM32_Serial.open();
+[6.740s] 7: -        STM32_Serial.flushInput();
+[6.740s] 7: -    }
+[6.740s] 7: -    catch (const serial::IOException &e)
+[6.740s] 7: -    {
+[6.741s] 7: -        RCLCPP_ERROR(this->get_logger(), "Failed to open port: %s", e.what());
+[6.741s] 7: -    }
+[6.741s] 7: -
+[6.741s] 7: -    if (STM32_Serial.isOpen())
+[6.741s] 7: -    {
+[6.742s] 7: -        RCLCPP_INFO(this->get_logger(), "Port opened successfully");
+[6.742s] 7: -
+[6.742s] 7: -        // 发送初始化命令
+[6.742s] 7: -        // uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x75, 0x00, 0x00, 0x00, 0x00, 0x1F, 0X7D};
+[6.742s] 7: -        // tx_data[9] = check_sum(tx_data, 9);
+[6.743s] 7: -        // STM32_Serial.write(tx_data, sizeof(tx_data));
+[6.743s] 7: -
+[6.743s] 7: -        // // 创建一个定时器来定期读取串口数据
+[6.743s] 7: -        // timer_ = this->create_wall_timer(
+[6.743s] 7: -        //     std::chrono::milliseconds(500), // 每500毫秒读取一次
+[6.744s] 7: -        //     std::bind(&TurnOn32Chassis::receive_row_serialdata, this));
+[6.744s] 7: -    }
+[6.744s] 7: -    else
+[6.744s] 7: -    {
+[6.744s] 7: -        RCLCPP_ERROR(this->get_logger(), "Failed to open serial port");
+[6.745s] 7: -    }
+[6.745s] 7: +int main(int argc, char ** argv)
+[6.745s] 7: +{
+[6.745s] 7: +  rclcpp::init(argc, argv);
+[6.745s] 7: +  TurnOn32Chassis TurnOn32Chassis;
+[6.746s] 7: +  TurnOn32Chassis.run();
+[6.746s] 7: +  return 0;
+[6.746s] 7: +}
+[6.746s] 7: +
+[6.746s] 7: +TurnOn32Chassis::TurnOn32Chassis()
+[6.747s] 7: +: rclcpp::Node("TurnOn32Chassis")
+[6.747s] 7: +{
+[6.747s] 7: +  sample_time_ = 0;
+[6.747s] 7: +
+[6.747s] 7: +  // 初始化结构体
+[6.748s] 7: +  memset(&receive_data_, 0, sizeof(receive_data_));
+[6.748s] 7: +  memset(&send_data_, 0, sizeof(send_data_));
+[6.748s] 7: +  imu_msg_ = sensor_msgs::msg::Imu();
+[6.748s] 7: +  memset(&robot_pos_, 0, sizeof(robot_pos_));
+[6.748s] 7: +  memset(&robot_vel_, 0, sizeof(robot_vel_));
+[6.749s] 7: +
+[6.749s] 7: +  // 注意：不要对 STM32_Serial 使用 memset，因为它是一个 C++ 对象
+[6.749s] 7: +
+[6.749s] 7: +  // 声明参数
+[6.749s] 7: +  this->declare_parameter<std::string>("port_name", "/dev/agribot_serial");
+[6.750s] 7: +  this->declare_parameter<int>("baud_rate", 115200);
+[6.750s] 7: +  this->declare_parameter<std::string>("odom_frame_id", "odom");
+[6.750s] 7: +  this->declare_parameter<std::string>("robot_frame_id", "base_footprint");
+[6.750s] 7: +  this->declare_parameter<std::string>("gyro_frame_id", "imu_link");
+[6.750s] 7: +
+[6.751s] 7: +  this->get_parameter<std::string>("port_name", port_name_);
+[6.751s] 7: +  this->get_parameter<int>("baud_rate", baud_rate_);
+[6.751s] 7: +  this->get_parameter("odom_frame_id", odom_frame_id);     // The odometer topic corresponds to the parent TF coordinate //里程计话题对应父TF坐标
+[6.751s] 7: +  this->get_parameter("robot_frame_id", robot_frame_id);   // The odometer topic corresponds to sub-TF coordinates //里程计话题对应子TF坐标
+[6.751s] 7: +  this->get_parameter("gyro_frame_id", gyro_frame_id);     // IMU topics correspond to TF coordinates //IMU话题对应TF坐标
+[6.752s] 7: +
+[6.752s] 7: +  odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2);   // Create the raw wheel odometry publisher //创建原始轮式里程计发布者
+[6.752s] 7: +  imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2);   // Create an IMU topic publisher //创建IMU话题发布者
+[6.752s] 7: +
+[6.752s] 7: +  Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(
+[6.753s] 7: +    "cmd_vel", 10, std::bind(&TurnOn32Chassis::Cmd_Vel_Callback, this, std::placeholders::_1));
+[6.753s] 7: +
+[6.753s] 7: +  try {
+[6.753s] 7: +    STM32_Serial.setPort(port_name_);
+[6.753s] 7: +    STM32_Serial.setBaudrate(baud_rate_);
+[6.754s] 7: +    STM32_Serial.setParity(serial::parity_none);
+[6.754s] 7: +    STM32_Serial.setStopbits(serial::stopbits_one);
+[6.754s] 7: +
+[6.754s] 7: +    serial::Timeout _timeout = serial::Timeout::simpleTimeout(1000);
+[6.754s] 7: +    STM32_Serial.setTimeout(_timeout);
+[6.754s] 7: +    STM32_Serial.open();
+[6.755s] 7: +    STM32_Serial.flushInput();
+[6.755s] 7: +  } catch (const serial::IOException & e) {
+[6.755s] 7: +    RCLCPP_ERROR(this->get_logger(), "Failed to open port: %s", e.what());
+[6.755s] 7: +  }
+[6.755s] 7: +
+[6.756s] 7: +  if (STM32_Serial.isOpen()) {
+[6.756s] 7: +    RCLCPP_INFO(this->get_logger(), "Port opened successfully");
+[6.756s] 7: +
+[6.756s] 7: +    // 发送初始化命令
+[6.756s] 7: +    // uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x75, 0x00, 0x00, 0x00, 0x00, 0x1F, 0X7D};
+[6.757s] 7: +    // tx_data[9] = check_sum(tx_data, 9);
+[6.757s] 7: +    // STM32_Serial.write(tx_data, sizeof(tx_data));
+[6.757s] 7: +
+[6.757s] 7: +    // // 创建一个定时器来定期读取串口数据
+[6.757s] 7: +    // timer_ = this->create_wall_timer(
+[6.757s] 7: +    //     std::chrono::milliseconds(500), // 每500毫秒读取一次
+[6.758s] 7: +    //     std::bind(&TurnOn32Chassis::receive_row_serialdata, this));
+[6.758s] 7: +  } else {
+[6.758s] 7: +    RCLCPP_ERROR(this->get_logger(), "Failed to open serial port");
+[6.758s] 7: +  }
+[6.758s] 7: @@ -93,3 +88,3 @@
+[6.759s] 7: -    short Temp_data = 0;
+[6.759s] 7: -    Temp_data = (data_high << 8) | data_low;
+[6.759s] 7: -    return Temp_data;
+[6.759s] 7: +  short Temp_data = 0;
+[6.759s] 7: +  Temp_data = (data_high << 8) | data_low;
+[6.759s] 7: +  return Temp_data;
+[6.760s] 7: @@ -104,9 +99,19 @@
+[6.760s] 7: -    static uint8_t ReceiveDataTemp = 0, count = 0, status = 0;
+[6.760s] 7: -
+[6.760s] 7: -    // 检查是否有数据可读
+[6.760s] 7: -    if (STM32_Serial.available() > 0)
+[6.761s] 7: -    {
+[6.761s] 7: -        STM32_Serial.read(&ReceiveDataTemp, 1);
+[6.761s] 7: -        // RCLCPP_INFO(this->get_logger(), "Received byte: 0x%02X count: %d status: %d", ReceiveDataTemp, count, status);
+[6.761s] 7: -
+[6.761s] 7: -        if (count == 0 && ReceiveDataTemp == FRAME_HEADER && status == 0)
+[6.761s] 7: +  static uint8_t ReceiveDataTemp = 0, count = 0, status = 0;
+[6.762s] 7: +
+[6.762s] 7: +  // 检查是否有数据可读
+[6.762s] 7: +  if (STM32_Serial.available() > 0) {
+[6.762s] 7: +    STM32_Serial.read(&ReceiveDataTemp, 1);
+[6.762s] 7: +    // RCLCPP_INFO(this->get_logger(), "Received byte: 0x%02X count: %d status: %d", ReceiveDataTemp, count, status);
+[6.762s] 7: +
+[6.763s] 7: +    if (count == 0 && ReceiveDataTemp == FRAME_HEADER && status == 0) {
+[6.763s] 7: +      receive_data_.buffer[count] = ReceiveDataTemp;
+[6.763s] 7: +      count++;
+[6.763s] 7: +      status = 1;
+[6.763s] 7: +    } else if (status == 1) {
+[6.763s] 7: +      receive_data_.buffer[count] = ReceiveDataTemp;
+[6.764s] 7: +      count++;
+[6.764s] 7: +      if (count == 24) {
+[6.764s] 7: +        status = 0;
+[6.764s] 7: +        count = 0;
+[6.764s] 7: +        if (receive_data_.buffer[23] == FRAME_TAIL &&
+[6.764s] 7: +          check_sum(receive_data_.buffer, 22) == receive_data_.buffer[22])
+[6.765s] 7: @@ -114,3 +119,46 @@
+[6.765s] 7: -            receive_data_.buffer[count] = ReceiveDataTemp;
+[6.765s] 7: -            count++;
+[6.765s] 7: -            status = 1;
+[6.765s] 7: +          // 解析解收到的数据
+[6.765s] 7: +          receive_data_.Frame_Header = receive_data_.buffer[0];
+[6.766s] 7: +          receive_data_.Flag_Stop = receive_data_.buffer[1];
+[6.766s] 7: +          receive_data_.X_speed =
+[6.766s] 7: +            (float)uchartoshort(receive_data_.buffer[2], receive_data_.buffer[3]) / 1000.0f;
+[6.766s] 7: +          receive_data_.Y_speed =
+[6.766s] 7: +            (float)uchartoshort(receive_data_.buffer[4], receive_data_.buffer[5]) / 1000.0f;
+[6.766s] 7: +          receive_data_.Z_speed =
+[6.767s] 7: +            (float)uchartoshort(receive_data_.buffer[6], receive_data_.buffer[7]) / 1000.0f;
+[6.767s] 7: +          receive_data_.IMUData.accele_x_data = uchartoshort(
+[6.767s] 7: +            receive_data_.buffer[8],
+[6.767s] 7: +            receive_data_.buffer[9]);
+[6.767s] 7: +          receive_data_.IMUData.accele_y_data = uchartoshort(
+[6.767s] 7: +            receive_data_.buffer[10],
+[6.768s] 7: +            receive_data_.buffer[11]);
+[6.768s] 7: +          receive_data_.IMUData.accele_z_data = uchartoshort(
+[6.768s] 7: +            receive_data_.buffer[12],
+[6.768s] 7: +            receive_data_.buffer[13]);
+[6.768s] 7: +          receive_data_.IMUData.gyros_x_data = uchartoshort(
+[6.768s] 7: +            receive_data_.buffer[14],
+[6.769s] 7: +            receive_data_.buffer[15]);
+[6.769s] 7: +          receive_data_.IMUData.gyros_y_data = uchartoshort(
+[6.769s] 7: +            receive_data_.buffer[16],
+[6.769s] 7: +            receive_data_.buffer[17]);
+[6.769s] 7: +          receive_data_.IMUData.gyros_z_data = uchartoshort(
+[6.769s] 7: +            receive_data_.buffer[18],
+[6.769s] 7: +            receive_data_.buffer[19]);
+[6.770s] 7: +          receive_data_.Power_Voltage = (float)uchartoshort(
+[6.770s] 7: +            receive_data_.buffer[20],
+[6.770s] 7: +            receive_data_.buffer[21]) / 1000.0f;
+[6.770s] 7: +          receive_data_.Frame_Tail = receive_data_.buffer[23];
+[6.770s] 7: +
+[6.770s] 7: +          // 处理串口数据
+[6.771s] 7: +          //  将串口接收到的速度数据赋值给robot_vel_
+[6.771s] 7: +          robot_vel_.X = receive_data_.X_speed;
+[6.771s] 7: +          robot_vel_.Y = receive_data_.Y_speed;
+[6.771s] 7: +          robot_vel_.Z = receive_data_.Z_speed;
+[6.771s] 7: +
+[6.771s] 7: +          // 将串口接收到的IMU数据赋值给imu_msg_
+[6.771s] 7: +          imu_msg_.linear_acceleration.x = (float)receive_data_.IMUData.accele_x_data / ACCEl_RATIO;
+[6.772s] 7: +          imu_msg_.linear_acceleration.y = (float)receive_data_.IMUData.accele_y_data / ACCEl_RATIO;
+[6.772s] 7: +          imu_msg_.linear_acceleration.z = (float)receive_data_.IMUData.accele_z_data / ACCEl_RATIO;
+[6.772s] 7: +          imu_msg_.angular_velocity.x = (float)receive_data_.IMUData.gyros_x_data / GYROSCOPE_RATIO;
+[6.772s] 7: +          imu_msg_.angular_velocity.y = (float)receive_data_.IMUData.gyros_y_data / GYROSCOPE_RATIO;
+[6.772s] 7: +          imu_msg_.angular_velocity.z = (float)receive_data_.IMUData.gyros_z_data / GYROSCOPE_RATIO;
+[6.772s] 7: +          return true;
+[6.773s] 7: @@ -118,42 +166 @@
+[6.773s] 7: -        else if (status == 1)
+[6.773s] 7: -        {
+[6.773s] 7: -            receive_data_.buffer[count] = ReceiveDataTemp;
+[6.773s] 7: -            count++;
+[6.773s] 7: -            if (count == 24)
+[6.773s] 7: -            {
+[6.774s] 7: -                status = 0;
+[6.774s] 7: -                count = 0;
+[6.774s] 7: -                if (receive_data_.buffer[23] == FRAME_TAIL && check_sum(receive_data_.buffer, 22) == receive_data_.buffer[22])
+[6.774s] 7: -                {
+[6.774s] 7: -                    // 解析解收到的数据
+[6.774s] 7: -                    receive_data_.Frame_Header = receive_data_.buffer[0];
+[6.774s] 7: -                    receive_data_.Flag_Stop = receive_data_.buffer[1];
+[6.775s] 7: -                    receive_data_.X_speed = (float)uchartoshort(receive_data_.buffer[2], receive_data_.buffer[3]) / 1000.0f;
+[6.775s] 7: -                    receive_data_.Y_speed = (float)uchartoshort(receive_data_.buffer[4], receive_data_.buffer[5]) / 1000.0f;
+[6.775s] 7: -                    receive_data_.Z_speed = (float)uchartoshort(receive_data_.buffer[6], receive_data_.buffer[7]) / 1000.0f;
+[6.775s] 7: -                    receive_data_.IMUData.accele_x_data = uchartoshort(receive_data_.buffer[8], receive_data_.buffer[9]);
+[6.775s] 7: -                    receive_data_.IMUData.accele_y_data = uchartoshort(receive_data_.buffer[10], receive_data_.buffer[11]);
+[6.775s] 7: -                    receive_data_.IMUData.accele_z_data = uchartoshort(receive_data_.buffer[12], receive_data_.buffer[13]);
+[6.776s] 7: -                    receive_data_.IMUData.gyros_x_data = uchartoshort(receive_data_.buffer[14], receive_data_.buffer[15]);
+[6.776s] 7: -                    receive_data_.IMUData.gyros_y_data = uchartoshort(receive_data_.buffer[16], receive_data_.buffer[17]);
+[6.776s] 7: -                    receive_data_.IMUData.gyros_z_data = uchartoshort(receive_data_.buffer[18], receive_data_.buffer[19]);
+[6.776s] 7: -                    receive_data_.Power_Voltage = (float)uchartoshort(receive_data_.buffer[20], receive_data_.buffer[21]) / 1000.0f;
+[6.776s] 7: -                    receive_data_.Frame_Tail = receive_data_.buffer[23];
+[6.776s] 7: -
+[6.776s] 7: -                    // 处理串口数据
+[6.777s] 7: -                    //  将串口接收到的速度数据赋值给robot_vel_
+[6.777s] 7: -                    robot_vel_.X = receive_data_.X_speed;
+[6.777s] 7: -                    robot_vel_.Y = receive_data_.Y_speed;
+[6.777s] 7: -                    robot_vel_.Z = receive_data_.Z_speed;
+[6.777s] 7: -
+[6.777s] 7: -                    // 将串口接收到的IMU数据赋值给imu_msg_
+[6.777s] 7: -                    imu_msg_.linear_acceleration.x = (float)receive_data_.IMUData.accele_x_data / ACCEl_RATIO;
+[6.778s] 7: -                    imu_msg_.linear_acceleration.y = (float)receive_data_.IMUData.accele_y_data / ACCEl_RATIO;
+[6.778s] 7: -                    imu_msg_.linear_acceleration.z = (float)receive_data_.IMUData.accele_z_data / ACCEl_RATIO;
+[6.778s] 7: -                    imu_msg_.angular_velocity.x = (float)receive_data_.IMUData.gyros_x_data / GYROSCOPE_RATIO;
+[6.778s] 7: -                    imu_msg_.angular_velocity.y = (float)receive_data_.IMUData.gyros_y_data / GYROSCOPE_RATIO;
+[6.778s] 7: -                    imu_msg_.angular_velocity.z = (float)receive_data_.IMUData.gyros_z_data / GYROSCOPE_RATIO;
+[6.778s] 7: -                    return true;
+[6.778s] 7: -                }
+[6.779s] 7: -            }
+[6.779s] 7: -        }
+[6.779s] 7: +      }
+[6.779s] 7: @@ -161,2 +168,3 @@
+[6.779s] 7: -
+[6.779s] 7: -    return false;
+[6.779s] 7: +  }
+[6.780s] 7: +
+[6.780s] 7: +  return false;
+[6.780s] 7: @@ -171,17 +179,16 @@
+[6.780s] 7: -uint8_t TurnOn32Chassis::check_sum(uint8_t *data, uint8_t len)
+[6.780s] 7: -{
+[6.780s] 7: -    unsigned char check_sum = 0, k;
+[6.780s] 7: -
+[6.781s] 7: -    for (k = 0; k < len; k++)
+[6.781s] 7: -    {
+[6.781s] 7: -        check_sum = check_sum ^ data[k]; // By bit or by bit //按位异或
+[6.781s] 7: -    }
+[6.781s] 7: -
+[6.781s] 7: -    // if (mode == 3)
+[6.781s] 7: -    // {
+[6.782s] 7: -    //     for (k = 0; k < Count_Number; k++)
+[6.782s] 7: -    //     {
+[6.782s] 7: -    //         check_sum = check_sum ^ Distance_Data.rx[k]; // By bit or by bit //按位异或
+[6.782s] 7: -    //     }
+[6.782s] 7: -
+[6.782s] 7: -    return check_sum; // Returns the bitwise XOR result //返回按位异或结果
+[6.782s] 7: +uint8_t TurnOn32Chassis::check_sum(uint8_t * data, uint8_t len)
+[6.783s] 7: +{
+[6.783s] 7: +  unsigned char check_sum = 0, k;
+[6.783s] 7: +
+[6.783s] 7: +  for (k = 0; k < len; k++) {
+[6.783s] 7: +    check_sum = check_sum ^ data[k];     // By bit or by bit //按位异或
+[6.783s] 7: +  }
+[6.783s] 7: +
+[6.784s] 7: +  // if (mode == 3)
+[6.784s] 7: +  // {
+[6.784s] 7: +  //     for (k = 0; k < Count_Number; k++)
+[6.784s] 7: +  //     {
+[6.784s] 7: +  //         check_sum = check_sum ^ Distance_Data.rx[k]; // By bit or by bit //按位异或
+[6.784s] 7: +  //     }
+[6.784s] 7: +
+[6.785s] 7: +  return check_sum;   // Returns the bitwise XOR result //返回按位异或结果
+[6.785s] 7: @@ -192,33 +199,33 @@
+[6.785s] 7: -    // Convert the Z-axis rotation Angle into a quaternion for expression
+[6.785s] 7: -    // 把Z轴转角转换为四元数进行表达
+[6.785s] 7: -    tf2::Quaternion q;
+[6.785s] 7: -    q.setRPY(0, 0, robot_pos_.Z);
+[6.785s] 7: -    geometry_msgs::msg::Quaternion odom_quat = tf2::toMsg(q);
+[6.785s] 7: -
+[6.786s] 7: -    nav_msgs::msg::Odometry odom; // Instance the odometer topic data //实例化里程计话题数据
+[6.786s] 7: -    odom.header.stamp = rclcpp::Node::now();
+[6.786s] 7: -    ;
+[6.786s] 7: -    odom.header.frame_id = odom_frame_id;     // Odometer TF parent coordinates //里程计TF父坐标
+[6.786s] 7: -    odom.pose.pose.position.x = robot_pos_.X; // Position //位置
+[6.786s] 7: -    odom.pose.pose.position.y = robot_pos_.Y;
+[6.786s] 7: -    odom.pose.pose.position.z = 0.0; // Planar robot: robot_pos_.Z stores yaw, not height //二维机器人：robot_pos_.Z 表示偏航角，不是高度
+[6.787s] 7: -    odom.pose.pose.orientation = odom_quat; // Posture, Quaternion converted by Z-axis rotation //姿态，通过Z轴转角转换的四元数
+[6.787s] 7: -
+[6.787s] 7: -    odom.child_frame_id = robot_frame_id;      // Odometer TF subcoordinates //里程计TF子坐标
+[6.787s] 7: -    odom.twist.twist.linear.x = robot_vel_.X;  // Speed in the X direction //X方向速度
+[6.787s] 7: -    odom.twist.twist.linear.y = robot_vel_.Y;  // Speed in the Y direction //Y方向速度
+[6.787s] 7: -    odom.twist.twist.angular.z = robot_vel_.Z; // Angular velocity around the Z axis //绕Z轴角速度
+[6.787s] 7: -
+[6.788s] 7: -    // There are two types of this matrix, which are used when the robot is at rest and when it is moving.Extended Kalman Filtering officially provides 2 matrices for the robot_pose_ekf feature pack
+[6.788s] 7: -    // 这个矩阵有两种，分别在机器人静止和运动的时候使用。扩展卡尔曼滤波官方提供的2个矩阵，用于robot_pose_ekf功能包
+[6.788s] 7: -    if (robot_vel_.X == 0 && robot_vel_.Y == 0 && robot_vel_.Z == 0)
+[6.788s] 7: -        // If the velocity is zero, it means that the error of the encoder will be relatively small, and the data of the encoder will be considered more reliable
+[6.788s] 7: -        // 如果velocity是零，说明编码器的误差会比较小，认为编码器数据更可靠
+[6.788s] 7: -        memcpy(&odom.pose.covariance, odom_pose_covariance2, sizeof(odom_pose_covariance2)),
+[6.788s] 7: -            memcpy(&odom.twist.covariance, odom_twist_covariance2, sizeof(odom_twist_covariance2));
+[6.789s] 7: -    else
+[6.789s] 7: -        // If the velocity of the trolley is non-zero, considering the sliding error that may be brought by the encoder in motion, the data of IMU is considered to be more reliable
+[6.789s] 7: -        // 如果小车velocity非零，考虑到运动中编码器可能带来的滑动误差，认为imu的数据更可靠
+[6.789s] 7: -        memcpy(&odom.pose.covariance, odom_pose_covariance, sizeof(odom_pose_covariance)),
+[6.789s] 7: -            memcpy(&odom.twist.covariance, odom_twist_covariance, sizeof(odom_twist_covariance));
+[6.789s] 7: -    odom_publisher->publish(odom); // Pub odometer topic //发布里程计话题
+[6.789s] 7: +  // Convert the Z-axis rotation Angle into a quaternion for expression
+[6.790s] 7: +  // 把Z轴转角转换为四元数进行表达
+[6.790s] 7: +  tf2::Quaternion q;
+[6.790s] 7: +  q.setRPY(0, 0, robot_pos_.Z);
+[6.790s] 7: +  geometry_msgs::msg::Quaternion odom_quat = tf2::toMsg(q);
+[6.790s] 7: +
+[6.790s] 7: +  nav_msgs::msg::Odometry odom;   // Instance the odometer topic data //实例化里程计话题数据
+[6.790s] 7: +  odom.header.stamp = rclcpp::Node::now();
+[6.790s] 7: +  odom.header.frame_id = odom_frame_id;       // Odometer TF parent coordinates //里程计TF父坐标
+[6.791s] 7: +  odom.pose.pose.position.x = robot_pos_.X;   // Position //位置
+[6.791s] 7: +  odom.pose.pose.position.y = robot_pos_.Y;
+[6.791s] 7: +  odom.pose.pose.position.z = 0.0;   // Planar robot: robot_pos_.Z stores yaw, not height //二维机器人：robot_pos_.Z 表示偏航角，不是高度
+[6.791s] 7: +  odom.pose.pose.orientation = odom_quat;   // Posture, Quaternion converted by Z-axis rotation //姿态，通过Z轴转角转换的四元数
+[6.791s] 7: +
+[6.791s] 7: +  odom.child_frame_id = robot_frame_id;        // Odometer TF subcoordinates //里程计TF子坐标
+[6.791s] 7: +  odom.twist.twist.linear.x = robot_vel_.X;    // Speed in the X direction //X方向速度
+[6.792s] 7: +  odom.twist.twist.linear.y = robot_vel_.Y;    // Speed in the Y direction //Y方向速度
+[6.792s] 7: +  odom.twist.twist.angular.z = robot_vel_.Z;   // Angular velocity around the Z axis //绕Z轴角速度
+[6.792s] 7: +
+[6.792s] 7: +  // There are two types of this matrix, which are used when the robot is at rest and when it is moving.Extended Kalman Filtering officially provides 2 matrices for the robot_pose_ekf feature pack
+[6.792s] 7: +  // 这个矩阵有两种，分别在机器人静止和运动的时候使用。扩展卡尔曼滤波官方提供的2个矩阵，用于robot_pose_ekf功能包
+[6.792s] 7: +  if (robot_vel_.X == 0 && robot_vel_.Y == 0 && robot_vel_.Z == 0) {
+[6.792s] 7: +    // If the velocity is zero, it means that the error of the encoder will be relatively small, and the data of the encoder will be considered more reliable
+[6.793s] 7: +    // 如果velocity是零，说明编码器的误差会比较小，认为编码器数据更可靠
+[6.793s] 7: +    memcpy(&odom.pose.covariance, odom_pose_covariance2, sizeof(odom_pose_covariance2)),
+[6.793s] 7: +    memcpy(&odom.twist.covariance, odom_twist_covariance2, sizeof(odom_twist_covariance2));
+[6.793s] 7: +  } else {
+[6.793s] 7: +    // If the velocity of the trolley is non-zero, considering the sliding error that may be brought by the encoder in motion, the data of IMU is considered to be more reliable
+[6.793s] 7: +    // 如果小车velocity非零，考虑到运动中编码器可能带来的滑动误差，认为imu的数据更可靠
+[6.793s] 7: +    memcpy(&odom.pose.covariance, odom_pose_covariance, sizeof(odom_pose_covariance)),
+[6.794s] 7: +    memcpy(&odom.twist.covariance, odom_twist_covariance, sizeof(odom_twist_covariance));
+[6.794s] 7: +  }
+[6.794s] 7: +  odom_publisher->publish(odom);   // Pub odometer topic //发布里程计话题
+[6.794s] 7: @@ -245,3 +252,3 @@
+[6.794s] 7: -    sensor_msgs::msg::Imu Imu_Data_Pub; // Instantiate IMU topic data //实例化IMU话题数据
+[6.794s] 7: -    Imu_Data_Pub.header.stamp = rclcpp::Node::now();
+[6.794s] 7: -    Imu_Data_Pub.header.frame_id = gyro_frame_id;        // IMU corresponds to TF coordinates, which is required to use the robot_pose_ekf feature pack
+[6.795s] 7: +  sensor_msgs::msg::Imu Imu_Data_Pub;   // Instantiate IMU topic data //实例化IMU话题数据
+[6.795s] 7: +  Imu_Data_Pub.header.stamp = rclcpp::Node::now();
+[6.795s] 7: +  Imu_Data_Pub.header.frame_id = gyro_frame_id;          // IMU corresponds to TF coordinates, which is required to use the robot_pose_ekf feature pack
+[6.795s] 7: @@ -249,17 +256,17 @@
+[6.795s] 7: -    Imu_Data_Pub.orientation.x = imu_msg_.orientation.x; // A quaternion represents a three-axis attitude //四元数表达三轴姿态
+[6.795s] 7: -    Imu_Data_Pub.orientation.y = imu_msg_.orientation.y;
+[6.795s] 7: -    Imu_Data_Pub.orientation.z = imu_msg_.orientation.z;
+[6.796s] 7: -    Imu_Data_Pub.orientation.w = imu_msg_.orientation.w;
+[6.796s] 7: -    Imu_Data_Pub.orientation_covariance[0] = 1e6; // Three-axis attitude covariance matrix //三轴姿态协方差矩阵
+[6.796s] 7: -    Imu_Data_Pub.orientation_covariance[4] = 1e6;
+[6.796s] 7: -    Imu_Data_Pub.orientation_covariance[8] = 1e-6;
+[6.796s] 7: -    Imu_Data_Pub.angular_velocity.x = imu_msg_.angular_velocity.x; // Triaxial angular velocity //三轴角速度
+[6.796s] 7: -    Imu_Data_Pub.angular_velocity.y = imu_msg_.angular_velocity.y;
+[6.796s] 7: -    Imu_Data_Pub.angular_velocity.z = imu_msg_.angular_velocity.z;
+[6.797s] 7: -    Imu_Data_Pub.angular_velocity_covariance[0] = 1e6; // Triaxial angular velocity covariance matrix //三轴角速度协方差矩阵
+[6.797s] 7: -    Imu_Data_Pub.angular_velocity_covariance[4] = 1e6;
+[6.797s] 7: -    Imu_Data_Pub.angular_velocity_covariance[8] = 1e-6;
+[6.797s] 7: -    Imu_Data_Pub.linear_acceleration.x = imu_msg_.linear_acceleration.x; // Triaxial acceleration //三轴线性加速度
+[6.797s] 7: -    Imu_Data_Pub.linear_acceleration.y = imu_msg_.linear_acceleration.y;
+[6.797s] 7: -    Imu_Data_Pub.linear_acceleration.z = imu_msg_.linear_acceleration.z;
+[6.797s] 7: -    imu_publisher->publish(Imu_Data_Pub); // Pub IMU topic //发布IMU话题
+[6.797s] 7: +  Imu_Data_Pub.orientation.x = imu_msg_.orientation.x;   // A quaternion represents a three-axis attitude //四元数表达三轴姿态
+[6.798s] 7: +  Imu_Data_Pub.orientation.y = imu_msg_.orientation.y;
+[6.798s] 7: +  Imu_Data_Pub.orientation.z = imu_msg_.orientation.z;
+[6.798s] 7: +  Imu_Data_Pub.orientation.w = imu_msg_.orientation.w;
+[6.798s] 7: +  Imu_Data_Pub.orientation_covariance[0] = 1e6;   // Three-axis attitude covariance matrix //三轴姿态协方差矩阵
+[6.798s] 7: +  Imu_Data_Pub.orientation_covariance[4] = 1e6;
+[6.798s] 7: +  Imu_Data_Pub.orientation_covariance[8] = 1e-6;
+[6.798s] 7: +  Imu_Data_Pub.angular_velocity.x = imu_msg_.angular_velocity.x;   // Triaxial angular velocity //三轴角速度
+[6.799s] 7: +  Imu_Data_Pub.angular_velocity.y = imu_msg_.angular_velocity.y;
+[6.799s] 7: +  Imu_Data_Pub.angular_velocity.z = imu_msg_.angular_velocity.z;
+[6.799s] 7: +  Imu_Data_Pub.angular_velocity_covariance[0] = 1e6;   // Triaxial angular velocity covariance matrix //三轴角速度协方差矩阵
+[6.799s] 7: +  Imu_Data_Pub.angular_velocity_covariance[4] = 1e6;
+[6.799s] 7: +  Imu_Data_Pub.angular_velocity_covariance[8] = 1e-6;
+[6.799s] 7: +  Imu_Data_Pub.linear_acceleration.x = imu_msg_.linear_acceleration.x;   // Triaxial acceleration //三轴线性加速度
+[6.799s] 7: +  Imu_Data_Pub.linear_acceleration.y = imu_msg_.linear_acceleration.y;
+[6.800s] 7: +  Imu_Data_Pub.linear_acceleration.z = imu_msg_.linear_acceleration.z;
+[6.800s] 7: +  imu_publisher->publish(Imu_Data_Pub);   // Pub IMU topic //发布IMU话题
+[6.800s] 7: @@ -270,35 +277,87 @@
+[6.800s] 7: -    short transition; // intermediate variable //中间变量
+[6.800s] 7: -
+[6.800s] 7: -    send_data_.buffer[0] = FRAME_HEADER; // frame head 0x7B //帧头0X7B
+[6.800s] 7: -    send_data_.buffer[1] = 0;            // set aside //预留位
+[6.801s] 7: -    send_data_.buffer[2] = 0;            // set aside //预留位
+[6.801s] 7: -
+[6.801s] 7: -    // The target velocity of the X-axis of the robot
+[6.801s] 7: -    // 机器人x轴的目标线速度
+[6.801s] 7: -    transition = 0;
+[6.801s] 7: -    transition = twist_aux->linear.x * 1000; // 将浮点数放大一千倍，简化传输
+[6.801s] 7: -    send_data_.buffer[4] = transition;       // 取数据的低8位
+[6.802s] 7: -    send_data_.buffer[3] = transition >> 8;  // 取数据的高8位
+[6.802s] 7: -
+[6.802s] 7: -    // The target velocity of the Y-axis of the robot
+[6.802s] 7: -    // 机器人y轴的目标线速度
+[6.802s] 7: -    transition = 0;
+[6.802s] 7: -    transition = twist_aux->linear.y * 1000;
+[6.802s] 7: -    send_data_.buffer[6] = transition;
+[6.802s] 7: -    send_data_.buffer[5] = transition >> 8;
+[6.803s] 7: -
+[6.803s] 7: -    // The target angular velocity of the robot's Z axis
+[6.803s] 7: -    // 机器人z轴的目标角速度
+[6.803s] 7: -    transition = 0;
+[6.803s] 7: -    transition = twist_aux->angular.z * 1000;
+[6.803s] 7: -    send_data_.buffer[8] = transition;
+[6.803s] 7: -    send_data_.buffer[7] = transition >> 8;
+[6.804s] 7: -
+[6.804s] 7: -    send_data_.buffer[9] = check_sum(send_data_.buffer, 9); // For the BCC check bits, see the Check_Sum function //BCC校验位，规则参见Check_Sum函数
+[6.804s] 7: -    send_data_.buffer[10] = FRAME_TAIL;                     // frame tail 0x7D //帧尾0X7D
+[6.804s] 7: -    try
+[6.804s] 7: -    {
+[6.804s] 7: -        STM32_Serial.write(send_data_.buffer, sizeof(send_data_.buffer)); // Sends data to the downloader via serial port //通过串口向下位机发送数据
+[6.804s] 7: -        RCLCPP_INFO(this->get_logger(), "Sent data: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",
+[6.805s] 7: -                    send_data_.buffer[0], send_data_.buffer[1], send_data_.buffer[2], send_data_.buffer[3], send_data_.buffer[4],
+[6.805s] 7: -                    send_data_.buffer[5], send_data_.buffer[6], send_data_.buffer[7], send_data_.buffer[8], send_data_.buffer[9], send_data_.buffer[10]);
+[6.805s] 7: +  short transition;   // intermediate variable //中间变量
+[6.805s] 7: +
+[6.805s] 7: +  send_data_.buffer[0] = FRAME_HEADER;   // frame head 0x7B //帧头0X7B
+[6.805s] 7: +  send_data_.buffer[1] = 0;              // set aside //预留位
+[6.805s] 7: +  send_data_.buffer[2] = 0;              // set aside //预留位
+[6.806s] 7: +
+[6.806s] 7: +  // The target velocity of the X-axis of the robot
+[6.806s] 7: +  // 机器人x轴的目标线速度
+[6.806s] 7: +  transition = 0;
+[6.806s] 7: +  transition = twist_aux->linear.x * 1000;   // 将浮点数放大一千倍，简化传输
+[6.806s] 7: +  send_data_.buffer[4] = transition;         // 取数据的低8位
+[6.806s] 7: +  send_data_.buffer[3] = transition >> 8;    // 取数据的高8位
+[6.806s] 7: +
+[6.807s] 7: +  // The target velocity of the Y-axis of the robot
+[6.807s] 7: +  // 机器人y轴的目标线速度
+[6.807s] 7: +  transition = 0;
+[6.807s] 7: +  transition = twist_aux->linear.y * 1000;
+[6.807s] 7: +  send_data_.buffer[6] = transition;
+[6.807s] 7: +  send_data_.buffer[5] = transition >> 8;
+[6.807s] 7: +
+[6.808s] 7: +  // The target angular velocity of the robot's Z axis
+[6.808s] 7: +  // 机器人z轴的目标角速度
+[6.808s] 7: +  transition = 0;
+[6.808s] 7: +  transition = twist_aux->angular.z * 1000;
+[6.808s] 7: +  send_data_.buffer[8] = transition;
+[6.808s] 7: +  send_data_.buffer[7] = transition >> 8;
+[6.808s] 7: +
+[6.809s] 7: +  send_data_.buffer[9] = check_sum(send_data_.buffer, 9);   // For the BCC check bits, see the Check_Sum function //BCC校验位，规则参见Check_Sum函数
+[6.809s] 7: +  send_data_.buffer[10] = FRAME_TAIL;                       // frame tail 0x7D //帧尾0X7D
+[6.809s] 7: +  try {
+[6.809s] 7: +    STM32_Serial.write(send_data_.buffer, sizeof(send_data_.buffer));     // Sends data to the downloader via serial port //通过串口向下位机发送数据
+[6.809s] 7: +    RCLCPP_INFO(
+[6.809s] 7: +      this->get_logger(), "Sent data: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",
+[6.809s] 7: +      send_data_.buffer[0], send_data_.buffer[1], send_data_.buffer[2], send_data_.buffer[3],
+[6.810s] 7: +      send_data_.buffer[4],
+[6.810s] 7: +      send_data_.buffer[5], send_data_.buffer[6], send_data_.buffer[7], send_data_.buffer[8],
+[6.810s] 7: +      send_data_.buffer[9], send_data_.buffer[10]);
+[6.810s] 7: +  } catch (serial::IOException & e) {
+[6.810s] 7: +    RCLCPP_ERROR(this->get_logger(), ("Unable to send data through serial port"));     // If sending data fails, an error message is printed //如果发送数据失败，打印错误信息
+[6.810s] 7: +  }
+[6.810s] 7: +}
+[6.811s] 7: +
+[6.811s] 7: +void TurnOn32Chassis::run()
+[6.811s] 7: +{
+[6.811s] 7: +  RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis");
+[6.811s] 7: +  last_time_ = rclcpp::Node::now();
+[6.811s] 7: +
+[6.811s] 7: +  while (rclcpp::ok()) {
+[6.811s] 7: +    try {
+[6.812s] 7: +      current_time_ = rclcpp::Node::now();
+[6.812s] 7: +      sample_time_ = (current_time_ - last_time_).seconds();
+[6.812s] 7: +      // RCLCPP_INFO(this->get_logger(), "sample_time_: %f", sample_time_);
+[6.812s] 7: +      // 采样频率
+[6.812s] 7: +      if (TurnOn32Chassis::receive_row_serialdata() == true) {
+[6.812s] 7: +        // RCLCPP_INFO(this->get_logger(), "SAMPLING_FREQ: %f", 1 / sample_time_);
+[6.812s] 7: +
+[6.813s] 7: +        // 应用缩放系数
+[6.813s] 7: +        robot_vel_.X = robot_vel_.X * odom_x_scale_;
+[6.813s] 7: +        robot_vel_.Y = robot_vel_.Y * odom_y_scale;
+[6.813s] 7: +        if (robot_vel_.Z >= 0) {
+[6.813s] 7: +          robot_vel_.Z = robot_vel_.Z * odom_z_scale_positive;
+[6.813s] 7: +        } else {
+[6.813s] 7: +          robot_vel_.Z = robot_vel_.Z * odom_z_scale_negative;
+[6.814s] 7: +        }
+[6.814s] 7: +
+[6.814s] 7: +        robot_pos_.X += (robot_vel_.X * cos(robot_pos_.Z) - robot_vel_.Y * sin(robot_pos_.Z)) *
+[6.814s] 7: +          sample_time_;                                                                                               // Calculate the displacement in the X direction, unit: m //计算X方向的位移，单位：m
+[6.814s] 7: +        robot_pos_.Y += (robot_vel_.X * sin(robot_pos_.Z) + robot_vel_.Y * cos(robot_pos_.Z)) *
+[6.814s] 7: +          sample_time_;                                                                                               // Calculate the displacement in the Y direction, unit: m //计算Y方向的位移，单位：m
+[6.814s] 7: +        robot_pos_.Z += robot_vel_.Z * sample_time_;                                                                  // The angular displacement about the Z axis, in rad //绕Z轴的角位移，单位：rad
+[6.814s] 7: +
+[6.815s] 7: +        // 通过IMU绕三轴角速度与三轴加速度计算三轴姿态
+[6.815s] 7: +        Quaternion_Solution(
+[6.815s] 7: +          imu_msg_.angular_velocity.x, imu_msg_.angular_velocity.y, imu_msg_.angular_velocity.z,
+[6.815s] 7: +          imu_msg_.linear_acceleration.x, imu_msg_.linear_acceleration.y,
+[6.815s] 7: +          imu_msg_.linear_acceleration.z);
+[6.815s] 7: +
+[6.815s] 7: +        Publish_Odom();              // Pub the speedometer topic //发布里程计话题
+[6.816s] 7: +        Publish_ImuSensor();         // Pub the IMU topic //发布IMU话题
+[6.816s] 7: +        // Publish_Voltage();   // Pub the topic of power supply voltage //发布电源电压话题
+[6.816s] 7: +
+[6.816s] 7: +        last_time_ = current_time_;         // Record the time and use it to calculate the time interval //记录时间，用于计算时间间隔
+[6.816s] 7: +      }
+[6.816s] 7: +
+[6.816s] 7: +      rclcpp::spin_some(this->get_node_base_interface());
+[6.817s] 7: +    } catch (const rclcpp::exceptions::RCLError & e) {
+[6.817s] 7: +      RCLCPP_ERROR(this->get_logger(), "unexpectedly failed whith %s", e.what());
+[6.817s] 7: @@ -306,53 +365 @@
+[6.817s] 7: -    catch (serial::IOException &e)
+[6.817s] 7: -    {
+[6.817s] 7: -        RCLCPP_ERROR(this->get_logger(), ("Unable to send data through serial port")); // If sending data fails, an error message is printed //如果发送数据失败，打印错误信息
+[6.817s] 7: -    }
+[6.817s] 7: -}
+[6.818s] 7: -
+[6.818s] 7: -void TurnOn32Chassis::run()
+[6.818s] 7: -{
+[6.818s] 7: -    RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis");
+[6.818s] 7: -    last_time_ = rclcpp::Node::now();
+[6.818s] 7: -
+[6.818s] 7: -    while (rclcpp::ok())
+[6.819s] 7: -    {
+[6.819s] 7: -        try
+[6.819s] 7: -        {
+[6.819s] 7: -            current_time_ = rclcpp::Node::now();
+[6.819s] 7: -            sample_time_ = (current_time_ - last_time_).seconds();
+[6.819s] 7: -            // RCLCPP_INFO(this->get_logger(), "sample_time_: %f", sample_time_);
+[6.819s] 7: -            // 采样频率
+[6.819s] 7: -            if (TurnOn32Chassis::receive_row_serialdata() == true)
+[6.820s] 7: -            {
+[6.820s] 7: -                // RCLCPP_INFO(this->get_logger(), "SAMPLING_FREQ: %f", 1 / sample_time_);
+[6.820s] 7: -
+[6.820s] 7: -                // 应用缩放系数
+[6.820s] 7: -                robot_vel_.X = robot_vel_.X * odom_x_scale_;
+[6.820s] 7: -                robot_vel_.Y = robot_vel_.Y * odom_y_scale;
+[6.820s] 7: -                if (robot_vel_.Z >= 0)
+[6.821s] 7: -                    robot_vel_.Z = robot_vel_.Z * odom_z_scale_positive;
+[6.821s] 7: -                else
+[6.821s] 7: -                    robot_vel_.Z = robot_vel_.Z * odom_z_scale_negative;
+[6.821s] 7: -
+[6.821s] 7: -                robot_pos_.X += (robot_vel_.X * cos(robot_pos_.Z) - robot_vel_.Y * sin(robot_pos_.Z)) * sample_time_; // Calculate the displacement in the X direction, unit: m //计算X方向的位移，单位：m
+[6.821s] 7: -                robot_pos_.Y += (robot_vel_.X * sin(robot_pos_.Z) + robot_vel_.Y * cos(robot_pos_.Z)) * sample_time_; // Calculate the displacement in the Y direction, unit: m //计算Y方向的位移，单位：m
+[6.821s] 7: -                robot_pos_.Z += robot_vel_.Z * sample_time_;                                                          // The angular displacement about the Z axis, in rad //绕Z轴的角位移，单位：rad
+[6.821s] 7: -
+[6.822s] 7: -                // 通过IMU绕三轴角速度与三轴加速度计算三轴姿态
+[6.822s] 7: -                Quaternion_Solution(imu_msg_.angular_velocity.x, imu_msg_.angular_velocity.y, imu_msg_.angular_velocity.z,
+[6.822s] 7: -                                    imu_msg_.linear_acceleration.x, imu_msg_.linear_acceleration.y, imu_msg_.linear_acceleration.z);
+[6.822s] 7: -
+[6.822s] 7: -                Publish_Odom();      // Pub the speedometer topic //发布里程计话题
+[6.822s] 7: -                Publish_ImuSensor(); // Pub the IMU topic //发布IMU话题
+[6.822s] 7: -                // Publish_Voltage();   // Pub the topic of power supply voltage //发布电源电压话题
+[6.823s] 7: -
+[6.823s] 7: -                last_time_ = current_time_; // Record the time and use it to calculate the time interval //记录时间，用于计算时间间隔
+[6.823s] 7: -            }
+[6.823s] 7: -
+[6.823s] 7: -            rclcpp::spin_some(this->get_node_base_interface());
+[6.823s] 7: -        }
+[6.823s] 7: -        catch (const rclcpp::exceptions::RCLError &e)
+[6.824s] 7: -        {
+[6.824s] 7: -            RCLCPP_ERROR(this->get_logger(), "unexpectedly failed whith %s", e.what());
+[6.824s] 7: -        }
+[6.824s] 7: -    }
+[6.824s] 7: +  }
+[6.824s] 7: @@ -363,8 +370,8 @@
+[6.824s] 7: -    RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis::~TurnOn32Chassis");
+[6.825s] 7: -
+[6.825s] 7: -    uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0X7D};
+[6.825s] 7: -    tx_data[9] = check_sum(tx_data, 9);
+[6.825s] 7: -    STM32_Serial.write(tx_data, sizeof(tx_data));
+[6.825s] 7: -
+[6.825s] 7: -    STM32_Serial.close();
+[6.825s] 7: -}
+[6.825s] 7: +  RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis::~TurnOn32Chassis");
+[6.826s] 7: +
+[6.826s] 7: +  uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0X7D};
+[6.826s] 7: +  tx_data[9] = check_sum(tx_data, 9);
+[6.826s] 7: +  STM32_Serial.write(tx_data, sizeof(tx_data));
+[6.826s] 7: +
+[6.826s] 7: +  STM32_Serial.close();
+[6.826s] 7: +}
+[6.826s] 7: 
+[6.827s] 7: 5 files with code style divergence
+[6.827s] 7: No code style divergence in file 'include/turn_on_32chassis/wheel_trust_monitor.hpp'
+[6.827s] 7: 
+[6.827s] 7: No code style divergence in file 'src/imu_source_selector.cpp'
+[6.827s] 7: 
+[6.827s] 7: No code style divergence in file 'test/test_wheel_trust_monitor.cpp'
+[6.827s] 7: 
+[6.828s] 7: -- run_test.py: return code 1
+[6.828s] 7: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/uncrustify.xunit.xml'
+[6.828s] 7/8 Test #7: uncrustify ................................***Failed    0.61 sec
+[6.828s] test 8
+[6.828s]     Start 8: xmllint
+[6.828s] 
+[6.828s] 8: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml" "--package-name" "turn_on_32chassis" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/ament_xmllint/xmllint.txt" "--command" "/opt/ros/humble/bin/ament_xmllint" "--xunit-file" "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml"
+[6.829s] 8: Test timeout computed to be: 60
+[6.885s] 8: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+[6.885s] 8:  - /opt/ros/humble/bin/ament_xmllint --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml
+[9.045s] 8: File 'package.xml' is valid
+[9.045s] 8: 
+[9.045s] 8: No problems found
+[9.076s] 8: -- run_test.py: return code 0
+[9.076s] 8: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/xmllint.xunit.xml'
+[9.099s] 8/8 Test #8: xmllint ...................................   Passed    2.37 sec
+[9.100s] 
+[9.101s] 50% tests passed, 4 tests failed out of 8
+[9.101s] 
+[9.101s] Label Time Summary:
+[9.102s] cppcheck       =   0.46 sec*proc (1 test)
+[9.102s] flake8         =   0.91 sec*proc (1 test)
+[9.102s] gtest          =   0.22 sec*proc (1 test)
+[9.103s] launch_test    =   3.36 sec*proc (1 test)
+[9.103s] lint_cmake     =   0.42 sec*proc (1 test)
+[9.103s] linter         =   5.38 sec*proc (6 tests)
+[9.103s] pep257         =   0.61 sec*proc (1 test)
+[9.104s] uncrustify     =   0.61 sec*proc (1 test)
+[9.104s] xmllint        =   2.37 sec*proc (1 test)
+[9.104s] 
+[9.104s] Total Test time (real) =   8.97 sec
+[9.105s] 
+[9.105s] The following tests FAILED:
+[9.105s] 	  2 - test_test_slip_aware_odometry_launch.py (Failed)
+[9.105s] 	  4 - flake8 (Failed)
+[9.106s] 	  5 - lint_cmake (Failed)
+[9.106s] 	  7 - uncrustify (Failed)
+[9.108s] Errors while running CTest
+[9.108s] Output from these tests are in: /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/Testing/Temporary/LastTest.log
+[9.108s] Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.
+[9.113s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis' returned '8': CMAKE_PREFIX_PATH=/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/fast_lio:/home/wheeltec/agribot/agribot_ws/install/yesense_std_ros2:/home/wheeltec/agribot/agribot_ws/install/yesense_interface:/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

@@ -1,0 +1,10 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis':
+ - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml
+
+checking ./launch/turn_on_32chassis.launch.py
+checking ./test/test_slip_aware_odometry_launch.py
+No problems found
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/pep257.xunit.xml'

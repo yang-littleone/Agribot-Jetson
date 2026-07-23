@@ -1,1 +1,1 @@
-prepend-non-duplicate-if-exists;PATH;bin
+/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_environment_hooks/path.dsv

@@ -1,0 +1,5 @@
+[0.000000] (-) TimerEvent: {}
+[0.000276] (fast_lio) JobQueued: {'identifier': 'fast_lio', 'dependencies': OrderedDict([('fast_lio', '/home/wheeltec/agribot/agribot_ws/install/fast_lio')])}
+[0.000387] (fast_lio) JobStarted: {'identifier': 'fast_lio'}
+[0.080813] (fast_lio) JobEnded: {'identifier': 'fast_lio', 'rc': 0}
+[0.085330] (-) EventReactorShutdown: {}

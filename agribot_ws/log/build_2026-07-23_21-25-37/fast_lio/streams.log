@@ -1,0 +1,172 @@
+[0.062s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/fast_lio': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/fast_lio -- -j8 -l8
+[0.168s] [  2%] Built target fast_lio__rs
+[0.171s] [ 11%] Built target fast_lio__rosidl_generator_c
+[0.179s] [ 13%] Built target fast_lio__cpp
+[0.208s] [ 13%] Built target ament_cmake_python_symlink_fast_lio
+[0.222s] [ 22%] Built target fast_lio__rosidl_typesupport_fastrtps_cpp
+[0.234s] [ 30%] Built target fast_lio__rosidl_typesupport_introspection_c
+[0.239s] [ 38%] Built target fast_lio__rosidl_typesupport_c
+[0.245s] [ 47%] Built target fast_lio__rosidl_typesupport_fastrtps_c
+[0.262s] [ 55%] Built target fast_lio__rosidl_typesupport_cpp
+[0.290s] [ 63%] Built target fast_lio__rosidl_typesupport_introspection_cpp
+[0.331s] [ 63%] Built target fast_lio
+[0.377s] [ 66%] Built target fast_lio__py
+[0.390s] [ 69%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/laserMapping.cpp.o
+[0.435s] [ 75%] Built target fast_lio__rosidl_generator_py
+[0.491s] [ 80%] Built target fast_lio__rosidl_typesupport_fastrtps_c__pyext
+[0.493s] [ 86%] Built target fast_lio__rosidl_typesupport_introspection_c__pyext
+[0.511s] [ 91%] Built target fast_lio__rosidl_typesupport_c__pyext
+[0.909s] running egg_info
+[0.910s] writing fast_lio.egg-info/PKG-INFO
+[0.911s] writing dependency_links to fast_lio.egg-info/dependency_links.txt
+[0.912s] writing top-level names to fast_lio.egg-info/top_level.txt
+[0.925s] reading manifest file 'fast_lio.egg-info/SOURCES.txt'
+[0.927s] writing manifest file 'fast_lio.egg-info/SOURCES.txt'
+[1.017s] [ 91%] Built target ament_cmake_python_build_fast_lio_egg
+[16.328s] In file included from /usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+[16.328s]                  from /usr/include/boost/smart_ptr/detail/yield_k.hpp:23,
+[16.328s]                  from /usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+[16.329s]                  from /usr/include/boost/smart_ptr/detail/spinlock.hpp:42,
+[16.329s]                  from /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+[16.329s]                  from /usr/include/boost/smart_ptr/shared_ptr.hpp:29,
+[16.329s]                  from /usr/include/boost/shared_ptr.hpp:17,
+[16.329s]                  from /usr/include/boost/date_time/microsec_time_clock.hpp:18,
+[16.329s]                  from /usr/include/boost/interprocess/detail/posix_time_types_wrk.hpp:31,
+[16.329s]                  from /usr/include/boost/interprocess/detail/os_thread_functions.hpp:36,
+[16.330s]                  from /usr/include/boost/interprocess/sync/file_lock.hpp:26,
+[16.330s]                  from /usr/include/pcl-1.12/pcl/io/pcd_io.h:46,
+[16.330s]                  from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:73,
+[16.330s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/src/IMU_Processing.hpp:18,
+[16.330s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/src/laserMapping.cpp:48:
+[16.330s] /usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+[16.331s]    36 | BOOST_PRAGMA_MESSAGE(
+[16.331s]       | ^~~~~~~~~~~~~~~~~~~~
+[32.004s] In file included from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp:83,
+[32.005s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/esekfom.hpp:49,
+[32.005s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/use-ikfom.hpp:4,
+[32.005s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/src/IMU_Processing.hpp:22,
+[32.005s]                  from /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/src/laserMapping.cpp:48:
+[32.005s] /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp: In instantiation of ‘std::pair<_FIter, _FIter> MTK::cos_sinc_sqrt(const scalar&) [with scalar = double]’:
+[32.006s] /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:252:52:   required from ‘scalar MTK::exp(MTK::vectview<scalar, dim>, MTK::vectview<const scalar, dim>, const scalar&) [with scalar = double; int n = 3]’
+[32.006s] /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/../mtk/types/S2.hpp:140:32:   required from ‘void MTK::S2<_scalar, den, num, S2_typ>::boxplus(MTK::vectview<const _scalar, 2>, MTK::S2<_scalar, den, num, S2_typ>::scalar) [with _scalar = double; int den = 98090; int num = 10000; int S2_typ = 1; MTK::S2<_scalar, den, num, S2_typ>::scalar = double]’
+[32.006s] /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/use-ikfom.hpp:12:1:   required from here
+[32.006s] /home/wheeltec/agribot/agribot_ws/src/FAST_LIO/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:143:27: note: parameter passing for argument of type ‘std::pair<double, double>’ when C++17 is enabled changed to match C++14 in GCC 10.1
+[32.006s]   143 | std::pair<scalar, scalar> cos_sinc_sqrt(const scalar &x2){
+[32.007s]       |                           ^~~~~~~~~~~~~
+[199.498s] [ 94%] Linking CXX executable fastlio_mapping
+[203.121s] [100%] Built target fastlio_mapping
+[203.153s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/fast_lio' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/fast_lio -- -j8 -l8
+[203.173s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/fast_lio': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/fast_lio
+[203.192s] -- Install configuration: "Release"
+[203.194s] -- Execute custom install script
+[203.197s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/ament_index/resource_index/rosidl_interfaces/fast_lio
+[203.198s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__functions.h
+[203.198s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__struct.h
+[203.198s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.h
+[203.198s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/pose6_d.h
+[203.198s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_generator_c__visibility_control.h
+[203.199s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/library_path.sh
+[203.199s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/library_path.dsv
+[203.200s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_fastrtps_c.h
+[203.200s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[203.201s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__builder.hpp
+[203.201s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__struct.hpp
+[203.201s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__traits.hpp
+[203.202s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.hpp
+[203.202s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/pose6_d.hpp
+[203.202s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_generator_cpp__visibility_control.hpp
+[203.204s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_fastrtps_cpp.hpp
+[203.204s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[203.205s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_introspection_c.h
+[203.205s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[203.206s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_introspection_cpp.hpp
+[203.206s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/pythonpath.sh
+[203.207s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/pythonpath.dsv
+[203.208s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/PKG-INFO
+[203.209s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/SOURCES.txt
+[203.209s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/dependency_links.txt
+[203.210s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/top_level.txt
+[203.211s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/__init__.py
+[203.212s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_c.c
+[203.212s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_fastrtps_c.c
+[203.213s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_introspection_c.c
+[203.213s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[203.213s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[203.213s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[203.213s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/libfast_lio__rosidl_generator_py.so
+[203.214s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/__init__.py
+[203.214s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/_pose6_d.py
+[203.214s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/_pose6_d_s.c
+[203.217s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[203.219s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[203.220s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[203.221s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/ament_index/resource_index/rust_packages/fast_lio
+[203.221s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rust/Cargo.toml
+[203.222s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rust/build.rs
+[203.222s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rust/src/lib.rs
+[203.223s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rust/src/msg.rs
+[203.224s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rust/src/msg/rmw.rs
+[203.227s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/msg/Pose6D.idl
+[203.227s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/msg/Pose6D.msg
+[203.228s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/fast_lio/fastlio_mapping
+[203.228s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/config/avia.yaml
+[203.228s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/config/horizon.yaml
+[203.229s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/config/mid360.yaml
+[203.232s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/config/ouster64.yaml
+[203.233s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/config/velodyne.yaml
+[203.233s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/launch/gdb_debug_example.launch
+[203.234s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/launch/mapping.launch.py
+[203.235s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/rviz/fastlio.rviz
+[203.236s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/LICENSE
+[203.237s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/README.md
+[203.237s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/ament_index/resource_index/package_run_dependencies/fast_lio
+[203.238s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/ament_index/resource_index/parent_prefix_path/fast_lio
+[203.238s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/ament_prefix_path.sh
+[203.239s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/ament_prefix_path.dsv
+[203.240s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/path.sh
+[203.240s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/environment/path.dsv
+[203.241s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/local_setup.bash
+[203.241s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/local_setup.sh
+[203.242s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/local_setup.zsh
+[203.242s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/local_setup.dsv
+[203.243s] -- Symlinking: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/package.dsv
+[203.251s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/ament_index/resource_index/packages/fast_lio
+[203.252s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/rosidl_cmake-extras.cmake
+[203.252s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_include_directories-extras.cmake
+[203.253s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_libraries-extras.cmake
+[203.254s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_targets-extras.cmake
+[203.254s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[203.254s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_dependencies-extras.cmake
+[203.255s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[203.255s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[203.255s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lioConfig.cmake
+[203.255s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lioConfig-version.cmake
+[203.255s] -- Up-to-date symlink: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/package.xml
+[203.256s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_generator_c.so
+[203.256s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_c.so
+[203.256s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_cpp.so
+[203.256s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_c.so
+[203.257s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_c.so
+[203.257s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_cpp.so
+[203.257s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_typesupport_cpp.so
+[203.393s] Listing '/home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio'...
+[203.394s] Listing '/home/wheeltec/agribot/agribot_ws/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg'...
+[203.410s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/lib/libfast_lio__rosidl_generator_py.so
+[203.412s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cExport.cmake
+[203.412s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cExport-release.cmake
+[203.413s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cExport.cmake
+[203.413s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cExport-release.cmake
+[203.413s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cppExport.cmake
+[203.413s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cppExport.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cExport.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cExport-release.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cExport.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cExport-release.cmake
+[203.414s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cppExport.cmake
+[203.415s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cppExport-release.cmake
+[203.415s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cppExport.cmake
+[203.415s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cppExport-release.cmake
+[203.415s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_pyExport.cmake
+[203.415s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_pyExport-release.cmake
+[203.423s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/fast_lio' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/fast_lio

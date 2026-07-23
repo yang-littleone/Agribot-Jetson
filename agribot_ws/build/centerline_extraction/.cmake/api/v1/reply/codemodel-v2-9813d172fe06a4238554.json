@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-e38badc6a07bdfe981c9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "centerline_extraction",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "centerline_extraction_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-centerline_extraction_uninstall-f05e570e9364f7bfd35e.json",
+					"name" : "centerline_extraction_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "corn_row_detector_projection::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-corn_row_detector_projection-b149d8e62b7fb5a7dd5b.json",
+					"name" : "corn_row_detector_projection",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cornfield_navigation_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cornfield_navigation_node-c3c301130215eb1a6243.json",
+					"name" : "cornfield_navigation_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-4c4d4edf21a98b37dddc.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wheeltec/agribot/agribot_ws/build/centerline_extraction",
+		"source" : "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

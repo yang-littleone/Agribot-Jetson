@@ -1,1 +1,1 @@
-prepend-non-duplicate;AMENT_PREFIX_PATH;
+/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_environment_hooks/ament_prefix_path.dsv

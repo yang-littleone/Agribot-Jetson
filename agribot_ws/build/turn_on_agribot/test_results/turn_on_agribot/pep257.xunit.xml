@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="turn_on_agribot.pep257"
+  tests="1"
+  errors="0"
+  failures="0"
+  time="0.026"
+>
+  <testcase
+    name="./launch/turn_on_agribot.launch.py"
+    classname="turn_on_agribot.pep257"/>
+  <system-out>Checked files:
+* ./launch/turn_on_agribot.launch.py</system-out>
+</testsuite>

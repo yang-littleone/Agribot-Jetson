@@ -1,0 +1,64 @@
+/**:
+    ros__parameters:
+        feature_extract_enable: false
+        point_filter_num: 3
+        max_iteration: 3
+        filter_size_surf: 0.2
+        filter_size_map: 0.2
+        cube_side_length: 1000.0
+        runtime_pos_log_enable: false
+        map_file_path: "./test.pcd"
+
+        common:
+            lid_topic:  "/livox/lidar"
+            imu_topic:  "/livox/imu"
+            # Keep the newest LiDAR scan instead of processing an old queue.
+            # Preserve enough 200 Hz IMU samples to propagate across a
+            # deliberately skipped LiDAR frame.
+            lidar_qos_depth: 1
+            imu_qos_depth: 400
+            maximum_lidar_buffer_size: 1
+            time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
+            time_offset_lidar_to_imu: 0.0 # Time offset between lidar and IMU calibrated by other algorithms, e.g. LI-Init (can be found in README).
+                                        # This param will take effect no matter what time_sync_en is. So if the time offset is not known exactly, please set as 0.0
+
+        preprocess:
+            lidar_type: 4                # MID360 PointCloud2 input
+            scan_line:  4
+            blind: 0.5
+            timestamp_unit: 3
+            scan_rate: 10
+
+        mapping:
+            acc_cov: 0.1
+            gyr_cov: 0.1
+            b_acc_cov: 0.0001
+            b_gyr_cov: 0.0001
+            fov_degree:    360.0
+            det_range:     100.0
+            extrinsic_est_en:  false     # use the calibrated MID360 LiDAR-to-IMU extrinsic below
+            extrinsic_T: [ -0.011, -0.02329, 0.04412 ]
+            extrinsic_R: [ 1., 0., 0.,
+                            0., 1., 0.,
+                            0., 0., 1.]
+            minimum_effective_points: 20
+            maximum_mean_residual: 0.20
+
+        publish:
+            # Real-robot navigation consumes raw /livox/lidar directly.
+            # Disabling visualization products keeps scan matching from
+            # falling behind the sensor stream.
+            path_en: false               # true: publish Path
+            effect_map_en: false         # true: publish Effects
+            map_en: false                # true: publish Map cloud
+            scan_publish_en: false       # false: close all the point cloud output
+            dense_publish_en: false      # false: low down the points number in a global-frame point clouds scan.
+            scan_bodyframe_pub_en: false # true: output the point cloud scans in IMU-body-frame
+            tf_en: false                 # final odom->base_footprint TF is owned by slip-aware odometry
+            odom_frame: "lio_odom"
+            body_frame: "lio_body"
+
+        pcd_save:
+            pcd_save_en: false
+            interval: -1                 # how many LiDAR frames saved in each pcd file; 
+                                        # -1 : all frames will be saved in ONE pcd file, may lead to memory crash when having too much frames.

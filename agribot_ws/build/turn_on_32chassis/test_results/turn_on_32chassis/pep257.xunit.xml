@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="turn_on_32chassis.pep257"
+  tests="2"
+  errors="0"
+  failures="0"
+  time="0.086"
+>
+  <testcase
+    name="./launch/turn_on_32chassis.launch.py"
+    classname="turn_on_32chassis.pep257"/>
+  <testcase
+    name="./test/test_slip_aware_odometry_launch.py"
+    classname="turn_on_32chassis.pep257"/>
+  <system-out>Checked files:
+* ./launch/turn_on_32chassis.launch.py
+* ./test/test_slip_aware_odometry_launch.py</system-out>
+</testsuite>

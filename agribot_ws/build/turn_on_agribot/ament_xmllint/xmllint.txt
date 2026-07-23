@@ -1,0 +1,10 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/turn_on_agribot':
+ - /opt/ros/humble/bin/ament_xmllint --xunit-file /home/wheeltec/agribot/agribot_ws/build/turn_on_agribot/test_results/turn_on_agribot/xmllint.xunit.xml
+
+File 'package.xml' is valid
+
+No problems found
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/turn_on_agribot/test_results/turn_on_agribot/xmllint.xunit.xml'

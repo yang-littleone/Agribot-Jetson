@@ -1,1 +1,1 @@
-rclcpp;std_msgs;sensor_msgs;nav_msgs;geometry_msgs;visualization_msgs;tf2;tf2_ros;tf2_geometry_msgs;pcl_conversions;PCL;pcl_ros;ament_lint_auto;ament_lint_common
+/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/centerline_extraction

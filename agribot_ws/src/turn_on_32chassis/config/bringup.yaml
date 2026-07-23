@@ -1,17 +1,20 @@
-# Parameters for turn_on_32chassis.launch.py.
-#
-# Values under "launch" select the data path and provide the defaults for
-# launch arguments. Values under each ROS node use the standard
-# ros__parameters layout. Command-line launch arguments still take precedence.
+# turn_on_32chassis.launch.py 的实机启动与节点参数。
+# launch 下是启动参数默认值；命令行传入的同名参数优先级更高。
 
 launch:
-# imu_source_selector parameters:h30 or onboard
-  imu_source: h30       
-  start_h30_driver: true
-  h30_topic: /imu/data_h30  #在h30的驱动文件中定义了其topic为/imu/data_h30,所以这里也要改成/imu/data_h30,否则会报错
-  h30_serial_port: /dev/wheeltec_IMU  #在h30的驱动文件中定义了其serial_port为/dev/wheeltec_IMU
-  h30_baud_rate: 460800
-  h30_frame_id: gyro_link  #在h30的驱动文件中定义了其frame_id为gyro_link,所以这里也要改成gyro_link,否则会报错
+  # 里程计模式：fastlio=当前抗打滑方案；legacy=原轮速+H30融合方案。
+  odometry_mode: fastlio
+
+  # IMU来源：h30=外置H30，onboard=底盘板载IMU。
+  imu_source: h30
+  start_h30_driver: true       # 选择H30时是否同时启动其串口驱动
+  h30_topic: /imu/data_h30     # H30驱动发布的原始IMU话题
+  h30_serial_port: /dev/wheeltec_IMU  # H30串口设备
+  h30_baud_rate: 460800        # H30串口波特率
+  h30_frame_id: gyro_link      # H30消息的坐标系
+  use_rviz: true               # 启动时是否打开RViz2
+
+  # 仅选择onboard时使用：base_link到板载IMU的静态外参（米、弧度）。
   onboard_imu_tf:
     parent_frame: base_link
     child_frame: imu_link
@@ -24,19 +27,86 @@ launch:
 
 turn_on_32chassis_node:
   ros__parameters:
-    odom_frame_id: odom
-    robot_frame_id: base_footprint
-    # This is the frame of the chassis controller's onboard IMU data.
-    gyro_frame_id: imu_link
+    odom_frame_id: odom             # 原始轮速里程计的父坐标系
+    robot_frame_id: base_footprint  # 地面投影处的车体坐标系
+    gyro_frame_id: imu_link         # 底盘板载IMU消息坐标系
 
 yesense_pub:
   ros__parameters:
-    driver_type: ros_serial
-    imu_topic: imu_data
+    driver_type: ros_serial  # H30驱动通信方式
+    imu_topic: imu_data      # 驱动内部话题名；启动文件会按h30_topic重设
 
 imu_source_selector:
   ros__parameters:
-    # Used only when the incoming H30 message has zero covariance entries.
-    orientation_variance: 0.0025
-    angular_velocity_variance: 0.0004
-    linear_acceleration_variance: 0.04
+    # 输入IMU未给协方差时使用的默认方差。
+    orientation_variance: 0.0025       # 姿态方差，rad²
+    angular_velocity_variance: 0.0004  # 角速度方差，(rad/s)²
+    linear_acceleration_variance: 0.04 # 线加速度方差，(m/s²)²
+
+slip_aware_odometry:
+  ros__parameters:
+    # ---------- 坐标系与话题 ----------
+    odom_frame: odom                       # 最终里程计父坐标系
+    base_frame: base_footprint              # 最终里程计车体坐标系
+    wheel_topic: /wheel/odom                # 底盘发布的原始轮速里程计
+    lio_input_topic: /Odometry              # FAST-LIO原始里程计
+    lio_output_topic: /lio/odom             # 对齐到odom后的标准LIO
+    validated_wheel_topic: /wheel/odom_validated # 通过打滑检查的轮速
+    fused_input_topic: /odometry/fused_internal  # EKF内部融合结果
+    final_odom_topic: /odometry/filtered    # 给导航使用的最终里程计
+
+    # ---------- 时序与实时输出 ----------
+    comparison_window: 0.2    # 轮速/LIO位移比较窗口，单位s
+    maximum_sync_delta: 0.15  # 两路数据允许的最大时间戳差，单位s
+    wheel_lio_max_age: 0.15   # LIO超过该时间未更新时停止使用轮速，单位s
+    lio_timeout: 0.5          # LIO超时后冻结最终位姿，单位s
+    output_frequency: 50.0    # 最终odom定时输出频率，单位Hz
+    maximum_prediction_horizon: 0.15 # 轮速帧间预测的最长时间，单位s
+    maximum_wheel_prediction_distance: 0.06 # 单次轮速预测最大位移，单位m
+    maximum_lio_latency: 0.30 # 拒绝延迟超过该值的旧LIO数据，单位s
+
+    # ---------- 静止抖动抑制 ----------
+    stationary_hold_time: 0.30             # 连续静止多久后锁定x/y，单位s
+    stationary_lio_speed_threshold: 0.025  # 进入静止的LIO速度上限，m/s
+    stationary_lio_release_speed: 0.05     # 超过该LIO速度解除静止锁定，m/s
+    stationary_wheel_linear_threshold: 0.01 # 轮速静止线速度门限，m/s
+    stationary_wheel_angular_threshold: 0.02 # 轮速静止角速度门限，rad/s
+    stationary_release_distance: 0.02      # 外力推动超过该距离解除锁定，m
+
+    # ---------- 瞬时速度不一致判定 ----------
+    instant_linear_residual_threshold: 0.15 # 触发轮速降权的线速度差，m/s
+    instant_linear_recovery_threshold: 0.08 # 解除瞬时降权的线速度差，m/s
+    instant_yaw_rate_residual_threshold: 0.50 # 触发降权的角速度差，rad/s
+    instant_yaw_rate_recovery_threshold: 0.25 # 解除降权的角速度差，rad/s
+    minimum_observable_speed: 0.05          # 低于该速度不做瞬时判定，m/s
+    instant_mismatch_variance_scale: 100.0  # 瞬时不一致时轮速方差倍率
+
+    # ---------- 窗口打滑状态机 ----------
+    translation_residual_threshold: 0.025 # 进入可疑状态的位移残差，m
+    yaw_residual_threshold: 0.12          # 进入可疑状态的航向残差，rad
+    recovery_translation_threshold: 0.015 # 恢复时要求的位移残差，m
+    recovery_yaw_threshold: 0.06          # 恢复时要求的航向残差，rad
+    minimum_observable_motion: 0.01       # 小于该位移不判定打滑，m
+    slip_confirmation_time: 0.2           # 可疑持续多久后隔离轮速，s
+    wheel_recovery_time: 0.5              # 一致持续多久后开始恢复轮速，s
+    wheel_recovery_ramp_time: 0.5         # 轮速权重渐进恢复时间，s
+    suspect_variance_scale: 25.0          # 可疑状态轮速方差倍率
+    rejected_variance_scale: 1000000.0    # 隔离状态方差倍率，近似完全剔除
+
+    # ---------- 测量协方差与速度滤波 ----------
+    lio_max_position_variance: 0.25  # 接受LIO位置的最大方差，m²
+    lio_pose_variance_floor: 0.001   # LIO位置方差下限，防止过度自信，m²
+    lio_twist_variance: 0.0025       # LIO线速度方差，(m/s)²
+    normal_wheel_linear_variance: 0.01  # 正常轮速线速度方差，(m/s)²
+    normal_wheel_angular_variance: 0.02 # 正常轮速角速度方差，(rad/s)²
+    frozen_variance: 1000.0          # LIO失效冻结时使用的大方差
+    twist_filter_alpha: 0.8          # LIO速度滤波系数；越大越实时、越小越平滑
+
+    # ---------- base_footprint到MID360惯导主体的外参 ----------
+    # 平移单位m，旋转单位rad；以下为CAD/出厂初值，实机标定后应更新。
+    "base_to_lio_body.x": 0.04263
+    "base_to_lio_body.y": 0.02338
+    "base_to_lio_body.z": 0.07088
+    "base_to_lio_body.roll": 0.0
+    "base_to_lio_body.pitch": 0.0
+    "base_to_lio_body.yaw": 0.0

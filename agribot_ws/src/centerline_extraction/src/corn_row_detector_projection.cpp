@@ -21,9 +21,11 @@ using PointCloudXYZPtr = pcl::PointCloud<pcl::PointXYZ>::Ptr;
 
 CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector_projection")
 {
+    const auto point_cloud_topic =
+        this->declare_parameter<std::string>("point_cloud_topic", "/livox/lidar");
     // create subscribers and publishers
     point_cloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-        "/mid360_PointCloud2", 10, std::bind(&CornRowDetectorProjection::point_cloud_callback, this, std::placeholders::_1));
+        point_cloud_topic, 10, std::bind(&CornRowDetectorProjection::point_cloud_callback, this, std::placeholders::_1));
     navigation_mode_sub_ = this->create_subscription<std_msgs::msg::String>(
         "/navigation_mode", 10,
         std::bind(&CornRowDetectorProjection::navigation_mode_callback, this, std::placeholders::_1));
