@@ -1,0 +1,209 @@
+[0.531s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'centerline_extraction', '--event-handlers', 'console_direct+']
+[0.531s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=['console_direct+'], ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['centerline_extraction'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff9612dd50>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff9612d7e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff9612d7e0>>)
+[2.101s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.102s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/wheeltec/agribot/agribot_ws'
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.103s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extensions ['ignore', 'ignore_ament_install']
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extension 'ignore'
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extension 'ignore_ament_install'
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extensions ['colcon_pkg']
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extension 'colcon_pkg'
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extensions ['colcon_meta']
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extension 'colcon_meta'
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extensions ['ros']
+[2.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/centerline_extraction) by extension 'ros'
+[2.157s] DEBUG:colcon.colcon_core.package_identification:Package 'src/centerline_extraction' with type 'ros.ament_cmake' and name 'centerline_extraction'
+[2.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extensions ['ignore', 'ignore_ament_install']
+[2.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extension 'ignore'
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extension 'ignore_ament_install'
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extensions ['colcon_pkg']
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extension 'colcon_pkg'
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extensions ['colcon_meta']
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extension 'colcon_meta'
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extensions ['ros']
+[2.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/serial_ros2) by extension 'ros'
+[2.160s] DEBUG:colcon.colcon_core.package_identification:Package 'src/serial_ros2' with type 'ros.ament_cmake' and name 'serial'
+[2.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extensions ['ignore', 'ignore_ament_install']
+[2.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extension 'ignore'
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extension 'ignore_ament_install'
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extensions ['colcon_pkg']
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extension 'colcon_pkg'
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extensions ['colcon_meta']
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extension 'colcon_meta'
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extensions ['ros']
+[2.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_32chassis) by extension 'ros'
+[2.167s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turn_on_32chassis' with type 'ros.ament_cmake' and name 'turn_on_32chassis'
+[2.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extensions ['ignore', 'ignore_ament_install']
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extension 'ignore'
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extension 'ignore_ament_install'
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extensions ['colcon_pkg']
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extension 'colcon_pkg'
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extensions ['colcon_meta']
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extension 'colcon_meta'
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extensions ['ros']
+[2.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turn_on_agribot) by extension 'ros'
+[2.170s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turn_on_agribot' with type 'ros.ament_cmake' and name 'turn_on_agribot'
+[2.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['ignore', 'ignore_ament_install']
+[2.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'ignore'
+[2.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'ignore_ament_install'
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['colcon_pkg']
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'colcon_pkg'
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['colcon_meta']
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'colcon_meta'
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['ros']
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'ros'
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['cmake', 'python']
+[2.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'cmake'
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'python'
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extensions ['python_setup_py']
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2) by extension 'python_setup_py'
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extensions ['ignore', 'ignore_ament_install']
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extension 'ignore'
+[2.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extension 'ignore_ament_install'
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extensions ['colcon_pkg']
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extension 'colcon_pkg'
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extensions ['colcon_meta']
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extension 'colcon_meta'
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extensions ['ros']
+[2.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_interface) by extension 'ros'
+[2.174s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yesense_ros2/yesense_interface' with type 'ros.ament_cmake' and name 'yesense_interface'
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extensions ['ignore', 'ignore_ament_install']
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extension 'ignore'
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extension 'ignore_ament_install'
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extensions ['colcon_pkg']
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extension 'colcon_pkg'
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extensions ['colcon_meta']
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extension 'colcon_meta'
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extensions ['ros']
+[2.175s] Level 1:colcon.colcon_core.package_identification:_identify(src/yesense_ros2/yesense_std_ros2) by extension 'ros'
+[2.177s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yesense_ros2/yesense_std_ros2' with type 'ros.ament_cmake' and name 'yesense_std_ros2'
+[2.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.320s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'serial' in 'src/serial_ros2'
+[2.320s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'turn_on_agribot' in 'src/turn_on_agribot'
+[2.320s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'yesense_interface' in 'src/yesense_ros2/yesense_interface'
+[2.320s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'turn_on_32chassis' in 'src/turn_on_32chassis'
+[2.320s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'yesense_std_ros2' in 'src/yesense_ros2/yesense_std_ros2'
+[2.322s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.322s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.351s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/wheeltec/agribot/agribot_ws/install
+[2.352s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/wheeltec/ws_livox/install
+[2.358s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 92 installed packages in /home/wheeltec/wheeltec_ros2/install
+[2.363s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 365 installed packages in /opt/ros/humble
+[2.369s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_args' from command line to 'None'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_target' from command line to 'None'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_clean_cache' from command line to 'False'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_clean_first' from command line to 'False'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'cmake_force_configure' from command line to 'False'
+[2.593s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'ament_cmake_args' from command line to 'None'
+[2.594s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'catkin_cmake_args' from command line to 'None'
+[2.594s] Level 5:colcon.colcon_core.verb:set package 'centerline_extraction' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.594s] DEBUG:colcon.colcon_core.verb:Building package 'centerline_extraction' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction', 'merge_install': False, 'path': '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction', 'symlink_install': False, 'test_result_base': None}
+[2.594s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.596s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.597s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction' with build type 'ament_cmake'
+[2.597s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction'
+[2.617s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.618s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.618s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.666s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8
+[54.320s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/centerline_extraction -- -j8 -l8
+[54.348s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/centerline_extraction
+[54.430s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(centerline_extraction)
+[54.432s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/centerline_extraction
+[54.445s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction' for CMake module files
+[54.446s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction' for CMake config files
+[54.447s] Level 1:colcon.colcon_core.shell:create_environment_hook('centerline_extraction', 'cmake_prefix_path')
+[54.447s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.ps1'
+[54.449s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.dsv'
+[54.451s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.sh'
+[54.453s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib'
+[54.453s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/bin'
+[54.453s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/pkgconfig/centerline_extraction.pc'
+[54.454s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/python3.10/site-packages'
+[54.455s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/bin'
+[54.455s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.ps1'
+[54.460s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.dsv'
+[54.471s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.sh'
+[54.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.bash'
+[54.477s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.zsh'
+[54.480s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/colcon-core/packages/centerline_extraction)
+[54.483s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(centerline_extraction)
+[54.484s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction' for CMake module files
+[54.485s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction' for CMake config files
+[54.487s] Level 1:colcon.colcon_core.shell:create_environment_hook('centerline_extraction', 'cmake_prefix_path')
+[54.487s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.ps1'
+[54.489s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.dsv'
+[54.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/hook/cmake_prefix_path.sh'
+[54.492s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib'
+[54.492s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/bin'
+[54.493s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/pkgconfig/centerline_extraction.pc'
+[54.493s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/python3.10/site-packages'
+[54.495s] Level 1:colcon.colcon_core.environment:checking '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/bin'
+[54.496s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.ps1'
+[54.498s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.dsv'
+[54.499s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.sh'
+[54.501s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.bash'
+[54.502s] INFO:colcon.colcon_core.shell:Creating package script '/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.zsh'
+[54.503s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/colcon-core/packages/centerline_extraction)
+[54.504s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[54.505s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[54.505s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[54.506s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[54.507s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[54.508s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/wheeltec/agribot/agribot_ws/install/local_setup.ps1'
+[54.512s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/wheeltec/agribot/agribot_ws/install/_local_setup_util_ps1.py'
+[54.517s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/wheeltec/agribot/agribot_ws/install/setup.ps1'
+[54.530s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/wheeltec/agribot/agribot_ws/install/local_setup.sh'
+[54.532s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/wheeltec/agribot/agribot_ws/install/_local_setup_util_sh.py'
+[54.534s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/wheeltec/agribot/agribot_ws/install/setup.sh'
+[54.548s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/wheeltec/agribot/agribot_ws/install/local_setup.bash'
+[54.551s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/wheeltec/agribot/agribot_ws/install/setup.bash'
+[54.565s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/wheeltec/agribot/agribot_ws/install/local_setup.zsh'
+[54.567s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/wheeltec/agribot/agribot_ws/install/setup.zsh'

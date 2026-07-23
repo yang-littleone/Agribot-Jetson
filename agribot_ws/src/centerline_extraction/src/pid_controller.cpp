@@ -13,7 +13,7 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
 
     // 订阅里程计信息（小车位姿）
     odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-        "/odom", 10,
+        "/odometry/filtered", 10,
         std::bind(&PIDController::odom_callback, this, std::placeholders::_1));
 
     confidence_sub_ = this->create_subscription<std_msgs::msg::Float32>(

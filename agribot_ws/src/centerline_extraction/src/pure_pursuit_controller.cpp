@@ -12,7 +12,7 @@ PurePursuitController::PurePursuitController() : Node("pure_pursuit_controller")
     
     // 订阅里程计信息（小车位姿）
     odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-        "/odom", 10,
+        "/odometry/filtered", 10,
         std::bind(&PurePursuitController::odom_callback, this, std::placeholders::_1));
     
     // 发布速度控制指令
