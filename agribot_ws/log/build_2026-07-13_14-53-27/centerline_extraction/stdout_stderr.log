@@ -1,0 +1,77 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found tf2: 0.25.20 (/opt/ros/humble/share/tf2/cmake)
+-- Found tf2_geometry_msgs: 0.25.20 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wheeltec/agribot/agribot_ws/build/centerline_extraction
+[ 57%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/corn_row_detector_projection.dir/src/corn_row_detector_projection.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o[0m
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:[m[K In lambda function:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:1087:54:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+ 1087 |                 return std::make_pair(0.0f, sum_y / n[01;36m[K)[m[K;
+      |                                                      [01;36m[K^[m[K
+[ 85%] [32m[1mLinking CXX executable corn_row_detector_projection[0m
+[100%] [32m[1mLinking CXX executable cornfield_navigation_node[0m
+[100%] Built target corn_row_detector_projection
+[100%] Built target cornfield_navigation_node
+-- Install configuration: ""
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node
+-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node" to ""
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection
+-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection" to ""
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/obstacle_detector.hpp
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller.hpp
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector_projection.hpp
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pid_controller.hpp
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/package_run_dependencies/centerline_extraction
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/parent_prefix_path/centerline_extraction
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.sh
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.dsv
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.sh
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.dsv
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.bash
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.sh
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.zsh
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.dsv
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.dsv
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/packages/centerline_extraction
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig.cmake
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig-version.cmake
+-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.xml

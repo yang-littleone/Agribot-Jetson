@@ -20,12 +20,12 @@ find_package(Eigen3 REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 
-# 包含PCL头文件目录            
+# 包含PCL头文件目录
 include_directories(
   include
   ${PCL_INCLUDE_DIRS}
   )
-  
+
 # 链接PCL库
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -55,6 +55,7 @@ add_executable(corn_row_detector_projection  src/corn_row_detector_projection.cp
 ament_target_dependencies(corn_row_detector_projection 
   rclcpp 
   nav_msgs
+  std_msgs
   sensor_msgs 
   pcl_conversions 
   visualization_msgs
@@ -64,18 +65,6 @@ target_link_libraries(corn_row_detector_projection
   ${PCL_LIBRARIES}
 )
 
-# Pure Pursuit Controller
-add_executable(pure_pursuit_controller src/pure_pursuit_controller.cpp)
-ament_target_dependencies(pure_pursuit_controller 
-  rclcpp 
-  nav_msgs
-  geometry_msgs
-  visualization_msgs
-  tf2
-  tf2_geometry_msgs)
-target_link_libraries(pure_pursuit_controller
-  ${PCL_LIBRARIES}
-)
 
 # add_executable(corn_row_detector  src/corn_row_detector.cpp)
 # ament_target_dependencies(corn_row_detector rclcpp sensor_msgs pcl_conversions visualization_msgs nav_msgs)
@@ -85,8 +74,8 @@ target_link_libraries(pure_pursuit_controller
 
 add_executable(cornfield_navigation_node
   # src/corn_row_detector.cpp
-  # src/pure_pursuit_controller.cpp
-  # src/obstacle_detector.cpp
+  src/pure_pursuit_controller.cpp
+  src/obstacle_detector.cpp
   src/pid_controller.cpp
   src/main.cpp
 )
@@ -108,22 +97,8 @@ target_link_libraries(cornfield_navigation_node
   ${PCL_LIBRARIES}
 )
 
-# Test Line Generator
-add_executable(test_line_generator src/test_line.cpp)
-ament_target_dependencies(test_line_generator 
-  rclcpp 
-  nav_msgs
-  geometry_msgs
-  std_msgs
-  tf2
-  tf2_geometry_msgs)
-
 install(TARGETS
-  # pcl_learning centerline_extract 
-  cornfield_navigation_node 
-  corn_row_detector_projection
-  pure_pursuit_controller
-  test_line_generator
+  cornfield_navigation_node corn_row_detector_projection
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -131,9 +106,9 @@ install(DIRECTORY
   include
   DESTINATION include/
 )
-install(DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}
-)
+# install(DIRECTORY launch config
+#   DESTINATION share/${PROJECT_NAME}
+# )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

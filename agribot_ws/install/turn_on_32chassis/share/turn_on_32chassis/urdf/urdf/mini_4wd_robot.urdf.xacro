@@ -54,10 +54,22 @@
 
         <!-- H30 IMU mounting frame.
              Replace xyz/rpy with the measured extrinsics of the sensor. -->
-        <link name="gyro_link" />
+        <!-- Yesense H30: 24.5 mm × 24.5 mm × 14.5 mm.
+             The gyro_link origin is the geometric centre of the enclosure. -->
+        <link name="gyro_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.0245 0.0245 0.0145" />
+                </geometry>
+                <material name="h30_enclosure">
+                    <color rgba="0.15 0.45 0.95 0.75" />
+                </material>
+            </visual>
+        </link>
 
         <joint name="h30_joint" type="fixed">
-            <origin xyz="0.03163 0.05 0.065" rpy="0 0 0" />
+            <origin xyz="0.047 0.043 0.060" rpy="0 0 0" />
             <parent link="base_link" />
             <child link="gyro_link" />
         </joint>
@@ -276,7 +288,7 @@
         </joint>
         
         <!-- laser -->
-         <!-- <link
+        <link
             name="laser_link">
             <inertial>
                 <origin
@@ -295,10 +307,10 @@
             <visual>
                 <origin
                     xyz="0 0 0"
-                    rpy="0 0 0" />
+                    rpy="0 3.14159265358979 0" />
                 <geometry>
                     <mesh
-                        filename="package://turn_on_32chassis/urdf/meshes/mini_4wd_robot_meshes/laser.STL" />
+                        filename="package://turn_on_32chassis/urdf/meshes/mid-360-asm.stl" />
                 </geometry>
                 <material
                     name="">
@@ -309,10 +321,10 @@
             <collision>
                 <origin
                     xyz="0 0 0"
-                    rpy="0 0 0" />
+                    rpy="0 3.14159265358979 0" />
                 <geometry>
                     <mesh
-                        filename="package://turn_on_32chassis/urdf/meshes/mini_4wd_robot_meshes/laser.STL" />
+                        filename="package://turn_on_32chassis/urdf/meshes/mid-360-asm.stl" />
                 </geometry>
             </collision>
         </link>
@@ -320,15 +332,15 @@
             name="laser_joint"
             type="fixed">
             <origin
-                xyz="0.0316310367407428 9.05810809801877E-05 0.09292418374143"
-                rpy="0 0 3.14159265358979" />
+                xyz="0.0316310367407428 9.05810809801877E-05 0.115"
+                rpy="0 0 0" />
             <parent
                 link="base_link" />
             <child
                 link="laser_link" />
             <axis
                 xyz="0 0 0" />
-        </joint>  -->
+        </joint>  
         <link
             name="controller_link">
             <inertial>

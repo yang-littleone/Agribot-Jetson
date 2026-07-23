@@ -9,7 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/main.cpp" "CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o" "gcc" "CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o.d"
+  "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/obstacle_detector.cpp" "CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o" "gcc" "CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o.d"
   "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pid_controller.cpp" "CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o" "gcc" "CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o.d"
+  "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp" "CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o" "gcc" "CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-d48931014018993ace20.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "turn_on_32chassis",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "imu_source_selector_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-imu_source_selector_node-feb01bc2fca170806ce9.json",
+					"name" : "imu_source_selector_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turn_on_32chassis_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turn_on_32chassis_node-b56db69540725ee6ebff.json",
+					"name" : "turn_on_32chassis_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turn_on_32chassis_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turn_on_32chassis_uninstall-3d7e59ebb12534c52f26.json",
+					"name" : "turn_on_32chassis_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-308cf2d76bde3e597421.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis",
+		"source" : "/home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

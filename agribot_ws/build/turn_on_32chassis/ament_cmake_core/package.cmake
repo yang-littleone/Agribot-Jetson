@@ -5,7 +5,7 @@ set(turn_on_32chassis_BUILD_DEPENDS "rclcpp" "serial" "sensor_msgs" "nav_msgs" "
 set(turn_on_32chassis_BUILDTOOL_DEPENDS "ament_cmake")
 set(turn_on_32chassis_BUILD_EXPORT_DEPENDS "rclcpp" "serial" "sensor_msgs" "nav_msgs" "std_msgs" "tf2" "tf2_ros" "geometry_msgs" "tf2_geometry_msgs")
 set(turn_on_32chassis_BUILDTOOL_EXPORT_DEPENDS )
-set(turn_on_32chassis_EXEC_DEPENDS "rclcpp" "serial" "sensor_msgs" "nav_msgs" "std_msgs" "tf2" "tf2_ros" "geometry_msgs" "tf2_geometry_msgs")
+set(turn_on_32chassis_EXEC_DEPENDS "python3-yaml" "rclcpp" "serial" "sensor_msgs" "nav_msgs" "std_msgs" "tf2" "tf2_ros" "geometry_msgs" "tf2_geometry_msgs")
 set(turn_on_32chassis_TEST_DEPENDS "ament_lint_auto" "ament_lint_common")
 set(turn_on_32chassis_GROUP_DEPENDS )
 set(turn_on_32chassis_MEMBER_OF_GROUPS )

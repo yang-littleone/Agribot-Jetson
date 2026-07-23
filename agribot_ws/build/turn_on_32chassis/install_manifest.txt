@@ -25,6 +25,7 @@
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/bases/burger_base.stl
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/bases/waffle_base.stl
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/bases/waffle_pi_base.stl
+/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/mid-360-asm.stl
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/wheels/right_tire.stl
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/wheels/left_tire.stl
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/urdf/meshes/mini_4wd_moveit_four_meshes/j3_link.STL
@@ -60,6 +61,7 @@
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/config/rviz2_config_agribot.rviz
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/config/imuconfig.yaml
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/config/ekf.yaml
+/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/config/bringup.yaml
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/ament_index/resource_index/package_run_dependencies/turn_on_32chassis
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/ament_index/resource_index/parent_prefix_path/turn_on_32chassis
 /home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis/share/turn_on_32chassis/environment/ament_prefix_path.sh

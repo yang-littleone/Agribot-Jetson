@@ -1,0 +1,11 @@
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:[m[K In member function ‘[01m[Kstd::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > > CornRowDetector::temporal_smoothing(const std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >&)[m[K’:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:361:50:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  361 |     while ([01;35m[Kstatic_cast<int>(path_buffer_.size()) > time_window_size_[m[K) {  // 显式转换为int
+      |            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:367:47:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  367 |     if ([01;35m[Kstatic_cast<int>(path_buffer_.size()) < time_window_size_[m[K) {  // 显式转换为int
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:[m[K In lambda function:
+[01m[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:1087:54:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+ 1087 |                 return std::make_pair(0.0f, sum_y / n[01;36m[K)[m[K;
+      |                                                      [01;36m[K^[m[K

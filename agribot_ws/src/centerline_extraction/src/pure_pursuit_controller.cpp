@@ -1,347 +1,258 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
-#include <algorithm>
-#include "rclcpp/rclcpp.hpp"
 #include "centerline_extraction/pure_pursuit_controller.hpp"
+#include <cmath>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <visualization_msgs/msg/marker.hpp>
 
-PurePursuitController::PurePursuitController() : Node("pure_pursuit_controller")
+PurePursuitController::PurePursuitController() : Node("pure_pursuit_controller"), has_center_line_(false)
 {
-    // 创建订阅者和发布者
-    path_sub_ = this->create_subscription<nav_msgs::msg::Path>(
-        "/corn_row_center_line", 10, 
-        std::bind(&PurePursuitController::path_callback, this, std::placeholders::_1));
+    // 订阅玉米行中心线（路径）
+    center_line_sub_ = this->create_subscription<nav_msgs::msg::Path>(
+        "/corn_row_center_line", 10,
+        std::bind(&PurePursuitController::center_line_callback, this, std::placeholders::_1));
     
+    // 订阅里程计信息（小车位姿）
     odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
-        "/odom_combined", 10, 
+        "/odom", 10,
         std::bind(&PurePursuitController::odom_callback, this, std::placeholders::_1));
     
-    cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
-    lookahead_marker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>("lookahead_point_marker", 10);
+    // 发布速度控制指令
+    cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>(
+        "/cmd_vel", 10);
+    
+    // 发布目标点可视化标记（调试用）
+    lookahead_marker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
+        "/lookahead_point", 10);
 
-    // 声明参数
-    this->declare_parameter<double>("lookahead_distance", 0.5);
-    this->declare_parameter<double>("min_lookahead_distance", 0.3);
-    this->declare_parameter<double>("max_lookahead_distance", 1.0);
-    this->declare_parameter<double>("linear_velocity", 0.3);
-    this->declare_parameter<double>("max_linear_velocity", 0.5);
-    this->declare_parameter<double>("min_linear_velocity", 0.1);
-    this->declare_parameter<double>("max_angular_velocity", 1.0);
-    this->declare_parameter<double>("velocity_gain", 0.5);
-    this->declare_parameter<bool>("adaptive_lookahead", false);
-    this->declare_parameter<bool>("debug_mode", true);
+    // 声明并初始化参数（适配差速小车）
+    this->declare_parameter("lookahead_base", 0.4);         // 基础前视距离（米）
+    this->declare_parameter("lookahead_gain", 1.5);         // 前视距离速度系数
+    this->declare_parameter("max_linear_speed", 0.5);       // 最大线速度（米/秒）
+    this->declare_parameter("min_linear_speed", 0.1);       // 最小线速度（米/秒）
+    this->declare_parameter("max_angular_speed", 1.5);      // 最大角速度（弧度/秒）
+    this->declare_parameter("wheel_base", 0.206);             // 轮距（米，需根据实际小车填写）
+    this->declare_parameter("lateral_error_gain", 0.1);    // 横向偏差校正系数
+    this->declare_parameter("curve_decay_gain", 0.3);       // 弯道减速系数
+    this->declare_parameter("debug_mode", false);           // 调试模式开关
 
-    // 获取参数
-    this->get_parameter("lookahead_distance", lookahead_distance_);
-    this->get_parameter("min_lookahead_distance", min_lookahead_distance_);
-    this->get_parameter("max_lookahead_distance", max_lookahead_distance_);
-    this->get_parameter("linear_velocity", linear_velocity_);
-    this->get_parameter("max_linear_velocity", max_linear_velocity_);
-    this->get_parameter("min_linear_velocity", min_linear_velocity_);
-    this->get_parameter("max_angular_velocity", max_angular_velocity_);
-    this->get_parameter("velocity_gain", velocity_gain_);
-    this->get_parameter("adaptive_lookahead", adaptive_lookahead_);
-    this->get_parameter("debug_mode", debug_mode_);
+    // 读取参数
+    get_parameters();
 
     // 初始化状态变量
-    has_path_ = false;
-    robot_x_ = 0.0;
-    robot_y_ = 0.0;
-    robot_yaw_ = 0.0;
-    robot_linear_vel_ = 0.0;
-    first_run_ = true;
-    last_time_ = this->now();
+    current_x_ = 0.0;
+    current_y_ = 0.0;
+    current_yaw_ = 0.0;
+    current_linear_vel_ = 0.0;
 
-    // 创建控制循环定时器（50Hz）
-    control_timer_ = this->create_wall_timer(
-        std::chrono::milliseconds(20),
-        std::bind(&PurePursuitController::control_loop, this));
-
-    RCLCPP_INFO(this->get_logger(), "Pure Pursuit Controller initialized");
-    RCLCPP_INFO(this->get_logger(), "Parameters: lookahead=%.2fm, velocity=%.2fm/s, max_omega=%.2frad/s", 
-                lookahead_distance_, linear_velocity_, max_angular_velocity_);
+    RCLCPP_INFO(this->get_logger(), "纯追踪控制器初始化完成（轮距: %.2f米）", wheel_base_);
 }
 
-PurePursuitController::~PurePursuitController()
+void PurePursuitController::get_parameters()
 {
+    this->get_parameter("lookahead_base", lookahead_base_);
+    this->get_parameter("lookahead_gain", lookahead_gain_);
+    this->get_parameter("max_linear_speed", max_linear_speed_);
+    this->get_parameter("min_linear_speed", min_linear_speed_);
+    this->get_parameter("max_angular_speed", max_angular_speed_);
+    this->get_parameter("wheel_base", wheel_base_);
+    this->get_parameter("lateral_error_gain", lateral_error_gain_);
+    this->get_parameter("curve_decay_gain", curve_decay_gain_);
+    this->get_parameter("debug_mode", debug_mode_);
 }
 
-void PurePursuitController::path_callback(const nav_msgs::msg::Path::SharedPtr msg)
+void PurePursuitController::center_line_callback(const nav_msgs::msg::Path::SharedPtr msg)
 {
-    if (msg->poses.empty())
-    {
-        RCLCPP_WARN(this->get_logger(), "Received empty path");
-        has_path_ = false;
+    if (msg->poses.empty()) {
+        has_center_line_ = false;
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        RCLCPP_WARN(this->get_logger(), "收到空的中心线，发布停止指令");
         return;
     }
-
-    current_path_ = *msg;
-    has_path_ = true;
     
-    RCLCPP_DEBUG(this->get_logger(), "Received path with %zu poses", msg->poses.size());
+    center_line_ = *msg;
+    has_center_line_ = true;
+    RCLCPP_DEBUG(this->get_logger(), "收到中心线（%zu个点）", center_line_.poses.size());
 }
 
 void PurePursuitController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 {
-    robot_x_ = msg->pose.pose.position.x;
-    robot_y_ = msg->pose.pose.position.y;
-    
-    // 从四元数计算偏航角
+    // 更新当前位姿
+    current_x_ = msg->pose.pose.position.x;
+    current_y_ = msg->pose.pose.position.y;
+    current_linear_vel_ = msg->twist.twist.linear.x;
+
+    // 从四元数解析偏航角（yaw）
     tf2::Quaternion q(
         msg->pose.pose.orientation.x,
         msg->pose.pose.orientation.y,
         msg->pose.pose.orientation.z,
         msg->pose.pose.orientation.w);
-    
     tf2::Matrix3x3 m(q);
-    double roll, pitch, yaw;
-    m.getRPY(roll, pitch, yaw);
-    robot_yaw_ = yaw;
-    
-    robot_linear_vel_ = msg->twist.twist.linear.x;
-}
+    double roll, pitch;
+    m.getRPY(roll, pitch, current_yaw_);
 
-void PurePursuitController::control_loop()
-{
-    // 检查是否有有效路径
-    if (!has_path_ || current_path_.poses.empty())
-    {
-        RCLCPP_DEBUG_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "No valid path available");
-        
-        // 发布零速度命令
+    // 有中心线时计算控制指令
+    if (has_center_line_ && !center_line_.poses.empty()) {
+        auto cmd_vel = calculate_control_command();
+        cmd_vel_pub_->publish(cmd_vel);
+    } else if (!has_center_line_) {
         geometry_msgs::msg::Twist stop_cmd;
         cmd_vel_pub_->publish(stop_cmd);
-        return;
+        RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "未收到中心线，发布停止指令");
     }
-
-    // 计算时间差
-    rclcpp::Time current_time = this->now();
-    
-    if (first_run_)
-    {
-        last_time_ = current_time;
-        first_run_ = false;
-        return;
-    }
-
-    // 查找前视点
-    int lookahead_idx = find_lookahead_point();
-    
-    if (lookahead_idx < 0)
-    {
-        RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Could not find lookahead point");
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
-        return;
-    }
-
-    // 计算路径曲率
-    double curvature = calculate_curvature(lookahead_idx);
-    
-    // 计算控制指令
-    geometry_msgs::msg::Twist cmd = calculate_control_command();
-    
-    // 限制角速度
-    if (std::abs(cmd.angular.z) > max_angular_velocity_)
-    {
-        cmd.angular.z = (cmd.angular.z > 0) ? max_angular_velocity_ : -max_angular_velocity_;
-    }
-    
-    // 发布速度命令
-    cmd_vel_pub_->publish(cmd);
-    
-    // 发布可视化标记
-    if (debug_mode_)
-    {
-        publish_lookahead_marker(lookahead_point_);
-    }
-    
-    // 记录日志
-    RCLCPP_DEBUG(this->get_logger(), 
-                 "Control: v=%.2f m/s, omega=%.2f rad/s, curvature=%.2f 1/m, lookahead_idx=%d",
-                 cmd.linear.x, cmd.angular.z, curvature, lookahead_idx);
-    
-    last_time_ = current_time;
 }
 
-int PurePursuitController::find_lookahead_point()
+geometry_msgs::msg::PointStamped PurePursuitController::find_lookahead_point()
 {
-    if (current_path_.poses.empty())
-    {
-        return -1;
-    }
+    geometry_msgs::msg::PointStamped lookahead_point;
+    lookahead_point.header.frame_id = center_line_.header.frame_id;
+    lookahead_point.header.stamp = this->now();
 
-    double best_dist = -1.0;
-    int lookahead_idx = -1;
-    
-    // 遍历路径点，找到距离机器人当前位置为 lookahead_distance 的点
-    for (size_t i = 0; i < current_path_.poses.size(); i++)
-    {
-        double dx = current_path_.poses[i].pose.position.x - robot_x_;
-        double dy = current_path_.poses[i].pose.position.y - robot_y_;
-        double dist = std::sqrt(dx * dx + dy * dy);
-        
-        // 找到第一个距离大于 lookahead_distance 的点
-        if (dist >= lookahead_distance_)
-        {
-            // 如果是第一个满足条件的点，或者比之前的点更接近 lookahead_distance
-            if (lookahead_idx < 0 || dist < best_dist)
-            {
-                best_dist = dist;
-                lookahead_idx = i;
-            }
-        }
-    }
-    
-    // 如果没有找到满足条件的点，使用最后一个点
-    if (lookahead_idx < 0)
-    {
-        lookahead_idx = current_path_.poses.size() - 1;
-        RCLCPP_DEBUG(this->get_logger(), "Using last path point as lookahead point");
-    }
-    
-    // 保存前视点信息
-    lookahead_point_.x = current_path_.poses[lookahead_idx].pose.position.x;
-    lookahead_point_.y = current_path_.poses[lookahead_idx].pose.position.y;
-    lookahead_point_.z = current_path_.poses[lookahead_idx].pose.position.z;
-    
-    return lookahead_idx;
-}
+    // 计算动态前视距离（基础距离 + 速度相关部分）
+    double dynamic_lookahead = lookahead_base_ + lookahead_gain_ * current_linear_vel_;
+    dynamic_lookahead = std::clamp(dynamic_lookahead, 0.5, 2.0);  // 限制范围
 
-double PurePursuitController::calculate_curvature(int lookahead_idx)
-{
-    if (lookahead_idx < 0 || lookahead_idx >= static_cast<int>(current_path_.poses.size()))
-    {
-        return 0.0;
-    }
-
-    // 将前视点转换到机器人坐标系
-    double dx = lookahead_point_.x - robot_x_;
-    double dy = lookahead_point_.y - robot_y_;
-    
-    // 旋转到机器人坐标系
-    double x_robot = dx * std::cos(-robot_yaw_) - dy * std::sin(-robot_yaw_);
-    double y_robot = dx * std::sin(-robot_yaw_) + dy * std::cos(-robot_yaw_);
-    
-    // 计算曲率：kappa = 2 * y / (L^2)，其中 L 是前视距离
-    // 这是 Pure Pursuit 的核心公式
-    double L = std::sqrt(x_robot * x_robot + y_robot * y_robot);
-    
-    if (L < 0.1) // 避免除零和数值不稳定
-    {
-        return 0.0;
-    }
-    
-    double curvature = 2.0 * y_robot / (L * L);
-    
-    return curvature;
-}
-
-geometry_msgs::msg::Twist PurePursuitController::calculate_control_command()
-{
-    geometry_msgs::msg::Twist cmd;
-    
-    // 计算曲率
-    int lookahead_idx = find_lookahead_point();
-    double curvature = calculate_curvature(lookahead_idx);
-    
-    // Pure Pursuit 控制律：omega = v * kappa
-    double angular_velocity = linear_velocity_ * curvature;
-    
-    // 自适应线速度：根据横向误差调整速度
-    double lateral_error = std::abs(lookahead_point_.y - robot_y_);
-    double adjusted_velocity = linear_velocity_;
-    
-    if (adaptive_lookahead_)
-    {
-        // 横向误差大时减速
-        adjusted_velocity = linear_velocity_ * (1.0 - velocity_gain_ * std::min(1.0, lateral_error / 2.0));
-        adjusted_velocity = std::max(min_linear_velocity_, std::min(max_linear_velocity_, adjusted_velocity));
-        
-        // 自适应调整前视距离：速度越快，前视距离越远
-        lookahead_distance_ = min_lookahead_distance_ + 
-                             (max_lookahead_distance_ - min_lookahead_distance_) * 
-                             (adjusted_velocity - min_linear_velocity_) / 
-                             (max_linear_velocity_ - min_linear_velocity_);
-    }
-    
-    cmd.linear.x = adjusted_velocity;
-    cmd.angular.z = angular_velocity;
-    
-    return cmd;
-}
-
-double PurePursuitController::calculate_yaw_from_path()
-{
-    if (current_path_.poses.size() < 2)
-    {
-        return robot_yaw_;
-    }
-    
-    // 找到最接近机器人的路径点
-    double min_dist = 1e6;
-    int closest_idx = 0;
-    
-    for (size_t i = 0; i < current_path_.poses.size(); i++)
-    {
-        double dx = current_path_.poses[i].pose.position.x - robot_x_;
-        double dy = current_path_.poses[i].pose.position.y - robot_y_;
-        double dist = std::sqrt(dx * dx + dy * dy);
-        
-        if (dist < min_dist)
-        {
+    // 1. 找到路径上离小车最近的点
+    size_t closest_idx = 0;
+    double min_dist = 1e9;
+    for (size_t i = 0; i < center_line_.poses.size(); ++i) {
+        const auto& p = center_line_.poses[i].pose.position;
+        double dx = p.x - current_x_;
+        double dy = p.y - current_y_;
+        double dist = std::hypot(dx, dy);
+        if (dist < min_dist) {
             min_dist = dist;
             closest_idx = i;
         }
     }
-    
-    // 使用前几个点计算期望航向
-    int next_idx = std::min(closest_idx + 2, static_cast<int>(current_path_.poses.size() - 1));
-    
-    double dx = current_path_.poses[next_idx].pose.position.x - current_path_.poses[closest_idx].pose.position.x;
-    double dy = current_path_.poses[next_idx].pose.position.y - current_path_.poses[closest_idx].pose.position.y;
-    
-    return std::atan2(dy, dx);
+    closest_point_.point = center_line_.poses[closest_idx].pose.position;
+
+    // 2. 从最近点开始，寻找第一个超出前视距离的点（只看小车前方）
+    for (size_t i = closest_idx; i < center_line_.poses.size(); ++i) {
+        const auto& p = center_line_.poses[i].pose.position;
+        double dx = p.x - current_x_;
+        double dy = p.y - current_y_;
+
+        // 过滤小车后方的点（仅考虑前方目标）
+        double x_veh = dx * cos(current_yaw_) + dy * sin(current_yaw_);  // 小车坐标系x（前向）
+        if (x_veh < 0) continue;
+
+        // 计算到目标点的距离
+        double dist = std::hypot(dx, dy);
+        if (dist >= dynamic_lookahead) {
+            // 若当前点刚好超过前视距离，在当前点与上一点间插值
+            if (i == 0) {
+                lookahead_point.point = p;
+                return lookahead_point;
+            }
+            const auto& p_prev = center_line_.poses[i-1].pose.position;
+            double dx_prev = p_prev.x - current_x_;
+            double dy_prev = p_prev.y - current_y_;
+            double dist_prev = std::hypot(dx_prev, dy_prev);
+
+            // 避免除零错误
+            if (std::abs(dist - dist_prev) < 1e-6) {
+                lookahead_point.point = p;
+                return lookahead_point;
+            }
+
+            // 线性插值找到精确前视距离点
+            double t = (dynamic_lookahead - dist_prev) / (dist - dist_prev);
+            lookahead_point.point.x = p_prev.x + t * (p.x - p_prev.x);
+            lookahead_point.point.y = p_prev.y + t * (p.y - p_prev.y);
+            lookahead_point.point.z = 0.0;
+            return lookahead_point;
+        }
+    }
+
+    // 若所有点都在视距内，取最后一个点
+    lookahead_point.point = center_line_.poses.back().pose.position;
+    return lookahead_point;
 }
 
-void PurePursuitController::publish_lookahead_marker(const geometry_msgs::msg::Point& point)
+double PurePursuitController::calculate_lateral_error()
+{
+    // 计算最近点在小车坐标系下的横向偏差（左正右负）
+    double dx = closest_point_.point.x - current_x_;
+    double dy = closest_point_.point.y - current_y_;
+    return -sin(current_yaw_) * dx + cos(current_yaw_) * dy;
+}
+
+void PurePursuitController::publish_lookahead_marker(const geometry_msgs::msg::PointStamped& point)
 {
     visualization_msgs::msg::Marker marker;
-    marker.header.frame_id = "odom_combined";
-    marker.header.stamp = this->now();
-    marker.ns = "lookahead_point";
+    marker.header = point.header;
+    marker.ns = "lookahead";
     marker.id = 0;
     marker.type = visualization_msgs::msg::Marker::SPHERE;
     marker.action = visualization_msgs::msg::Marker::ADD;
-    
-    marker.pose.position.x = point.x;
-    marker.pose.position.y = point.y;
-    marker.pose.position.z = point.z;
-    marker.pose.orientation.w = 1.0;
-    
+    marker.pose.position = point.point;
     marker.scale.x = 0.2;
     marker.scale.y = 0.2;
     marker.scale.z = 0.2;
-    
     marker.color.r = 1.0;
     marker.color.g = 0.0;
     marker.color.b = 0.0;
     marker.color.a = 1.0;
-    
     marker.lifetime = rclcpp::Duration::from_seconds(0.5);
-    
     lookahead_marker_pub_->publish(marker);
 }
 
-void PurePursuitController::get_parameters()
+geometry_msgs::msg::Twist PurePursuitController::calculate_control_command()
 {
-    // 参数已在构造函数中获取
-}
+    geometry_msgs::msg::Twist cmd_vel;
 
-int main(int argc, char **argv)
-{
-    rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<PurePursuitController>());
-    rclcpp::shutdown();
-    return 0;
+    // 调试模式：输出固定速度测试转向
+    if (debug_mode_) {
+        cmd_vel.linear.x = 0.1;
+        cmd_vel.angular.z = 0.0;
+        RCLCPP_INFO(this->get_logger(), "调试模式：线速度=0.1m/s, 角速度=0");
+        return cmd_vel;
+    }
+
+    // 1. 寻找前视目标点
+    lookahead_point_ = find_lookahead_point();
+    publish_lookahead_marker(lookahead_point_);  // 可视化目标点
+
+    // 2. 将目标点转换到小车坐标系
+    double dx = lookahead_point_.point.x - current_x_;
+    double dy = lookahead_point_.point.y - current_y_;
+    double x_veh = dx * cos(current_yaw_) + dy * sin(current_yaw_);  // 前向距离
+    double y_veh = -dx * sin(current_yaw_) + dy * cos(current_yaw_); // 横向距离（左正）
+
+    // 3. 计算曲率（纯追踪核心公式）
+    double curvature = 0.0;
+    double denominator = x_veh * x_veh + y_veh * y_veh;
+    if (std::abs(denominator) > 1e-6) {
+        curvature = (2 * y_veh) / denominator;  // 曲率 = 2*横向距离 / 距离平方
+    }
+
+    // 4. 加入横向偏差校正（减少稳态误差）
+    double lateral_error = calculate_lateral_error();
+    curvature += lateral_error_gain_ * lateral_error;
+
+    // 5. 计算角速度（曲率 * 线速度）
+    double angular_vel = current_linear_vel_ * curvature;
+    angular_vel = std::clamp(angular_vel, -max_angular_speed_, max_angular_speed_);
+
+    // 6. 计算线速度（弯道减速）
+    double linear_speed;
+    if (std::abs(angular_vel) < 0.2) {  // 小转弯不减速
+        linear_speed = max_linear_speed_;
+    } else {
+        // 角速度越大，速度越低（保留基础速度）
+        linear_speed = max_linear_speed_ * (1.0 - curve_decay_gain_ * std::abs(angular_vel)/max_angular_speed_);
+    }
+    linear_speed = std::max(linear_speed, min_linear_speed_);  // 不低于最小速度
+
+    // 7. 赋值控制指令
+    cmd_vel.linear.x = linear_speed;
+    cmd_vel.angular.z = angular_vel;
+
+    // 调试日志
+    RCLCPP_DEBUG(this->get_logger(), 
+        "前视距离: %.2f, 横向偏差: %.2f, 线速度: %.2f, 角速度: %.2f",
+        std::hypot(dx, dy), lateral_error, linear_speed, angular_vel);
+
+    return cmd_vel;
 }

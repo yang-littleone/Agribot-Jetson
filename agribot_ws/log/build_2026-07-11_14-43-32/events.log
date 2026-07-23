@@ -1,0 +1,920 @@
+[0.000000] (-) TimerEvent: {}
+[0.000751] (-) JobUnselected: {'identifier': 'serial'}
+[0.001342] (-) JobUnselected: {'identifier': 'turn_on_32chassis'}
+[0.001672] (-) JobUnselected: {'identifier': 'turn_on_agribot'}
+[0.002002] (centerline_extraction) JobQueued: {'identifier': 'centerline_extraction', 'dependencies': OrderedDict()}
+[0.002131] (centerline_extraction) JobStarted: {'identifier': 'centerline_extraction'}
+[0.062295] (centerline_extraction) JobProgress: {'identifier': 'centerline_extraction', 'progress': 'cmake'}
+[0.063820] (centerline_extraction) Command: {'cmd': ['/usr/bin/cmake', '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction', '-DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/centerline_extraction'], 'cwd': '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7898'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'wheeltec'), ('SSH_CLIENT', '192.168.3.138 60207 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/aarch64-linux-gnu:/home/wheeltec/agribot/agribot_ws/install/serial/lib:/usr/lib/aarch64-linux-gnu:/home/wheeltec/ws_livox/install/livox_sdk2/lib:/home/wheeltec/ws_livox/install/livox_ros_driver2/lib:/home/wheeltec/wheeltec_ros2/install/yesense_interface/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt/lib:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/lib:/home/wheeltec/wheeltec_ros2/install/usb_cam/lib:/home/wheeltec/wheeltec_ros2/install/ublox_gps/lib:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/lib:/home/wheeltec/wheeltec_ros2/install/serial/lib:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/lib:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping/lib:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_controller/lib:/home/wheeltec/wheeltec_ros2/install/dwb_plugins/lib:/home/wheeltec/wheeltec_ros2/install/dwb_critics/lib:/home/wheeltec/wheeltec_ros2/install/dwb_core/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils/lib:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower/lib:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors/lib:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor/lib:/home/wheeltec/wheeltec_ros2/install/costmap_queue/lib:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d/lib:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid/lib:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins/lib:/home/wheeltec/wheeltec_ros2/install/nav2_map_server/lib:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree/lib:/home/wheeltec/wheeltec_ros2/install/nav2_amcl/lib:/home/wheeltec/wheeltec_ros2/install/nav2_util/lib:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/lib:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/lib:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco_ros/lib:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco/lib:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wheeltec'), ('TERM_PROGRAM_VERSION', '1.128.0'), ('NO_PROXY', 'localhost,127.0.0.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-7b82605c-d942-4c3e-b2c5-5e5a419e16b5.sock'), ('JETSON_L4T', '36.4.7'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Orin NX Engineering Reference Developer Kit'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install:/home/wheeltec/ws_livox/install:/home/wheeltec/wheeltec_ros2/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'wheeltec'), ('JETSON_MODULE', 'NVIDIA Jetson Orin NX (16GB ram)'), ('JETSON_SERIAL_NUMBER', '1422525044003'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', ':/opt/opencv_410/lib/pkgconfig:/opt/opencv_410/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-1b24ffe71c80518c.txt'), ('LANG', 'zh_CN.UTF-8'), ('PYTHONSTARTUP', '/home/wheeltec/.vscode-server/data/User/workspaceStorage/64f4472d1280cf46ce0f694c7f8ba4f6/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra234'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ce713f1bb8.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('JETSON_CUDA_ARCH_BIN', '8.7'), ('PWD', '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'ffd0c90ef5f5f21efcb855a6670ca01a'), ('SSH_CONNECTION', '192.168.3.138 60207 192.168.3.195 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/wheeltec/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/yesense_interface/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/tf2_tools/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_common/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7898'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', ''), ('CMAKE_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble'), ('JETSON_P_NUMBER', 'p3767-0000')]), 'shell': False}
+[0.099317] (-) TimerEvent: {}
+[0.200123] (-) TimerEvent: {}
+[0.295684] (centerline_extraction) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.300217] (-) TimerEvent: {}
+[0.400881] (-) TimerEvent: {}
+[0.501640] (-) TimerEvent: {}
+[0.506749] (centerline_extraction) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.529961] (centerline_extraction) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.601864] (-) TimerEvent: {}
+[0.702888] (-) TimerEvent: {}
+[0.706398] (centerline_extraction) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.727023] (centerline_extraction) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.737362] (centerline_extraction) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.739210] (centerline_extraction) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.752099] (centerline_extraction) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.803048] (-) TimerEvent: {}
+[0.903884] (-) TimerEvent: {}
+[0.924312] (centerline_extraction) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.940888] (centerline_extraction) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.941771] (centerline_extraction) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.943373] (centerline_extraction) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.004070] (-) TimerEvent: {}
+[1.006828] (centerline_extraction) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.104224] (-) TimerEvent: {}
+[1.204872] (-) TimerEvent: {}
+[1.305531] (-) TimerEvent: {}
+[1.406206] (-) TimerEvent: {}
+[1.506930] (-) TimerEvent: {}
+[1.519468] (centerline_extraction) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.607112] (-) TimerEvent: {}
+[1.707947] (-) TimerEvent: {}
+[1.808959] (-) TimerEvent: {}
+[1.909978] (-) TimerEvent: {}
+[2.010747] (-) TimerEvent: {}
+[2.111462] (-) TimerEvent: {}
+[2.212166] (-) TimerEvent: {}
+[2.272137] (centerline_extraction) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[2.312337] (-) TimerEvent: {}
+[2.413478] (-) TimerEvent: {}
+[2.514228] (-) TimerEvent: {}
+[2.615069] (-) TimerEvent: {}
+[2.716047] (-) TimerEvent: {}
+[2.817019] (-) TimerEvent: {}
+[2.867375] (centerline_extraction) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[2.917153] (-) TimerEvent: {}
+[2.945127] (centerline_extraction) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[3.017333] (-) TimerEvent: {}
+[3.027518] (centerline_extraction) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[3.117558] (-) TimerEvent: {}
+[3.129907] (centerline_extraction) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.217732] (-) TimerEvent: {}
+[3.269331] (centerline_extraction) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.317934] (-) TimerEvent: {}
+[3.418641] (-) TimerEvent: {}
+[3.519470] (-) TimerEvent: {}
+[3.620277] (-) TimerEvent: {}
+[3.693266] (centerline_extraction) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[3.720400] (-) TimerEvent: {}
+[3.738526] (centerline_extraction) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[3.820587] (-) TimerEvent: {}
+[4.347337] (-) TimerEvent: {}
+[4.448134] (-) TimerEvent: {}
+[4.549193] (-) TimerEvent: {}
+[4.649946] (-) TimerEvent: {}
+[4.715421] (centerline_extraction) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[4.750047] (-) TimerEvent: {}
+[4.822471] (centerline_extraction) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[4.850271] (-) TimerEvent: {}
+[4.950923] (-) TimerEvent: {}
+[4.962329] (centerline_extraction) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.051051] (-) TimerEvent: {}
+[5.151689] (-) TimerEvent: {}
+[5.198380] (centerline_extraction) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[5.251871] (-) TimerEvent: {}
+[5.352621] (-) TimerEvent: {}
+[5.368896] (centerline_extraction) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[5.370567] (centerline_extraction) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[5.452803] (-) TimerEvent: {}
+[5.541619] (centerline_extraction) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[5.545068] (centerline_extraction) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[5.552923] (-) TimerEvent: {}
+[5.653667] (-) TimerEvent: {}
+[5.754507] (-) TimerEvent: {}
+[5.855324] (-) TimerEvent: {}
+[5.909165] (centerline_extraction) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[5.955493] (-) TimerEvent: {}
+[6.054796] (centerline_extraction) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[6.055509] (-) TimerEvent: {}
+[6.136882] (centerline_extraction) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[6.155695] (-) TimerEvent: {}
+[6.223000] (centerline_extraction) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[6.255851] (-) TimerEvent: {}
+[6.356633] (-) TimerEvent: {}
+[6.414591] (centerline_extraction) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[6.456838] (-) TimerEvent: {}
+[6.466847] (centerline_extraction) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[6.557202] (-) TimerEvent: {}
+[6.560022] (centerline_extraction) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[6.560671] (centerline_extraction) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[6.657406] (-) TimerEvent: {}
+[6.758321] (-) TimerEvent: {}
+[6.859162] (-) TimerEvent: {}
+[6.932212] (centerline_extraction) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[6.959339] (-) TimerEvent: {}
+[6.987856] (centerline_extraction) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[7.059566] (-) TimerEvent: {}
+[7.092892] (centerline_extraction) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/aarch64-linux-gnu/libflann_cpp.so  \n'}
+[7.093614] (centerline_extraction) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)\n'}
+[7.159773] (-) TimerEvent: {}
+[7.260720] (-) TimerEvent: {}
+[7.361460] (-) TimerEvent: {}
+[7.462662] (-) TimerEvent: {}
+[7.563417] (-) TimerEvent: {}
+[7.664376] (-) TimerEvent: {}
+[7.765094] (-) TimerEvent: {}
+[7.865905] (-) TimerEvent: {}
+[7.966773] (-) TimerEvent: {}
+[8.067601] (-) TimerEvent: {}
+[8.168414] (-) TimerEvent: {}
+[8.269143] (-) TimerEvent: {}
+[8.369851] (-) TimerEvent: {}
+[8.470557] (-) TimerEvent: {}
+[8.571424] (-) TimerEvent: {}
+[8.672330] (-) TimerEvent: {}
+[8.773088] (-) TimerEvent: {}
+[8.877927] (-) TimerEvent: {}
+[8.978737] (-) TimerEvent: {}
+[9.079457] (-) TimerEvent: {}
+[9.180249] (-) TimerEvent: {}
+[9.280903] (-) TimerEvent: {}
+[9.381644] (-) TimerEvent: {}
+[9.482342] (-) TimerEvent: {}
+[9.583070] (-) TimerEvent: {}
+[9.683773] (-) TimerEvent: {}
+[9.784541] (-) TimerEvent: {}
+[9.885341] (-) TimerEvent: {}
+[9.986007] (-) TimerEvent: {}
+[10.086674] (-) TimerEvent: {}
+[10.187392] (-) TimerEvent: {}
+[10.212638] (centerline_extraction) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[10.272567] (centerline_extraction) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[10.287555] (-) TimerEvent: {}
+[10.369211] (centerline_extraction) StdoutLine: {'line': b'-- Found libusb: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  \n'}
+[10.381743] (centerline_extraction) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[10.387632] (-) TimerEvent: {}
+[10.488259] (-) TimerEvent: {}
+[10.555627] (centerline_extraction) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[10.588368] (-) TimerEvent: {}
+[10.688982] (-) TimerEvent: {}
+[10.789676] (-) TimerEvent: {}
+[10.890358] (-) TimerEvent: {}
+[10.905748] (centerline_extraction) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[10.918625] (centerline_extraction) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[10.929598] (centerline_extraction) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.3.0.85, include: /home/wheeltec/wheeltec_ros2/install/astra_camera/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[10.990542] (-) TimerEvent: {}
+[11.091336] (-) TimerEvent: {}
+[11.192136] (-) TimerEvent: {}
+[11.291062] (centerline_extraction) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[11.292218] (-) TimerEvent: {}
+[11.392851] (-) TimerEvent: {}
+[11.493689] (-) TimerEvent: {}
+[11.594390] (-) TimerEvent: {}
+[11.628416] (centerline_extraction) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[11.694581] (-) TimerEvent: {}
+[11.795277] (-) TimerEvent: {}
+[11.896009] (-) TimerEvent: {}
+[11.956502] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  \n'}
+[11.958168] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  \n'}
+[11.959898] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  \n'}
+[11.961632] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  \n'}
+[11.963522] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[11.965250] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  \n'}
+[11.966052] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[11.966747] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[11.968479] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  \n'}
+[11.970408] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  \n'}
+[11.972313] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  \n'}
+[11.974108] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  \n'}
+[11.976282] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  \n'}
+[11.978302] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  \n'}
+[11.980151] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  \n'}
+[11.982034] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  \n'}
+[11.983860] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  \n'}
+[11.985655] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  \n'}
+[11.987699] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  \n'}
+[11.989458] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  \n'}
+[11.990987] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[11.991652] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[11.992516] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[11.994364] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  \n'}
+[11.996063] (-) TimerEvent: {}
+[11.996557] (centerline_extraction) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  \n'}
+[12.091885] (centerline_extraction) StdoutLine: {'line': b'-- Found tf2: 0.25.20 (/opt/ros/humble/share/tf2/cmake)\n'}
+[12.096185] (-) TimerEvent: {}
+[12.175680] (centerline_extraction) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.20 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[12.196293] (-) TimerEvent: {}
+[12.281934] (centerline_extraction) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[12.285306] (centerline_extraction) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[12.285774] (centerline_extraction) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[12.296437] (-) TimerEvent: {}
+[12.397112] (-) TimerEvent: {}
+[12.497961] (-) TimerEvent: {}
+[12.598819] (-) TimerEvent: {}
+[12.699506] (-) TimerEvent: {}
+[12.800276] (-) TimerEvent: {}
+[12.901028] (-) TimerEvent: {}
+[13.001772] (-) TimerEvent: {}
+[13.102555] (-) TimerEvent: {}
+[13.203287] (-) TimerEvent: {}
+[13.289323] (centerline_extraction) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[13.303399] (-) TimerEvent: {}
+[13.403970] (-) TimerEvent: {}
+[13.504628] (-) TimerEvent: {}
+[13.605396] (-) TimerEvent: {}
+[13.706188] (-) TimerEvent: {}
+[13.765528] (centerline_extraction) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[14.256220] (-) TimerEvent: {}
+[14.256669] (centerline_extraction) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/include\n'}
+[14.257017] (centerline_extraction) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[14.262617] (centerline_extraction) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[14.274087] (centerline_extraction) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[14.274668] (centerline_extraction) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[14.291453] (centerline_extraction) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[14.310504] (centerline_extraction) StdoutLine: {'line': b'-- Configuring done\n'}
+[14.356387] (-) TimerEvent: {}
+[14.457165] (-) TimerEvent: {}
+[14.558029] (-) TimerEvent: {}
+[14.605527] (centerline_extraction) StdoutLine: {'line': b'-- Generating done\n'}
+[14.658177] (-) TimerEvent: {}
+[14.682934] (centerline_extraction) StdoutLine: {'line': b'-- Build files have been written to: /home/wheeltec/agribot/agribot_ws/build/centerline_extraction\n'}
+[14.740196] (centerline_extraction) CommandEnded: {'returncode': 0}
+[14.741973] (centerline_extraction) JobProgress: {'identifier': 'centerline_extraction', 'progress': 'build'}
+[14.745578] (centerline_extraction) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction', '--', '-j8', '-l8'], 'cwd': '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7898'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'wheeltec'), ('SSH_CLIENT', '192.168.3.138 60207 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/aarch64-linux-gnu:/home/wheeltec/agribot/agribot_ws/install/serial/lib:/usr/lib/aarch64-linux-gnu:/home/wheeltec/ws_livox/install/livox_sdk2/lib:/home/wheeltec/ws_livox/install/livox_ros_driver2/lib:/home/wheeltec/wheeltec_ros2/install/yesense_interface/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt/lib:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/lib:/home/wheeltec/wheeltec_ros2/install/usb_cam/lib:/home/wheeltec/wheeltec_ros2/install/ublox_gps/lib:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/lib:/home/wheeltec/wheeltec_ros2/install/serial/lib:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/lib:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping/lib:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_controller/lib:/home/wheeltec/wheeltec_ros2/install/dwb_plugins/lib:/home/wheeltec/wheeltec_ros2/install/dwb_critics/lib:/home/wheeltec/wheeltec_ros2/install/dwb_core/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils/lib:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower/lib:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors/lib:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor/lib:/home/wheeltec/wheeltec_ros2/install/costmap_queue/lib:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d/lib:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid/lib:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins/lib:/home/wheeltec/wheeltec_ros2/install/nav2_map_server/lib:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree/lib:/home/wheeltec/wheeltec_ros2/install/nav2_amcl/lib:/home/wheeltec/wheeltec_ros2/install/nav2_util/lib:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/lib:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/lib:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco_ros/lib:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco/lib:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wheeltec'), ('TERM_PROGRAM_VERSION', '1.128.0'), ('NO_PROXY', 'localhost,127.0.0.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-7b82605c-d942-4c3e-b2c5-5e5a419e16b5.sock'), ('JETSON_L4T', '36.4.7'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Orin NX Engineering Reference Developer Kit'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install:/home/wheeltec/ws_livox/install:/home/wheeltec/wheeltec_ros2/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'wheeltec'), ('JETSON_MODULE', 'NVIDIA Jetson Orin NX (16GB ram)'), ('JETSON_SERIAL_NUMBER', '1422525044003'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', ':/opt/opencv_410/lib/pkgconfig:/opt/opencv_410/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-1b24ffe71c80518c.txt'), ('LANG', 'zh_CN.UTF-8'), ('PYTHONSTARTUP', '/home/wheeltec/.vscode-server/data/User/workspaceStorage/64f4472d1280cf46ce0f694c7f8ba4f6/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra234'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ce713f1bb8.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('JETSON_CUDA_ARCH_BIN', '8.7'), ('PWD', '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'ffd0c90ef5f5f21efcb855a6670ca01a'), ('SSH_CONNECTION', '192.168.3.138 60207 192.168.3.195 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/wheeltec/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/yesense_interface/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/tf2_tools/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_common/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7898'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', ''), ('CMAKE_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble'), ('JETSON_P_NUMBER', 'p3767-0000')]), 'shell': False}
+[14.758362] (-) TimerEvent: {}
+[14.859251] (-) TimerEvent: {}
+[14.860780] (centerline_extraction) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object CMakeFiles/centerline_extract.dir/src/centerline_extract.cpp.o\x1b[0m\n'}
+[14.861270] (centerline_extraction) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/corn_row_detector.cpp.o\x1b[0m\n'}
+[14.867140] (centerline_extraction) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o\x1b[0m\n'}
+[14.877914] (centerline_extraction) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/pcl_learning.dir/src/pcl_learning.cpp.o\x1b[0m\n'}
+[14.888262] (centerline_extraction) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/corn_row_detector_projection.dir/src/corn_row_detector_projection.cpp.o\x1b[0m\n'}
+[14.888920] (centerline_extraction) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o\x1b[0m\n'}
+[14.889728] (centerline_extraction) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o\x1b[0m\n'}
+[14.890029] (centerline_extraction) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o\x1b[0m\n'}
+[14.959439] (-) TimerEvent: {}
+[15.060237] (-) TimerEvent: {}
+[15.160991] (-) TimerEvent: {}
+[15.261711] (-) TimerEvent: {}
+[15.362489] (-) TimerEvent: {}
+[15.463325] (-) TimerEvent: {}
+[15.564068] (-) TimerEvent: {}
+[15.664860] (-) TimerEvent: {}
+[15.765667] (-) TimerEvent: {}
+[15.866540] (-) TimerEvent: {}
+[15.967391] (-) TimerEvent: {}
+[16.068231] (-) TimerEvent: {}
+[16.169102] (-) TimerEvent: {}
+[16.269846] (-) TimerEvent: {}
+[16.370653] (-) TimerEvent: {}
+[16.471428] (-) TimerEvent: {}
+[16.572166] (-) TimerEvent: {}
+[16.673066] (-) TimerEvent: {}
+[16.773872] (-) TimerEvent: {}
+[16.874766] (-) TimerEvent: {}
+[16.975638] (-) TimerEvent: {}
+[17.076500] (-) TimerEvent: {}
+[17.177369] (-) TimerEvent: {}
+[17.278160] (-) TimerEvent: {}
+[17.378992] (-) TimerEvent: {}
+[17.479755] (-) TimerEvent: {}
+[17.580600] (-) TimerEvent: {}
+[17.681481] (-) TimerEvent: {}
+[17.782232] (-) TimerEvent: {}
+[17.883150] (-) TimerEvent: {}
+[17.983880] (-) TimerEvent: {}
+[18.084717] (-) TimerEvent: {}
+[18.185577] (-) TimerEvent: {}
+[18.286405] (-) TimerEvent: {}
+[18.387337] (-) TimerEvent: {}
+[18.488065] (-) TimerEvent: {}
+[18.588896] (-) TimerEvent: {}
+[18.689720] (-) TimerEvent: {}
+[18.790781] (-) TimerEvent: {}
+[18.891588] (-) TimerEvent: {}
+[19.109881] (-) TimerEvent: {}
+[19.210598] (-) TimerEvent: {}
+[19.311319] (-) TimerEvent: {}
+[19.412066] (-) TimerEvent: {}
+[19.512800] (-) TimerEvent: {}
+[19.613909] (-) TimerEvent: {}
+[19.714636] (-) TimerEvent: {}
+[19.815400] (-) TimerEvent: {}
+[19.916143] (-) TimerEvent: {}
+[20.016900] (-) TimerEvent: {}
+[20.117661] (-) TimerEvent: {}
+[20.218427] (-) TimerEvent: {}
+[20.319219] (-) TimerEvent: {}
+[20.419991] (-) TimerEvent: {}
+[20.520771] (-) TimerEvent: {}
+[20.621521] (-) TimerEvent: {}
+[20.722270] (-) TimerEvent: {}
+[20.823079] (-) TimerEvent: {}
+[20.923852] (-) TimerEvent: {}
+[21.024649] (-) TimerEvent: {}
+[21.125437] (-) TimerEvent: {}
+[21.226191] (-) TimerEvent: {}
+[21.326940] (-) TimerEvent: {}
+[21.427784] (-) TimerEvent: {}
+[21.528578] (-) TimerEvent: {}
+[21.629390] (-) TimerEvent: {}
+[21.730156] (-) TimerEvent: {}
+[21.830946] (-) TimerEvent: {}
+[21.931739] (-) TimerEvent: {}
+[22.032510] (-) TimerEvent: {}
+[22.133306] (-) TimerEvent: {}
+[22.234060] (-) TimerEvent: {}
+[22.334827] (-) TimerEvent: {}
+[22.435583] (-) TimerEvent: {}
+[22.536367] (-) TimerEvent: {}
+[22.637126] (-) TimerEvent: {}
+[22.737940] (-) TimerEvent: {}
+[22.838722] (-) TimerEvent: {}
+[22.939464] (-) TimerEvent: {}
+[23.040216] (-) TimerEvent: {}
+[23.140966] (-) TimerEvent: {}
+[23.241740] (-) TimerEvent: {}
+[23.342564] (-) TimerEvent: {}
+[23.443268] (-) TimerEvent: {}
+[23.544005] (-) TimerEvent: {}
+[23.644779] (-) TimerEvent: {}
+[23.745546] (-) TimerEvent: {}
+[23.846278] (-) TimerEvent: {}
+[23.947046] (-) TimerEvent: {}
+[24.047827] (-) TimerEvent: {}
+[24.157859] (-) TimerEvent: {}
+[24.258637] (-) TimerEvent: {}
+[24.359382] (-) TimerEvent: {}
+[24.460128] (-) TimerEvent: {}
+[24.560892] (-) TimerEvent: {}
+[24.661654] (-) TimerEvent: {}
+[24.762402] (-) TimerEvent: {}
+[24.863156] (-) TimerEvent: {}
+[24.963949] (-) TimerEvent: {}
+[25.064705] (-) TimerEvent: {}
+[25.165419] (-) TimerEvent: {}
+[25.266160] (-) TimerEvent: {}
+[25.366908] (-) TimerEvent: {}
+[25.467664] (-) TimerEvent: {}
+[25.568432] (-) TimerEvent: {}
+[25.669252] (-) TimerEvent: {}
+[25.772963] (-) TimerEvent: {}
+[25.873745] (-) TimerEvent: {}
+[25.974506] (-) TimerEvent: {}
+[26.075268] (-) TimerEvent: {}
+[26.176020] (-) TimerEvent: {}
+[26.276742] (-) TimerEvent: {}
+[26.377533] (-) TimerEvent: {}
+[26.478264] (-) TimerEvent: {}
+[26.579034] (-) TimerEvent: {}
+[26.679783] (-) TimerEvent: {}
+[26.780557] (-) TimerEvent: {}
+[26.881354] (-) TimerEvent: {}
+[26.982086] (-) TimerEvent: {}
+[27.082834] (-) TimerEvent: {}
+[27.183602] (-) TimerEvent: {}
+[27.284394] (-) TimerEvent: {}
+[27.385155] (-) TimerEvent: {}
+[27.485939] (-) TimerEvent: {}
+[27.586676] (-) TimerEvent: {}
+[27.687426] (-) TimerEvent: {}
+[27.788191] (-) TimerEvent: {}
+[27.888936] (-) TimerEvent: {}
+[27.989717] (-) TimerEvent: {}
+[28.090503] (-) TimerEvent: {}
+[28.191299] (-) TimerEvent: {}
+[28.292064] (-) TimerEvent: {}
+[28.392842] (-) TimerEvent: {}
+[28.493625] (-) TimerEvent: {}
+[28.594388] (-) TimerEvent: {}
+[28.695157] (-) TimerEvent: {}
+[28.795909] (-) TimerEvent: {}
+[28.896670] (-) TimerEvent: {}
+[28.997439] (-) TimerEvent: {}
+[29.223068] (-) TimerEvent: {}
+[29.323850] (-) TimerEvent: {}
+[29.424584] (-) TimerEvent: {}
+[29.525384] (-) TimerEvent: {}
+[29.626134] (-) TimerEvent: {}
+[29.726894] (-) TimerEvent: {}
+[29.827621] (-) TimerEvent: {}
+[29.928385] (-) TimerEvent: {}
+[30.029142] (-) TimerEvent: {}
+[30.129933] (-) TimerEvent: {}
+[30.230710] (-) TimerEvent: {}
+[30.331512] (-) TimerEvent: {}
+[30.432312] (-) TimerEvent: {}
+[30.533086] (-) TimerEvent: {}
+[30.633874] (-) TimerEvent: {}
+[30.734645] (-) TimerEvent: {}
+[30.835405] (-) TimerEvent: {}
+[30.936163] (-) TimerEvent: {}
+[31.036920] (-) TimerEvent: {}
+[31.137676] (-) TimerEvent: {}
+[31.238397] (-) TimerEvent: {}
+[31.339120] (-) TimerEvent: {}
+[31.439829] (-) TimerEvent: {}
+[31.540547] (-) TimerEvent: {}
+[31.641351] (-) TimerEvent: {}
+[31.742092] (-) TimerEvent: {}
+[31.842864] (-) TimerEvent: {}
+[31.943677] (-) TimerEvent: {}
+[32.044415] (-) TimerEvent: {}
+[32.145147] (-) TimerEvent: {}
+[32.245897] (-) TimerEvent: {}
+[32.346644] (-) TimerEvent: {}
+[32.447406] (-) TimerEvent: {}
+[32.548160] (-) TimerEvent: {}
+[32.648890] (-) TimerEvent: {}
+[32.749666] (-) TimerEvent: {}
+[32.850466] (-) TimerEvent: {}
+[32.951229] (-) TimerEvent: {}
+[33.052009] (-) TimerEvent: {}
+[33.152757] (-) TimerEvent: {}
+[33.253536] (-) TimerEvent: {}
+[33.354290] (-) TimerEvent: {}
+[33.455064] (-) TimerEvent: {}
+[33.555804] (-) TimerEvent: {}
+[33.656558] (-) TimerEvent: {}
+[33.757379] (-) TimerEvent: {}
+[33.858112] (-) TimerEvent: {}
+[33.958859] (-) TimerEvent: {}
+[34.059636] (-) TimerEvent: {}
+[34.169716] (-) TimerEvent: {}
+[34.270455] (-) TimerEvent: {}
+[34.371175] (-) TimerEvent: {}
+[34.471905] (-) TimerEvent: {}
+[34.572685] (-) TimerEvent: {}
+[34.673438] (-) TimerEvent: {}
+[34.774178] (-) TimerEvent: {}
+[34.874947] (-) TimerEvent: {}
+[34.975698] (-) TimerEvent: {}
+[35.076474] (-) TimerEvent: {}
+[35.177251] (-) TimerEvent: {}
+[35.277979] (-) TimerEvent: {}
+[35.378735] (-) TimerEvent: {}
+[35.479498] (-) TimerEvent: {}
+[35.580255] (-) TimerEvent: {}
+[35.681001] (-) TimerEvent: {}
+[35.781742] (-) TimerEvent: {}
+[35.882478] (-) TimerEvent: {}
+[35.983214] (-) TimerEvent: {}
+[36.083957] (-) TimerEvent: {}
+[36.184748] (-) TimerEvent: {}
+[36.285497] (-) TimerEvent: {}
+[36.386231] (-) TimerEvent: {}
+[36.486946] (-) TimerEvent: {}
+[36.587703] (-) TimerEvent: {}
+[36.688484] (-) TimerEvent: {}
+[36.703784] (centerline_extraction) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > > CornRowDetector::temporal_smoothing(const std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[36.705174] (centerline_extraction) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:361:50:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[36.709178] (centerline_extraction) StderrLine: {'line': b'  361 |     while (\x1b[01;35m\x1b[Kstatic_cast<int>(path_buffer_.size()) > time_window_size_\x1b[m\x1b[K) {  // \xe6\x98\xbe\xe5\xbc\x8f\xe8\xbd\xac\xe6\x8d\xa2\xe4\xb8\xbaint\n'}
+[36.710006] (centerline_extraction) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[36.710609] (centerline_extraction) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector.cpp:367:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[36.711333] (centerline_extraction) StderrLine: {'line': b'  367 |     if (\x1b[01;35m\x1b[Kstatic_cast<int>(path_buffer_.size()) < time_window_size_\x1b[m\x1b[K) {  // \xe6\x98\xbe\xe5\xbc\x8f\xe8\xbd\xac\xe6\x8d\xa2\xe4\xb8\xbaint\n'}
+[36.712002] (centerline_extraction) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[36.788726] (-) TimerEvent: {}
+[36.889587] (-) TimerEvent: {}
+[36.990316] (-) TimerEvent: {}
+[37.086036] (centerline_extraction) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[37.086698] (centerline_extraction) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:1087:54:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kparameter passing for argument of type \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<float, float>\x1b[m\x1b[K\xe2\x80\x99 when C++17 is enabled changed to match C++14 \x1b]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_base\x07in GCC 10.1\x1b]8;;\x07\n'}
+[37.086971] (centerline_extraction) StderrLine: {'line': b' 1087 |                 return std::make_pair(0.0f, sum_y / n\x1b[01;36m\x1b[K)\x1b[m\x1b[K;\n'}
+[37.087188] (centerline_extraction) StderrLine: {'line': b'      |                                                      \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[37.090478] (-) TimerEvent: {}
+[37.191250] (-) TimerEvent: {}
+[37.292008] (-) TimerEvent: {}
+[37.392744] (-) TimerEvent: {}
+[37.493625] (-) TimerEvent: {}
+[37.594385] (-) TimerEvent: {}
+[37.695231] (-) TimerEvent: {}
+[37.795997] (-) TimerEvent: {}
+[37.896773] (-) TimerEvent: {}
+[37.997601] (-) TimerEvent: {}
+[38.098318] (-) TimerEvent: {}
+[38.199146] (-) TimerEvent: {}
+[38.299899] (-) TimerEvent: {}
+[38.400655] (-) TimerEvent: {}
+[38.501484] (-) TimerEvent: {}
+[38.602206] (-) TimerEvent: {}
+[38.703625] (-) TimerEvent: {}
+[38.804442] (-) TimerEvent: {}
+[38.905193] (-) TimerEvent: {}
+[39.006019] (-) TimerEvent: {}
+[39.106773] (-) TimerEvent: {}
+[39.207539] (-) TimerEvent: {}
+[39.308402] (-) TimerEvent: {}
+[39.409309] (-) TimerEvent: {}
+[39.510093] (-) TimerEvent: {}
+[39.610848] (-) TimerEvent: {}
+[39.711647] (-) TimerEvent: {}
+[39.812370] (-) TimerEvent: {}
+[39.913240] (-) TimerEvent: {}
+[40.014002] (-) TimerEvent: {}
+[40.114715] (-) TimerEvent: {}
+[40.215482] (-) TimerEvent: {}
+[40.316198] (-) TimerEvent: {}
+[40.416911] (-) TimerEvent: {}
+[40.517646] (-) TimerEvent: {}
+[40.618392] (-) TimerEvent: {}
+[40.719172] (-) TimerEvent: {}
+[40.819909] (-) TimerEvent: {}
+[40.920626] (-) TimerEvent: {}
+[41.021357] (-) TimerEvent: {}
+[41.122087] (-) TimerEvent: {}
+[41.222816] (-) TimerEvent: {}
+[41.323550] (-) TimerEvent: {}
+[41.424252] (-) TimerEvent: {}
+[41.525062] (-) TimerEvent: {}
+[41.625786] (-) TimerEvent: {}
+[41.726511] (-) TimerEvent: {}
+[41.827238] (-) TimerEvent: {}
+[41.927952] (-) TimerEvent: {}
+[42.028672] (-) TimerEvent: {}
+[42.129450] (-) TimerEvent: {}
+[42.230140] (-) TimerEvent: {}
+[42.330875] (-) TimerEvent: {}
+[42.433855] (-) TimerEvent: {}
+[42.534600] (-) TimerEvent: {}
+[42.635297] (-) TimerEvent: {}
+[42.736026] (-) TimerEvent: {}
+[42.836851] (-) TimerEvent: {}
+[42.937594] (-) TimerEvent: {}
+[43.038321] (-) TimerEvent: {}
+[43.139078] (-) TimerEvent: {}
+[43.240011] (-) TimerEvent: {}
+[43.340757] (-) TimerEvent: {}
+[43.441510] (-) TimerEvent: {}
+[43.542247] (-) TimerEvent: {}
+[43.642992] (-) TimerEvent: {}
+[43.743728] (-) TimerEvent: {}
+[43.844470] (-) TimerEvent: {}
+[43.945261] (-) TimerEvent: {}
+[44.046244] (-) TimerEvent: {}
+[44.147024] (-) TimerEvent: {}
+[44.247810] (-) TimerEvent: {}
+[44.348619] (-) TimerEvent: {}
+[44.449414] (-) TimerEvent: {}
+[44.550193] (-) TimerEvent: {}
+[44.650933] (-) TimerEvent: {}
+[44.751674] (-) TimerEvent: {}
+[44.852416] (-) TimerEvent: {}
+[44.953159] (-) TimerEvent: {}
+[45.053919] (-) TimerEvent: {}
+[45.154856] (-) TimerEvent: {}
+[45.255650] (-) TimerEvent: {}
+[45.356379] (-) TimerEvent: {}
+[45.457108] (-) TimerEvent: {}
+[45.557868] (-) TimerEvent: {}
+[45.658604] (-) TimerEvent: {}
+[45.759389] (-) TimerEvent: {}
+[45.860158] (-) TimerEvent: {}
+[45.960873] (-) TimerEvent: {}
+[46.061654] (-) TimerEvent: {}
+[46.162381] (-) TimerEvent: {}
+[46.263105] (-) TimerEvent: {}
+[46.363856] (-) TimerEvent: {}
+[46.464600] (-) TimerEvent: {}
+[46.565414] (-) TimerEvent: {}
+[46.666207] (-) TimerEvent: {}
+[46.767258] (-) TimerEvent: {}
+[46.868012] (-) TimerEvent: {}
+[46.968832] (-) TimerEvent: {}
+[47.069948] (-) TimerEvent: {}
+[47.170689] (-) TimerEvent: {}
+[47.271416] (-) TimerEvent: {}
+[47.372190] (-) TimerEvent: {}
+[47.472954] (-) TimerEvent: {}
+[47.573729] (-) TimerEvent: {}
+[47.674503] (-) TimerEvent: {}
+[47.775301] (-) TimerEvent: {}
+[47.876162] (-) TimerEvent: {}
+[47.976875] (-) TimerEvent: {}
+[48.077610] (-) TimerEvent: {}
+[48.178396] (-) TimerEvent: {}
+[48.279145] (-) TimerEvent: {}
+[48.380049] (-) TimerEvent: {}
+[48.480781] (-) TimerEvent: {}
+[48.581681] (-) TimerEvent: {}
+[48.682461] (-) TimerEvent: {}
+[48.783352] (-) TimerEvent: {}
+[48.884120] (-) TimerEvent: {}
+[48.984934] (-) TimerEvent: {}
+[49.085721] (-) TimerEvent: {}
+[49.186734] (-) TimerEvent: {}
+[49.287499] (-) TimerEvent: {}
+[49.388250] (-) TimerEvent: {}
+[49.489061] (-) TimerEvent: {}
+[49.589856] (-) TimerEvent: {}
+[49.690604] (-) TimerEvent: {}
+[49.791372] (-) TimerEvent: {}
+[49.892119] (-) TimerEvent: {}
+[49.992909] (-) TimerEvent: {}
+[50.093679] (-) TimerEvent: {}
+[50.194398] (-) TimerEvent: {}
+[50.295114] (-) TimerEvent: {}
+[50.395875] (-) TimerEvent: {}
+[50.496584] (-) TimerEvent: {}
+[50.597325] (-) TimerEvent: {}
+[50.698033] (-) TimerEvent: {}
+[50.798763] (-) TimerEvent: {}
+[50.899471] (-) TimerEvent: {}
+[51.000170] (-) TimerEvent: {}
+[51.100886] (-) TimerEvent: {}
+[51.201715] (-) TimerEvent: {}
+[51.302408] (-) TimerEvent: {}
+[51.403273] (-) TimerEvent: {}
+[51.504070] (-) TimerEvent: {}
+[51.604767] (-) TimerEvent: {}
+[51.705451] (-) TimerEvent: {}
+[51.806329] (-) TimerEvent: {}
+[51.906973] (-) TimerEvent: {}
+[52.007691] (-) TimerEvent: {}
+[52.108429] (-) TimerEvent: {}
+[52.209183] (-) TimerEvent: {}
+[52.309959] (-) TimerEvent: {}
+[52.410680] (-) TimerEvent: {}
+[52.511362] (-) TimerEvent: {}
+[52.612044] (-) TimerEvent: {}
+[52.712742] (-) TimerEvent: {}
+[52.813545] (-) TimerEvent: {}
+[52.914277] (-) TimerEvent: {}
+[53.015011] (-) TimerEvent: {}
+[53.115692] (-) TimerEvent: {}
+[53.216405] (-) TimerEvent: {}
+[53.317134] (-) TimerEvent: {}
+[53.417887] (-) TimerEvent: {}
+[53.518591] (-) TimerEvent: {}
+[53.619311] (-) TimerEvent: {}
+[53.720072] (-) TimerEvent: {}
+[53.820803] (-) TimerEvent: {}
+[53.921525] (-) TimerEvent: {}
+[54.022217] (-) TimerEvent: {}
+[54.122947] (-) TimerEvent: {}
+[54.223641] (-) TimerEvent: {}
+[54.324360] (-) TimerEvent: {}
+[54.425106] (-) TimerEvent: {}
+[54.525882] (-) TimerEvent: {}
+[54.626608] (-) TimerEvent: {}
+[54.727347] (-) TimerEvent: {}
+[54.828079] (-) TimerEvent: {}
+[54.928798] (-) TimerEvent: {}
+[55.029533] (-) TimerEvent: {}
+[55.130237] (-) TimerEvent: {}
+[55.230933] (-) TimerEvent: {}
+[55.331660] (-) TimerEvent: {}
+[55.432383] (-) TimerEvent: {}
+[55.533151] (-) TimerEvent: {}
+[55.634998] (-) TimerEvent: {}
+[55.735722] (-) TimerEvent: {}
+[55.836512] (-) TimerEvent: {}
+[55.937269] (-) TimerEvent: {}
+[56.037966] (-) TimerEvent: {}
+[56.138676] (-) TimerEvent: {}
+[56.239398] (-) TimerEvent: {}
+[56.340108] (-) TimerEvent: {}
+[56.440848] (-) TimerEvent: {}
+[56.541575] (-) TimerEvent: {}
+[56.603039] (centerline_extraction) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable centerline_extract\x1b[0m\n'}
+[56.641760] (-) TimerEvent: {}
+[56.742454] (-) TimerEvent: {}
+[56.843160] (-) TimerEvent: {}
+[56.943911] (-) TimerEvent: {}
+[57.044640] (-) TimerEvent: {}
+[57.145542] (-) TimerEvent: {}
+[57.186327] (centerline_extraction) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable pcl_learning\x1b[0m\n'}
+[57.245745] (-) TimerEvent: {}
+[57.346575] (-) TimerEvent: {}
+[57.447536] (-) TimerEvent: {}
+[57.548282] (-) TimerEvent: {}
+[57.648971] (-) TimerEvent: {}
+[57.749740] (-) TimerEvent: {}
+[57.850476] (-) TimerEvent: {}
+[57.951181] (-) TimerEvent: {}
+[58.051911] (-) TimerEvent: {}
+[58.152659] (-) TimerEvent: {}
+[58.253427] (-) TimerEvent: {}
+[58.354140] (-) TimerEvent: {}
+[58.454816] (-) TimerEvent: {}
+[58.555533] (-) TimerEvent: {}
+[58.656281] (-) TimerEvent: {}
+[58.756967] (-) TimerEvent: {}
+[58.857733] (-) TimerEvent: {}
+[58.958469] (-) TimerEvent: {}
+[59.059165] (-) TimerEvent: {}
+[59.159882] (-) TimerEvent: {}
+[59.260601] (-) TimerEvent: {}
+[59.361407] (-) TimerEvent: {}
+[59.462103] (-) TimerEvent: {}
+[59.562804] (-) TimerEvent: {}
+[59.663724] (-) TimerEvent: {}
+[59.764433] (-) TimerEvent: {}
+[59.865148] (-) TimerEvent: {}
+[59.965869] (-) TimerEvent: {}
+[60.066563] (-) TimerEvent: {}
+[60.167231] (-) TimerEvent: {}
+[60.267928] (-) TimerEvent: {}
+[60.368623] (-) TimerEvent: {}
+[60.469360] (-) TimerEvent: {}
+[60.570065] (-) TimerEvent: {}
+[60.670768] (-) TimerEvent: {}
+[60.771451] (-) TimerEvent: {}
+[60.872139] (-) TimerEvent: {}
+[60.972836] (-) TimerEvent: {}
+[61.073595] (-) TimerEvent: {}
+[61.174280] (-) TimerEvent: {}
+[61.274957] (-) TimerEvent: {}
+[61.375658] (-) TimerEvent: {}
+[61.476338] (-) TimerEvent: {}
+[61.577012] (-) TimerEvent: {}
+[61.587442] (centerline_extraction) StdoutLine: {'line': b'[ 83%] Built target centerline_extract\n'}
+[61.630710] (centerline_extraction) StdoutLine: {'line': b'[ 83%] Built target pcl_learning\n'}
+[61.677191] (-) TimerEvent: {}
+[61.777895] (-) TimerEvent: {}
+[61.878571] (-) TimerEvent: {}
+[61.979264] (-) TimerEvent: {}
+[62.079947] (-) TimerEvent: {}
+[62.180608] (-) TimerEvent: {}
+[62.281309] (-) TimerEvent: {}
+[62.381969] (-) TimerEvent: {}
+[62.482636] (-) TimerEvent: {}
+[62.583328] (-) TimerEvent: {}
+[62.684002] (-) TimerEvent: {}
+[62.784676] (-) TimerEvent: {}
+[62.885371] (-) TimerEvent: {}
+[62.986060] (-) TimerEvent: {}
+[63.086757] (-) TimerEvent: {}
+[63.187448] (-) TimerEvent: {}
+[63.288127] (-) TimerEvent: {}
+[63.388831] (-) TimerEvent: {}
+[63.489593] (-) TimerEvent: {}
+[63.590388] (-) TimerEvent: {}
+[63.691067] (-) TimerEvent: {}
+[63.791751] (-) TimerEvent: {}
+[63.892423] (-) TimerEvent: {}
+[63.993100] (-) TimerEvent: {}
+[64.093773] (-) TimerEvent: {}
+[64.194450] (-) TimerEvent: {}
+[64.295113] (-) TimerEvent: {}
+[64.395760] (-) TimerEvent: {}
+[64.496455] (-) TimerEvent: {}
+[64.597127] (-) TimerEvent: {}
+[64.697802] (-) TimerEvent: {}
+[64.798467] (-) TimerEvent: {}
+[64.899128] (-) TimerEvent: {}
+[64.999803] (-) TimerEvent: {}
+[65.100479] (-) TimerEvent: {}
+[65.201250] (-) TimerEvent: {}
+[65.301915] (-) TimerEvent: {}
+[65.402587] (-) TimerEvent: {}
+[65.503265] (-) TimerEvent: {}
+[65.603961] (-) TimerEvent: {}
+[65.704656] (-) TimerEvent: {}
+[65.805348] (-) TimerEvent: {}
+[65.906063] (-) TimerEvent: {}
+[66.006880] (-) TimerEvent: {}
+[66.107559] (-) TimerEvent: {}
+[66.208254] (-) TimerEvent: {}
+[66.308925] (-) TimerEvent: {}
+[66.409592] (-) TimerEvent: {}
+[66.510269] (-) TimerEvent: {}
+[66.610938] (-) TimerEvent: {}
+[66.711645] (-) TimerEvent: {}
+[66.812347] (-) TimerEvent: {}
+[66.913088] (-) TimerEvent: {}
+[67.013834] (-) TimerEvent: {}
+[67.114559] (-) TimerEvent: {}
+[67.215257] (-) TimerEvent: {}
+[67.315924] (-) TimerEvent: {}
+[67.416599] (-) TimerEvent: {}
+[67.517314] (-) TimerEvent: {}
+[67.617993] (-) TimerEvent: {}
+[67.718679] (-) TimerEvent: {}
+[67.819380] (-) TimerEvent: {}
+[67.920085] (-) TimerEvent: {}
+[68.020805] (-) TimerEvent: {}
+[68.121444] (-) TimerEvent: {}
+[68.222123] (-) TimerEvent: {}
+[68.322774] (-) TimerEvent: {}
+[68.406110] (centerline_extraction) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking CXX executable cornfield_navigation_node\x1b[0m\n'}
+[68.422953] (-) TimerEvent: {}
+[68.523649] (-) TimerEvent: {}
+[68.624346] (-) TimerEvent: {}
+[68.725055] (-) TimerEvent: {}
+[68.825785] (-) TimerEvent: {}
+[68.926503] (-) TimerEvent: {}
+[69.027251] (-) TimerEvent: {}
+[69.128016] (-) TimerEvent: {}
+[69.228816] (-) TimerEvent: {}
+[69.329666] (-) TimerEvent: {}
+[69.430420] (-) TimerEvent: {}
+[69.531213] (-) TimerEvent: {}
+[69.632044] (-) TimerEvent: {}
+[69.732778] (-) TimerEvent: {}
+[69.833492] (-) TimerEvent: {}
+[69.934348] (-) TimerEvent: {}
+[70.035247] (-) TimerEvent: {}
+[70.135996] (-) TimerEvent: {}
+[70.236894] (-) TimerEvent: {}
+[70.337309] (centerline_extraction) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable corn_row_detector_projection\x1b[0m\n'}
+[70.337910] (-) TimerEvent: {}
+[70.438428] (-) TimerEvent: {}
+[70.539196] (-) TimerEvent: {}
+[70.639985] (-) TimerEvent: {}
+[70.740809] (-) TimerEvent: {}
+[70.841614] (-) TimerEvent: {}
+[70.942360] (-) TimerEvent: {}
+[71.043125] (-) TimerEvent: {}
+[71.143834] (-) TimerEvent: {}
+[71.244567] (-) TimerEvent: {}
+[71.345307] (-) TimerEvent: {}
+[71.446073] (-) TimerEvent: {}
+[71.546825] (-) TimerEvent: {}
+[71.647571] (-) TimerEvent: {}
+[71.748313] (-) TimerEvent: {}
+[71.849066] (-) TimerEvent: {}
+[71.950068] (-) TimerEvent: {}
+[72.050867] (-) TimerEvent: {}
+[72.151626] (-) TimerEvent: {}
+[72.252434] (-) TimerEvent: {}
+[72.353163] (-) TimerEvent: {}
+[72.453948] (-) TimerEvent: {}
+[72.554708] (-) TimerEvent: {}
+[72.655438] (-) TimerEvent: {}
+[72.756178] (-) TimerEvent: {}
+[72.856900] (-) TimerEvent: {}
+[72.957713] (-) TimerEvent: {}
+[73.058445] (-) TimerEvent: {}
+[73.159196] (-) TimerEvent: {}
+[73.259998] (-) TimerEvent: {}
+[73.360779] (-) TimerEvent: {}
+[73.461564] (-) TimerEvent: {}
+[73.562400] (-) TimerEvent: {}
+[73.663070] (-) TimerEvent: {}
+[73.763792] (-) TimerEvent: {}
+[73.864449] (-) TimerEvent: {}
+[73.936448] (centerline_extraction) StdoutLine: {'line': b'[100%] Built target corn_row_detector_projection\n'}
+[73.964591] (-) TimerEvent: {}
+[74.065213] (-) TimerEvent: {}
+[74.165931] (-) TimerEvent: {}
+[74.266641] (-) TimerEvent: {}
+[74.367360] (-) TimerEvent: {}
+[74.468090] (-) TimerEvent: {}
+[74.568906] (-) TimerEvent: {}
+[74.669773] (-) TimerEvent: {}
+[74.770590] (-) TimerEvent: {}
+[74.871384] (-) TimerEvent: {}
+[74.972161] (-) TimerEvent: {}
+[75.073014] (-) TimerEvent: {}
+[75.173902] (-) TimerEvent: {}
+[75.274735] (-) TimerEvent: {}
+[75.375478] (-) TimerEvent: {}
+[75.476299] (-) TimerEvent: {}
+[75.577104] (-) TimerEvent: {}
+[75.677842] (-) TimerEvent: {}
+[75.778678] (-) TimerEvent: {}
+[75.879484] (-) TimerEvent: {}
+[75.980165] (-) TimerEvent: {}
+[76.080868] (-) TimerEvent: {}
+[76.181816] (-) TimerEvent: {}
+[76.282569] (-) TimerEvent: {}
+[76.287990] (centerline_extraction) StdoutLine: {'line': b'[100%] Built target cornfield_navigation_node\n'}
+[76.325461] (centerline_extraction) CommandEnded: {'returncode': 0}
+[76.329438] (centerline_extraction) JobProgress: {'identifier': 'centerline_extraction', 'progress': 'install'}
+[76.352971] (centerline_extraction) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction'], 'cwd': '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://127.0.0.1:7898'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'wheeltec'), ('SSH_CLIENT', '192.168.3.138 60207 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/aarch64-linux-gnu:/home/wheeltec/agribot/agribot_ws/install/serial/lib:/usr/lib/aarch64-linux-gnu:/home/wheeltec/ws_livox/install/livox_sdk2/lib:/home/wheeltec/ws_livox/install/livox_ros_driver2/lib:/home/wheeltec/wheeltec_ros2/install/yesense_interface/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt/lib:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/lib:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/lib:/home/wheeltec/wheeltec_ros2/install/usb_cam/lib:/home/wheeltec/wheeltec_ros2/install/ublox_gps/lib:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/lib:/home/wheeltec/wheeltec_ros2/install/serial/lib:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/lib:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping/lib:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_controller/lib:/home/wheeltec/wheeltec_ros2/install/dwb_plugins/lib:/home/wheeltec/wheeltec_ros2/install/dwb_critics/lib:/home/wheeltec/wheeltec_ros2/install/dwb_core/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils/lib:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/lib:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower/lib:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller/lib:/home/wheeltec/wheeltec_ros2/install/nav2_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner/lib:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors/lib:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor/lib:/home/wheeltec/wheeltec_ros2/install/costmap_queue/lib:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d/lib:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid/lib:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother/lib:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins/lib:/home/wheeltec/wheeltec_ros2/install/nav2_map_server/lib:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager/lib:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree/lib:/home/wheeltec/wheeltec_ros2/install/nav2_amcl/lib:/home/wheeltec/wheeltec_ros2/install/nav2_util/lib:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/lib:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/lib:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera/lib:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco_ros/lib:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/lib:/home/wheeltec/wheeltec_ros2/install/aruco/lib:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wheeltec'), ('TERM_PROGRAM_VERSION', '1.128.0'), ('NO_PROXY', 'localhost,127.0.0.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-7b82605c-d942-4c3e-b2c5-5e5a419e16b5.sock'), ('JETSON_L4T', '36.4.7'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Orin NX Engineering Reference Developer Kit'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install:/home/wheeltec/ws_livox/install:/home/wheeltec/wheeltec_ros2/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'wheeltec'), ('JETSON_MODULE', 'NVIDIA Jetson Orin NX (16GB ram)'), ('JETSON_SERIAL_NUMBER', '1422525044003'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', ':/opt/opencv_410/lib/pkgconfig:/opt/opencv_410/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/wheeltec/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/wheeltec/.vscode-server/cli/servers/Stable-fc3def6774c76082adf699d366f31a557ce5573f/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/wheeltec/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-1b24ffe71c80518c.txt'), ('LANG', 'zh_CN.UTF-8'), ('PYTHONSTARTUP', '/home/wheeltec/.vscode-server/data/User/workspaceStorage/64f4472d1280cf46ce0f694c7f8ba4f6/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra234'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ce713f1bb8.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('JETSON_CUDA_ARCH_BIN', '8.7'), ('PWD', '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'ffd0c90ef5f5f21efcb855a6670ca01a'), ('SSH_CONNECTION', '192.168.3.138 60207 192.168.3.195 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/wheeltec/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/yesense_interface/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ublox_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/tf2_tools/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nmea_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/nav2_common/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2/lib/python3.10/site-packages:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/aruco_msgs/local/lib/python3.10/dist-packages:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7898'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', ''), ('CMAKE_PREFIX_PATH', '/home/wheeltec/agribot/agribot_ws/install/turn_on_agribot:/home/wheeltec/agribot/agribot_ws/install/turn_on_32chassis:/home/wheeltec/agribot/agribot_ws/install/serial:/home/wheeltec/agribot/agribot_ws/install/centerline_extraction:/home/wheeltec/ws_livox/install/livox_ros_driver2:/home/wheeltec/wheeltec_ros2/install/yesense_std_ros2:/home/wheeltec/wheeltec_ros2/install/yesense_interface:/home/wheeltec/wheeltec_ros2/install/wheeltec_slam_toolbox:/home/wheeltec/wheeltec_ros2/install/wheeltec_rviz2:/home/wheeltec/wheeltec_ros2/install/wheeltec_rrt_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_urdf:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rtab:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_rrt:/home/wheeltec/wheeltec_ros2/install/turn_on_wheeltec_robot:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_kcf:/home/wheeltec/wheeltec_ros2/install/wheeltec_path_follow:/home/wheeltec/wheeltec_ros2/install/wheeltec_nav2:/home/wheeltec/wheeltec_ros2/install/wheeltec_multi:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_mic_msg:/home/wheeltec/wheeltec_ros2/install/wheeltec_joy:/home/wheeltec/wheeltec_ros2/install/wheeltec_gps_driver:/home/wheeltec/wheeltec_ros2/install/wheeltec_cartographer:/home/wheeltec/wheeltec_ros2/install/wheeltec_aiui:/home/wheeltec/wheeltec_ros2/install/web_video_server:/home/wheeltec/wheeltec_ros2/install/usb_cam:/home/wheeltec/wheeltec_ros2/install/ublox:/home/wheeltec/wheeltec_ros2/install/ublox_gps:/home/wheeltec/wheeltec_ros2/install/ublox_msgs:/home/wheeltec/wheeltec_ros2/install/ublox_serialization:/home/wheeltec/wheeltec_ros2/install/tts:/home/wheeltec/wheeltec_ros2/install/slam_gmapping:/home/wheeltec/wheeltec_ros2/install/bodyreader:/home/wheeltec/wheeltec_ros2/install/serial:/home/wheeltec/wheeltec_ros2/install/rplidar_ros:/home/wheeltec/wheeltec_ros2/install/orb_slam2_ros:/home/wheeltec/wheeltec_ros2/install/openslam_gmapping:/home/wheeltec/wheeltec_ros2/install/ollama_ros_msgs:/home/wheeltec/wheeltec_ros2/install/nmea_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_bringup:/home/wheeltec/wheeltec_ros2/install/navigation2:/home/wheeltec/wheeltec_ros2/install/nav2_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_dwb_controller:/home/wheeltec/wheeltec_ros2/install/nav2_controller:/home/wheeltec/wheeltec_ros2/install/dwb_plugins:/home/wheeltec/wheeltec_ros2/install/dwb_critics:/home/wheeltec/wheeltec_ros2/install/dwb_core:/home/wheeltec/wheeltec_ros2/install/nav_2d_utils:/home/wheeltec/wheeltec_ros2/install/dwb_msgs:/home/wheeltec/wheeltec_ros2/install/nav_2d_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_follower:/home/wheeltec/wheeltec_ros2/install/nav2_theta_star_planner:/home/wheeltec/wheeltec_ros2/install/nav2_smac_planner:/home/wheeltec/wheeltec_ros2/install/nav2_rotation_shim_controller:/home/wheeltec/wheeltec_ros2/install/nav2_regulated_pure_pursuit_controller:/home/wheeltec/wheeltec_ros2/install/nav2_planner:/home/wheeltec/wheeltec_ros2/install/nav2_navfn_planner:/home/wheeltec/wheeltec_ros2/install/nav2_constrained_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_bt_navigator:/home/wheeltec/wheeltec_ros2/install/nav2_behaviors:/home/wheeltec/wheeltec_ros2/install/nav2_core:/home/wheeltec/wheeltec_ros2/install/nav2_collision_monitor:/home/wheeltec/wheeltec_ros2/install/costmap_queue:/home/wheeltec/wheeltec_ros2/install/nav2_costmap_2d:/home/wheeltec/wheeltec_ros2/install/nav2_voxel_grid:/home/wheeltec/wheeltec_ros2/install/nav2_velocity_smoother:/home/wheeltec/wheeltec_ros2/install/nav2_rviz_plugins:/home/wheeltec/wheeltec_ros2/install/nav2_map_server:/home/wheeltec/wheeltec_ros2/install/nav2_lifecycle_manager:/home/wheeltec/wheeltec_ros2/install/nav2_behavior_tree:/home/wheeltec/wheeltec_ros2/install/nav2_amcl:/home/wheeltec/wheeltec_ros2/install/nav2_util:/home/wheeltec/wheeltec_ros2/install/nav2_msgs:/home/wheeltec/wheeltec_ros2/install/nav2_common:/home/wheeltec/wheeltec_ros2/install/lslidar_driver:/home/wheeltec/wheeltec_ros2/install/lslidar_msgs:/home/wheeltec/wheeltec_ros2/install/ldlidar_stl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar_sl_ros2:/home/wheeltec/wheeltec_ros2/install/ldlidar:/home/wheeltec/wheeltec_ros2/install/bodyreader_msg:/home/wheeltec/wheeltec_ros2/install/astra_camera:/home/wheeltec/wheeltec_ros2/install/astra_camera_msgs:/home/wheeltec/wheeltec_ros2/install/aruco_ros:/home/wheeltec/wheeltec_ros2/install/aruco_msgs:/home/wheeltec/wheeltec_ros2/install/aruco:/home/wheeltec/wheeltec_ros2/install/ackermann_msgs:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble'), ('JETSON_P_NUMBER', 'p3767-0000')]), 'shell': False}
+[76.382341] (centerline_extraction) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[76.382821] (-) TimerEvent: {}
+[76.384966] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/pcl_learning\n'}
+[76.397679] (centerline_extraction) StdoutLine: {'line': b'-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/pcl_learning" to ""\n'}
+[76.398116] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/centerline_extract\n'}
+[76.409192] (centerline_extraction) StdoutLine: {'line': b'-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/centerline_extract" to ""\n'}
+[76.409597] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node\n'}
+[76.439815] (centerline_extraction) StdoutLine: {'line': b'-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node" to ""\n'}
+[76.440266] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection\n'}
+[76.456560] (centerline_extraction) StdoutLine: {'line': b'-- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection" to ""\n'}
+[76.456974] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include\n'}
+[76.457150] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction\n'}
+[76.457335] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/obstacle_detector.hpp\n'}
+[76.457528] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller.hpp\n'}
+[76.457681] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector_projection.hpp\n'}
+[76.457887] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pid_controller.hpp\n'}
+[76.458108] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller copy 2.hpp\n'}
+[76.458295] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector.hpp\n'}
+[76.458476] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller copy.hpp\n'}
+[76.458654] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector1.hpp\n'}
+[76.458811] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector copy.hpp\n'}
+[76.469434] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/package_run_dependencies/centerline_extraction\n'}
+[76.470251] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/parent_prefix_path/centerline_extraction\n'}
+[76.472712] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.sh\n'}
+[76.473789] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.dsv\n'}
+[76.474275] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.sh\n'}
+[76.474723] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/path.dsv\n'}
+[76.475135] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.bash\n'}
+[76.475746] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.sh\n'}
+[76.476353] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.zsh\n'}
+[76.476814] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/local_setup.dsv\n'}
+[76.477259] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.dsv\n'}
+[76.478266] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/packages/centerline_extraction\n'}
+[76.478875] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig.cmake\n'}
+[76.479287] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/cmake/centerline_extractionConfig-version.cmake\n'}
+[76.479891] (centerline_extraction) StdoutLine: {'line': b'-- Installing: /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/package.xml\n'}
+[76.482904] (-) TimerEvent: {}
+[76.485748] (centerline_extraction) CommandEnded: {'returncode': 0}
+[76.567730] (centerline_extraction) JobEnded: {'identifier': 'centerline_extraction', 'rc': 0}
+[76.569703] (-) EventReactorShutdown: {}

@@ -69,10 +69,38 @@ include CMakeFiles/cornfield_navigation_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cornfield_navigation_node.dir/flags.make
 
+CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o: CMakeFiles/cornfield_navigation_node.dir/flags.make
+CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp
+CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o: CMakeFiles/cornfield_navigation_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o -MF CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o.d -o CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o -c /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp
+
+CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp > CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.i
+
+CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pure_pursuit_controller.cpp -o CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.s
+
+CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o: CMakeFiles/cornfield_navigation_node.dir/flags.make
+CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/obstacle_detector.cpp
+CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o: CMakeFiles/cornfield_navigation_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o -MF CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o.d -o CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o -c /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/obstacle_detector.cpp
+
+CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/obstacle_detector.cpp > CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.i
+
+CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/obstacle_detector.cpp -o CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.s
+
 CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o: CMakeFiles/cornfield_navigation_node.dir/flags.make
 CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pid_controller.cpp
 CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o: CMakeFiles/cornfield_navigation_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o -MF CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o.d -o CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o -c /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/pid_controller.cpp
 
 CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.i: cmake_force
@@ -86,7 +114,7 @@ CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.s: cmake_force
 CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o: CMakeFiles/cornfield_navigation_node.dir/flags.make
 CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o: /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/main.cpp
 CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o: CMakeFiles/cornfield_navigation_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o -MF CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o.d -o CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o -c /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/main.cpp
 
 CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.i: cmake_force
@@ -99,12 +127,16 @@ CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.s: cmake_force
 
 # Object files for target cornfield_navigation_node
 cornfield_navigation_node_OBJECTS = \
+"CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o" \
+"CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o" \
 "CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o" \
 "CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o"
 
 # External object files for target cornfield_navigation_node
 cornfield_navigation_node_EXTERNAL_OBJECTS =
 
+cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o
+cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o
 cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o
 cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o
 cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/build.make
@@ -358,7 +390,7 @@ cornfield_navigation_node: /usr/lib/aarch64-linux-gnu/libboost_iostreams.so.1.74
 cornfield_navigation_node: /usr/lib/aarch64-linux-gnu/libboost_serialization.so.1.74.0
 cornfield_navigation_node: /usr/lib/aarch64-linux-gnu/libqhull_r.so.8.0.2
 cornfield_navigation_node: CMakeFiles/cornfield_navigation_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cornfield_navigation_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable cornfield_navigation_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cornfield_navigation_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

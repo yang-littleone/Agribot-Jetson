@@ -4,34 +4,67 @@ from ament_index_python.packages import get_package_share_directory #通过功�
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
 import os
+import yaml
+from launch.launch_description_sources import PythonLaunchDescriptionSource 
+
+def load_bringup_config(config_path):
+    """Load launch defaults and node parameters from the package YAML file."""
+    with open(config_path, 'r', encoding='utf-8') as config_file:
+        config = yaml.safe_load(config_file) or {}
+
+    if 'launch' not in config:
+        raise RuntimeError(f"Missing 'launch' section in {config_path}")
+
+    return config
 
 def generate_launch_description():
+    package_share_dir = get_package_share_directory('turn_on_32chassis')
+    bringup_config = os.path.join(package_share_dir, 'config', 'bringup.yaml')
+    config = load_bringup_config(bringup_config)
+    launch_defaults = config['launch']
+    chassis_params = config['turn_on_32chassis_node']['ros__parameters']
+    h30_params = config['yesense_pub']['ros__parameters']
+    selector_params = config['imu_source_selector']['ros__parameters']
+    onboard_imu_tf = launch_defaults['onboard_imu_tf']
+
     imu_source = LaunchConfiguration('imu_source')
     start_h30_driver = LaunchConfiguration('start_h30_driver')
     h30_topic = LaunchConfiguration('h30_topic')
     h30_serial_port = LaunchConfiguration('h30_serial_port')
+    h30_baud_rate = LaunchConfiguration('h30_baud_rate')
+    h30_frame_id = LaunchConfiguration('h30_frame_id')
 
     action_declare_imu_source = launch.actions.DeclareLaunchArgument(
         name='imu_source',
-        default_value='h30',
+        default_value=str(launch_defaults['imu_source']),
         choices=['onboard', 'h30'],
         description='Select the IMU used by the EKF: onboard or h30',
     )
     action_declare_start_h30_driver = launch.actions.DeclareLaunchArgument(
         name='start_h30_driver',
-        default_value='true',
+        default_value=str(launch_defaults['start_h30_driver']).lower(),
         choices=['true', 'false'],
         description='Start the Yesense H30 driver when imu_source is h30',
     )
     action_declare_h30_topic = launch.actions.DeclareLaunchArgument(
         name='h30_topic',
-        default_value='/imu/data_h30',
+        default_value=str(launch_defaults['h30_topic']),
         description='H30 sensor_msgs/Imu topic',
     )
     action_declare_h30_serial_port = launch.actions.DeclareLaunchArgument(
         name='h30_serial_port',
-        default_value='/dev/wheeltec_IMU',
+        default_value=str(launch_defaults['h30_serial_port']),
         description='Serial device used by the H30 IMU',
+    )
+    action_declare_h30_baud_rate = launch.actions.DeclareLaunchArgument(
+        name='h30_baud_rate',
+        default_value=str(launch_defaults['h30_baud_rate']),
+        description='Serial baud rate used by the H30 IMU',
+    )
+    action_declare_h30_frame_id = launch.actions.DeclareLaunchArgument(
+        name='h30_frame_id',
+        default_value=str(launch_defaults['h30_frame_id']),
+        description='TF frame assigned to H30 sensor_msgs/Imu messages',
     )
 
     onboard_condition = IfCondition(
@@ -49,7 +82,6 @@ def generate_launch_description():
     ])
 
     # 获取默认的urdf路径
-    package_share_dir = get_package_share_directory('turn_on_32chassis')
     default_urdf_path = os.path.join(package_share_dir, 'urdf/urdf','agribot.urdf.xacro')
 
     ekf_config = os.path.join(package_share_dir, 'config','ekf.yaml')
@@ -75,10 +107,14 @@ def generate_launch_description():
             executable='static_transform_publisher', 
             name='base_to_gyro',
             arguments=[
-                '--x', '0', '--y', '0', '--z', '0',
-                '--roll', '0', '--pitch', '0', '--yaw', '0',
-                '--frame-id', 'base_link',
-                '--child-frame-id', 'imu_link',
+                '--x', str(onboard_imu_tf['x']),
+                '--y', str(onboard_imu_tf['y']),
+                '--z', str(onboard_imu_tf['z']),
+                '--roll', str(onboard_imu_tf['roll']),
+                '--pitch', str(onboard_imu_tf['pitch']),
+                '--yaw', str(onboard_imu_tf['yaw']),
+                '--frame-id', str(onboard_imu_tf['parent_frame']),
+                '--child-frame-id', str(onboard_imu_tf['child_frame']),
             ],
             condition=onboard_condition,
     )
@@ -101,11 +137,7 @@ def generate_launch_description():
         executable='turn_on_32chassis_node',
         name='turn_on_32chassis_node',
         output='screen',
-        parameters=[
-            {'odom_frame_id': 'odom'},
-            {'robot_frame_id': 'base_footprint'},
-            {'gyro_frame_id': 'imu_link'}
-    ]
+        parameters=[chassis_params],
     )
 
     imu_filter_node =  launch_ros.actions.Node(
@@ -120,13 +152,11 @@ def generate_launch_description():
         executable='yesense_node_publisher',
         name='yesense_pub',
         output='screen',
-        parameters=[{
+        parameters=[h30_params, {
             'serial_port': h30_serial_port,
-            'baud_rate': 460800,
-            'frame_id': 'gyro_link',
-            'driver_type': 'ros_serial',
+            'baud_rate': h30_baud_rate,
+            'frame_id': h30_frame_id,
             'imu_topic_ros': h30_topic,
-            'imu_topic': 'imu_data',
         }],
         condition=start_h30_condition,
     )
@@ -136,6 +166,7 @@ def generate_launch_description():
         executable='imu_source_selector_node',
         name='imu_source_selector',
         output='screen',
+        parameters=[selector_params],
         remappings=[('imu/input', selected_imu_topic)],
     )
 
@@ -146,7 +177,12 @@ def generate_launch_description():
         parameters=[ekf_config],
     )
 
-
+    # 启动 MID360 激光雷达驱动
+    # 使用get_package_share_directory获取包的share目录时，必须在.bashrc中source工作空间的setup.bash文件，以确保环境变量正确设置。
+    # when using get_package_share_directory to get the share directory of a package, you must source the setup.bash file of your workspace in your .bashrc to ensure that the environment variables are set correctly.
+    action_launch_mid360 = launch.actions.IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([get_package_share_directory('livox_ros_driver2'), '/launch_ROS2/msg_MID360_launch.py'])
+    )
     # RViz 节点
     action_rviz_node = launch_ros.actions.Node(
         package='rviz2',
@@ -160,6 +196,8 @@ def generate_launch_description():
         action_declare_start_h30_driver,
         action_declare_h30_topic,
         action_declare_h30_serial_port,
+        action_declare_h30_baud_rate,
+        action_declare_h30_frame_id,
         action_declare_arg_mode_path,
         action_robot_state_publisher,
         action_joint_state_publisher,
@@ -169,5 +207,6 @@ def generate_launch_description():
         imu_source_selector_node,
         base_to_gyro,
         action_ekf_node,  # 启用EKF节点
+        action_launch_mid360,  # 启动 MID360 激光雷达驱动
         action_rviz_node,
     ])

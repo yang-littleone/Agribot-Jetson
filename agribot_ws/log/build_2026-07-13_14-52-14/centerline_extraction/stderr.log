@@ -1,0 +1,5 @@
+[31mCMake Error at CMakeLists.txt:100 (install):
+  install TARGETS given target "pcl_learning" which does not exist.
+
+[0m
+gmake: *** [Makefile:498：cmake_check_build_system] 错误 1

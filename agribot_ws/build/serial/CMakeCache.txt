@@ -322,6 +322,9 @@ rosidl_generator_cpp_DIR:PATH=/opt/ros/humble/share/rosidl_generator_cpp/cmake
 //The directory containing a CMake configuration file for rosidl_generator_py.
 rosidl_generator_py_DIR:PATH=/opt/ros/humble/share/rosidl_generator_py/cmake
 
+//The directory containing a CMake configuration file for rosidl_generator_rs.
+rosidl_generator_rs_DIR:PATH=/opt/ros/humble/share/rosidl_generator_rs/cmake
+
 //The directory containing a CMake configuration file for rosidl_runtime_c.
 rosidl_runtime_c_DIR:PATH=/opt/ros/humble/share/rosidl_runtime_c/cmake
 

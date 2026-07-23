@@ -211,19 +211,6 @@ corn_row_detector_projection/fast:
 .PHONY : corn_row_detector_projection/fast
 
 #=============================================================================
-# Target rules for targets named pure_pursuit_controller
-
-# Build rule for target.
-pure_pursuit_controller: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pure_pursuit_controller
-.PHONY : pure_pursuit_controller
-
-# fast build rule for target.
-pure_pursuit_controller/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pure_pursuit_controller.dir/build.make CMakeFiles/pure_pursuit_controller.dir/build
-.PHONY : pure_pursuit_controller/fast
-
-#=============================================================================
 # Target rules for targets named cornfield_navigation_node
 
 # Build rule for target.
@@ -235,19 +222,6 @@ cornfield_navigation_node: cmake_check_build_system
 cornfield_navigation_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/build
 .PHONY : cornfield_navigation_node/fast
-
-#=============================================================================
-# Target rules for targets named test_line_generator
-
-# Build rule for target.
-test_line_generator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_line_generator
-.PHONY : test_line_generator
-
-# fast build rule for target.
-test_line_generator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_line_generator.dir/build.make CMakeFiles/test_line_generator.dir/build
-.PHONY : test_line_generator/fast
 
 src/corn_row_detector_projection.o: src/corn_row_detector_projection.cpp.o
 .PHONY : src/corn_row_detector_projection.o
@@ -297,6 +271,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/obstacle_detector.o: src/obstacle_detector.cpp.o
+.PHONY : src/obstacle_detector.o
+
+# target to build an object file
+src/obstacle_detector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.o
+.PHONY : src/obstacle_detector.cpp.o
+
+src/obstacle_detector.i: src/obstacle_detector.cpp.i
+.PHONY : src/obstacle_detector.i
+
+# target to preprocess a source file
+src/obstacle_detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.i
+.PHONY : src/obstacle_detector.cpp.i
+
+src/obstacle_detector.s: src/obstacle_detector.cpp.s
+.PHONY : src/obstacle_detector.s
+
+# target to generate assembly for a file
+src/obstacle_detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/obstacle_detector.cpp.s
+.PHONY : src/obstacle_detector.cpp.s
+
 src/pid_controller.o: src/pid_controller.cpp.o
 .PHONY : src/pid_controller.o
 
@@ -326,7 +324,7 @@ src/pure_pursuit_controller.o: src/pure_pursuit_controller.cpp.o
 
 # target to build an object file
 src/pure_pursuit_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pure_pursuit_controller.dir/build.make CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.o
 .PHONY : src/pure_pursuit_controller.cpp.o
 
 src/pure_pursuit_controller.i: src/pure_pursuit_controller.cpp.i
@@ -334,7 +332,7 @@ src/pure_pursuit_controller.i: src/pure_pursuit_controller.cpp.i
 
 # target to preprocess a source file
 src/pure_pursuit_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pure_pursuit_controller.dir/build.make CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.i
 .PHONY : src/pure_pursuit_controller.cpp.i
 
 src/pure_pursuit_controller.s: src/pure_pursuit_controller.cpp.s
@@ -342,32 +340,8 @@ src/pure_pursuit_controller.s: src/pure_pursuit_controller.cpp.s
 
 # target to generate assembly for a file
 src/pure_pursuit_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pure_pursuit_controller.dir/build.make CMakeFiles/pure_pursuit_controller.dir/src/pure_pursuit_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.s
 .PHONY : src/pure_pursuit_controller.cpp.s
-
-src/test_line.o: src/test_line.cpp.o
-.PHONY : src/test_line.o
-
-# target to build an object file
-src/test_line.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_line_generator.dir/build.make CMakeFiles/test_line_generator.dir/src/test_line.cpp.o
-.PHONY : src/test_line.cpp.o
-
-src/test_line.i: src/test_line.cpp.i
-.PHONY : src/test_line.i
-
-# target to preprocess a source file
-src/test_line.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_line_generator.dir/build.make CMakeFiles/test_line_generator.dir/src/test_line.cpp.i
-.PHONY : src/test_line.cpp.i
-
-src/test_line.s: src/test_line.cpp.s
-.PHONY : src/test_line.s
-
-# target to generate assembly for a file
-src/test_line.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_line_generator.dir/build.make CMakeFiles/test_line_generator.dir/src/test_line.cpp.s
-.PHONY : src/test_line.cpp.s
 
 # Help Target
 help:
@@ -386,23 +360,21 @@ help:
 	@echo "... uninstall"
 	@echo "... corn_row_detector_projection"
 	@echo "... cornfield_navigation_node"
-	@echo "... pure_pursuit_controller"
-	@echo "... test_line_generator"
 	@echo "... src/corn_row_detector_projection.o"
 	@echo "... src/corn_row_detector_projection.i"
 	@echo "... src/corn_row_detector_projection.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/obstacle_detector.o"
+	@echo "... src/obstacle_detector.i"
+	@echo "... src/obstacle_detector.s"
 	@echo "... src/pid_controller.o"
 	@echo "... src/pid_controller.i"
 	@echo "... src/pid_controller.s"
 	@echo "... src/pure_pursuit_controller.o"
 	@echo "... src/pure_pursuit_controller.i"
 	@echo "... src/pure_pursuit_controller.s"
-	@echo "... src/test_line.o"
-	@echo "... src/test_line.i"
-	@echo "... src/test_line.s"
 .PHONY : help
 
 

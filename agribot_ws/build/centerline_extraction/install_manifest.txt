@@ -1,11 +1,9 @@
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/cornfield_navigation_node
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/corn_row_detector_projection
-/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/pure_pursuit_controller
-/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/test_line_generator
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/obstacle_detector.hpp
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pure_pursuit_controller.hpp
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector_projection.hpp
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pid_controller.hpp
-/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/launch/pure_pursuit.launch.py
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/package_run_dependencies/centerline_extraction
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/parent_prefix_path/centerline_extraction
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.sh

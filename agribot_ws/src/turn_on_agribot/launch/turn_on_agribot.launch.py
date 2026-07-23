@@ -20,7 +20,7 @@ def generate_launch_description():
     )
     
     action_launch_32chassis = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([get_package_share_directory('turn_on_wheeltec_robot'), '/launch/turn_on_wheeltec_robot.launch.py'])
+        PythonLaunchDescriptionSource([get_package_share_directory('turn_on_32chassis'), '/launch/turn_on_32chassis.launch.py'])
     )
 
     action_corndetector = launch_ros.actions.Node(
@@ -33,5 +33,5 @@ def generate_launch_description():
         action_launch_32chassis,
         # 启动32chassis完成后再启动MID360
         action_launch_mid360,
-        action_corndetector,
+        # action_corndetector,
     ])

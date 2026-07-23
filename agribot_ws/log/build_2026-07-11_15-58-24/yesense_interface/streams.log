@@ -1,0 +1,848 @@
+[0.065s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/yesense_ros2/yesense_interface -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/yesense_interface
+[0.306s] -- The C compiler identification is GNU 11.4.0
+[0.477s] -- The CXX compiler identification is GNU 11.4.0
+[0.516s] -- Detecting C compiler ABI info
+[0.693s] -- Detecting C compiler ABI info - done
+[0.718s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.728s] -- Detecting C compile features
+[0.730s] -- Detecting C compile features - done
+[0.743s] -- Detecting CXX compiler ABI info
+[0.900s] -- Detecting CXX compiler ABI info - done
+[0.926s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.926s] -- Detecting CXX compile features
+[0.928s] -- Detecting CXX compile features - done
+[0.985s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.516s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.291s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[2.386s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.494s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.914s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.214s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[4.900s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.658s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.752s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[5.798s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[5.934s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[5.935s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.935s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[5.935s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[5.994s] -- Found PythonExtra: .so  
+[6.452s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.750s] -- Added test 'lint_cmake' to check CMake code style
+[6.769s] -- Added test 'xmllint' to check XML markup files
+[6.795s] -- Configuring done
+[6.934s] -- Generating done
+[6.974s] -- Build files have been written to: /home/wheeltec/agribot/agribot_ws/build/yesense_interface
+[7.006s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake /home/wheeltec/agribot/agribot_ws/src/yesense_ros2/yesense_interface -DCMAKE_INSTALL_PREFIX=/home/wheeltec/agribot/agribot_ws/install/yesense_interface
+[7.012s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/yesense_interface -- -j8 -l8
+[7.101s] [  0%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.120s] [  1%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[7.122s] [  1%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[7.140s] [  1%] Built target ament_cmake_python_copy_yesense_interface
+[7.805s] running egg_info
+[7.807s] creating yesense_interface.egg-info
+[7.807s] writing yesense_interface.egg-info/PKG-INFO
+[7.808s] writing dependency_links to yesense_interface.egg-info/dependency_links.txt
+[7.808s] writing top-level names to yesense_interface.egg-info/top_level.txt
+[7.816s] writing manifest file 'yesense_interface.egg-info/SOURCES.txt'
+[7.826s] reading manifest file 'yesense_interface.egg-info/SOURCES.txt'
+[7.827s] writing manifest file 'yesense_interface.egg-info/SOURCES.txt'
+[7.908s] [  1%] Built target ament_cmake_python_build_yesense_interface_egg
+[8.311s] [  1%] Built target yesense_interface__rs
+[9.954s] [  1%] Built target yesense_interface__cpp
+[9.973s] [  2%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[9.980s] [  3%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[9.988s] [  4%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[10.250s] [  5%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/euler_angle__functions.c.o[0m
+[10.251s] [  6%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/pressure__functions.c.o[0m
+[10.251s] [  6%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/sensor_temp__functions.c.o[0m
+[10.254s] [  5%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/three_axis__functions.c.o[0m
+[10.255s] [  7%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/tid__functions.c.o[0m
+[10.391s] [  8%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/gnss_pos__functions.c.o[0m
+[10.391s] [  8%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/quat__functions.c.o[0m
+[10.399s] [  9%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/vel__functions.c.o[0m
+[10.404s] [  9%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/nav_status__functions.c.o[0m
+[10.406s] [  9%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/utc__functions.c.o[0m
+[10.501s] [ 10%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/sample_timestamp__functions.c.o[0m
+[10.501s] [ 10%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/imu_data__functions.c.o[0m
+[10.513s] [ 11%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/imu_data_ten_axis__functions.c.o[0m
+[10.516s] [ 11%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/euler_only__functions.c.o[0m
+[10.541s] [ 12%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/robot_lord__functions.c.o[0m
+[10.604s] [ 13%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/attitude_min_ahrs__functions.c.o[0m
+[10.604s] [ 13%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/attitude_min_vru__functions.c.o[0m
+[10.639s] [ 13%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/attitude_all_data__functions.c.o[0m
+[10.650s] [ 14%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/pos_only__functions.c.o[0m
+[10.663s] [ 14%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/nav_min__functions.c.o[0m
+[10.738s] [ 14%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/nav_all__functions.c.o[0m
+[10.744s] [ 15%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_c.dir/rosidl_generator_c/yesense_interface/msg/detail/nav_min_utc__functions.c.o[0m
+[10.861s] [ 16%] [32m[1mLinking C shared library libyesense_interface__rosidl_generator_c.so[0m
+[10.948s] [ 16%] Built target yesense_interface__rosidl_generator_c
+[10.972s] [ 17%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[10.973s] [ 18%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[10.983s] [ 19%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[11.646s] [ 19%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/tid__type_support.cpp.o[0m
+[11.676s] [ 20%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/sensor_temp__type_support.cpp.o[0m
+[11.676s] [ 20%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/three_axis__type_support.cpp.o[0m
+[12.591s] [ 21%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/pressure__type_support.cpp.o[0m
+[12.618s] [ 21%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/euler_angle__type_support.cpp.o[0m
+[12.702s] [ 22%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/quat__type_support.cpp.o[0m
+[13.465s] [ 22%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/gnss_pos__type_support.cpp.o[0m
+[13.504s] [ 22%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/tid__type_support.cpp.o[0m
+[13.559s] [ 22%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/tid__type_support.cpp.o[0m
+[13.610s] [ 23%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/nav_status__type_support.cpp.o[0m
+[13.617s] [ 24%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/three_axis__type_support.cpp.o[0m
+[13.679s] [ 24%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/sensor_temp__type_support.cpp.o[0m
+[13.748s] [ 24%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/euler_angle__type_support.cpp.o[0m
+[13.752s] [ 25%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/pressure__type_support.cpp.o[0m
+[13.787s] [ 25%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/tid__type_support.cpp.o[0m
+[13.823s] [ 26%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/quat__type_support.cpp.o[0m
+[13.878s] [ 27%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/three_axis__type_support.cpp.o[0m
+[13.918s] [ 27%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/gnss_pos__type_support.cpp.o[0m
+[14.021s] [ 28%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/nav_status__type_support.cpp.o[0m
+[14.113s] [ 28%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/vel__type_support.cpp.o[0m
+[14.180s] [ 29%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/utc__type_support.cpp.o[0m
+[14.225s] [ 29%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/vel__type_support.cpp.o[0m
+[14.249s] [ 29%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/sample_timestamp__type_support.cpp.o[0m
+[14.311s] [ 30%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/utc__type_support.cpp.o[0m
+[14.342s] [ 31%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/imu_data__type_support.cpp.o[0m
+[14.433s] [ 31%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/imu_data_ten_axis__type_support.cpp.o[0m
+[14.486s] [ 31%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/tid__type_support.c.o[0m
+[14.510s] [ 32%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/euler_only__type_support.cpp.o[0m
+[14.549s] [ 33%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/three_axis__type_support.cpp.o[0m
+[14.587s] [ 33%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/robot_lord__type_support.cpp.o[0m
+[14.606s] [ 34%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/three_axis__type_support.c.o[0m
+[14.659s] [ 34%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/tid__type_support_c.cpp.o[0m
+[14.724s] [ 35%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/attitude_min_vru__type_support.cpp.o[0m
+[14.745s] [ 35%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/sensor_temp__type_support.c.o[0m
+[14.845s] [ 35%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/attitude_min_ahrs__type_support.cpp.o[0m
+[14.943s] [ 36%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/pressure__type_support.c.o[0m
+[14.948s] [ 37%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/attitude_all_data__type_support.cpp.o[0m
+[15.013s] [ 37%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/pos_only__type_support.cpp.o[0m
+[15.039s] [ 38%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/euler_angle__type_support.c.o[0m
+[15.039s] [ 38%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/nav_min__type_support.cpp.o[0m
+[15.080s] [ 38%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/sensor_temp__type_support.cpp.o[0m
+[15.084s] [ 38%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/sample_timestamp__type_support.cpp.o[0m
+[15.160s] [ 39%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/imu_data__type_support.cpp.o[0m
+[15.181s] [ 40%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/quat__type_support.c.o[0m
+[15.199s] [ 40%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/nav_min_utc__type_support.cpp.o[0m
+[15.235s] [ 40%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/gnss_pos__type_support.c.o[0m
+[15.313s] [ 41%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/yesense_interface/msg/nav_all__type_support.cpp.o[0m
+[15.316s] [ 42%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/nav_status__type_support.c.o[0m
+[15.331s] [ 42%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/vel__type_support.c.o[0m
+[15.447s] [ 42%] [32m[1mLinking CXX shared library libyesense_interface__rosidl_typesupport_c.so[0m
+[15.505s] [ 43%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/utc__type_support.c.o[0m
+[15.585s] [ 43%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/sample_timestamp__type_support.c.o[0m
+[15.641s] [ 44%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/three_axis__type_support_c.cpp.o[0m
+[15.665s] [ 44%] Built target yesense_interface__rosidl_typesupport_c
+[15.708s] [ 44%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/imu_data_ten_axis__type_support.cpp.o[0m
+[15.726s] [ 45%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/imu_data__type_support.c.o[0m
+[15.756s] [ 45%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/imu_data_ten_axis__type_support.c.o[0m
+[15.857s] [ 46%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/euler_only__type_support.c.o[0m
+[15.871s] [ 47%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/euler_only__type_support.cpp.o[0m
+[15.917s] [ 47%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/robot_lord__type_support.c.o[0m
+[15.945s] [ 48%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/attitude_min_vru__type_support.c.o[0m
+[16.011s] [ 48%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/sensor_temp__type_support.cpp.o[0m
+[16.049s] [ 48%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/attitude_min_ahrs__type_support.c.o[0m
+[16.069s] [ 49%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/attitude_all_data__type_support.c.o[0m
+[16.078s] [ 49%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/robot_lord__type_support.cpp.o[0m
+[16.164s] [ 49%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/pos_only__type_support.c.o[0m
+[16.177s] [ 50%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/nav_min__type_support.c.o[0m
+[16.233s] [ 50%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/nav_min_utc__type_support.c.o[0m
+[16.254s] [ 51%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/pressure__type_support.cpp.o[0m
+[16.271s] [ 52%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/yesense_interface/msg/detail/nav_all__type_support.c.o[0m
+[16.319s] [ 52%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/euler_angle__type_support.cpp.o[0m
+[16.360s] [ 52%] [32m[1mLinking C shared library libyesense_interface__rosidl_typesupport_introspection_c.so[0m
+[16.430s] [ 52%] Built target yesense_interface__rosidl_typesupport_introspection_c
+[16.447s] [ 52%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/attitude_min_ahrs__type_support.cpp.o[0m
+[16.461s] [ 53%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/attitude_min_vru__type_support.cpp.o[0m
+[16.580s] [ 54%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/attitude_all_data__type_support.cpp.o[0m
+[16.602s] [ 54%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/sensor_temp__type_support_c.cpp.o[0m
+[16.860s] [ 54%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/pos_only__type_support.cpp.o[0m
+[17.098s] [ 55%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/nav_min__type_support.cpp.o[0m
+[17.312s] [ 56%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/pressure__type_support.cpp.o[0m
+[17.346s] [ 56%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/nav_min_utc__type_support.cpp.o[0m
+[17.382s] [ 57%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/quat__type_support.cpp.o[0m
+[17.388s] [ 57%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/gnss_pos__type_support.cpp.o[0m
+[17.488s] [ 58%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/yesense_interface/msg/nav_all__type_support.cpp.o[0m
+[17.622s] [ 59%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/nav_status__type_support.cpp.o[0m
+[17.758s] [ 60%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/pressure__type_support_c.cpp.o[0m
+[17.819s] [ 60%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/euler_angle__type_support_c.cpp.o[0m
+[18.037s] [ 61%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/quat__type_support_c.cpp.o[0m
+[18.276s] [ 61%] [32m[1mLinking CXX shared library libyesense_interface__rosidl_typesupport_cpp.so[0m
+[18.318s] [ 61%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/vel__type_support.cpp.o[0m
+[18.329s] [ 61%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/euler_angle__type_support.cpp.o[0m
+[18.472s] [ 61%] Built target yesense_interface__rosidl_typesupport_cpp
+[18.539s] [ 62%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/quat__type_support.cpp.o[0m
+[18.628s] [ 63%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/utc__type_support.cpp.o[0m
+[18.649s] [ 63%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/gnss_pos__type_support_c.cpp.o[0m
+[18.666s] [ 64%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/nav_status__type_support_c.cpp.o[0m
+[18.703s] [ 64%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/sample_timestamp__type_support.cpp.o[0m
+[18.887s] [ 64%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/vel__type_support_c.cpp.o[0m
+[19.271s] [ 64%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/gnss_pos__type_support.cpp.o[0m
+[19.338s] [ 65%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/imu_data__type_support.cpp.o[0m
+[19.469s] [ 66%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/nav_status__type_support.cpp.o[0m
+[19.616s] [ 67%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/utc__type_support_c.cpp.o[0m
+[19.645s] [ 67%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/imu_data_ten_axis__type_support.cpp.o[0m
+[19.689s] [ 67%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/sample_timestamp__type_support_c.cpp.o[0m
+[19.823s] [ 68%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/imu_data__type_support_c.cpp.o[0m
+[19.865s] [ 68%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/imu_data_ten_axis__type_support_c.cpp.o[0m
+[20.369s] [ 68%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/vel__type_support.cpp.o[0m
+[20.393s] [ 69%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/euler_only__type_support.cpp.o[0m
+[20.472s] [ 70%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/utc__type_support.cpp.o[0m
+[20.486s] [ 71%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/euler_only__type_support_c.cpp.o[0m
+[20.669s] [ 71%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/robot_lord__type_support_c.cpp.o[0m
+[20.678s] [ 71%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/robot_lord__type_support.cpp.o[0m
+[20.760s] [ 72%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/attitude_min_vru__type_support_c.cpp.o[0m
+[20.809s] [ 72%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/attitude_min_ahrs__type_support_c.cpp.o[0m
+[21.273s] [ 72%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/sample_timestamp__type_support.cpp.o[0m
+[21.335s] [ 73%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/attitude_all_data__type_support_c.cpp.o[0m
+[21.339s] [ 74%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/attitude_min_vru__type_support.cpp.o[0m
+[21.469s] [ 75%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/imu_data__type_support.cpp.o[0m
+[21.487s] [ 75%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/pos_only__type_support_c.cpp.o[0m
+[21.652s] [ 76%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/nav_min__type_support_c.cpp.o[0m
+[21.742s] [ 76%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/nav_min_utc__type_support_c.cpp.o[0m
+[21.987s] [ 76%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/attitude_min_ahrs__type_support.cpp.o[0m
+[22.172s] [ 77%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/yesense_interface/msg/detail/nav_all__type_support_c.cpp.o[0m
+[22.192s] [ 77%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/imu_data_ten_axis__type_support.cpp.o[0m
+[22.323s] [ 78%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/attitude_all_data__type_support.cpp.o[0m
+[22.358s] [ 78%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/pos_only__type_support.cpp.o[0m
+[22.580s] [ 79%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/euler_only__type_support.cpp.o[0m
+[22.597s] [ 79%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/robot_lord__type_support.cpp.o[0m
+[22.707s] [ 80%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/attitude_min_vru__type_support.cpp.o[0m
+[23.068s] [ 81%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/nav_min__type_support.cpp.o[0m
+[23.167s] [ 81%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/attitude_min_ahrs__type_support.cpp.o[0m
+[23.306s] [ 81%] [32m[1mLinking CXX shared library libyesense_interface__rosidl_typesupport_fastrtps_c.so[0m
+[23.440s] [ 81%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/nav_min_utc__type_support.cpp.o[0m
+[23.448s] [ 82%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/yesense_interface/msg/detail/dds_fastrtps/nav_all__type_support.cpp.o[0m
+[23.518s] [ 83%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/attitude_all_data__type_support.cpp.o[0m
+[23.616s] [ 83%] Built target yesense_interface__rosidl_typesupport_fastrtps_c
+[23.634s] [ 83%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/pos_only__type_support.cpp.o[0m
+[23.652s] [ 84%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/nav_min__type_support.cpp.o[0m
+[23.795s] [ 84%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/nav_min_utc__type_support.cpp.o[0m
+[24.190s] [ 85%] [32mBuilding CXX object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/yesense_interface/msg/detail/nav_all__type_support.cpp.o[0m
+[24.490s] [ 85%] [32m[1mLinking CXX shared library libyesense_interface__rosidl_typesupport_fastrtps_cpp.so[0m
+[24.740s] [ 85%] Built target yesense_interface__rosidl_typesupport_fastrtps_cpp
+[25.086s] [ 85%] [32m[1mLinking CXX shared library libyesense_interface__rosidl_typesupport_introspection_cpp.so[0m
+[25.238s] [ 85%] Built target yesense_interface__rosidl_typesupport_introspection_cpp
+[25.274s] [ 85%] Built target yesense_interface
+[25.314s] [ 86%] [34m[1mGenerating Python code for ROS interfaces[0m
+[29.723s] [ 86%] Built target yesense_interface__py
+[29.763s] [ 87%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_tid_s.c.o[0m
+[29.765s] [ 88%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_three_axis_s.c.o[0m
+[29.765s] [ 87%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_pressure_s.c.o[0m
+[29.765s] [ 87%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_sensor_temp_s.c.o[0m
+[29.775s] [ 89%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_quat_s.c.o[0m
+[29.781s] [ 90%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_euler_angle_s.c.o[0m
+[29.781s] [ 90%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_nav_status_s.c.o[0m
+[29.782s] [ 90%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_gnss_pos_s.c.o[0m
+[30.104s] [ 90%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_vel_s.c.o[0m
+[30.119s] [ 90%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_sample_timestamp_s.c.o[0m
+[30.120s] [ 91%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_utc_s.c.o[0m
+[30.137s] [ 92%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_imu_data_ten_axis_s.c.o[0m
+[30.137s] [ 92%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_imu_data_s.c.o[0m
+[30.146s] [ 93%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_euler_only_s.c.o[0m
+[30.160s] [ 94%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_attitude_min_vru_s.c.o[0m
+[30.177s] [ 94%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_robot_lord_s.c.o[0m
+[30.359s] [ 94%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_attitude_min_ahrs_s.c.o[0m
+[30.397s] [ 95%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_attitude_all_data_s.c.o[0m
+[30.467s] [ 95%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_pos_only_s.c.o[0m
+[30.487s] [ 96%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_nav_min_s.c.o[0m
+[30.554s] [ 97%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_nav_min_utc_s.c.o[0m
+[30.556s] [ 97%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_generator_py.dir/rosidl_generator_py/yesense_interface/msg/_nav_all_s.c.o[0m
+[30.839s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/yesense_interface/libyesense_interface__rosidl_generator_py.so[0m
+[30.923s] [ 97%] Built target yesense_interface__rosidl_generator_py
+[30.963s] [100%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_c.c.o[0m
+[30.963s] [100%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[30.964s] [100%] [32mBuilding C object CMakeFiles/yesense_interface__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[31.327s] [100%] [32m[1mLinking C shared library rosidl_generator_py/yesense_interface/yesense_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[31.337s] [100%] [32m[1mLinking C shared library rosidl_generator_py/yesense_interface/yesense_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[31.338s] [100%] [32m[1mLinking C shared library rosidl_generator_py/yesense_interface/yesense_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[31.399s] [100%] Built target yesense_interface__rosidl_typesupport_introspection_c__pyext
+[31.404s] [100%] Built target yesense_interface__rosidl_typesupport_c__pyext
+[31.414s] [100%] Built target yesense_interface__rosidl_typesupport_fastrtps_c__pyext
+[31.444s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --build /home/wheeltec/agribot/agribot_ws/build/yesense_interface -- -j8 -l8
+[31.465s] Invoking command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/yesense_interface
+[31.481s] -- Install configuration: ""
+[31.482s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/ament_index/resource_index/rosidl_interfaces/yesense_interface
+[31.482s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.482s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.483s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/quat.h
+[31.483s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_all.h
+[31.484s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/imu_data.h
+[31.484s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_min_ahrs.h
+[31.484s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_status.h
+[31.484s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/vel.h
+[31.485s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/three_axis.h
+[31.485s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/euler_angle.h
+[31.485s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/utc.h
+[31.485s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/euler_only.h
+[31.485s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/pressure.h
+[31.486s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_min_vru.h
+[31.486s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/sensor_temp.h
+[31.486s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/rosidl_generator_c__visibility_control.h
+[31.487s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_min_utc.h
+[31.487s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_all_data.h
+[31.488s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.488s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__functions.h
+[31.488s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__functions.c
+[31.489s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__functions.c
+[31.489s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__type_support.h
+[31.490s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__struct.h
+[31.490s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__functions.c
+[31.490s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__functions.c
+[31.491s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__functions.c
+[31.491s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__type_support.h
+[31.494s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__struct.h
+[31.494s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__type_support.h
+[31.495s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__functions.c
+[31.495s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__functions.h
+[31.495s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__struct.h
+[31.496s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__functions.h
+[31.496s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__functions.c
+[31.496s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__struct.h
+[31.497s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__struct.h
+[31.497s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__functions.h
+[31.497s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__functions.h
+[31.497s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__type_support.h
+[31.498s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__struct.h
+[31.498s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__functions.c
+[31.498s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__type_support.h
+[31.498s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__functions.h
+[31.499s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__functions.c
+[31.499s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__functions.c
+[31.499s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__functions.c
+[31.499s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__functions.h
+[31.500s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__type_support.h
+[31.500s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__struct.h
+[31.500s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__functions.h
+[31.501s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__struct.h
+[31.501s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__struct.h
+[31.502s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__type_support.h
+[31.502s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__type_support.h
+[31.502s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__type_support.h
+[31.503s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__type_support.h
+[31.503s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__type_support.h
+[31.504s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__functions.c
+[31.504s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__type_support.h
+[31.505s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__struct.h
+[31.505s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__struct.h
+[31.506s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__struct.h
+[31.506s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__type_support.h
+[31.506s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__functions.h
+[31.507s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__struct.h
+[31.507s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__functions.c
+[31.508s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__functions.c
+[31.508s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__type_support.h
+[31.509s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__functions.c
+[31.509s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__functions.h
+[31.510s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__functions.h
+[31.510s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__functions.h
+[31.510s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__functions.h
+[31.510s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__functions.h
+[31.511s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__type_support.h
+[31.511s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__functions.h
+[31.512s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__struct.h
+[31.512s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__struct.h
+[31.513s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__type_support.h
+[31.513s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__struct.h
+[31.513s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__type_support.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__functions.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__functions.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__functions.c
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__type_support.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__struct.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__functions.h
+[31.514s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__functions.c
+[31.515s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__functions.c
+[31.515s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__struct.h
+[31.515s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__struct.h
+[31.515s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__functions.h
+[31.516s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__functions.c
+[31.516s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__functions.c
+[31.516s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__type_support.h
+[31.516s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__struct.h
+[31.517s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__type_support.h
+[31.517s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__functions.h
+[31.517s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__functions.c
+[31.517s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__type_support.h
+[31.517s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__struct.h
+[31.518s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__functions.c
+[31.518s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__functions.h
+[31.518s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__functions.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__type_support.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__struct.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/pos_only.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/tid.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_min.h
+[31.519s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/gnss_pos.h
+[31.520s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/sample_timestamp.h
+[31.520s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/imu_data_ten_axis.h
+[31.520s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/robot_lord.h
+[31.521s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/library_path.sh
+[31.521s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/library_path.dsv
+[31.521s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_generator_c.so
+[31.521s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_generator_c.so" to ""
+[31.522s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.522s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.522s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[31.522s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__rosidl_typesupport_fastrtps_c.h
+[31.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__rosidl_typesupport_fastrtps_c.h
+[31.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__rosidl_typesupport_fastrtps_c.h
+[31.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__rosidl_typesupport_fastrtps_c.h
+[31.523s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__rosidl_typesupport_fastrtps_c.h
+[31.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__rosidl_typesupport_fastrtps_c.h
+[31.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__rosidl_typesupport_fastrtps_c.h
+[31.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__rosidl_typesupport_fastrtps_c.h
+[31.524s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__rosidl_typesupport_fastrtps_c.h
+[31.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__rosidl_typesupport_fastrtps_c.h
+[31.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__rosidl_typesupport_fastrtps_c.h
+[31.525s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__rosidl_typesupport_fastrtps_c.h
+[31.526s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__rosidl_typesupport_fastrtps_c.h
+[31.526s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__rosidl_typesupport_fastrtps_c.h
+[31.526s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__rosidl_typesupport_fastrtps_c.h
+[31.526s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__rosidl_typesupport_fastrtps_c.h
+[31.527s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__rosidl_typesupport_fastrtps_c.h
+[31.527s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__rosidl_typesupport_fastrtps_c.h
+[31.527s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__rosidl_typesupport_fastrtps_c.h
+[31.527s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__rosidl_typesupport_fastrtps_c.h
+[31.527s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__rosidl_typesupport_fastrtps_c.h
+[31.528s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__rosidl_typesupport_fastrtps_c.h
+[31.528s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_fastrtps_c.so
+[31.528s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_fastrtps_c.so" to ""
+[31.528s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.528s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.529s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[31.529s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.529s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__rosidl_typesupport_introspection_c.h
+[31.530s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__rosidl_typesupport_introspection_c.h
+[31.530s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__type_support.c
+[31.530s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__rosidl_typesupport_introspection_c.h
+[31.530s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__type_support.c
+[31.531s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__type_support.c
+[31.531s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__type_support.c
+[31.531s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__type_support.c
+[31.531s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__type_support.c
+[31.531s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__rosidl_typesupport_introspection_c.h
+[31.532s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__rosidl_typesupport_introspection_c.h
+[31.532s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__type_support.c
+[31.532s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__rosidl_typesupport_introspection_c.h
+[31.532s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__type_support.c
+[31.532s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__rosidl_typesupport_introspection_c.h
+[31.533s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__rosidl_typesupport_introspection_c.h
+[31.533s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__type_support.c
+[31.533s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__type_support.c
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__type_support.c
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__rosidl_typesupport_introspection_c.h
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__rosidl_typesupport_introspection_c.h
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__rosidl_typesupport_introspection_c.h
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__rosidl_typesupport_introspection_c.h
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__type_support.c
+[31.534s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__type_support.c
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__rosidl_typesupport_introspection_c.h
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__rosidl_typesupport_introspection_c.h
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__rosidl_typesupport_introspection_c.h
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__type_support.c
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__type_support.c
+[31.535s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__type_support.c
+[31.536s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__type_support.c
+[31.536s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__type_support.c
+[31.536s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__rosidl_typesupport_introspection_c.h
+[31.536s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__type_support.c
+[31.536s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__rosidl_typesupport_introspection_c.h
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__rosidl_typesupport_introspection_c.h
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__type_support.c
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__type_support.c
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__rosidl_typesupport_introspection_c.h
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__type_support.c
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__rosidl_typesupport_introspection_c.h
+[31.537s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__rosidl_typesupport_introspection_c.h
+[31.538s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__rosidl_typesupport_introspection_c.h
+[31.538s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_introspection_c.so
+[31.538s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_introspection_c.so" to ""
+[31.538s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_c.so
+[31.538s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_c.so" to ""
+[31.538s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.538s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.539s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/imu_data.hpp
+[31.540s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/utc.hpp
+[31.540s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/gnss_pos.hpp
+[31.540s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_min_vru.hpp
+[31.540s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_all.hpp
+[31.541s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_min.hpp
+[31.541s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/imu_data_ten_axis.hpp
+[31.541s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/sensor_temp.hpp
+[31.542s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_min_ahrs.hpp
+[31.542s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_status.hpp
+[31.542s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/pressure.hpp
+[31.542s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/quat.hpp
+[31.542s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/robot_lord.hpp
+[31.543s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/three_axis.hpp
+[31.543s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/nav_min_utc.hpp
+[31.543s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.543s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__struct.hpp
+[31.543s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__type_support.hpp
+[31.543s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__type_support.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__type_support.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__traits.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__traits.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__struct.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__type_support.hpp
+[31.544s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__type_support.hpp
+[31.545s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__builder.hpp
+[31.545s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__struct.hpp
+[31.545s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__type_support.hpp
+[31.545s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__type_support.hpp
+[31.546s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__struct.hpp
+[31.546s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__builder.hpp
+[31.546s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__struct.hpp
+[31.546s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__traits.hpp
+[31.546s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__builder.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__builder.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__struct.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__struct.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__builder.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__builder.hpp
+[31.547s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__builder.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__traits.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__struct.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__type_support.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__type_support.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__traits.hpp
+[31.548s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__struct.hpp
+[31.549s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__struct.hpp
+[31.549s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__traits.hpp
+[31.549s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__traits.hpp
+[31.549s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__traits.hpp
+[31.549s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__builder.hpp
+[31.550s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__builder.hpp
+[31.550s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__builder.hpp
+[31.550s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__traits.hpp
+[31.550s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__traits.hpp
+[31.550s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__type_support.hpp
+[31.551s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__struct.hpp
+[31.551s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__struct.hpp
+[31.551s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__struct.hpp
+[31.551s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__struct.hpp
+[31.551s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__builder.hpp
+[31.552s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__builder.hpp
+[31.552s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__traits.hpp
+[31.552s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__type_support.hpp
+[31.552s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__struct.hpp
+[31.553s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__traits.hpp
+[31.553s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__builder.hpp
+[31.553s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__type_support.hpp
+[31.553s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__traits.hpp
+[31.554s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__traits.hpp
+[31.554s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__traits.hpp
+[31.554s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__builder.hpp
+[31.554s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__traits.hpp
+[31.555s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__struct.hpp
+[31.555s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__builder.hpp
+[31.555s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__traits.hpp
+[31.555s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__traits.hpp
+[31.556s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__type_support.hpp
+[31.556s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__builder.hpp
+[31.556s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__builder.hpp
+[31.556s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__struct.hpp
+[31.557s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__type_support.hpp
+[31.557s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__builder.hpp
+[31.557s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__struct.hpp
+[31.557s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__type_support.hpp
+[31.558s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__type_support.hpp
+[31.558s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__builder.hpp
+[31.558s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__type_support.hpp
+[31.559s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__traits.hpp
+[31.559s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__struct.hpp
+[31.560s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__type_support.hpp
+[31.560s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__struct.hpp
+[31.560s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__type_support.hpp
+[31.560s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__builder.hpp
+[31.560s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__struct.hpp
+[31.561s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__type_support.hpp
+[31.561s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__traits.hpp
+[31.561s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__traits.hpp
+[31.561s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__traits.hpp
+[31.562s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__type_support.hpp
+[31.562s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__builder.hpp
+[31.562s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__struct.hpp
+[31.562s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__builder.hpp
+[31.563s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__type_support.hpp
+[31.563s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/vel.hpp
+[31.563s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/euler_angle.hpp
+[31.563s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/tid.hpp
+[31.564s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/sample_timestamp.hpp
+[31.564s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/attitude_all_data.hpp
+[31.565s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/rosidl_generator_cpp__visibility_control.hpp
+[31.565s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/euler_only.hpp
+[31.566s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/pos_only.hpp
+[31.566s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.566s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.566s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[31.566s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.567s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__rosidl_typesupport_fastrtps_cpp.hpp
+[31.567s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__rosidl_typesupport_fastrtps_cpp.hpp
+[31.567s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__rosidl_typesupport_fastrtps_cpp.hpp
+[31.567s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__rosidl_typesupport_fastrtps_cpp.hpp
+[31.567s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__rosidl_typesupport_fastrtps_cpp.hpp
+[31.568s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__rosidl_typesupport_fastrtps_cpp.hpp
+[31.568s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__rosidl_typesupport_fastrtps_cpp.hpp
+[31.568s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__rosidl_typesupport_fastrtps_cpp.hpp
+[31.568s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__rosidl_typesupport_fastrtps_cpp.hpp
+[31.568s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__rosidl_typesupport_fastrtps_cpp.hpp
+[31.569s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__rosidl_typesupport_fastrtps_cpp.hpp
+[31.569s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__rosidl_typesupport_fastrtps_cpp.hpp
+[31.569s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__rosidl_typesupport_fastrtps_cpp.hpp
+[31.570s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__rosidl_typesupport_fastrtps_cpp.hpp
+[31.571s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__rosidl_typesupport_fastrtps_cpp.hpp
+[31.571s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__rosidl_typesupport_fastrtps_cpp.hpp
+[31.571s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__rosidl_typesupport_fastrtps_cpp.hpp
+[31.571s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/dds_fastrtps
+[31.572s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_fastrtps_cpp.so
+[31.573s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[31.573s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface
+[31.573s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg
+[31.574s] -- Up-to-date: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail
+[31.574s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__type_support.cpp
+[31.574s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__rosidl_typesupport_introspection_cpp.hpp
+[31.575s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__rosidl_typesupport_introspection_cpp.hpp
+[31.575s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__type_support.cpp
+[31.575s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__rosidl_typesupport_introspection_cpp.hpp
+[31.575s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__rosidl_typesupport_introspection_cpp.hpp
+[31.576s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__rosidl_typesupport_introspection_cpp.hpp
+[31.576s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__type_support.cpp
+[31.576s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sample_timestamp__rosidl_typesupport_introspection_cpp.hpp
+[31.576s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__rosidl_typesupport_introspection_cpp.hpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__type_support.cpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_only__type_support.cpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__type_support.cpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__type_support.cpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__rosidl_typesupport_introspection_cpp.hpp
+[31.577s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__type_support.cpp
+[31.578s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__rosidl_typesupport_introspection_cpp.hpp
+[31.578s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__type_support.cpp
+[31.578s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/utc__type_support.cpp
+[31.578s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__rosidl_typesupport_introspection_cpp.hpp
+[31.579s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/vel__rosidl_typesupport_introspection_cpp.hpp
+[31.579s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pos_only__rosidl_typesupport_introspection_cpp.hpp
+[31.579s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_all__type_support.cpp
+[31.579s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min_utc__type_support.cpp
+[31.580s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/euler_angle__type_support.cpp
+[31.580s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__rosidl_typesupport_introspection_cpp.hpp
+[31.580s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/pressure__type_support.cpp
+[31.581s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__type_support.cpp
+[31.581s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_all_data__rosidl_typesupport_introspection_cpp.hpp
+[31.581s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data__rosidl_typesupport_introspection_cpp.hpp
+[31.581s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/three_axis__rosidl_typesupport_introspection_cpp.hpp
+[31.582s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__type_support.cpp
+[31.582s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/robot_lord__type_support.cpp
+[31.582s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_vru__rosidl_typesupport_introspection_cpp.hpp
+[31.582s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/gnss_pos__type_support.cpp
+[31.583s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_status__rosidl_typesupport_introspection_cpp.hpp
+[31.583s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/nav_min__rosidl_typesupport_introspection_cpp.hpp
+[31.583s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__type_support.cpp
+[31.583s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/tid__rosidl_typesupport_introspection_cpp.hpp
+[31.584s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/imu_data_ten_axis__type_support.cpp
+[31.584s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__rosidl_typesupport_introspection_cpp.hpp
+[31.584s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/attitude_min_ahrs__rosidl_typesupport_introspection_cpp.hpp
+[31.584s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/sensor_temp__type_support.cpp
+[31.585s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/include/yesense_interface/yesense_interface/msg/detail/quat__type_support.cpp
+[31.585s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_introspection_cpp.so
+[31.586s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_introspection_cpp.so" to ""
+[31.586s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_cpp.so
+[31.587s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_typesupport_cpp.so" to ""
+[31.587s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/pythonpath.sh
+[31.588s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/pythonpath.dsv
+[31.588s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface-1.0.0-py3.10.egg-info
+[31.588s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface-1.0.0-py3.10.egg-info/SOURCES.txt
+[31.589s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface-1.0.0-py3.10.egg-info/PKG-INFO
+[31.589s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface-1.0.0-py3.10.egg-info/dependency_links.txt
+[31.589s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface-1.0.0-py3.10.egg-info/top_level.txt
+[31.590s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface
+[31.590s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[31.590s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[31.591s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_introspection_c.c
+[31.591s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/libyesense_interface__rosidl_generator_py.so
+[31.592s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[31.592s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/_yesense_interface_s.ep.rosidl_typesupport_c.c
+[31.592s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[31.593s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg
+[31.593s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_three_axis.py
+[31.593s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_ahrs_s.c
+[31.594s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_gnss_pos.py
+[31.594s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sensor_temp_s.c
+[31.594s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_robot_lord_s.c
+[31.594s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_all_data_s.c
+[31.594s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sensor_temp.py
+[31.595s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min_utc.py
+[31.595s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pressure.py
+[31.595s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_only.py
+[31.595s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_all.py
+[31.596s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_utc_s.c
+[31.596s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pressure_s.c
+[31.596s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_ahrs.py
+[31.596s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pos_only_s.c
+[31.596s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_vru.py
+[31.597s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min_s.c
+[31.597s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_all_s.c
+[31.597s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_tid_s.c
+[31.597s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_angle_s.c
+[31.598s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_three_axis_s.c
+[31.598s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_only_s.c
+[31.598s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_vel_s.c
+[31.598s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_tid.py
+[31.598s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data_ten_axis.py
+[31.599s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_status_s.c
+[31.599s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_quat.py
+[31.599s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data_ten_axis_s.c
+[31.599s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data.py
+[31.600s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_vru_s.c
+[31.600s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_vel.py
+[31.600s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_robot_lord.py
+[31.600s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_utc.py
+[31.601s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min_utc_s.c
+[31.601s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_all_data.py
+[31.601s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_status.py
+[31.601s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_gnss_pos_s.c
+[31.601s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data_s.c
+[31.602s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_quat_s.c
+[31.602s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_angle.py
+[31.602s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pos_only.py
+[31.602s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sample_timestamp.py
+[31.602s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sample_timestamp_s.c
+[31.603s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min.py
+[31.603s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/__init__.py
+[31.603s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/__init__.py
+[31.797s] Listing '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface'...
+[31.798s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/__init__.py'...
+[31.798s] Listing '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg'...
+[31.798s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/__init__.py'...
+[31.798s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_all_data.py'...
+[31.798s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_ahrs.py'...
+[31.798s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_attitude_min_vru.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_angle.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_euler_only.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_gnss_pos.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_imu_data_ten_axis.py'...
+[31.799s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_all.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_min_utc.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_nav_status.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pos_only.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_pressure.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_quat.py'...
+[31.800s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_robot_lord.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sample_timestamp.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_sensor_temp.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_three_axis.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_tid.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_utc.py'...
+[31.801s] Compiling '/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/msg/_vel.py'...
+[31.813s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[31.813s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[31.814s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[31.814s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[31.815s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[31.815s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/local/lib/python3.10/dist-packages/yesense_interface/yesense_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[31.816s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_generator_py.so
+[31.817s] -- Set runtime path of "/home/wheeltec/agribot/agribot_ws/install/yesense_interface/lib/libyesense_interface__rosidl_generator_py.so" to ""
+[31.817s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/ament_index/resource_index/rust_packages/yesense_interface
+[31.817s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust
+[31.817s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/build.rs
+[31.818s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/src
+[31.818s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/src/msg.rs
+[31.818s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/src/lib.rs
+[31.818s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/src/msg
+[31.819s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/src/msg/rmw.rs
+[31.819s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/rust/Cargo.toml
+[31.819s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Tid.idl
+[31.820s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ThreeAxis.idl
+[31.820s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/SensorTemp.idl
+[31.821s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Pressure.idl
+[31.821s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/EulerAngle.idl
+[31.822s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Quat.idl
+[31.822s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/GnssPos.idl
+[31.822s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavStatus.idl
+[31.822s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Vel.idl
+[31.823s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Utc.idl
+[31.823s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/SampleTimestamp.idl
+[31.823s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ImuData.idl
+[31.824s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ImuDataTenAxis.idl
+[31.824s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/EulerOnly.idl
+[31.824s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/RobotLord.idl
+[31.825s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeMinVru.idl
+[31.825s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeMinAhrs.idl
+[31.825s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeAllData.idl
+[31.826s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/PosOnly.idl
+[31.826s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavMin.idl
+[31.826s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavMinUtc.idl
+[31.827s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavAll.idl
+[31.827s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Tid.msg
+[31.827s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ThreeAxis.msg
+[31.828s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/SensorTemp.msg
+[31.828s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Pressure.msg
+[31.828s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/EulerAngle.msg
+[31.829s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Quat.msg
+[31.829s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/GnssPos.msg
+[31.829s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavStatus.msg
+[31.830s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Vel.msg
+[31.830s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/Utc.msg
+[31.830s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/SampleTimestamp.msg
+[31.831s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ImuData.msg
+[31.831s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/ImuDataTenAxis.msg
+[31.831s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/EulerOnly.msg
+[31.831s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/RobotLord.msg
+[31.832s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeMinVru.msg
+[31.832s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeMinAhrs.msg
+[31.832s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/AttitudeAllData.msg
+[31.833s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/PosOnly.msg
+[31.833s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavMin.msg
+[31.833s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavMinUtc.msg
+[31.834s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/msg/NavAll.msg
+[31.834s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/ament_index/resource_index/package_run_dependencies/yesense_interface
+[31.835s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/ament_index/resource_index/parent_prefix_path/yesense_interface
+[31.835s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/ament_prefix_path.sh
+[31.835s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/ament_prefix_path.dsv
+[31.836s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/path.sh
+[31.836s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/environment/path.dsv
+[31.837s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/local_setup.bash
+[31.838s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/local_setup.sh
+[31.838s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/local_setup.zsh
+[31.838s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/local_setup.dsv
+[31.838s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/package.dsv
+[31.839s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/ament_index/resource_index/packages/yesense_interface
+[31.839s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_generator_cExport.cmake
+[31.839s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_generator_cExport-noconfig.cmake
+[31.839s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[31.840s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[31.841s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_introspection_cExport.cmake
+[31.841s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[31.841s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_cExport.cmake
+[31.841s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_cExport-noconfig.cmake
+[31.842s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_generator_cppExport.cmake
+[31.842s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[31.842s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[31.843s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_introspection_cppExport.cmake
+[31.843s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[31.844s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_cppExport.cmake
+[31.844s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[31.844s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_generator_pyExport.cmake
+[31.845s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/export_yesense_interface__rosidl_generator_pyExport-noconfig.cmake
+[31.845s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/rosidl_cmake-extras.cmake
+[31.846s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[31.846s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[31.846s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/ament_cmake_export_targets-extras.cmake
+[31.846s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[31.847s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[31.847s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[31.847s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[31.848s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interfaceConfig.cmake
+[31.848s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/cmake/yesense_interfaceConfig-version.cmake
+[31.848s] -- Installing: /home/wheeltec/agribot/agribot_ws/install/yesense_interface/share/yesense_interface/package.xml
+[31.855s] Invoked command in '/home/wheeltec/agribot/agribot_ws/build/yesense_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/wheeltec/wheeltec_ros2/install/simple_follower_ros2:/home/wheeltec/wheeltec_ros2/install/wheeltec_robot_keyboard:/home/wheeltec/wheeltec_ros2/install/wheeltec_dual_rtk_driver:/home/wheeltec/wheeltec_ros2/install/ultralytics_ros2:/home/wheeltec/wheeltec_ros2/install/tf2_tools:/home/wheeltec/wheeltec_ros2/install/ollama_ros_chat:/home/wheeltec/wheeltec_ros2/install/nmea_navsat_driver:/home/wheeltec/wheeltec_ros2/install/nav2_waypoint_cycle:/home/wheeltec/wheeltec_ros2/install/nav2_simple_commander:/home/wheeltec/wheeltec_ros2/install/auto_recharge_ros2:/opt/ros/humble /usr/bin/cmake --install /home/wheeltec/agribot/agribot_ws/build/yesense_interface
