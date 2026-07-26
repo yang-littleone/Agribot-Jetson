@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="centerline_extraction.pep257"
+  tests="13"
+  errors="0"
+  failures="7"
+  time="0.238"
+>
+  <testcase
+    name="./launch/field_path_tracking.launch.py"
+    classname="centerline_extraction.pep257"/>
+  <testcase
+    name="./launch/field_system_with_perception.launch.py"
+    classname="centerline_extraction.pep257"/>
+  <testcase
+    name="./launch/perception_ablation.launch.py"
+    classname="centerline_extraction.pep257"/>
+  <testcase
+    name="D213 (./launch/pid_path_test.launch.py:12)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D213: Multi-line docstring summary should start at the second line"/>
+  </testcase>
+  <testcase
+    name="D400 (./launch/pid_path_test.launch.py:12)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D400: First line should end with a period (not '。')"/>
+  </testcase>
+  <testcase
+    name="D415 (./launch/pid_path_test.launch.py:12)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D415: First line should end with a period, question mark, or exclamation point (not '。')"/>
+  </testcase>
+  <testcase
+    name="./scripts/analyze_field_trials.py"
+    classname="centerline_extraction.pep257"/>
+  <testcase
+    name="./scripts/field_trial_logger.py"
+    classname="centerline_extraction.pep257"/>
+  <testcase
+    name="D400 (./scripts/pid_tracking_evaluator.py:2)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D400: First line should end with a period (not '。')"/>
+  </testcase>
+  <testcase
+    name="D415 (./scripts/pid_tracking_evaluator.py:2)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D415: First line should end with a period, question mark, or exclamation point (not '。')"/>
+  </testcase>
+  <testcase
+    name="D400 (./scripts/pid_tracking_evaluator.py:32)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D400: First line should end with a period (not '。')"/>
+  </testcase>
+  <testcase
+    name="D415 (./scripts/pid_tracking_evaluator.py:32)"
+    classname="centerline_extraction.pep257"
+  >
+      <failure message="D415: First line should end with a period, question mark, or exclamation point (not '。')"/>
+  </testcase>
+  <testcase
+    name="./test/test_field_analysis.py"
+    classname="centerline_extraction.pep257"/>
+  <system-out>Checked files:
+* ./launch/field_path_tracking.launch.py
+* ./launch/field_system_with_perception.launch.py
+* ./launch/perception_ablation.launch.py
+* ./launch/pid_path_test.launch.py
+* ./scripts/analyze_field_trials.py
+* ./scripts/field_trial_logger.py
+* ./scripts/pid_tracking_evaluator.py
+* ./test/test_field_analysis.py</system-out>
+</testsuite>

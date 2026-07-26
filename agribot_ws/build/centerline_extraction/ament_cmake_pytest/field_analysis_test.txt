@@ -1,0 +1,18 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction':
+ - /usr/bin/python3 -u -m pytest /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/test/test_field_analysis.py -o cache_dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_pytest/field_analysis_test/.cache --junit-xml=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml --junit-prefix=centerline_extraction
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: build/centerline_extraction/ament_cmake_pytest/field_analysis_test/.cache
+rootdir: /home/wheeltec/agribot/agribot_ws
+plugins: ament-copyright-0.12.15, launch-testing-ros-0.19.13, ament-xmllint-0.12.15, launch-testing-1.0.14, ament-pep257-0.12.15, ament-flake8-0.12.15, ament-lint-0.12.15, cov-3.0.0, colcon-core-0.21.0
+collected 5 items
+
+../../src/centerline_extraction/test/test_field_analysis.py .....        [100%]
+
+- generated xml file: /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml -
+============================== 5 passed in 0.06s ===============================
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml'

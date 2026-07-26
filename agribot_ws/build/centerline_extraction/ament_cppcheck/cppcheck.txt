@@ -1,0 +1,8 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction':
+ - /opt/ros/humble/bin/ament_cppcheck --xunit-file /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/cppcheck.xunit.xml --include_dirs /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/include
+
+cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/cppcheck.xunit.xml'

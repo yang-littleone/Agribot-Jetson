@@ -53,21 +53,29 @@ corn_row_detector_projection:
     quality_safety_weight: 0.15
     quality_observation_fallback_score: 0.45
 
-    # 本文不验证自动掉头；只记录地头候选信号，不允许控制器执行换行。
-    enable_headland_detection: true
+    # 地头检测：路径无效/过短、任一侧点数不足或置信度过低，
+    # 任一条件连续约0.6 s成立后确认。
+    enable_headland_detection: true            # 是否启用地头候选检测
+    headland_low_confidence_threshold: 0.35    # 低于该置信度时视为地头候选
+    headland_min_side_points: 80               # 任一侧点数低于该值时视为支撑不足
+    headland_min_path_points: 5                # 中心线路径点少于该值时视为路径过短
+    headland_candidate_frames: 6               # 连续候选帧达到该值才确认地头
 
 pid_controller:
   ros__parameters:
-    target_distance: 0.30
+    # 摸底起点：较长前视距离降低局部中心线小幅跳动对转向的放大。
+    target_distance: 0.3
     # 摸底试验确认0.10 m/s不足以克服实车低速死区，正式名义速度锁定为0.18 m/s。
     # field_path_tracking.launch.py 无参数启动时仍会安全覆盖为0.05 m/s。
     max_linear_speed: 0.18
     min_linear_speed: 0.03
     max_angular_speed: 0.60
+    max_angular_acceleration: 0.80
+    angular_command_deadband: 0.02
     lateral_kp: 1.05
-    lateral_ki: 0.005
+    lateral_ki: 0.00
     lateral_kd: 0.00
-    heading_kp: 1.20
+    heading_kp: 1.05
     heading_ki: 0.00
     heading_kd: 0.00
 
@@ -86,10 +94,44 @@ pid_controller:
     safety_margin_mid: 0.125
     safety_margin_stop: 0.10
 
-    max_row_follow_distance: 10.0
+    # 0表示不按里程计累计距离自动停车；5 m场地终点由人工停车/急停控制。
+    max_row_follow_distance: 0.0
     max_row_follow_time: 180.0
     stop_at_path_end: false
-    enable_headland_turn: false
+
+    # 地头U形换行。当前配置用于5 m、0.60 m行距模拟场地的单次左转摸底。
+    enable_headland_turn: true                 # 是否允许收到地头信号后自动掉头
+    headland_min_follow_distance: 1.50         # 每次掉头前必须完成的最小行间行驶距离（m）
+    headland_row_spacing: 0.60                 # 相邻两行中心线间距（m）
+    # <=0时源码自动采用 headland_row_spacing / 2，即当前为0.30 m。
+    headland_turn_radius: 0.0                  # U形轨迹半径（m），0表示按行距的一半自动计算
+    headland_exit_distance: 0.15               # 触发掉头后沿当前行方向继续前进的距离（m）
+    headland_settle_distance: 0.60             # 完成180°转向后的直线稳定段长度（m）
+    headland_path_step: 0.05                   # 掉头及重捕获参考路径的采样间距（m）
+
+    # 标准半圆对当前0.60 m行距的曲率要求低于现有连续曲率轨迹。
+    headland_use_continuous_curvature_turn: false  # true使用平滑曲线，false使用标准半圆
+    # 仅在 headland_use_continuous_curvature_turn=true 时使用。
+    headland_turn_forward_extension: 0.30      # 平滑掉头曲线向地头前方伸出的最大距离（m）
+    headland_turn_use_safety_margin_speed: true  # 掉头时是否根据通道安全裕度降低速度
+
+    headland_turn_goal_tolerance: 0.20         # 判断到达掉头终点的位置容差（m）
+    headland_turn_heading_tolerance: 0.35      # 判断掉头完成的航向容差（rad）
+    headland_turn_direction: left             # 第一次掉头方向：left或right，之后自动交替
+    max_headland_turns: 1                     # 本次运行允许的最大掉头次数，<=0表示不限制
+    headland_turn_linear_speed: 0.15           # U_TURN状态下的线速度上限（m/s）
+    headland_turn_target_distance: 0.20        # U_TURN状态下使用的路径前视距离（m）
+
+    # 掉头完成后的相邻行预测跟踪和实测中心线重捕获。
+    headland_reacquire_confidence: 0.70        # 高于该置信度才计为一次稳定重捕获
+    headland_reacquire_track_confidence: 0.35  # 高于该置信度即可融合实测下一行中心线
+    headland_reacquire_search_speed: 0.15      # NEXT_ROW_REACQUIRE状态的线速度上限（m/s）
+    headland_reacquire_search_angular_speed: 0.0  # 无预测和实测路径时使用的备用角速度（rad/s）
+    headland_reacquire_max_distance: 1.20      # 允许搜索下一行的最大累计距离（m）
+    headland_reacquire_max_time: 8.0           # 允许搜索下一行的最长时间（s）
+    headland_reacquire_prediction_length: 1.50 # 掉头后生成的预测中心线长度（m）
+    headland_reacquire_frames: 5               # 连续满足高置信度的帧数达到该值才恢复行间跟踪
+
     debug_mode: false
 
 field_trial_logger:

@@ -1,0 +1,23 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction':
+ - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/pep257.xunit.xml
+
+checking ./launch/field_path_tracking.launch.py
+checking ./launch/field_system_with_perception.launch.py
+checking ./launch/perception_ablation.launch.py
+checking ./launch/pid_path_test.launch.py
+./launch/pid_path_test.launch.py:12 in public function `generate_launch_description`: D213: Multi-line docstring summary should start at the second line
+./launch/pid_path_test.launch.py:12 in public function `generate_launch_description`: D400: First line should end with a period (not '。')
+./launch/pid_path_test.launch.py:12 in public function `generate_launch_description`: D415: First line should end with a period, question mark, or exclamation point (not '。')
+checking ./scripts/analyze_field_trials.py
+checking ./scripts/field_trial_logger.py
+checking ./scripts/pid_tracking_evaluator.py
+./scripts/pid_tracking_evaluator.py:2 at module level: D400: First line should end with a period (not '。')
+./scripts/pid_tracking_evaluator.py:2 at module level: D415: First line should end with a period, question mark, or exclamation point (not '。')
+./scripts/pid_tracking_evaluator.py:32 in public class `PIDTrackingEvaluator`: D400: First line should end with a period (not '。')
+./scripts/pid_tracking_evaluator.py:32 in public class `PIDTrackingEvaluator`: D415: First line should end with a period, question mark, or exclamation point (not '。')
+checking ./test/test_field_analysis.py
+7 errors
+
+
+-- run_test.py: return code 1
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/pep257.xunit.xml'

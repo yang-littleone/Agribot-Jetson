@@ -35,6 +35,7 @@ class PIDTrackingEvaluator(Node):
         'lateral_kp', 'lateral_ki', 'lateral_kd',
         'heading_kp', 'heading_ki', 'heading_kd',
         'max_linear_speed', 'max_angular_speed',
+        'max_angular_acceleration', 'angular_command_deadband',
     )
 
     def __init__(self):

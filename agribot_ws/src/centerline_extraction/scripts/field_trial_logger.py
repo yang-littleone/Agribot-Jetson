@@ -57,7 +57,9 @@ class FieldTrialLogger(Node):
     )
     CONTROLLER_PARAMETERS = (
         'target_distance', 'max_linear_speed', 'min_linear_speed',
-        'max_angular_speed', 'lateral_kp', 'lateral_ki', 'lateral_kd',
+        'max_angular_speed', 'max_angular_acceleration',
+        'angular_command_deadband',
+        'lateral_kp', 'lateral_ki', 'lateral_kd',
         'heading_kp', 'heading_ki', 'heading_kd',
         'use_quality_aware_control', 'require_quality_metrics',
         'confidence_high_threshold', 'confidence_low_threshold',
@@ -114,6 +116,7 @@ class FieldTrialLogger(Node):
             'trial_id', 'experiment_type', 'scenario', 'perception_method',
             'repeat_index', 'nominal_speed_mps', 'quality_aware',
             'time_s', 'ros_time_s',
+            'odom_stamp_s', 'odom_age_s', 'path_stamp_s', 'path_age_s',
             'x_m', 'y_m', 'yaw_rad',
             'odom_linear_mps', 'odom_angular_rps', 'travel_distance_m',
             'cmd_linear_mps', 'cmd_angular_rps', 'path_points',
@@ -122,6 +125,7 @@ class FieldTrialLogger(Node):
             'safety_margin_m', 'error_budget_m', 'published_confidence',
             'control_quality_factor', 'headland_detected', 'navigation_mode',
             'navigation_safety_state',
+            'controller_lateral_error_m', 'controller_heading_error_rad',
         ] + [
             name for name in self.DIAGNOSTIC_NAMES
             if name not in {
@@ -163,6 +167,8 @@ class FieldTrialLogger(Node):
             'error_budget_m': math.nan,
             'published_confidence': math.nan,
             'control_quality_factor': math.nan,
+            'controller_lateral_error_m': math.nan,
+            'controller_heading_error_rad': math.nan,
         }
         self.diagnostics = {}
         self.headland_detected = False
@@ -191,6 +197,14 @@ class FieldTrialLogger(Node):
         self.create_subscription(
             Float32, '/control_quality_factor',
             lambda msg: self.set_metric('control_quality_factor', msg.data), 10)
+        self.create_subscription(
+            Float32, '/controller_lateral_error',
+            lambda msg: self.set_metric(
+                'controller_lateral_error_m', msg.data), 10)
+        self.create_subscription(
+            Float32, '/controller_heading_error',
+            lambda msg: self.set_metric(
+                'controller_heading_error_rad', msg.data), 10)
         self.create_subscription(
             Float32MultiArray, '/centerline_detection_diagnostics',
             self.diagnostics_callback, 10)
@@ -302,12 +316,30 @@ class FieldTrialLogger(Node):
         if self.latest_odom is None:
             return
         now = self.get_clock().now()
+        now_s = now.nanoseconds / 1e9
         pose = self.latest_odom.pose.pose
         twist = self.latest_odom.twist.twist
+        odom_stamp_s = (
+            self.latest_odom.header.stamp.sec +
+            self.latest_odom.header.stamp.nanosec * 1e-9)
+        path_stamp_s = math.nan
+        if self.latest_path is not None:
+            path_stamp_s = (
+                self.latest_path.header.stamp.sec +
+                self.latest_path.header.stamp.nanosec * 1e-9)
         row = {
             **self.identity,
             'time_s': (now - self.start_time).nanoseconds / 1e9,
-            'ros_time_s': now.nanoseconds / 1e9,
+            'ros_time_s': now_s,
+            'odom_stamp_s': odom_stamp_s,
+            'odom_age_s': (
+                max(0.0, now_s - odom_stamp_s)
+                if odom_stamp_s > 0.0 else math.nan),
+            'path_stamp_s': path_stamp_s,
+            'path_age_s': (
+                max(0.0, now_s - path_stamp_s)
+                if math.isfinite(path_stamp_s) and path_stamp_s > 0.0
+                else math.nan),
             'x_m': pose.position.x,
             'y_m': pose.position.y,
             'yaw_rad': yaw_from_quaternion(pose.orientation),

@@ -11,7 +11,8 @@
 1. 实测车体最大外廓宽度、每个试验行段的行距和要求的植株安全间隙；
 2. 确定 ROI、高度范围、最小点数、行距容差、拟合残差阈值、跳变阈值、丢线
    保持时间、置信度分级和停车阈值；
-3. 在 0.05 m/s 下确认转向符号、急停、中心线超时停车、质量超时停车和距离上限；
+3. 架空驱动轮后在 0.05 m/s 指令下确认转向符号和停车逻辑；落地摸底使用能够克服
+   底盘死区的 0.18 m/s 名义速度；
 4. 将 `config/field_row_follow.yaml` 复制为带日期的锁定配置，计算 SHA256，并保存
    到试验台账。正式试验开始后不得修改；缺株、遮挡、杂草行只用于独立测试。
 
@@ -34,7 +35,7 @@ ros2 launch centerline_extraction field_system_with_perception.launch.py
 
 确认 `/livox/lidar`、`/odometry/filtered`、TF、硬件急停和遥控接管均正常。人员不得
 站在车体前方或两行植株之间，同时确认 `/corn_row_center_line` 和五个质量分量持续
-更新。首次只允许架空轮测试，然后以 0.05 m/s 短距离摸底。
+更新。首次只允许架空轮测试，确认方向正确后再进行落地短距离摸底。
 
 终端2单独启动本次路径跟踪和记录。每次试验结束后只需停止并重新运行这个启动，
 基础系统和中心线感知不需要重启：
@@ -42,17 +43,20 @@ ros2 launch centerline_extraction field_system_with_perception.launch.py
 ```bash
 ros2 launch centerline_extraction field_path_tracking.launch.py \
   trial_id:=complex_qaware_v018_r1 scenario:=complex \
-  quality_aware:=true max_linear_speed:=0.18 max_distance:=10.0 \
+  quality_aware:=true max_linear_speed:=0.18 max_distance:=0.0 \
   repeat_index:=1 output_dir:=field_trial_results
 ```
 
 `quality_aware:=false` 是固定名义速度 PID 对照；两组使用相同PID增益和终端1中
 持续运行的同一感知方法，只改变质量是否作用于速度/角速度、历史中心线保持和停车。
-每次重启控制器，距离上限从收到第一条有效中心线开始计。
+当前5 m场地不使用里程计距离自动停车，`max_distance:=0.0`表示禁用距离上限；
+到达场地终点后人工停车。180 s时间上限、中心线/质量超时停车和安全裕度停车仍然
+有效。
 
 记录器为每次运行生成 `timeseries.csv` 和 `metadata.json`。后者包含感知、控制参数
 快照；CSV 保留点数、观测完整性、行距、残差、安全裕度、误差预算、五个质量分量、
-最终置信度、控制质量因子和停车状态，不能只保留最终置信度。
+最终置信度、控制质量因子、独立横向/航向控制误差、里程计与中心线数据年龄及停车
+状态，不能只保留最终置信度。
 
 建议另行录制原始数据，至少包括：
 
@@ -62,12 +66,16 @@ ros2 bag record -o BAG_NAME \
   /corn_row_center_line /under_canopy_left_boundary /under_canopy_right_boundary \
   /corridor_width /corridor_safety_margin /corridor_error_budget \
   /corridor_confidence /centerline_detection_diagnostics \
-  /cmd_vel /control_quality_factor /navigation_safety_state /navigation_mode
+  /cmd_vel /control_quality_factor \
+  /controller_lateral_error /controller_heading_error \
+  /navigation_safety_state /navigation_mode
 ```
 
-固定相机应覆盖车体和两侧植株，在试验段入口、中部、出口设置可量测断面。每次记录
-植株接触、人工干预、完成与否及运行时间。视频标注写入
-`docs/ground_truth_template.csv` 所示格式，时间基准须与记录器对齐。
+成熟期玉米冠层下不要求外部视频覆盖全程。20～50 m精度试验段采用高于冠层的
+RTK天线、自动跟踪全站仪，或每隔2～5 m测量车辆中心轨迹相对双行中心的离散真值；
+200～500 m长距离试验只评价完成率、植株接触、人工干预、丢线与停车持续时间。
+真值统一写入`docs/ground_truth_template.csv`，时间基准须与记录器对齐。车辆两侧
+宜安装柔性接触开关，区分叶片轻触和茎秆碰撞。
 
 ## 3. 感知消融
 

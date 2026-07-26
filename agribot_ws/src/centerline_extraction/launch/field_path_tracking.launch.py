@@ -32,8 +32,8 @@ def generate_launch_description():
             description='true=质量约束PID，false=固定名义速度PID。'),
         DeclareLaunchArgument(
             'max_distance',
-            default_value='1.0',
-            description='本次试验最大累计行驶距离（m）。'),
+            default_value='0.0',
+            description='最大累计行驶距离（m）；0表示禁用距离自动停车。'),
         DeclareLaunchArgument(
             'max_time',
             default_value='180.0',

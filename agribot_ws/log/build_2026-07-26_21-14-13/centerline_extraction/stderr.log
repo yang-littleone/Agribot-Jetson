@@ -1,0 +1,4 @@
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp: In lambda function:
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/src/corn_row_detector_projection.cpp:1152:54: note: parameter passing for argument of type ‘std::pair<float, float>’ when C++17 is enabled changed to match C++14 in GCC 10.1
+ 1152 |                 return std::make_pair(0.0f, sum_y / n);
+      |                                                      ^

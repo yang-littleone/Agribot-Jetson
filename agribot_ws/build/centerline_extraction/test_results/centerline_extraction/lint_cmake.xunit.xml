@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite
+  name="centerline_extraction.lint_cmake"
+  tests="7"
+  errors="0"
+  failures="7"
+  time="0.005"
+>
+  <testcase
+    name="whitespace/mismatch (CMakeLists.txt:24)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Mismatching spaces inside () after command"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:39)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:55)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:56)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:59)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:60)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <testcase
+    name="whitespace/eol (CMakeLists.txt:122)"
+    classname="centerline_extraction.lint_cmake"
+  >
+      <failure message="Line ends in whitespace"/>
+  </testcase>
+  <system-out>Checked files:
+* CMakeLists.txt</system-out>
+</testsuite>

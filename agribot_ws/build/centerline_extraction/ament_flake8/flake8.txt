@@ -1,0 +1,45 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction':
+ - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/flake8.xunit.xml
+
+        if self.last_sample_time and (now - self.last_sample_time).nanoseconds < self.sample_period * 1e9:
+                                                                                                   ^
+        if self.gains is None and self.parameter_future is None and self.parameter_client.service_is_ready():
+                                                                                                   ^
+                (self.get_clock().now() - self.finish_started).nanoseconds >= self.finish_hold_time * 1e9):
+                                                                                                   ^
+            'rmse_m': round(math.sqrt(sum(error * error for error in absolute_errors) / len(absolute_errors)), 4),
+                                                                                                   ^
+            'mean_abs_heading_error_deg': round(math.degrees(sum(heading_errors) / len(heading_errors)), 3),
+                                                                                                   ^
+5     E501 line too long (106 > 99 characters)
+
+./scripts/pid_tracking_evaluator.py:121:100: E501 line too long (106 > 99 characters)
+
+./scripts/pid_tracking_evaluator.py:158:100: E501 line too long (109 > 99 characters)
+
+./scripts/pid_tracking_evaluator.py:165:100: E501 line too long (107 > 99 characters)
+
+./scripts/pid_tracking_evaluator.py:277:100: E501 line too long (114 > 99 characters)
+
+./scripts/pid_tracking_evaluator.py:282:100: E501 line too long (108 > 99 characters)
+
+
+8 files checked
+5 errors
+
+'E'-type errors: 5
+
+Checked files:
+
+* ./launch/field_system_with_perception.launch.py
+* ./launch/pid_path_test.launch.py
+* ./launch/field_path_tracking.launch.py
+* ./launch/perception_ablation.launch.py
+* ./scripts/pid_tracking_evaluator.py
+* ./scripts/field_trial_logger.py
+* ./scripts/analyze_field_trials.py
+* ./test/test_field_analysis.py
+
+
+-- run_test.py: return code 1
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/flake8.xunit.xml'

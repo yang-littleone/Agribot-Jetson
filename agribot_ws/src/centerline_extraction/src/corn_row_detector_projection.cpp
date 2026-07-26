@@ -1808,6 +1808,7 @@ void CornRowDetectorProjection::publish_headland_detection(
         std::min(left_points, right_points) < headland_min_side_points_;
     const bool low_confidence =
         last_corridor_confidence_ < headland_low_confidence_threshold_;
+    // 路径、单侧点数或置信度任一项退化，均视为地头候选。
     const bool candidate =
         enable_headland_detection_ &&
         (invalid_or_short_path || weak_side_support || low_confidence);

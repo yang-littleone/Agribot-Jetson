@@ -33,7 +33,11 @@ private:
 
     // 核心控制函数
     geometry_msgs::msg::PointStamped find_target_point();
+    double compute_lateral_error_to_path() const;
     geometry_msgs::msg::Twist calculate_control_command();
+    double limit_angular_command(
+        double desired_angular_speed, double angular_speed_limit, double dt);
+    void publish_stop_command();
 
     // PID辅助函数
     double compute_pid(double error, double dt, double &integral, double &previous_error, 
@@ -84,12 +88,16 @@ private:
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr navigation_mode_pub_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr control_state_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr quality_factor_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr lateral_error_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr heading_error_pub_;
 
     // 控制器参数
     double target_distance_;        // 目标跟随距离（距离路径前方多少米）
     double max_linear_speed_;       // 最大线速度
     double min_linear_speed_;       // 最小线速度
     double max_angular_speed_;      // 最大角速度
+    double max_angular_acceleration_;  // 最大角速度变化率
+    double angular_command_deadband_;  // 小角速度指令死区
     bool stop_at_path_end_;         // 到达静态测试路径末端后停车
     double path_end_tolerance_;     // 路径末端停车半径（米）
     double confidence_high_threshold_;
@@ -195,12 +203,15 @@ private:
     double current_angular_vel_;       // 当前角速度
     
     geometry_msgs::msg::PointStamped target_point_; // 目标点
+    double target_path_heading_;                    // 目标点处路径切线方向
     
     // PID控制器状态变量
     double lateral_integral_;
     double lateral_previous_error_;
     double heading_integral_;
     double heading_previous_error_;
+    double last_angular_command_;
+    bool has_last_angular_command_;
     
     // 时间记录
     rclcpp::Time last_time_;

@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-26T19:19:47",
+  "metrics": {
+    "samples": 329,
+    "raw_samples": 329,
+    "duration_s": 18.522,
+    "path_length_m": 3.284,
+    "max_progress_m": 3.246,
+    "completion_ratio": 0.9884,
+    "endpoint_reached": false,
+    "experiment_valid": false,
+    "rmse_m": 0.2896,
+    "mean_abs_error_m": 0.2332,
+    "mean_signed_error_m": -0.1922,
+    "p95_m": 0.501,
+    "max_error_m": 0.5079,
+    "mean_abs_heading_error_deg": 14.872,
+    "final_endpoint_error_m": 0.2169,
+    "saturation_ratio": 0.4802,
+    "oscillation_crossings": 1
+  },
+  "current_parameters": {
+    "lateral_kp": 1.2,
+    "lateral_ki": 0.0,
+    "lateral_kd": 0.0,
+    "heading_kp": 2.5,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.2,
+    "max_angular_speed": 0.45,
+    "max_angular_acceleration": 0.8,
+    "angular_command_deadband": 0.02
+  },
+  "recommendation": {
+    "status": "本次试验无效，不据此调 PID：测试路径未完整跑完，或机器人未产生足够的路径进度。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {}
+  }
+}

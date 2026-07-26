@@ -8,10 +8,12 @@ pid_controller:
     # 室内起始值：先仅用 P 项，确认方向正确且不会振荡后再加入很小的 D 项。
     target_distance: 0.15
     max_linear_speed: 0.40
-    min_linear_speed: 0.08
-    max_angular_speed: 0.70
-    lateral_kp: 1.05
-    lateral_ki: 0.005
+    min_linear_speed: 0.15
+    max_angular_speed: 0.60
+    max_angular_acceleration: 0.80
+    angular_command_deadband: 0.02
+    lateral_kp: 1.20
+    lateral_ki: 0.00
     lateral_kd: 0.00
     heading_kp: 1.20
     heading_ki: 0.00
@@ -45,7 +47,7 @@ pid_tracking_evaluator:
     odom_topic: /odometry/filtered
     cmd_vel_topic: /cmd_vel
     controller_node: /pid_controller
-    max_angular_speed: 0.70
+    max_angular_speed: 0.45
     sample_period: 0.05
     finish_tolerance: 0.12
     finish_hold_time: 0.60

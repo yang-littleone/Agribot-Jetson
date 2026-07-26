@@ -45,12 +45,18 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
         "/navigation_safety_state", 10);
     quality_factor_pub_ = this->create_publisher<std_msgs::msg::Float32>(
         "/control_quality_factor", 10);
+    lateral_error_pub_ = this->create_publisher<std_msgs::msg::Float32>(
+        "/controller_lateral_error", 10);
+    heading_error_pub_ = this->create_publisher<std_msgs::msg::Float32>(
+        "/controller_heading_error", 10);
 
     // 声明并初始化参数
-    this->declare_parameter("target_distance", 0.4);   // 目标跟随距离（米）
+    this->declare_parameter("target_distance", 0.5);   // 目标跟随距离（米）
     this->declare_parameter("max_linear_speed", 0.4);  // 最大线速度（米/秒）
     this->declare_parameter("min_linear_speed", 0.1);  // 最小线速度（米/秒）
-    this->declare_parameter("max_angular_speed", 1.0); // 最大角速度（弧度/秒）
+    this->declare_parameter("max_angular_speed", 0.35); // 最大角速度（弧度/秒）
+    this->declare_parameter("max_angular_acceleration", 0.8); // 最大角加速度（弧度/秒方）
+    this->declare_parameter("angular_command_deadband", 0.02); // 小角速度死区（弧度/秒）
     // 默认关闭：玉米行检测输出的是不断更新的局部路径，不能据其末点停车。
     // PID 室内测试启动文件会显式打开该项。
     this->declare_parameter("stop_at_path_end", false);
@@ -96,12 +102,12 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     this->declare_parameter("headland_turn_target_distance", 0.35);
 
     // 横向PID参数
-    this->declare_parameter("lateral_kp", 1.05); // 比例系数
-    this->declare_parameter("lateral_ki", 0.005);  // 积分系数
+    this->declare_parameter("lateral_kp", 0.6); // 比例系数
+    this->declare_parameter("lateral_ki", 0.0);  // 积分系数
     this->declare_parameter("lateral_kd", 0.0); // 微分系数
 
     // 航向PID参数
-    this->declare_parameter("heading_kp", 1.2); // 比例系数
+    this->declare_parameter("heading_kp", 0.7); // 比例系数
     this->declare_parameter("heading_ki", 0.0);  // 积分系数
     this->declare_parameter("heading_kd", 0.0); // 微分系数
 
@@ -160,6 +166,9 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     lateral_previous_error_ = 0.0;
     heading_integral_ = 0.0;
     heading_previous_error_ = 0.0;
+    target_path_heading_ = 0.0;
+    last_angular_command_ = 0.0;
+    has_last_angular_command_ = true;
 
     RCLCPP_INFO(this->get_logger(), "PID控制器初始化完成（目标距离: %.2f米）", target_distance_);
     RCLCPP_INFO(this->get_logger(), "置信度/安全裕度控制: %s",
@@ -177,6 +186,12 @@ void PIDController::get_parameters()
     this->get_parameter("max_linear_speed", max_linear_speed_);
     this->get_parameter("min_linear_speed", min_linear_speed_);
     this->get_parameter("max_angular_speed", max_angular_speed_);
+    this->get_parameter("max_angular_acceleration", max_angular_acceleration_);
+    this->get_parameter("angular_command_deadband", angular_command_deadband_);
+    max_angular_speed_ = std::max(0.05, max_angular_speed_);
+    max_angular_acceleration_ = std::max(0.0, max_angular_acceleration_);
+    angular_command_deadband_ = std::clamp(
+        angular_command_deadband_, 0.0, max_angular_speed_);
     this->get_parameter("stop_at_path_end", stop_at_path_end_);
     this->get_parameter("path_end_tolerance", path_end_tolerance_);
     path_end_tolerance_ = std::max(0.02, path_end_tolerance_);
@@ -403,8 +418,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
         if (is_headland_turn_complete())
         {
             start_next_row_reacquire();
-            geometry_msgs::msg::Twist stop_cmd;
-            cmd_vel_pub_->publish(stop_cmd);
+            publish_stop_command();
             return;
         }
 
@@ -461,8 +475,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
             if (reacquire_failed_)
             {
-                geometry_msgs::msg::Twist stop_cmd;
-                cmd_vel_pub_->publish(stop_cmd);
+                publish_stop_command();
                 return;
             }
 
@@ -518,8 +531,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (trial_limit_reached())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         const double elapsed = trial_started_
                                    ? std::max(0.0, (this->now() - trial_start_time_).seconds())
@@ -536,8 +548,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (!has_center_line_ || center_line_.poses.empty())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("WAITING_FOR_CENTERLINE");
         RCLCPP_WARN_THROTTLE(
@@ -548,8 +559,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (centerline_is_stale())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("STOP_STALE_CENTERLINE");
         RCLCPP_ERROR_THROTTLE(
@@ -561,8 +571,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
     if (use_quality_aware_control_ && require_quality_metrics_ &&
         (!has_corridor_confidence_ || !has_corridor_safety_margin_))
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("WAITING_FOR_QUALITY");
         RCLCPP_WARN_THROTTLE(
@@ -573,8 +582,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (quality_data_is_stale())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("STOP_STALE_QUALITY");
         RCLCPP_ERROR_THROTTLE(
@@ -585,8 +593,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (should_stop_for_safety())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("STOP_SAFETY_MARGIN");
         RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
@@ -624,8 +631,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
         }
         else
         {
-            geometry_msgs::msg::Twist stop_cmd;
-            cmd_vel_pub_->publish(stop_cmd);
+            publish_stop_command();
             publish_quality_factor(0.0);
             publish_control_state("STOP_LOW_CONFIDENCE");
             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
@@ -641,8 +647,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
     if (stop_at_path_end_ && is_path_end_reached())
     {
-        geometry_msgs::msg::Twist stop_cmd;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         publish_quality_factor(0.0);
         publish_control_state("STOP_PATH_END");
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
@@ -660,10 +665,7 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
     else
     {
         // 当没有中心线时，发布零速度指令让小车停止
-        geometry_msgs::msg::Twist stop_cmd;
-        stop_cmd.linear.x = 0.0;
-        stop_cmd.angular.z = 0.0;
-        cmd_vel_pub_->publish(stop_cmd);
+        publish_stop_command();
         RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "未收到中心线，发布停止指令");
     }
 }
@@ -729,8 +731,15 @@ geometry_msgs::msg::PointStamped PIDController::find_target_point()
     geometry_msgs::msg::PointStamped target_point;
     target_point.header.frame_id = center_line_.header.frame_id;
     target_point.header.stamp = this->now();
+    target_path_heading_ = current_yaw_;
     const double active_target_distance =
         (navigation_mode_ == NavigationMode::U_TURN) ? headland_turn_target_distance_ : target_distance_;
+
+    if (center_line_.poses.size() == 1)
+    {
+        target_point.point = center_line_.poses.front().pose.position;
+        return target_point;
+    }
 
     // 1. 找到路径上离小车最近的点
     size_t closest_idx = 0;
@@ -767,6 +776,7 @@ geometry_msgs::msg::PointStamped PIDController::find_target_point()
             target_point.point.x = p1.x + t * (p2.x - p1.x);
             target_point.point.y = p1.y + t * (p2.y - p1.y);
             target_point.point.z = 0.0;
+            target_path_heading_ = std::atan2(p2.y - p1.y, p2.x - p1.x);
 
             return target_point;
         }
@@ -775,6 +785,14 @@ geometry_msgs::msg::PointStamped PIDController::find_target_point()
     }
 
     auto last_point = center_line_.poses.back().pose.position;
+    if (center_line_.poses.size() >= 2)
+    {
+        const auto &previous_point =
+            center_line_.poses[center_line_.poses.size() - 2].pose.position;
+        target_path_heading_ = std::atan2(
+            last_point.y - previous_point.y,
+            last_point.x - previous_point.x);
+    }
     const double dx = last_point.x - current_x_;
     const double dy = last_point.y - current_y_;
     const double x_veh = dx * std::cos(current_yaw_) + dy * std::sin(current_yaw_);
@@ -783,6 +801,7 @@ geometry_msgs::msg::PointStamped PIDController::find_target_point()
         target_point.point.x = current_x_ + active_target_distance * std::cos(current_yaw_);
         target_point.point.y = current_y_ + active_target_distance * std::sin(current_yaw_);
         target_point.point.z = 0.0;
+        target_path_heading_ = current_yaw_;
     }
     else
     {
@@ -790,6 +809,110 @@ geometry_msgs::msg::PointStamped PIDController::find_target_point()
     }
 
     return target_point;
+}
+
+double PIDController::compute_lateral_error_to_path() const
+{
+    if (center_line_.poses.empty())
+    {
+        return 0.0;
+    }
+    if (center_line_.poses.size() == 1)
+    {
+        const auto &point = center_line_.poses.front().pose.position;
+        const double dx = point.x - current_x_;
+        const double dy = point.y - current_y_;
+        return dx * -std::sin(target_path_heading_) +
+               dy * std::cos(target_path_heading_);
+    }
+
+    double best_distance_squared = std::numeric_limits<double>::infinity();
+    double best_lateral_error = 0.0;
+    for (size_t index = 0; index + 1 < center_line_.poses.size(); ++index)
+    {
+        const auto &start = center_line_.poses[index].pose.position;
+        const auto &end = center_line_.poses[index + 1].pose.position;
+        const double segment_x = end.x - start.x;
+        const double segment_y = end.y - start.y;
+        const double segment_length_squared =
+            segment_x * segment_x + segment_y * segment_y;
+        if (segment_length_squared < 1e-12)
+        {
+            continue;
+        }
+
+        const double projection_fraction = std::clamp(
+            ((current_x_ - start.x) * segment_x +
+             (current_y_ - start.y) * segment_y) /
+                segment_length_squared,
+            0.0,
+            1.0);
+        const double projection_x =
+            start.x + projection_fraction * segment_x;
+        const double projection_y =
+            start.y + projection_fraction * segment_y;
+        const double path_from_vehicle_x = projection_x - current_x_;
+        const double path_from_vehicle_y = projection_y - current_y_;
+        const double distance_squared =
+            path_from_vehicle_x * path_from_vehicle_x +
+            path_from_vehicle_y * path_from_vehicle_y;
+        if (distance_squared >= best_distance_squared)
+        {
+            continue;
+        }
+
+        const double inverse_segment_length =
+            1.0 / std::sqrt(segment_length_squared);
+        const double left_normal_x =
+            -segment_y * inverse_segment_length;
+        const double left_normal_y =
+            segment_x * inverse_segment_length;
+        best_distance_squared = distance_squared;
+        best_lateral_error =
+            path_from_vehicle_x * left_normal_x +
+            path_from_vehicle_y * left_normal_y;
+    }
+    return best_lateral_error;
+}
+
+double PIDController::limit_angular_command(
+    double desired_angular_speed, double angular_speed_limit, double dt)
+{
+    desired_angular_speed = std::clamp(
+        desired_angular_speed, -angular_speed_limit, angular_speed_limit);
+    if (std::abs(desired_angular_speed) < angular_command_deadband_)
+    {
+        desired_angular_speed = 0.0;
+    }
+
+    if (!has_last_angular_command_)
+    {
+        last_angular_command_ = 0.0;
+        has_last_angular_command_ = true;
+    }
+    if (max_angular_acceleration_ > 0.0)
+    {
+        const double max_delta =
+            max_angular_acceleration_ * std::clamp(dt, 0.001, 0.2);
+        desired_angular_speed = std::clamp(
+            desired_angular_speed,
+            last_angular_command_ - max_delta,
+            last_angular_command_ + max_delta);
+    }
+    // 死区只作用于 PID 的目标指令，不能再次作用于角加速度限幅后的中间值。
+    // 否则在高频控制下，当 max_angular_acceleration * dt 小于死区时，
+    // 每一帧刚建立的角速度都会被清零，车辆将永远无法开始转向。
+    desired_angular_speed = std::clamp(
+        desired_angular_speed, -angular_speed_limit, angular_speed_limit);
+    last_angular_command_ = desired_angular_speed;
+    return desired_angular_speed;
+}
+
+void PIDController::publish_stop_command()
+{
+    geometry_msgs::msg::Twist stop_cmd;
+    cmd_vel_pub_->publish(stop_cmd);
+    reset_pid_state();
 }
 
 double PIDController::compute_pid(double error, double dt, double &integral, double &previous_error,
@@ -971,6 +1094,8 @@ void PIDController::reset_pid_state()
     lateral_previous_error_ = 0.0;
     heading_integral_ = 0.0;
     heading_previous_error_ = 0.0;
+    last_angular_command_ = 0.0;
+    has_last_angular_command_ = true;
     first_run_ = true;
 }
 
@@ -1450,19 +1575,20 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
     }
     last_time_ = current_time;
 
-    // 3. 将目标点转换到小车坐标系
-    double dx = target_point_.point.x - current_x_;
-    double dy = target_point_.point.y - current_y_;
+    // 3. 横向误差使用车辆到最近路径线段投影点的有符号垂距。
+    //    不能使用车辆到前视点切线的距离，否则曲线路径会产生反向假误差。
+    const double lateral_error = compute_lateral_error_to_path();
 
-    // 小车坐标系下的目标点位置
-    double x_veh = dx * cos(current_yaw_) + dy * sin(current_yaw_);  // 前向距离
-    double y_veh = -dx * sin(current_yaw_) + dy * cos(current_yaw_); // 横向距离（左正右负）
+    // 4. 航向误差来自前视目标点处的中心线切线。
+    const double heading_error =
+        normalize_angle(target_path_heading_ - current_yaw_);
 
-    // 4. 计算横向误差（y_veh就是我们需要消除的横向误差）
-    double lateral_error = y_veh;
-
-    // 5. 计算航向误差（目标点相对于小车朝向的角度）
-    double heading_error = atan2(y_veh, x_veh);
+    std_msgs::msg::Float32 lateral_error_msg;
+    lateral_error_msg.data = static_cast<float>(lateral_error);
+    lateral_error_pub_->publish(lateral_error_msg);
+    std_msgs::msg::Float32 heading_error_msg;
+    heading_error_msg.data = static_cast<float>(heading_error);
+    heading_error_pub_->publish(heading_error_msg);
 
     // 6. 使用PID控制器计算控制输出
     // 横向控制（主要影响转向）
@@ -1486,7 +1612,8 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
     double angular_vel = lateral_control + heading_control;
     const double current_max_angular_speed =
         std::max(0.1, max_angular_speed_ * quality_factor);
-    angular_vel = std::clamp(angular_vel, -current_max_angular_speed, current_max_angular_speed);
+    angular_vel = limit_angular_command(
+        angular_vel, current_max_angular_speed, dt);
 
     // 8. 计算线速度：中心线质量、安全裕度和转向幅度共同调速
     const double turning_factor = use_quality_aware_control_

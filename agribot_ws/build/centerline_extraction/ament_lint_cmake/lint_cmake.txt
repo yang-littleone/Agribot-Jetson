@@ -1,0 +1,17 @@
+-- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/src/centerline_extraction':
+ - /opt/ros/humble/bin/ament_lint_cmake --xunit-file /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/lint_cmake.xunit.xml
+
+CMakeLists.txt:24: Mismatching spaces inside () after command [whitespace/mismatch]
+CMakeLists.txt:39: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:55: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:56: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:59: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:60: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:122: Line ends in whitespace [whitespace/eol]
+
+
+7 errors
+
+
+-- run_test.py: return code 1
+-- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/lint_cmake.xunit.xml'
