@@ -97,8 +97,23 @@ target_link_libraries(cornfield_navigation_node
   ${PCL_LIBRARIES}
 )
 
+# 在没有玉米行检测输入时，为 PID 跟踪提供可重复的室内测试中心线。
+add_executable(test_path_publisher src/test_path_publisher.cpp)
+ament_target_dependencies(test_path_publisher
+  rclcpp
+  nav_msgs
+  geometry_msgs
+  tf2
+  tf2_geometry_msgs
+)
+
 install(TARGETS
-  cornfield_navigation_node corn_row_detector_projection
+  cornfield_navigation_node corn_row_detector_projection test_path_publisher
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/pid_tracking_evaluator.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -106,9 +121,9 @@ install(DIRECTORY
   include
   DESTINATION include/
 )
-# install(DIRECTORY launch config
-#   DESTINATION share/${PROJECT_NAME}
-# )
+install(DIRECTORY launch config
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -19,7 +19,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -37,7 +38,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -62,6 +64,13 @@
 					"id" : "cornfield_navigation_node::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-cornfield_navigation_node-c3c301130215eb1a6243.json",
 					"name" : "cornfield_navigation_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_path_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_path_publisher-bb95c30c0fed4c7ca3f1.json",
+					"name" : "test_path_publisher",
 					"projectIndex" : 0
 				},
 				{

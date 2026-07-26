@@ -1,0 +1,3 @@
+time_s,x_m,y_m,yaw_rad,cross_track_error_m,abs_cross_track_error_m,heading_error_rad,path_progress_m,endpoint_distance_m,linear_cmd_mps,angular_cmd_rps
+0.0,2.9064253139741885,0.9265353916187908,3.1397802391393874,-0.0,0.0,0.0,0.0,1.3,0.0,0.0
+0.0571,2.9064253139741885,0.9265353916187908,3.1397802391393874,-0.0,0.0,0.0,0.0,1.3,0.0,0.0

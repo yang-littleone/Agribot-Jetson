@@ -1,0 +1,10 @@
+cornfield_navigation_node:
+  ros__parameters:
+    lateral_kp: 1.0000
+    lateral_ki: 0.0000
+    lateral_kd: 0.0000
+    heading_kp: 1.2000
+    heading_ki: 0.0000
+    heading_kd: 0.0000
+    max_linear_speed: 0.4000
+    max_angular_speed: 0.7000

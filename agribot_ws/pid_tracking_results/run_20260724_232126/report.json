@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-24T23:21:26",
+  "metrics": {
+    "samples": 217,
+    "raw_samples": 231,
+    "duration_s": 11.896,
+    "path_length_m": 3.221,
+    "max_progress_m": 3.139,
+    "rmse_m": 0.0953,
+    "mean_abs_error_m": 0.0798,
+    "mean_signed_error_m": 0.008,
+    "p95_m": 0.1687,
+    "max_error_m": 0.192,
+    "mean_abs_heading_error_deg": 23.163,
+    "final_endpoint_error_m": 0.1026,
+    "saturation_ratio": 0.6221,
+    "oscillation_crossings": 3
+  },
+  "current_parameters": {
+    "lateral_kp": 1.0,
+    "lateral_ki": 0.0,
+    "lateral_kd": 0.0,
+    "heading_kp": 1.2,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.4,
+    "max_angular_speed": 0.7
+  },
+  "recommendation": {
+    "status": "检测到振荡或转向饱和：下一轮只降低 lateral_kp，速度保持不变。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {
+      "lateral_kp": 0.85,
+      "lateral_ki": 0.0,
+      "lateral_kd": 0.0,
+      "heading_kp": 1.2,
+      "heading_ki": 0.0,
+      "heading_kd": 0.0,
+      "max_linear_speed": 0.4,
+      "max_angular_speed": 0.7
+    }
+  }
+}

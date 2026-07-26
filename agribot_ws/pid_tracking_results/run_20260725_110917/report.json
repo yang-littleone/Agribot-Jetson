@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-25T11:09:17",
+  "metrics": {
+    "samples": 359,
+    "raw_samples": 371,
+    "duration_s": 20.251,
+    "path_length_m": 2.392,
+    "max_progress_m": 2.291,
+    "rmse_m": 0.049,
+    "mean_abs_error_m": 0.0343,
+    "mean_signed_error_m": 0.0329,
+    "p95_m": 0.1165,
+    "max_error_m": 0.1211,
+    "mean_abs_heading_error_deg": 5.609,
+    "final_endpoint_error_m": 0.1162,
+    "saturation_ratio": 0.0028,
+    "oscillation_crossings": 2
+  },
+  "current_parameters": {
+    "lateral_kp": 1.05,
+    "lateral_ki": 0.0,
+    "lateral_kd": 0.0,
+    "heading_kp": 1.2,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.12,
+    "max_angular_speed": 0.7
+  },
+  "recommendation": {
+    "status": "存在稳定单侧偏差：下一轮只尝试很小的 lateral_ki。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {
+      "lateral_kp": 1.05,
+      "lateral_ki": 0.01,
+      "lateral_kd": 0.0,
+      "heading_kp": 1.2,
+      "heading_ki": 0.0,
+      "heading_kd": 0.0,
+      "max_linear_speed": 0.12,
+      "max_angular_speed": 0.7
+    }
+  }
+}

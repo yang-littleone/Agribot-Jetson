@@ -1,0 +1,10 @@
+Consolidate compiler generated dependencies of target cornfield_navigation_node
+[ 22%] Built target corn_row_detector_projection
+[ 33%] Linking CXX executable cornfield_navigation_node
+[ 55%] Built target test_path_publisher
+/usr/bin/ld: CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o: in function `void __gnu_cxx::new_allocator<PIDController>::construct<PIDController>(PIDController*)':
+main.cpp:(.text._ZN9__gnu_cxx13new_allocatorI13PIDControllerE9constructIS1_JEEEvPT_DpOT0_[_ZN9__gnu_cxx13new_allocatorI13PIDControllerE9constructIS1_JEEEvPT_DpOT0_]+0x30): undefined reference to `PIDController::PIDController()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cornfield_navigation_node.dir/build.make:394：cornfield_navigation_node] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:167：CMakeFiles/cornfield_navigation_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

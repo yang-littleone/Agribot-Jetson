@@ -1,6 +1,7 @@
 #include "centerline_extraction/pid_controller.hpp"
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <visualization_msgs/msg/marker.hpp>
 
@@ -46,6 +47,10 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     this->declare_parameter("max_linear_speed", 0.4);  // 最大线速度（米/秒）
     this->declare_parameter("min_linear_speed", 0.1);  // 最小线速度（米/秒）
     this->declare_parameter("max_angular_speed", 1.0); // 最大角速度（弧度/秒）
+    // 默认关闭：玉米行检测输出的是不断更新的局部路径，不能据其末点停车。
+    // PID 室内测试启动文件会显式打开该项。
+    this->declare_parameter("stop_at_path_end", false);
+    this->declare_parameter("path_end_tolerance", 0.12);
     this->declare_parameter("confidence_high_threshold", 0.75);
     this->declare_parameter("confidence_low_threshold", 0.45);
     this->declare_parameter("confidence_stop_threshold", 0.25);
@@ -81,14 +86,14 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     this->declare_parameter("headland_turn_target_distance", 0.35);
 
     // 横向PID参数
-    this->declare_parameter("lateral_kp", 20.0); // 比例系数
-    this->declare_parameter("lateral_ki", 1.0);  // 积分系数
-    this->declare_parameter("lateral_kd", 10.0); // 微分系数
+    this->declare_parameter("lateral_kp", 1.05); // 比例系数
+    this->declare_parameter("lateral_ki", 0.005);  // 积分系数
+    this->declare_parameter("lateral_kd", 0.0); // 微分系数
 
     // 航向PID参数
-    this->declare_parameter("heading_kp", 20.0); // 比例系数
-    this->declare_parameter("heading_ki", 1.0);  // 积分系数
-    this->declare_parameter("heading_kd", 10.0); // 微分系数
+    this->declare_parameter("heading_kp", 1.2); // 比例系数
+    this->declare_parameter("heading_ki", 0.0);  // 积分系数
+    this->declare_parameter("heading_kd", 0.0); // 微分系数
 
     this->declare_parameter("debug_mode", false); // 调试模式开关
 
@@ -145,6 +150,9 @@ void PIDController::get_parameters()
     this->get_parameter("max_linear_speed", max_linear_speed_);
     this->get_parameter("min_linear_speed", min_linear_speed_);
     this->get_parameter("max_angular_speed", max_angular_speed_);
+    this->get_parameter("stop_at_path_end", stop_at_path_end_);
+    this->get_parameter("path_end_tolerance", path_end_tolerance_);
+    path_end_tolerance_ = std::max(0.02, path_end_tolerance_);
     this->get_parameter("confidence_high_threshold", confidence_high_threshold_);
     this->get_parameter("confidence_low_threshold", confidence_low_threshold_);
     this->get_parameter("confidence_stop_threshold", confidence_stop_threshold_);
@@ -498,7 +506,14 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
         low_confidence_count_ = 0;
     }
 
-    if (has_center_line_ && !center_line_.poses.empty())
+    if (stop_at_path_end_ && is_path_end_reached())
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+                             "已到达测试路径终点（容差 %.2f m），停车", path_end_tolerance_);
+    }
+    else if (has_center_line_ && !center_line_.poses.empty())
     {
         auto cmd_vel = calculate_control_command();
         cmd_vel_pub_->publish(cmd_vel);
@@ -512,6 +527,62 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
         cmd_vel_pub_->publish(stop_cmd);
         RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "未收到中心线，发布停止指令");
     }
+}
+
+bool PIDController::is_path_end_reached() const
+{
+    if (!has_center_line_ || center_line_.poses.empty())
+    {
+        return false;
+    }
+
+    const auto &end = center_line_.poses.back().pose.position;
+    const double end_distance = std::hypot(end.x - current_x_, end.y - current_y_);
+    if (end_distance <= path_end_tolerance_)
+    {
+        return true;
+    }
+
+    // 若车辆因横向偏差没有进入终点圆形容差，却已经越过终点横线，也必须停车。
+    // 否则 find_target_point() 会持续把最后一个点当目标，小车会在终点外继续前进。
+    if (center_line_.poses.size() < 2)
+    {
+        return false;
+    }
+
+    // U 形/半圆路径的终点朝向可能与起点相反。若仅检查终点横线，起点会被
+    // 误判为已经越过终点。因此只有最近路径点已位于最后约 0.10 m 时，才允许
+    // 使用“越过终点横线”停车保护。
+    size_t closest_idx = 0;
+    double closest_distance = std::numeric_limits<double>::infinity();
+    for (size_t index = 0; index < center_line_.poses.size(); ++index)
+    {
+        const auto &point = center_line_.poses[index].pose.position;
+        const double distance = std::hypot(point.x - current_x_, point.y - current_y_);
+        if (distance < closest_distance)
+        {
+            closest_distance = distance;
+            closest_idx = index;
+        }
+    }
+    constexpr size_t kEndPointGateSamples = 3;
+    if (closest_idx + kEndPointGateSamples < center_line_.poses.size())
+    {
+        return false;
+    }
+
+    const auto &previous = center_line_.poses[center_line_.poses.size() - 2].pose.position;
+    const double tangent_x = end.x - previous.x;
+    const double tangent_y = end.y - previous.y;
+    const double tangent_length = std::hypot(tangent_x, tangent_y);
+    if (tangent_length < 1e-6)
+    {
+        return false;
+    }
+
+    const double passed_distance =
+        ((current_x_ - end.x) * tangent_x + (current_y_ - end.y) * tangent_y) / tangent_length;
+    return passed_distance >= 0.0;
 }
 
 geometry_msgs::msg::PointStamped PIDController::find_target_point()
@@ -1148,7 +1219,9 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
     rclcpp::Time current_time = this->now();
     double dt = 0.0;
 
-    if (!first_run_)
+    // rclcpp::Time 的默认构造使用 ROS_TIME，而 this->now() 在当前配置下为
+    // SYSTEM_TIME。首次控制周期或时钟源切换时不做相减，避免异常退出。
+    if (!first_run_ && current_time.get_clock_type() == last_time_.get_clock_type())
     {
         dt = (current_time - last_time_).seconds();
     }

@@ -223,6 +223,19 @@ cornfield_navigation_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/build
 .PHONY : cornfield_navigation_node/fast
 
+#=============================================================================
+# Target rules for targets named test_path_publisher
+
+# Build rule for target.
+test_path_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_path_publisher
+.PHONY : test_path_publisher
+
+# fast build rule for target.
+test_path_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_path_publisher.dir/build.make CMakeFiles/test_path_publisher.dir/build
+.PHONY : test_path_publisher/fast
+
 src/corn_row_detector_projection.o: src/corn_row_detector_projection.cpp.o
 .PHONY : src/corn_row_detector_projection.o
 
@@ -343,6 +356,30 @@ src/pure_pursuit_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cornfield_navigation_node.dir/build.make CMakeFiles/cornfield_navigation_node.dir/src/pure_pursuit_controller.cpp.s
 .PHONY : src/pure_pursuit_controller.cpp.s
 
+src/test_path_publisher.o: src/test_path_publisher.cpp.o
+.PHONY : src/test_path_publisher.o
+
+# target to build an object file
+src/test_path_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_path_publisher.dir/build.make CMakeFiles/test_path_publisher.dir/src/test_path_publisher.cpp.o
+.PHONY : src/test_path_publisher.cpp.o
+
+src/test_path_publisher.i: src/test_path_publisher.cpp.i
+.PHONY : src/test_path_publisher.i
+
+# target to preprocess a source file
+src/test_path_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_path_publisher.dir/build.make CMakeFiles/test_path_publisher.dir/src/test_path_publisher.cpp.i
+.PHONY : src/test_path_publisher.cpp.i
+
+src/test_path_publisher.s: src/test_path_publisher.cpp.s
+.PHONY : src/test_path_publisher.s
+
+# target to generate assembly for a file
+src/test_path_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_path_publisher.dir/build.make CMakeFiles/test_path_publisher.dir/src/test_path_publisher.cpp.s
+.PHONY : src/test_path_publisher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -360,6 +397,7 @@ help:
 	@echo "... uninstall"
 	@echo "... corn_row_detector_projection"
 	@echo "... cornfield_navigation_node"
+	@echo "... test_path_publisher"
 	@echo "... src/corn_row_detector_projection.o"
 	@echo "... src/corn_row_detector_projection.i"
 	@echo "... src/corn_row_detector_projection.s"
@@ -375,6 +413,9 @@ help:
 	@echo "... src/pure_pursuit_controller.o"
 	@echo "... src/pure_pursuit_controller.i"
 	@echo "... src/pure_pursuit_controller.s"
+	@echo "... src/test_path_publisher.o"
+	@echo "... src/test_path_publisher.i"
+	@echo "... src/test_path_publisher.s"
 .PHONY : help
 
 

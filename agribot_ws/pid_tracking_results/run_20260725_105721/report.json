@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-25T10:57:21",
+  "metrics": {
+    "samples": 186,
+    "raw_samples": 198,
+    "duration_s": 10.471,
+    "path_length_m": 3.045,
+    "max_progress_m": 2.95,
+    "rmse_m": 0.0325,
+    "mean_abs_error_m": 0.0273,
+    "mean_signed_error_m": 0.0168,
+    "p95_m": 0.0586,
+    "max_error_m": 0.0637,
+    "mean_abs_heading_error_deg": 7.106,
+    "final_endpoint_error_m": 0.1097,
+    "saturation_ratio": 0.0215,
+    "oscillation_crossings": 3
+  },
+  "current_parameters": {
+    "lateral_kp": 1.05,
+    "lateral_ki": 0.0,
+    "lateral_kd": 0.0,
+    "heading_kp": 1.2,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.35,
+    "max_angular_speed": 0.7
+  },
+  "recommendation": {
+    "status": "通过：横向误差已适合此室内测试，下一轮保持 PID 不变，仅可小幅提高速度。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {
+      "lateral_kp": 1.05,
+      "lateral_ki": 0.0,
+      "lateral_kd": 0.0,
+      "heading_kp": 1.2,
+      "heading_ki": 0.0,
+      "heading_kd": 0.0,
+      "max_linear_speed": 0.35,
+      "max_angular_speed": 0.7
+    }
+  }
+}

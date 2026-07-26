@@ -1,0 +1,53 @@
+pid_controller:
+  ros__parameters:
+    # 测试期间不依赖玉米行检测器发布的质量指标。
+    use_quality_aware_control: false
+    enable_headland_turn: false
+    debug_mode: false
+
+    # 室内起始值：先仅用 P 项，确认方向正确且不会振荡后再加入很小的 D 项。
+    target_distance: 0.15
+    max_linear_speed: 0.40
+    min_linear_speed: 0.08
+    max_angular_speed: 0.70
+    lateral_kp: 1.05
+    lateral_ki: 0.005
+    lateral_kd: 0.00
+    heading_kp: 1.20
+    heading_ki: 0.00
+    heading_kd: 0.00
+
+    # 仅供固定测试轨迹使用；默认玉米行跟踪中该功能保持关闭。
+    stop_at_path_end: true
+    path_end_tolerance: 0.12
+
+test_path_publisher:
+  ros__parameters:
+    profile: straight_half_circle
+    path_topic: /corn_row_center_line
+    sample_spacing: 0.05
+    # 3.29 m 总长度：1.50 m 直线 + 半径 0.25 m 的 180°半圆 + 1.00 m 反向直线退出。
+    # 机器人从场地宽度中线出发时，半圆后横向偏移 0.50 m，需确认车体外廓安全间隙。
+    straight_length: 3.00
+    lead_in_length: 0.30
+    s_curve_length: 2.40
+    s_amplitude: 0.10
+    straight_before_arc: 1.50
+    arc_radius: 0.25
+    arc_angle_degrees: 180.0
+    arc_exit_length: 1.00
+    arc_direction: left
+    publish_period: 0.10
+
+pid_tracking_evaluator:
+  ros__parameters:
+    path_topic: /corn_row_center_line
+    odom_topic: /odometry/filtered
+    cmd_vel_topic: /cmd_vel
+    controller_node: /pid_controller
+    max_angular_speed: 0.70
+    sample_period: 0.05
+    finish_tolerance: 0.12
+    finish_hold_time: 0.60
+    auto_finish: true
+    output_dir: /home/wheeltec/agribot/agribot_ws/pid_tracking_results

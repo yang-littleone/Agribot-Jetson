@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-25T11:22:55",
+  "metrics": {
+    "samples": 368,
+    "raw_samples": 378,
+    "duration_s": 21.355,
+    "path_length_m": 2.584,
+    "max_progress_m": 2.483,
+    "completion_ratio": 0.9609,
+    "endpoint_reached": true,
+    "experiment_valid": true,
+    "rmse_m": 0.0507,
+    "mean_abs_error_m": 0.0337,
+    "mean_signed_error_m": 0.0329,
+    "p95_m": 0.1076,
+    "max_error_m": 0.1186,
+    "mean_abs_heading_error_deg": 5.158,
+    "final_endpoint_error_m": 0.1116,
+    "saturation_ratio": 0.0951,
+    "oscillation_crossings": 0
+  },
+  "current_parameters": null,
+  "recommendation": {
+    "status": "无法读取当前控制器参数，仅输出误差数据；请确认控制器节点名称。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {}
+  }
+}

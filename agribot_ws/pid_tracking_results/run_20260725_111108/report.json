@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-25T11:11:08",
+  "metrics": {
+    "samples": 306,
+    "raw_samples": 319,
+    "duration_s": 17.741,
+    "path_length_m": 2.392,
+    "max_progress_m": 2.295,
+    "rmse_m": 0.0405,
+    "mean_abs_error_m": 0.0234,
+    "mean_signed_error_m": 0.0226,
+    "p95_m": 0.0977,
+    "max_error_m": 0.1123,
+    "mean_abs_heading_error_deg": 5.053,
+    "final_endpoint_error_m": 0.1112,
+    "saturation_ratio": 0.0,
+    "oscillation_crossings": 0
+  },
+  "current_parameters": {
+    "lateral_kp": 1.05,
+    "lateral_ki": 0.0,
+    "lateral_kd": 0.0,
+    "heading_kp": 1.2,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.12,
+    "max_angular_speed": 0.7
+  },
+  "recommendation": {
+    "status": "误差偏大但未见明显振荡：下一轮小幅提高 lateral_kp。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {
+      "lateral_kp": 1.2075,
+      "lateral_ki": 0.0,
+      "lateral_kd": 0.0,
+      "heading_kp": 1.2,
+      "heading_ki": 0.0,
+      "heading_kd": 0.0,
+      "max_linear_speed": 0.12,
+      "max_angular_speed": 0.7
+    }
+  }
+}

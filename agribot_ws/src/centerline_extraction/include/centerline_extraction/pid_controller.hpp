@@ -64,6 +64,7 @@ private:
     void publish_reacquire_reference_path(const nav_msgs::msg::Path &path);
     void publish_navigation_mode();
     std::string navigation_mode_name() const;
+    bool is_path_end_reached() const;
 
     // 订阅者和发布者
     rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr center_line_sub_;
@@ -82,6 +83,8 @@ private:
     double max_linear_speed_;       // 最大线速度
     double min_linear_speed_;       // 最小线速度
     double max_angular_speed_;      // 最大角速度
+    bool stop_at_path_end_;         // 到达静态测试路径末端后停车
+    double path_end_tolerance_;     // 路径末端停车半径（米）
     double confidence_high_threshold_;
     double confidence_low_threshold_;
     double confidence_stop_threshold_;

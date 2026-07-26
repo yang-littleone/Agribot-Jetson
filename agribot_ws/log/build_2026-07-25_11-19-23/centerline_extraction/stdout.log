@@ -1,0 +1,8 @@
+[ 44%] Built target corn_row_detector_projection
+[ 44%] Built target test_path_publisher
+[ 55%] Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/cornfield_navigation_node.dir/src/pid_controller.cpp.o
+[ 55%] Linking CXX executable cornfield_navigation_node
+[100%] Built target cornfield_navigation_node
+-- Install configuration: ""
+-- Execute custom install script

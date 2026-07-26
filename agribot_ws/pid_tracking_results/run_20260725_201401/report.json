@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-07-25T20:14:01",
+  "metrics": {
+    "samples": 472,
+    "raw_samples": 484,
+    "duration_s": 26.885,
+    "path_length_m": 3.284,
+    "max_progress_m": 3.173,
+    "completion_ratio": 0.9663,
+    "endpoint_reached": true,
+    "experiment_valid": true,
+    "rmse_m": 0.0593,
+    "mean_abs_error_m": 0.0469,
+    "mean_signed_error_m": 0.0469,
+    "p95_m": 0.1114,
+    "max_error_m": 0.1445,
+    "mean_abs_heading_error_deg": 7.431,
+    "final_endpoint_error_m": 0.1166,
+    "saturation_ratio": 0.0847,
+    "oscillation_crossings": 0
+  },
+  "current_parameters": {
+    "lateral_kp": 1.05,
+    "lateral_ki": 0.005,
+    "lateral_kd": 0.0,
+    "heading_kp": 1.2,
+    "heading_ki": 0.0,
+    "heading_kd": 0.0,
+    "max_linear_speed": 0.12,
+    "max_angular_speed": 0.7
+  },
+  "recommendation": {
+    "status": "存在稳定单侧偏差：下一轮只尝试很小的 lateral_ki。",
+    "apply_one_change_only": true,
+    "proposed_parameters": {
+      "lateral_kp": 1.05,
+      "lateral_ki": 0.01,
+      "lateral_kd": 0.0,
+      "heading_kp": 1.2,
+      "heading_ki": 0.0,
+      "heading_kd": 0.0,
+      "max_linear_speed": 0.12,
+      "max_angular_speed": 0.7
+    }
+  }
+}

@@ -1129,4 +1129,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/centerline_extraction_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/corn_row_detector_projection.dir/DependInfo.cmake"
   "CMakeFiles/cornfield_navigation_node.dir/DependInfo.cmake"
+  "CMakeFiles/test_path_publisher.dir/DependInfo.cmake"
   )

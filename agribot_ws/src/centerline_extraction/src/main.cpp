@@ -11,16 +11,21 @@ int main(int argc, char * argv[])
     rclcpp::init(argc, argv);
 
     std::string controller_type = "pid";
-    for (int i = 1; i < argc - 1; ++i) {
-        if (std::string(argv[i]) == "--controller_type") {
-            controller_type = argv[i + 1];
+    bool enable_obstacle_detector = true;
+    for (int i = 1; i < argc; ++i) {
+        if (std::string(argv[i]) == "--controller_type" && i + 1 < argc) {
+            controller_type = argv[++i];
+        } else if (std::string(argv[i]) == "--disable_obstacle_detector") {
+            enable_obstacle_detector = false;
         }
     }
 
-    auto obstacle_detector = std::make_shared<ObstacleDetector>();
-    
     rclcpp::executors::MultiThreadedExecutor executor;
-    executor.add_node(obstacle_detector);
+    std::shared_ptr<ObstacleDetector> obstacle_detector;
+    if (enable_obstacle_detector) {
+        obstacle_detector = std::make_shared<ObstacleDetector>();
+        executor.add_node(obstacle_detector);
+    }
 
     std::shared_ptr<rclcpp::Node> controller_node;
     if (controller_type == "pure_pursuit") {
@@ -31,6 +36,9 @@ int main(int argc, char * argv[])
         controller_node = std::make_shared<PIDController>();
         executor.add_node(controller_node);
         RCLCPP_INFO(rclcpp::get_logger("main"), "Cornfield navigation system started with pid controller");
+    }
+    if (!enable_obstacle_detector) {
+        RCLCPP_INFO(rclcpp::get_logger("main"), "Obstacle detector disabled for path-tracking test");
     }
 
     executor.spin();

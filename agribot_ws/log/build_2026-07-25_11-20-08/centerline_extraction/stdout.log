@@ -1,0 +1,4 @@
+Consolidate compiler generated dependencies of target cornfield_navigation_node
+[ 22%] Built target corn_row_detector_projection
+[ 33%] Linking CXX executable cornfield_navigation_node
+[ 55%] Built target test_path_publisher

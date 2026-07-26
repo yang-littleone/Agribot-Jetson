@@ -1,0 +1,9 @@
+CMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:272 (message):
+  ament_cmake_symlink_install_targets() can't find
+  '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/cornfield_navigation_node'
+Call Stack (most recent call first):
+  ament_cmake_symlink_install_targets_0_.cmake:1 (ament_cmake_symlink_install_targets)
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:319 (include)
+  cmake_install.cmake:46 (include)
+
+
