@@ -45,6 +45,9 @@ private:
     double compute_confidence_factor() const;
     double compute_safety_factor() const;
     bool should_stop_for_safety() const;
+    bool quality_data_is_stale() const;
+    bool centerline_is_stale() const;
+    bool trial_limit_reached() const;
     double normalize_angle(double angle) const;
     void reset_pid_state();
     void update_travel_distance(double x, double y);
@@ -63,6 +66,8 @@ private:
     void publish_headland_turn_path();
     void publish_reacquire_reference_path(const nav_msgs::msg::Path &path);
     void publish_navigation_mode();
+    void publish_control_state(const std::string &state);
+    void publish_quality_factor(double factor);
     std::string navigation_mode_name() const;
     bool is_path_end_reached() const;
 
@@ -77,6 +82,8 @@ private:
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr headland_turn_path_pub_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr reacquire_reference_path_pub_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr navigation_mode_pub_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr control_state_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr quality_factor_pub_;
 
     // 控制器参数
     double target_distance_;        // 目标跟随距离（距离路径前方多少米）
@@ -93,7 +100,13 @@ private:
     double safety_margin_mid_;
     double safety_margin_stop_;
     int max_low_confidence_frames_;
+    double max_low_confidence_duration_;
     bool use_quality_aware_control_;
+    bool require_quality_metrics_;
+    double centerline_timeout_;
+    double quality_timeout_;
+    double max_row_follow_distance_;
+    double max_row_follow_time_;
     bool enable_headland_turn_;
     double headland_min_follow_distance_;
     double headland_row_spacing_;
@@ -137,6 +150,7 @@ private:
     bool has_last_valid_center_line_;
     bool use_recovery_path_;
     int low_confidence_count_;
+    bool low_confidence_active_;
     double corridor_confidence_;
     double corridor_safety_margin_;
     bool has_corridor_confidence_;
@@ -160,6 +174,20 @@ private:
     bool has_measured_reacquire_path_;
     bool reacquire_failed_;
     rclcpp::Time reacquire_start_time_;
+    rclcpp::Time last_centerline_time_;
+    rclcpp::Time last_confidence_time_;
+    rclcpp::Time last_safety_margin_time_;
+    rclcpp::Time low_confidence_start_time_;
+    rclcpp::Time trial_start_time_;
+    bool has_centerline_timestamp_;
+    bool has_confidence_timestamp_;
+    bool has_safety_margin_timestamp_;
+    bool trial_started_;
+    double trial_distance_;
+    double trial_previous_x_;
+    double trial_previous_y_;
+    bool has_trial_previous_odom_;
+    std::string last_control_state_;
     double current_x_;                 // 当前x坐标
     double current_y_;                 // 当前y坐标
     double current_yaw_;               // 当前偏航角

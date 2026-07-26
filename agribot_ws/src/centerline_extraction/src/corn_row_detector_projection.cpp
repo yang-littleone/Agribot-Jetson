@@ -38,6 +38,7 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     right_boundary_pub_ = this->create_publisher<nav_msgs::msg::Path>("under_canopy_right_boundary", 10);
     corridor_width_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_width", 10);
     corridor_safety_margin_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_safety_margin", 10);
+    corridor_error_budget_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_error_budget", 10);
     corridor_confidence_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_confidence", 10);
     detection_diagnostics_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("centerline_detection_diagnostics", 10);
     headland_detected_pub_ = this->create_publisher<std_msgs::msg::Bool>("headland_detected", 10);
@@ -80,6 +81,17 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->declare_parameter<bool>("use_simple_inner_row_mode", true);
     this->declare_parameter<bool>("use_row_yaw_estimation", true);
     this->declare_parameter<bool>("use_parallel_row_model", true);
+    this->declare_parameter<bool>("enable_innermost_row_extraction", true);
+    this->declare_parameter<bool>("enable_robust_refinement", true);
+    this->declare_parameter<bool>("enable_temporal_tracking", true);
+    this->declare_parameter<bool>("enable_quality_evaluation", true);
+    this->declare_parameter<float>("plant_safety_clearance", 0.10);
+    this->declare_parameter<float>("quality_support_weight", 0.30);
+    this->declare_parameter<float>("quality_observation_weight", 0.20);
+    this->declare_parameter<float>("quality_width_weight", 0.20);
+    this->declare_parameter<float>("quality_residual_weight", 0.15);
+    this->declare_parameter<float>("quality_safety_weight", 0.15);
+    this->declare_parameter<float>("quality_observation_fallback_score", 0.45);
     this->declare_parameter<std::string>("base_frame", "base_link");
     this->declare_parameter<std::string>("output_frame", "odom");
     this->declare_parameter<int>("time_window_size", 1);
@@ -130,6 +142,17 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->get_parameter("use_simple_inner_row_mode", use_simple_inner_row_mode_);
     this->get_parameter("use_row_yaw_estimation", use_row_yaw_estimation_);
     this->get_parameter("use_parallel_row_model", use_parallel_row_model_);
+    this->get_parameter("enable_innermost_row_extraction", enable_innermost_row_extraction_);
+    this->get_parameter("enable_robust_refinement", enable_robust_refinement_);
+    this->get_parameter("enable_temporal_tracking", enable_temporal_tracking_);
+    this->get_parameter("enable_quality_evaluation", enable_quality_evaluation_);
+    this->get_parameter("plant_safety_clearance", plant_safety_clearance_);
+    this->get_parameter("quality_support_weight", quality_support_weight_);
+    this->get_parameter("quality_observation_weight", quality_observation_weight_);
+    this->get_parameter("quality_width_weight", quality_width_weight_);
+    this->get_parameter("quality_residual_weight", quality_residual_weight_);
+    this->get_parameter("quality_safety_weight", quality_safety_weight_);
+    this->get_parameter("quality_observation_fallback_score", quality_observation_fallback_score_);
     this->get_parameter("base_frame", base_frame_);
     this->get_parameter("output_frame", output_frame_);
     this->get_parameter("time_window_size", time_window_size_);
@@ -144,6 +167,36 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->get_parameter("headland_min_side_points", headland_min_side_points_);
     this->get_parameter("headland_min_path_points", headland_min_path_points_);
     this->get_parameter("headland_candidate_frames", headland_candidate_frames_);
+
+    quality_support_weight_ = std::max(0.0f, quality_support_weight_);
+    quality_observation_weight_ = std::max(0.0f, quality_observation_weight_);
+    quality_width_weight_ = std::max(0.0f, quality_width_weight_);
+    quality_residual_weight_ = std::max(0.0f, quality_residual_weight_);
+    quality_safety_weight_ = std::max(0.0f, quality_safety_weight_);
+    const float quality_weight_sum =
+        quality_support_weight_ + quality_observation_weight_ +
+        quality_width_weight_ + quality_residual_weight_ +
+        quality_safety_weight_;
+    if (quality_weight_sum < 1e-6f)
+    {
+        quality_support_weight_ = 0.30f;
+        quality_observation_weight_ = 0.20f;
+        quality_width_weight_ = 0.20f;
+        quality_residual_weight_ = 0.15f;
+        quality_safety_weight_ = 0.15f;
+        RCLCPP_WARN(this->get_logger(), "All quality weights were zero; restored defaults");
+    }
+    else
+    {
+        quality_support_weight_ /= quality_weight_sum;
+        quality_observation_weight_ /= quality_weight_sum;
+        quality_width_weight_ /= quality_weight_sum;
+        quality_residual_weight_ /= quality_weight_sum;
+        quality_safety_weight_ /= quality_weight_sum;
+    }
+    quality_observation_fallback_score_ =
+        std::clamp(quality_observation_fallback_score_, 0.0f, 1.0f);
+    plant_safety_clearance_ = std::max(0.0f, plant_safety_clearance_);
 
     if (path_step_ <= 0.0f)
     {
@@ -291,8 +344,12 @@ void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::Poi
     auto [left_row_cloud, right_row_cloud] = this->split_left_right_rows(row_frame_cloud);
 
     // 从每侧点集合中提取最内侧一行（用于多行场景）
-    PointCloudXYZPtr left_inner = this->extract_innermost_row(left_row_cloud, true);
-    PointCloudXYZPtr right_inner = this->extract_innermost_row(right_row_cloud, false);
+    PointCloudXYZPtr left_inner = enable_innermost_row_extraction_
+                                      ? this->extract_innermost_row(left_row_cloud, true)
+                                      : left_row_cloud;
+    PointCloudXYZPtr right_inner = enable_innermost_row_extraction_
+                                       ? this->extract_innermost_row(right_row_cloud, false)
+                                       : right_row_cloud;
 
     // 如果提取后点数过少，复杂模式下可回退为整侧点；简单模式下不能回退，否则会混入外侧行。
     if (left_inner->size() < static_cast<size_t>(min_cluster_size_))
@@ -833,6 +890,12 @@ float CornRowDetectorProjection::estimate_row_yaw(PointCloudXYZPtr cloud)
 float CornRowDetectorProjection::filter_global_row_yaw(float measured_global_row_yaw)
 {
     measured_global_row_yaw = this->normalize_axis_angle(measured_global_row_yaw);
+    if (!enable_temporal_tracking_)
+    {
+        tracked_global_row_yaw_ = measured_global_row_yaw;
+        has_tracked_global_row_yaw_ = true;
+        return measured_global_row_yaw;
+    }
     if (!has_tracked_global_row_yaw_)
     {
         tracked_global_row_yaw_ = measured_global_row_yaw;
@@ -1396,6 +1459,10 @@ std::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr clo
     };
 
     auto [slope, intercept] = least_squares(points);
+    if (!enable_robust_refinement_)
+    {
+        return std::make_pair(slope, intercept);
+    }
 
     std::vector<pcl::PointXYZ> inliers;
     inliers.reserve(points.size());
@@ -1421,6 +1488,12 @@ std::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr clo
 float CornRowDetectorProjection::filter_row_yaw(float measured_row_yaw)
 {
     measured_row_yaw = this->normalize_axis_angle(measured_row_yaw);
+    if (!enable_temporal_tracking_)
+    {
+        tracked_row_yaw_ = measured_row_yaw;
+        has_tracked_row_yaw_ = true;
+        return measured_row_yaw;
+    }
     if (!has_tracked_row_yaw_)
     {
         tracked_row_yaw_ = measured_row_yaw;
@@ -1470,6 +1543,23 @@ bool CornRowDetectorProjection::update_tracked_lines(
     {
         measurement_valid = false;
         RCLCPP_WARN(this->get_logger(), "Reject row measurement due to width %.2f", measured_width);
+    }
+
+    if (!enable_temporal_tracking_)
+    {
+        if (!measurement_valid)
+        {
+            return false;
+        }
+        tracked_left_line_ = measured_left_line;
+        tracked_right_line_ = measured_right_line;
+        tracked_row_yaw_ = measured_row_yaw;
+        has_tracked_lines_ = true;
+        line_lost_count_ = 0;
+        tracked_left_line = measured_left_line;
+        tracked_right_line = measured_right_line;
+        tracked_row_yaw = measured_row_yaw;
+        return true;
     }
 
     if (!has_tracked_lines_)
@@ -1619,10 +1709,15 @@ nav_msgs::msg::Path CornRowDetectorProjection::transform_path_to_output_frame(co
     return path_output;
 }
 
-void CornRowDetectorProjection::publish_corridor_metrics(float width, float safety_margin, float confidence)
+void CornRowDetectorProjection::publish_corridor_metrics(
+    float width,
+    float safety_margin,
+    float error_budget,
+    float confidence)
 {
     last_corridor_width_ = width;
     last_corridor_safety_margin_ = safety_margin;
+    last_corridor_error_budget_ = error_budget;
     last_corridor_confidence_ = confidence;
 
     std_msgs::msg::Float32 width_msg;
@@ -1632,6 +1727,10 @@ void CornRowDetectorProjection::publish_corridor_metrics(float width, float safe
     std_msgs::msg::Float32 safety_msg;
     safety_msg.data = safety_margin;
     corridor_safety_margin_pub_->publish(safety_msg);
+
+    std_msgs::msg::Float32 error_budget_msg;
+    error_budget_msg.data = error_budget;
+    corridor_error_budget_pub_->publish(error_budget_msg);
 
     std_msgs::msg::Float32 confidence_msg;
     confidence_msg.data = confidence;
@@ -1649,6 +1748,15 @@ void CornRowDetectorProjection::publish_detection_diagnostics(
     int path_points)
 {
     std_msgs::msg::Float32MultiArray msg;
+    msg.layout.dim.resize(1);
+    msg.layout.dim[0].label =
+        "valid,left_points,right_points,corridor_width_m,safety_margin_m,"
+        "published_confidence,row_yaw_rad,center_offset_m,left_slope,left_intercept,"
+        "right_slope,right_intercept,line_lost_count,path_points,support_score,"
+        "observation_score,width_score,residual_score,safety_score,observed_valid_ratio,"
+        "raw_confidence,error_budget_m,support_weight,observation_weight,width_weight,"
+        "residual_weight,safety_weight,innermost_enabled,robust_enabled,"
+        "temporal_enabled,parallel_enabled";
     msg.data = {
         valid ? 1.0f : 0.0f,
         static_cast<float>(left_points),
@@ -1663,7 +1771,26 @@ void CornRowDetectorProjection::publish_detection_diagnostics(
         right_line.first,
         right_line.second,
         static_cast<float>(line_lost_count_),
-        static_cast<float>(path_points)};
+        static_cast<float>(path_points),
+        last_quality_support_score_,
+        last_quality_observation_score_,
+        last_quality_width_score_,
+        last_quality_residual_score_,
+        last_quality_safety_score_,
+        last_quality_observed_valid_ratio_,
+        last_raw_corridor_confidence_,
+        last_corridor_error_budget_,
+        quality_support_weight_,
+        quality_observation_weight_,
+        quality_width_weight_,
+        quality_residual_weight_,
+        quality_safety_weight_,
+        enable_innermost_row_extraction_ ? 1.0f : 0.0f,
+        enable_robust_refinement_ ? 1.0f : 0.0f,
+        enable_temporal_tracking_ ? 1.0f : 0.0f,
+        use_parallel_row_model_ ? 1.0f : 0.0f};
+    msg.layout.dim[0].size = msg.data.size();
+    msg.layout.dim[0].stride = msg.data.size();
     detection_diagnostics_pub_->publish(msg);
     publish_headland_detection(valid, left_points, right_points, path_points);
 }
@@ -1719,9 +1846,13 @@ nav_msgs::msg::Path CornRowDetectorProjection::create_corridor_path(
     right_boundary_base.header.frame_id = base_frame_;
 
     float width_sum = 0.0f;
-    float confidence_sum = 0.0f;
+    float support_score_sum = 0.0f;
+    float observation_score_sum = 0.0f;
+    float width_score_sum = 0.0f;
+    float residual_score_sum = 0.0f;
+    float safety_score_sum = 0.0f;
     float min_safety_margin = std::numeric_limits<float>::max();
-    int valid_sections = 0;
+    int observed_valid_sections = 0;
     int total_sections = 0;
 
     for (float x = 0.0f; x <= path_length_ + 1e-4f; x += path_step_)
@@ -1764,12 +1895,16 @@ nav_msgs::msg::Path CornRowDetectorProjection::create_corridor_path(
         const float support_score = std::clamp(
             static_cast<float>(left_support + right_support) / static_cast<float>(2 * std::max(1, min_section_points_)),
             0.0f, 1.0f);
-        const float observation_score = (left_observed && right_observed && valid_width) ? 1.0f : 0.45f;
+        const bool observed_valid = left_observed && right_observed && valid_width;
+        const float observation_score =
+            observed_valid ? 1.0f : quality_observation_fallback_score_;
         const float width_score = 1.0f - std::clamp(std::abs(width - desired_row_separation_) /
                                                         std::max(desired_row_separation_, 1e-3f),
                                                     0.0f, 1.0f);
-        const float section_confidence = std::clamp(
-            0.35f * support_score + 0.25f * observation_score + 0.25f * width_score + 0.15f * residual_score,
+        const float section_error_budget =
+            0.5f * (width - platform_width_) - plant_safety_clearance_;
+        const float safety_score = std::clamp(
+            section_error_budget / std::max(plant_safety_clearance_, 1e-3f),
             0.0f, 1.0f);
 
         const float corridor_yaw = row_yaw + std::atan2((left_line.first + right_line.first) * 0.5f, 1.0f);
@@ -1807,21 +1942,55 @@ nav_msgs::msg::Path CornRowDetectorProjection::create_corridor_path(
         right_boundary_base.poses.push_back(right_pose);
 
         width_sum += width;
-        confidence_sum += section_confidence;
+        support_score_sum += support_score;
+        observation_score_sum += observation_score;
+        width_score_sum += width_score;
+        residual_score_sum += residual_score;
+        safety_score_sum += safety_score;
         min_safety_margin = std::min(min_safety_margin, 0.5f * (width - platform_width_));
-        valid_sections++;
+        if (observed_valid)
+        {
+            observed_valid_sections++;
+        }
     }
 
-    if (valid_sections == 0)
+    if (total_sections == 0)
     {
-        publish_corridor_metrics(0.0f, 0.0f, 0.0f);
+        last_quality_support_score_ = 0.0f;
+        last_quality_observation_score_ = 0.0f;
+        last_quality_width_score_ = 0.0f;
+        last_quality_residual_score_ = 0.0f;
+        last_quality_safety_score_ = 0.0f;
+        last_quality_observed_valid_ratio_ = 0.0f;
+        last_raw_corridor_confidence_ = 0.0f;
+        publish_corridor_metrics(0.0f, 0.0f, -plant_safety_clearance_, 0.0f);
         return transform_path_to_output_frame(center_base);
     }
 
-    const float valid_ratio = static_cast<float>(valid_sections) / static_cast<float>(std::max(1, total_sections));
-    const float mean_width = width_sum / static_cast<float>(valid_sections);
-    const float mean_confidence = (confidence_sum / static_cast<float>(valid_sections)) * valid_ratio;
-    publish_corridor_metrics(mean_width, min_safety_margin, std::clamp(mean_confidence, 0.0f, 1.0f));
+    const float section_count = static_cast<float>(total_sections);
+    last_quality_support_score_ = support_score_sum / section_count;
+    last_quality_observation_score_ = observation_score_sum / section_count;
+    last_quality_width_score_ = width_score_sum / section_count;
+    last_quality_residual_score_ = residual_score_sum / section_count;
+    last_quality_safety_score_ = safety_score_sum / section_count;
+    last_quality_observed_valid_ratio_ =
+        static_cast<float>(observed_valid_sections) / section_count;
+    last_raw_corridor_confidence_ = std::clamp(
+        quality_support_weight_ * last_quality_support_score_ +
+            quality_observation_weight_ * last_quality_observation_score_ +
+            quality_width_weight_ * last_quality_width_score_ +
+            quality_residual_weight_ * last_quality_residual_score_ +
+            quality_safety_weight_ * last_quality_safety_score_,
+        0.0f, 1.0f);
+    const float mean_width = width_sum / section_count;
+    const float error_budget = min_safety_margin - plant_safety_clearance_;
+    const float published_confidence =
+        enable_quality_evaluation_ ? last_raw_corridor_confidence_ : 1.0f;
+    publish_corridor_metrics(
+        mean_width,
+        min_safety_margin,
+        error_budget,
+        published_confidence);
 
     center_line_viz_pub_->publish(center_base);
     left_boundary_pub_->publish(transform_path_to_output_frame(left_boundary_base));
@@ -1943,6 +2112,12 @@ nav_msgs::msg::Path CornRowDetectorProjection::spatial_smoothing(const nav_msgs:
 
 nav_msgs::msg::Path CornRowDetectorProjection::temporal_smoothing(const nav_msgs::msg::Path &path)
 {
+    if (!enable_temporal_tracking_)
+    {
+        path_history_.clear();
+        return path;
+    }
+
     // 添加到历史记录
     path_history_.push_back(path);
 
@@ -2043,6 +2218,13 @@ void CornRowDetectorProjection::publish_empty_path(const std_msgs::msg::Header &
     right_row_pub_->publish(empty_cloud);
 
     path_history_.clear();
-    publish_corridor_metrics(0.0f, 0.0f, 0.0f);
+    last_quality_support_score_ = 0.0f;
+    last_quality_observation_score_ = 0.0f;
+    last_quality_width_score_ = 0.0f;
+    last_quality_residual_score_ = 0.0f;
+    last_quality_safety_score_ = 0.0f;
+    last_quality_observed_valid_ratio_ = 0.0f;
+    last_raw_corridor_confidence_ = 0.0f;
+    publish_corridor_metrics(0.0f, 0.0f, -plant_safety_clearance_, 0.0f);
     publish_detection_diagnostics(false, 0, 0, 0.0f, 0.0f, {0.0f, 0.0f}, {0.0f, 0.0f}, 0);
 }

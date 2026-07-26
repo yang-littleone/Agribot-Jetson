@@ -114,6 +114,8 @@ install(TARGETS
 
 install(PROGRAMS
   scripts/pid_tracking_evaluator.py
+  scripts/field_trial_logger.py
+  scripts/analyze_field_trials.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -124,9 +126,14 @@ install(DIRECTORY
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
+install(DIRECTORY docs
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(field_analysis_test test/test_field_analysis.py)
   # the following line skips the linter which checks for copyrights
   # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)

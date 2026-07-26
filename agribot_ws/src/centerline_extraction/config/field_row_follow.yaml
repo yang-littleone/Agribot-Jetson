@@ -1,0 +1,100 @@
+# 正式试验前必须用卷尺更新 platform_width、desired_row_separation 和
+# plant_safety_clearance；摸底试验完成后复制本文件并锁定，不得边测试边调参。
+corn_row_detector_projection:
+  ros__parameters:
+    point_cloud_topic: /livox/lidar
+    base_frame: base_link
+    output_frame: odom
+
+    z_min: 0.00
+    z_max: 0.80
+    voxel_size: 0.025
+    x_min: 0.10
+    x_max: 2.20
+    y_min: -0.60
+    y_max: 0.60
+    path_length: 2.00
+    path_step: 0.10
+
+    # 示例起始值，不是实测值。安全阈值定义：
+    # error_budget = row_width/2 - platform_width/2 - plant_safety_clearance
+    platform_width: 0.22
+    desired_row_separation: 0.60
+    plant_safety_clearance: 0.05
+    min_row_separation: 0.42
+    max_row_separation: 0.82
+
+    section_width: 0.25
+    min_section_points: 3
+    robust_fit_residual_threshold: 0.12
+    min_cluster_size: 10
+    innermost_bin_width: 0.20
+    innermost_row_band_width: 0.18
+    innermost_quantile: 0.20
+    min_innermost_seeds: 4
+
+    enable_innermost_row_extraction: true
+    enable_robust_refinement: true
+    use_parallel_row_model: true
+    enable_temporal_tracking: true
+    enable_quality_evaluation: true
+    use_row_yaw_estimation: true
+    line_filter_alpha: 0.25
+    max_line_lateral_jump: 0.18
+    max_row_width_jump: 0.20
+    max_row_yaw_jump: 0.35
+    max_line_lost_frames: 5
+    time_window_size: 3
+
+    quality_support_weight: 0.30
+    quality_observation_weight: 0.20
+    quality_width_weight: 0.20
+    quality_residual_weight: 0.15
+    quality_safety_weight: 0.15
+    quality_observation_fallback_score: 0.45
+
+    # 本文不验证自动掉头；只记录地头候选信号，不允许控制器执行换行。
+    enable_headland_detection: true
+
+pid_controller:
+  ros__parameters:
+    target_distance: 0.30
+    # 摸底试验确认0.10 m/s不足以克服实车低速死区，正式名义速度锁定为0.18 m/s。
+    # field_path_tracking.launch.py 无参数启动时仍会安全覆盖为0.05 m/s。
+    max_linear_speed: 0.18
+    min_linear_speed: 0.03
+    max_angular_speed: 0.60
+    lateral_kp: 1.05
+    lateral_ki: 0.005
+    lateral_kd: 0.00
+    heading_kp: 1.20
+    heading_ki: 0.00
+    heading_kd: 0.00
+
+    use_quality_aware_control: true
+    require_quality_metrics: true
+    confidence_high_threshold: 0.75
+    confidence_low_threshold: 0.45
+    confidence_stop_threshold: 0.25
+    confidence_min_speed_factor: 0.20
+    max_low_confidence_duration: 0.50
+    centerline_timeout: 0.50
+    quality_timeout: 0.50
+
+    # 下面三项须依据实测车宽、行距和安全间隙在摸底试验中锁定。
+    safety_margin_high: 0.15
+    safety_margin_mid: 0.125
+    safety_margin_stop: 0.10
+
+    max_row_follow_distance: 10.0
+    max_row_follow_time: 180.0
+    stop_at_path_end: false
+    enable_headland_turn: false
+    debug_mode: false
+
+field_trial_logger:
+  ros__parameters:
+    sample_period: 0.05
+    controller_node: /pid_controller
+    detector_node: /corn_row_detector_projection
+    output_dir: field_trial_results

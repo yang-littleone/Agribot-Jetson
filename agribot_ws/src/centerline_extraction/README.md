@@ -1,5 +1,12 @@
 # PID 室内固定轨迹测试
 
+真实玉米田的感知质量约束导航请先阅读
+[`docs/field_experiment_protocol.md`](docs/field_experiment_protocol.md)，并使用
+两个独立启动：`field_system_with_perception.launch.py` 启动基础系统和中心线感知，
+`field_path_tracking.launch.py` 启动路径跟踪和本次试验记录。田间正常运行只使用
+这两个入口。该流程会保存全部质量分量、参数快照和安全停车状态；不要用本页的
+室内固定轨迹配置直接下田。
+
 本测试使用 3 × 6 块、每块 0.60 m 的地面，即 **1.8 m × 3.6 m** 的区域。
 默认轨迹以小车收到第一帧 `/odometry/filtered` 时的位姿为起点，因此不需要把
 odom 数值清零。将车放在区域短边中央，车头对准 3.6 m 长边；车的实际外廓应在

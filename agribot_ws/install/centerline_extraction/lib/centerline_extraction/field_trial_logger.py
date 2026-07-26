@@ -1,0 +1,1 @@
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/scripts/field_trial_logger.py

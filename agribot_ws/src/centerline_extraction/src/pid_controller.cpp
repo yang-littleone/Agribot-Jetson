@@ -41,6 +41,10 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
         "/reacquire_reference_path", 10);
     navigation_mode_pub_ = this->create_publisher<std_msgs::msg::String>(
         "/navigation_mode", 10);
+    control_state_pub_ = this->create_publisher<std_msgs::msg::String>(
+        "/navigation_safety_state", 10);
+    quality_factor_pub_ = this->create_publisher<std_msgs::msg::Float32>(
+        "/control_quality_factor", 10);
 
     // 声明并初始化参数
     this->declare_parameter("target_distance", 0.4);   // 目标跟随距离（米）
@@ -59,7 +63,13 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     this->declare_parameter("safety_margin_mid", 0.10);
     this->declare_parameter("safety_margin_stop", 0.05);
     this->declare_parameter("max_low_confidence_frames", 10);
+    this->declare_parameter("max_low_confidence_duration", 0.50);
     this->declare_parameter("use_quality_aware_control", true);
+    this->declare_parameter("require_quality_metrics", false);
+    this->declare_parameter("centerline_timeout", 0.50);
+    this->declare_parameter("quality_timeout", 0.50);
+    this->declare_parameter("max_row_follow_distance", 0.0);
+    this->declare_parameter("max_row_follow_time", 0.0);
     this->declare_parameter("enable_headland_turn", false);
     this->declare_parameter("headland_min_follow_distance", 1.5);
     this->declare_parameter("headland_row_spacing", 1.00); // 行间距，默认1.00米
@@ -109,6 +119,7 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     has_last_valid_center_line_ = false;
     use_recovery_path_ = false;
     low_confidence_count_ = 0;
+    low_confidence_active_ = false;
     corridor_confidence_ = 1.0;
     corridor_safety_margin_ = safety_margin_high_;
     has_corridor_confidence_ = false;
@@ -129,6 +140,20 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     has_measured_reacquire_path_ = false;
     reacquire_failed_ = false;
     reacquire_start_time_ = this->now();
+    last_centerline_time_ = this->now();
+    last_confidence_time_ = this->now();
+    last_safety_margin_time_ = this->now();
+    low_confidence_start_time_ = this->now();
+    trial_start_time_ = this->now();
+    has_centerline_timestamp_ = false;
+    has_confidence_timestamp_ = false;
+    has_safety_margin_timestamp_ = false;
+    trial_started_ = false;
+    trial_distance_ = 0.0;
+    trial_previous_x_ = 0.0;
+    trial_previous_y_ = 0.0;
+    has_trial_previous_odom_ = false;
+    last_control_state_.clear();
 
     // 初始化PID控制器状态变量
     lateral_integral_ = 0.0;
@@ -142,6 +167,8 @@ PIDController::PIDController() : Node("pid_controller"), has_center_line_(false)
     RCLCPP_INFO(this->get_logger(), "地头U形换行: %s",
                 enable_headland_turn_ ? "启用" : "关闭");
     publish_navigation_mode();
+    publish_control_state("WAITING_FOR_CENTERLINE");
+    publish_quality_factor(0.0);
 }
 
 void PIDController::get_parameters()
@@ -161,7 +188,18 @@ void PIDController::get_parameters()
     this->get_parameter("safety_margin_mid", safety_margin_mid_);
     this->get_parameter("safety_margin_stop", safety_margin_stop_);
     this->get_parameter("max_low_confidence_frames", max_low_confidence_frames_);
+    this->get_parameter("max_low_confidence_duration", max_low_confidence_duration_);
     this->get_parameter("use_quality_aware_control", use_quality_aware_control_);
+    this->get_parameter("require_quality_metrics", require_quality_metrics_);
+    this->get_parameter("centerline_timeout", centerline_timeout_);
+    this->get_parameter("quality_timeout", quality_timeout_);
+    this->get_parameter("max_row_follow_distance", max_row_follow_distance_);
+    this->get_parameter("max_row_follow_time", max_row_follow_time_);
+    max_low_confidence_duration_ = std::max(0.0, max_low_confidence_duration_);
+    centerline_timeout_ = std::max(0.05, centerline_timeout_);
+    quality_timeout_ = std::max(0.05, quality_timeout_);
+    max_row_follow_distance_ = std::max(0.0, max_row_follow_distance_);
+    max_row_follow_time_ = std::max(0.0, max_row_follow_time_);
     this->get_parameter("enable_headland_turn", enable_headland_turn_);
     this->get_parameter("headland_min_follow_distance", headland_min_follow_distance_);
     this->get_parameter("headland_row_spacing", headland_row_spacing_);
@@ -246,6 +284,8 @@ void PIDController::get_parameters()
 
 void PIDController::center_line_callback(const nav_msgs::msg::Path::SharedPtr msg)
 {
+    last_centerline_time_ = this->now();
+    has_centerline_timestamp_ = true;
     if (navigation_mode_ == NavigationMode::U_TURN)
     {
         return;
@@ -289,6 +329,14 @@ void PIDController::center_line_callback(const nav_msgs::msg::Path::SharedPtr ms
         center_line_ = *msg;
     }
     has_center_line_ = true;
+    if (!trial_started_ && navigation_mode_ == NavigationMode::ROW_FOLLOW)
+    {
+        trial_started_ = true;
+        trial_start_time_ = this->now();
+        trial_distance_ = 0.0;
+        has_trial_previous_odom_ = false;
+        RCLCPP_INFO(this->get_logger(), "田间试验计程开始");
+    }
     if (!use_quality_aware_control_ ||
         !has_corridor_confidence_ ||
         corridor_confidence_ >= confidence_low_threshold_)
@@ -304,12 +352,16 @@ void PIDController::confidence_callback(const std_msgs::msg::Float32::SharedPtr 
 {
     corridor_confidence_ = std::clamp(static_cast<double>(msg->data), 0.0, 1.0);
     has_corridor_confidence_ = true;
+    last_confidence_time_ = this->now();
+    has_confidence_timestamp_ = true;
 }
 
 void PIDController::safety_margin_callback(const std_msgs::msg::Float32::SharedPtr msg)
 {
     corridor_safety_margin_ = static_cast<double>(msg->data);
     has_corridor_safety_margin_ = true;
+    last_safety_margin_time_ = this->now();
+    has_safety_margin_timestamp_ = true;
 }
 
 void PIDController::headland_detected_callback(const std_msgs::msg::Bool::SharedPtr msg)
@@ -464,10 +516,79 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
         }
     }
 
+    if (trial_limit_reached())
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        const double elapsed = trial_started_
+                                   ? std::max(0.0, (this->now() - trial_start_time_).seconds())
+                                   : 0.0;
+        const bool distance_reached =
+            max_row_follow_distance_ > 0.0 && trial_distance_ >= max_row_follow_distance_;
+        publish_control_state(distance_reached ? "STOP_DISTANCE_LIMIT" : "STOP_TIME_LIMIT");
+        RCLCPP_INFO_THROTTLE(
+            this->get_logger(), *this->get_clock(), 1000,
+            "试验上限已到，停车: distance=%.2f/%.2f m, time=%.2f/%.2f s",
+            trial_distance_, max_row_follow_distance_, elapsed, max_row_follow_time_);
+        return;
+    }
+
+    if (!has_center_line_ || center_line_.poses.empty())
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("WAITING_FOR_CENTERLINE");
+        RCLCPP_WARN_THROTTLE(
+            this->get_logger(), *this->get_clock(), 1000,
+            "未收到有效中心线，发布停止指令");
+        return;
+    }
+
+    if (centerline_is_stale())
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("STOP_STALE_CENTERLINE");
+        RCLCPP_ERROR_THROTTLE(
+            this->get_logger(), *this->get_clock(), 1000,
+            "中心线超过 %.2f s 未更新，停车", centerline_timeout_);
+        return;
+    }
+
+    if (use_quality_aware_control_ && require_quality_metrics_ &&
+        (!has_corridor_confidence_ || !has_corridor_safety_margin_))
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("WAITING_FOR_QUALITY");
+        RCLCPP_WARN_THROTTLE(
+            this->get_logger(), *this->get_clock(), 1000,
+            "等待置信度和安全裕度，停车");
+        return;
+    }
+
+    if (quality_data_is_stale())
+    {
+        geometry_msgs::msg::Twist stop_cmd;
+        cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("STOP_STALE_QUALITY");
+        RCLCPP_ERROR_THROTTLE(
+            this->get_logger(), *this->get_clock(), 1000,
+            "质量指标超过 %.2f s 未更新，停车", quality_timeout_);
+        return;
+    }
+
     if (should_stop_for_safety())
     {
         geometry_msgs::msg::Twist stop_cmd;
         cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("STOP_SAFETY_MARGIN");
         RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
                              "安全裕度不足 %.3f m，停车", corridor_safety_margin_);
         return;
@@ -481,21 +602,32 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
     if (confidence_low)
     {
         low_confidence_count_++;
+        if (!low_confidence_active_)
+        {
+            low_confidence_active_ = true;
+            low_confidence_start_time_ = this->now();
+        }
+        const double low_confidence_duration =
+            std::max(0.0, (this->now() - low_confidence_start_time_).seconds());
         if (has_last_valid_center_line_ &&
-            low_confidence_count_ <= max_low_confidence_frames_ &&
+            low_confidence_duration <= max_low_confidence_duration_ &&
             corridor_confidence_ >= confidence_stop_threshold_)
         {
             center_line_ = last_valid_center_line_;
             has_center_line_ = true;
             use_recovery_path_ = true;
+            publish_control_state("RECOVERY_HISTORY_PATH");
             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
-                                 "低置信度 %.2f，使用历史中心线恢复跟踪 (%d/%d)",
-                                 corridor_confidence_, low_confidence_count_, max_low_confidence_frames_);
+                                 "低置信度 %.2f，使用历史中心线 %.2f/%.2f s",
+                                 corridor_confidence_, low_confidence_duration,
+                                 max_low_confidence_duration_);
         }
         else
         {
             geometry_msgs::msg::Twist stop_cmd;
             cmd_vel_pub_->publish(stop_cmd);
+            publish_quality_factor(0.0);
+            publish_control_state("STOP_LOW_CONFIDENCE");
             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
                                  "中心线置信度过低 %.2f，停车", corridor_confidence_);
             return;
@@ -504,12 +636,15 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
     else
     {
         low_confidence_count_ = 0;
+        low_confidence_active_ = false;
     }
 
     if (stop_at_path_end_ && is_path_end_reached())
     {
         geometry_msgs::msg::Twist stop_cmd;
         cmd_vel_pub_->publish(stop_cmd);
+        publish_quality_factor(0.0);
+        publish_control_state("STOP_PATH_END");
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
                              "已到达测试路径终点（容差 %.2f m），停车", path_end_tolerance_);
     }
@@ -517,6 +652,10 @@ void PIDController::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
     {
         auto cmd_vel = calculate_control_command();
         cmd_vel_pub_->publish(cmd_vel);
+        if (!use_recovery_path_)
+        {
+            publish_control_state("TRACKING");
+        }
     }
     else
     {
@@ -775,6 +914,44 @@ bool PIDController::should_stop_for_safety() const
            corridor_safety_margin_ < safety_margin_stop_;
 }
 
+bool PIDController::quality_data_is_stale() const
+{
+    if (!use_quality_aware_control_ || !require_quality_metrics_)
+    {
+        return false;
+    }
+    if (!has_confidence_timestamp_ || !has_safety_margin_timestamp_)
+    {
+        return true;
+    }
+    const rclcpp::Time now = this->now();
+    return (now - last_confidence_time_).seconds() > quality_timeout_ ||
+           (now - last_safety_margin_time_).seconds() > quality_timeout_;
+}
+
+bool PIDController::centerline_is_stale() const
+{
+    if (!has_centerline_timestamp_)
+    {
+        return true;
+    }
+    return (this->now() - last_centerline_time_).seconds() > centerline_timeout_;
+}
+
+bool PIDController::trial_limit_reached() const
+{
+    if (!trial_started_ || navigation_mode_ != NavigationMode::ROW_FOLLOW)
+    {
+        return false;
+    }
+    const bool distance_reached =
+        max_row_follow_distance_ > 0.0 && trial_distance_ >= max_row_follow_distance_;
+    const bool time_reached =
+        max_row_follow_time_ > 0.0 &&
+        (this->now() - trial_start_time_).seconds() >= max_row_follow_time_;
+    return distance_reached || time_reached;
+}
+
 double PIDController::normalize_angle(double angle) const
 {
     while (angle > M_PI)
@@ -814,6 +991,27 @@ void PIDController::update_travel_distance(double x, double y)
     }
     previous_odom_x_ = x;
     previous_odom_y_ = y;
+
+    if (trial_started_ && navigation_mode_ == NavigationMode::ROW_FOLLOW)
+    {
+        if (!has_trial_previous_odom_)
+        {
+            trial_previous_x_ = x;
+            trial_previous_y_ = y;
+            has_trial_previous_odom_ = true;
+        }
+        else
+        {
+            const double trial_step =
+                std::hypot(x - trial_previous_x_, y - trial_previous_y_);
+            if (trial_step < 1.0)
+            {
+                trial_distance_ += trial_step;
+            }
+            trial_previous_x_ = x;
+            trial_previous_y_ = y;
+        }
+    }
 }
 
 bool PIDController::should_start_headland_turn() const
@@ -1162,6 +1360,26 @@ void PIDController::publish_navigation_mode()
     navigation_mode_pub_->publish(msg);
 }
 
+void PIDController::publish_control_state(const std::string &state)
+{
+    const bool changed = state != last_control_state_;
+    std_msgs::msg::String msg;
+    msg.data = state;
+    control_state_pub_->publish(msg);
+    if (changed)
+    {
+        last_control_state_ = state;
+        RCLCPP_INFO(this->get_logger(), "控制安全状态: %s", state.c_str());
+    }
+}
+
+void PIDController::publish_quality_factor(double factor)
+{
+    std_msgs::msg::Float32 msg;
+    msg.data = static_cast<float>(std::clamp(factor, 0.0, 1.0));
+    quality_factor_pub_->publish(msg);
+}
+
 std::string PIDController::navigation_mode_name() const
 {
     switch (navigation_mode_)
@@ -1257,6 +1475,8 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
 
     const double confidence_factor = compute_confidence_factor();
     const double safety_factor = compute_safety_factor();
+    const double quality_factor = std::min(confidence_factor, safety_factor);
+    publish_quality_factor(quality_factor);
     if (safety_factor <= 0.0)
     {
         return cmd_vel;
@@ -1264,14 +1484,18 @@ geometry_msgs::msg::Twist PIDController::calculate_control_command()
 
     // 7. 组合控制输出
     double angular_vel = lateral_control + heading_control;
-    const double current_max_angular_speed = std::max(0.1, max_angular_speed_ * safety_factor);
+    const double current_max_angular_speed =
+        std::max(0.1, max_angular_speed_ * quality_factor);
     angular_vel = std::clamp(angular_vel, -current_max_angular_speed, current_max_angular_speed);
 
     // 8. 计算线速度：中心线质量、安全裕度和转向幅度共同调速
-    const double turning_factor = std::clamp(
-        1.0 - 0.5 * std::abs(angular_vel) / std::max(current_max_angular_speed, 1e-3),
-        0.2,
-        1.0);
+    const double turning_factor = use_quality_aware_control_
+                                      ? std::clamp(
+                                            1.0 - 0.5 * std::abs(angular_vel) /
+                                                      std::max(current_max_angular_speed, 1e-3),
+                                            0.2,
+                                            1.0)
+                                      : 1.0;
     double linear_speed = max_linear_speed_ * confidence_factor * safety_factor * turning_factor;
     double mode_speed_limit = max_linear_speed_;
     if (navigation_mode_ == NavigationMode::U_TURN)

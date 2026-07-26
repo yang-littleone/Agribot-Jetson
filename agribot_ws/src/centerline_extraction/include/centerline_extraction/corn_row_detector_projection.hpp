@@ -34,6 +34,7 @@ private:
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr right_boundary_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_width_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_safety_margin_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_error_budget_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_confidence_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr detection_diagnostics_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr headland_detected_pub_;
@@ -73,6 +74,17 @@ private:
     bool use_simple_inner_row_mode_ = true;
     bool use_row_yaw_estimation_ = true;
     bool use_parallel_row_model_ = true;
+    bool enable_innermost_row_extraction_ = true;
+    bool enable_robust_refinement_ = true;
+    bool enable_temporal_tracking_ = true;
+    bool enable_quality_evaluation_ = true;
+    float plant_safety_clearance_ = 0.10;
+    float quality_support_weight_ = 0.30;
+    float quality_observation_weight_ = 0.20;
+    float quality_width_weight_ = 0.20;
+    float quality_residual_weight_ = 0.15;
+    float quality_safety_weight_ = 0.15;
+    float quality_observation_fallback_score_ = 0.45;
     std::string base_frame_ = "base_link";
     std::string output_frame_ = "odom";
 
@@ -107,7 +119,15 @@ private:
     std::pair<float, float> tracked_right_line_{0.0f, 0.0f};
     float last_corridor_width_ = 0.0f;
     float last_corridor_safety_margin_ = 0.0f;
+    float last_corridor_error_budget_ = 0.0f;
     float last_corridor_confidence_ = 0.0f;
+    float last_raw_corridor_confidence_ = 0.0f;
+    float last_quality_support_score_ = 0.0f;
+    float last_quality_observation_score_ = 0.0f;
+    float last_quality_width_score_ = 0.0f;
+    float last_quality_residual_score_ = 0.0f;
+    float last_quality_safety_score_ = 0.0f;
+    float last_quality_observed_valid_ratio_ = 0.0f;
 
 public:
     CornRowDetectorProjection();
@@ -174,7 +194,11 @@ private:
         float &estimated_y,
         int &support_count);
 
-    void publish_corridor_metrics(float width, float safety_margin, float confidence);
+    void publish_corridor_metrics(
+        float width,
+        float safety_margin,
+        float error_budget,
+        float confidence);
     void publish_detection_diagnostics(
         bool valid,
         int left_points,
