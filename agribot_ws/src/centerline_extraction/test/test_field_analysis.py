@@ -8,6 +8,14 @@ SPEC = importlib.util.spec_from_file_location('field_analysis', MODULE_PATH)
 analysis = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(analysis)
 
+TRUTH_MODULE_PATH = (
+    Path(__file__).resolve().parents[1] /
+    'scripts' / 'prepare_ground_truth.py')
+TRUTH_SPEC = importlib.util.spec_from_file_location(
+    'prepare_ground_truth', TRUTH_MODULE_PATH)
+truth_converter = importlib.util.module_from_spec(TRUTH_SPEC)
+TRUTH_SPEC.loader.exec_module(truth_converter)
+
 
 def test_spearman_has_expected_direction():
     assert analysis.spearman([0.9, 0.7, 0.4, 0.2], [0.01, 0.03, 0.08, 0.15]) == -1.0
@@ -42,6 +50,41 @@ def test_error_metrics_include_tail_and_jitter():
     assert report['centerline_frame_jitter_p95_m'] == 0.03
 
 
+def test_detection_frame_metrics_uses_all_frames():
+    rows = [
+        {'time_s': 0.0, 'valid': 1.0, 'center_offset_m': 0.00},
+        {'time_s': 0.1, 'valid': 0.0, 'center_offset_m': 0.02},
+        {'time_s': 0.2, 'valid': 1.0, 'center_offset_m': -0.01},
+    ]
+    report = analysis.detection_frame_metrics(rows)
+    assert report['frame_samples'] == 3
+    assert report['valid_detection_rate'] == 2 / 3
+    assert report['centerline_frame_jitter_p95_m'] == 0.03
+
+
+def test_detection_jitter_does_not_cross_trial_files():
+    rows = [
+        {
+            '_source': 'run_a', 'time_s': 0.0,
+            'valid': 1.0, 'center_offset_m': 0.0,
+        },
+        {
+            '_source': 'run_a', 'time_s': 0.1,
+            'valid': 1.0, 'center_offset_m': 0.0,
+        },
+        {
+            '_source': 'run_b', 'time_s': 0.0,
+            'valid': 1.0, 'center_offset_m': 0.8,
+        },
+        {
+            '_source': 'run_b', 'time_s': 0.1,
+            'valid': 1.0, 'center_offset_m': 0.8,
+        },
+    ]
+    report = analysis.detection_frame_metrics(rows)
+    assert report['centerline_frame_jitter_p95_m'] == 0.0
+
+
 def test_single_weight_sensitivity_generates_all_variants():
     rows = []
     for index in range(6):
@@ -56,7 +99,7 @@ def test_single_weight_sensitivity_generates_all_variants():
             'width_weight': 0.20,
             'residual_weight': 0.15,
             'safety_weight': 0.15,
-            'lateral_error_m': index * 0.02,
+            'perception_lateral_error_m': index * 0.02,
         })
     report = analysis.sensitivity_report(rows)
     assert report['samples'] == 6
@@ -79,3 +122,52 @@ def test_manual_completion_annotation_is_counted():
     report = analysis.closed_loop_metrics(rows)
     assert report['completed_trials'] == 1
     assert report['completion_rate'] == 1.0
+
+
+def test_perception_error_uses_local_path_and_independent_truth():
+    row = {
+        'true_center_offset_m': 0.10,
+        'true_row_yaw_deg': 0.0,
+        'local_path_first_x_m': 0.0,
+        'local_path_first_y_m': 0.12,
+        'local_path_mid_x_m': 1.0,
+        'local_path_mid_y_m': 0.12,
+        'local_path_last_x_m': 2.0,
+        'local_path_last_y_m': 0.12,
+    }
+    result = analysis.add_perception_errors(row)
+    assert abs(result['perception_lateral_error_m'] - 0.02) < 1e-12
+    assert abs(result['perception_heading_error_deg']) < 1e-12
+
+
+def test_truth_alignment_uses_each_station_once():
+    trial_rows = [
+        {'time_s': 0.95, 'sample': 1},
+        {'time_s': 1.00, 'sample': 2},
+        {'time_s': 1.05, 'sample': 3},
+    ]
+    truth_rows = [{
+        'time_s': 1.00,
+        'lateral_error_m': 0.01,
+        'heading_error_deg': 1.0,
+    }]
+    aligned = analysis.align_truth(trial_rows, truth_rows, 0.08)
+    assert len(aligned) == 1
+    assert aligned[0]['sample'] == 2
+
+
+def test_cross_section_conversion_derives_local_row_truth():
+    converted = truth_converter.convert_row({
+        'trial_id': 'run_1',
+        'matched_time_s': '',
+        'matched_ros_time_s': '1002.0',
+        'lateral_error_m': '0.1',
+        'heading_error_deg': '0.0',
+        'plant_contact': '1',
+        'intervention': '0',
+        'completed': '1',
+    })
+    assert converted['true_center_offset_m'] == -0.1
+    assert converted['true_row_yaw_deg'] == -0.0
+    assert converted['plant_contact'] == 1
+    assert converted['time_s'] == 1002.0

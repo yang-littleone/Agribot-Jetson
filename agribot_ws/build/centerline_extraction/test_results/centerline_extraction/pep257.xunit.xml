@@ -4,7 +4,7 @@
   tests="13"
   errors="0"
   failures="7"
-  time="0.238"
+  time="0.198"
 >
   <testcase
     name="./launch/field_path_tracking.launch.py"

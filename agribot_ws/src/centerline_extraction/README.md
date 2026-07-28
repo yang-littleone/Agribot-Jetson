@@ -7,6 +7,29 @@
 这两个入口。该流程会保存全部质量分量、参数快照和安全停车状态；不要用本页的
 室内固定轨迹配置直接下田。
 
+面向小论文正式真实玉米地试验，使用包含无冠层上方设备真值方法、现场表格和
+数据验收清单的
+[`docs/real_corn_field_paper_experiment_guide.md`](docs/real_corn_field_paper_experiment_guide.md)。
+
+正式田间试验还应为每次运行单独记录原始 rosbag。基础系统启动后，在独立终端
+执行：
+
+```bash
+ros2 run centerline_extraction record_field_bag.sh TRIAL_ID
+```
+
+U盘已挂载、可写且剩余空间不少于1 GiB时，rosbag、CSV和参数快照优先保存到
+U盘的 `agribot_field_data/field_trial_bags/` 和
+`agribot_field_data/field_trial_results/`；否则自动使用当前工作空间内同名目录。
+U盘在录制中写满或异常断开后，rosbag会在工作空间建立带
+`continued_after_usb` 后缀的目录续录，CSV也会转到带
+`workspace_continued` 后缀的目录继续写入。每次启动时以终端打印的实际目录为准。
+
+可用环境变量：`FIELD_USB_MOUNT` 指定U盘挂载点，
+`FIELD_STORAGE_MIN_FREE_GIB` 修改U盘启用阈值，
+`FIELD_STORAGE_FORCE_WORKSPACE=1` 强制使用工作空间。launch命令显式传入
+`output_dir:=...` 时，CSV使用指定目录，但写入失败后仍回退工作空间。
+
 本测试使用 3 × 6 块、每块 0.60 m 的地面，即 **1.8 m × 3.6 m** 的区域。
 默认轨迹以小车收到第一帧 `/odometry/filtered` 时的位姿为起点，因此不需要把
 odom 数值清零。将车放在区域短边中央，车头对准 3.6 m 长边；车的实际外廓应在

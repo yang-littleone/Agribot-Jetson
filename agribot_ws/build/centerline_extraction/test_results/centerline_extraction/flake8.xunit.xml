@@ -4,7 +4,7 @@
   tests="5"
   errors="0"
   failures="5"
-  time="0.369"
+  time="0.392"
 >
   <testcase
     name="E501 (./scripts/pid_tracking_evaluator.py:121:100)"

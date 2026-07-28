@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""将记录器数据与视频/人工真值对齐，生成论文所需质量、风险和消融统计."""
+"""将记录器数据与独立田间真值对齐，生成论文所需质量、风险和消融统计."""
 
 import argparse
 import csv
@@ -85,14 +85,24 @@ def average_precision(labels, scores):
     return total / positives
 
 
-def error_metrics(rows):
+def normalize_angle_deg(angle):
+    while angle > 180.0:
+        angle -= 360.0
+    while angle < -180.0:
+        angle += 360.0
+    return angle
+
+
+def error_metrics(
+        rows, lateral_field='lateral_error_m',
+        heading_field='heading_error_deg'):
     lateral = [
-        abs(row['lateral_error_m']) for row in rows
-        if row.get('lateral_error_m') is not None
+        abs(row[lateral_field]) for row in rows
+        if row.get(lateral_field) is not None
     ]
     heading = [
-        abs(row['heading_error_deg']) for row in rows
-        if row.get('heading_error_deg') is not None
+        abs(row[heading_field]) for row in rows
+        if row.get(heading_field) is not None
     ]
     if not lateral:
         return {'samples': 0}
@@ -125,6 +135,37 @@ def error_metrics(rows):
     }
 
 
+def detection_frame_metrics(rows):
+    valid_flags = [
+        row['valid'] for row in rows if row.get('valid') is not None
+    ]
+    by_source = defaultdict(list)
+    for row in rows:
+        by_source[row.get('_source', 'single_run')].append(row)
+    jitter = []
+    for source_rows in by_source.values():
+        ordered_offsets = [
+            row['center_offset_m'] for row in sorted(
+                (item for item in source_rows
+                 if item.get('time_s') is not None),
+                key=lambda item: item['time_s'])
+            if row.get('center_offset_m') is not None
+        ]
+        jitter.extend(
+            abs(current - previous)
+            for previous, current in zip(
+                ordered_offsets, ordered_offsets[1:]))
+    return {
+        'frame_samples': len(rows),
+        'valid_detection_rate': (
+            sum(flag >= 0.5 for flag in valid_flags) / len(valid_flags)
+            if valid_flags else None),
+        'centerline_frame_jitter_mae_m': (
+            sum(jitter) / len(jitter) if jitter else None),
+        'centerline_frame_jitter_p95_m': percentile(jitter, 0.95),
+    }
+
+
 def read_csv(path):
     with Path(path).open(newline='', encoding='utf-8-sig') as stream:
         return list(csv.DictReader(stream))
@@ -148,6 +189,7 @@ def load_trials(paths):
             row = dict(raw)
             row['_source'] = str(path)
             row['time_s'] = finite(raw.get('time_s'))
+            row['ros_time_s'] = finite(raw.get('ros_time_s'))
             for name in (
                     'published_confidence', 'raw_confidence', 'support_score',
                     'observation_score', 'width_score', 'residual_score',
@@ -155,6 +197,10 @@ def load_trials(paths):
                     'support_weight', 'observation_weight', 'width_weight',
                     'residual_weight', 'safety_weight'):
                 row[name] = finite(raw.get(name))
+            for label in ('first', 'mid', 'last'):
+                for axis in ('x', 'y'):
+                    name = f'local_path_{label}_{axis}_m'
+                    row[name] = finite(raw.get(name))
             rows.append(row)
     return rows
 
@@ -169,8 +215,12 @@ def load_truth(path):
     for raw in rows:
         grouped[raw['trial_id']].append({
             'time_s': float(raw['time_s']),
+            'ros_time_s': finite(raw.get('ros_time_s')),
             'lateral_error_m': float(raw['lateral_error_m']),
             'heading_error_deg': float(raw['heading_error_deg']),
+            'true_center_offset_m': finite(
+                raw.get('true_center_offset_m')),
+            'true_row_yaw_deg': finite(raw.get('true_row_yaw_deg')),
             'plant_contact': int(raw.get('plant_contact', '0') or 0),
             'intervention': int(raw.get('intervention', '0') or 0),
             'completed': int(raw.get('completed', '0') or 0),
@@ -183,31 +233,81 @@ def load_truth(path):
 def align_truth(trial_rows, truth_rows, tolerance):
     aligned = []
     cursor = 0
-    for row in sorted(trial_rows, key=lambda item: item['time_s']):
-        time_s = row['time_s']
-        if time_s is None or not truth_rows:
-            continue
-        while (cursor + 1 < len(truth_rows) and
-               abs(truth_rows[cursor + 1]['time_s'] - time_s) <=
-               abs(truth_rows[cursor]['time_s'] - time_s)):
+    use_ros_time = (
+        truth_rows and
+        all(row.get('ros_time_s') is not None for row in truth_rows) and
+        any(row.get('ros_time_s') is not None for row in trial_rows))
+    time_field = 'ros_time_s' if use_ros_time else 'time_s'
+    ordered_trials = sorted(
+        (row for row in trial_rows if row.get(time_field) is not None),
+        key=lambda item: item[time_field])
+    for truth_row in truth_rows:
+        if not ordered_trials:
+            break
+        while (cursor + 1 < len(ordered_trials) and
+               abs(ordered_trials[cursor + 1][time_field] -
+                   truth_row[time_field]) <=
+               abs(ordered_trials[cursor][time_field] -
+                   truth_row[time_field])):
             cursor += 1
-        truth = truth_rows[cursor]
-        if abs(truth['time_s'] - time_s) <= tolerance:
-            aligned.append({**row, **truth})
+        trial_row = ordered_trials[cursor]
+        if abs(
+                trial_row[time_field] -
+                truth_row[time_field]) <= tolerance:
+            aligned.append({**trial_row, **truth_row})
     return aligned
 
 
-def confidence_report(rows, safe_threshold):
+def add_perception_errors(row):
+    output = dict(row)
+    true_offset = row.get('true_center_offset_m')
+    true_yaw_deg = row.get('true_row_yaw_deg')
+    points = [
+        (
+            row.get(f'local_path_{label}_x_m'),
+            row.get(f'local_path_{label}_y_m'))
+        for label in ('first', 'mid', 'last')
+    ]
+    points = [
+        (x, y) for x, y in points if x is not None and y is not None
+    ]
+    output['perception_lateral_error_m'] = None
+    output['perception_heading_error_deg'] = None
+    if true_offset is None or true_yaw_deg is None or len(points) < 2:
+        return output
+
+    mean_x = sum(point[0] for point in points) / len(points)
+    mean_y = sum(point[1] for point in points) / len(points)
+    denominator = sum((point[0] - mean_x) ** 2 for point in points)
+    if denominator <= 1e-12:
+        return output
+    slope = sum(
+        (x - mean_x) * (y - mean_y) for x, y in points) / denominator
+    predicted_offset = mean_y - slope * mean_x
+    predicted_yaw_deg = math.degrees(math.atan(slope))
+    true_yaw_rad = math.radians(true_yaw_deg)
+    output['perception_lateral_error_m'] = (
+        (predicted_offset - true_offset) * math.cos(true_yaw_rad))
+    output['perception_heading_error_deg'] = normalize_angle_deg(
+        predicted_yaw_deg - true_yaw_deg)
+    return output
+
+
+def confidence_report(
+        rows, safe_threshold,
+        lateral_field='perception_lateral_error_m',
+        heading_field='perception_heading_error_deg'):
     usable = [
         row for row in rows
         if row.get('raw_confidence') is not None and
-        row.get('lateral_error_m') is not None
+        row.get(lateral_field) is not None and
+        row.get(heading_field) is not None
     ]
     if not usable:
         return {'samples': 0}
     confidence = [row['raw_confidence'] for row in usable]
-    lateral = [abs(row['lateral_error_m']) for row in usable]
-    heading = [abs(row['heading_error_deg']) for row in usable]
+    lateral = [abs(row[lateral_field]) for row in usable]
+    heading = [abs(row[heading_field]) for row in usable]
     labels = [int(error > safe_threshold) for error in lateral]
     danger_scores = [1.0 - value for value in confidence]
     curve = []
@@ -265,12 +365,12 @@ def confidence_report(rows, safe_threshold):
     }
 
 
-def sensitivity_report(rows):
+def sensitivity_report(rows, error_field='perception_lateral_error_m'):
     usable = [
         row for row in rows
         if all(row.get(name) is not None for name in (
             'support_score', 'observation_score', 'width_score',
-            'residual_score', 'safety_score', 'lateral_error_m'))
+            'residual_score', 'safety_score', error_field))
     ]
     if not usable:
         return {'samples': 0}
@@ -285,7 +385,7 @@ def sensitivity_report(rows):
     base = (
         first_weights if all(weight is not None for weight in first_weights)
         else [0.30, 0.20, 0.20, 0.15, 0.15])
-    errors = [abs(row['lateral_error_m']) for row in usable]
+    errors = [abs(row[error_field]) for row in usable]
     result = {'samples': len(usable), 'variants': {}}
     for index, name in enumerate(names):
         for scale in (0.8, 1.2):
@@ -367,16 +467,18 @@ def main():
     truth = load_truth(args.ground_truth)
     grouped = defaultdict(list)
     for row in trials:
-        grouped[row['trial_id']].append(row)
+        grouped[(row['trial_id'], row['_source'])].append(row)
 
     aligned = []
-    missing_truth = []
-    for trial_id, trial_rows in grouped.items():
+    missing_truth = set()
+    for (trial_id, _source), trial_rows in grouped.items():
         if trial_id not in truth:
-            missing_truth.append(trial_id)
+            missing_truth.add(trial_id)
             continue
-        aligned.extend(align_truth(
-            trial_rows, truth[trial_id], args.time_tolerance))
+        aligned.extend(
+            add_perception_errors(row)
+            for row in align_truth(
+                trial_rows, truth[trial_id], args.time_tolerance))
 
     by_method = defaultdict(list)
     by_closed_loop_group = defaultdict(list)
@@ -391,17 +493,46 @@ def main():
             )
             by_closed_loop_group['|'.join(group)].append(row)
 
+    raw_by_method = defaultdict(list)
+    for row in trials:
+        if row.get('experiment_type') == 'perception_ablation':
+            raw_by_method[
+                row.get('perception_method') or 'unspecified'].append(row)
+
     full_method_rows = [
         row for row in aligned
-        if (row.get('perception_method') or 'full') == 'full'
+        if row.get('experiment_type') == 'perception_ablation' and
+        (row.get('perception_method') or 'full') == 'full'
     ]
+    if not full_method_rows:
+        full_method_rows = [
+            row for row in aligned
+            if row.get('experiment_type') == 'closed_loop' and
+            (row.get('perception_method') or 'full') == 'full'
+        ]
 
     report = {
         'input_files': [str(path) for path in trial_files],
         'aligned_samples': len(aligned),
         'trials_without_truth': sorted(missing_truth),
+        'metric_definitions': {
+            'perception_error': (
+                'local detected centerline versus independently measured '
+                'true_center_offset_m and true_row_yaw_deg'),
+            'closed_loop_error': (
+                'vehicle center trace versus independently measured crop-row '
+                'centerline: lateral_error_m and heading_error_deg'),
+            'one_aligned_sample_per_truth_station': True,
+        },
         'perception_ablation': {
-            method: error_metrics(rows) for method, rows in sorted(by_method.items())
+            method: {
+                **error_metrics(
+                    rows,
+                    lateral_field='perception_lateral_error_m',
+                    heading_field='perception_heading_error_deg'),
+                **detection_frame_metrics(raw_by_method.get(method, [])),
+            }
+            for method, rows in sorted(by_method.items())
         },
         'quality_validity': confidence_report(
             full_method_rows, args.safe_threshold),

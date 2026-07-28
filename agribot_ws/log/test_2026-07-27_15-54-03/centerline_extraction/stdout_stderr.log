@@ -1,0 +1,46 @@
+UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CTestConfiguration.ini
+Parse Config file:/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CTestConfiguration.ini
+   Site: wheeltec
+   Build name: (empty)
+ Add coverage exclude regular expressions.
+Create new tag: 20260727-0754 - Experimental
+UpdateCTestConfiguration  from :/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CTestConfiguration.ini
+Parse Config file:/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/CTestConfiguration.ini
+Test project /home/wheeltec/agribot/agribot_ws/build/centerline_extraction
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: field_analysis_test
+
+1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml" "--package-name" "centerline_extraction" "--output-file" "/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_pytest/field_analysis_test.txt" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/test/test_field_analysis.py" "-o" "cache_dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_pytest/field_analysis_test/.cache" "--junit-xml=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml" "--junit-prefix=centerline_extraction"
+1: Test timeout computed to be: 60
+1: -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction':
+1:  - /usr/bin/python3 -u -m pytest /home/wheeltec/agribot/agribot_ws/src/centerline_extraction/test/test_field_analysis.py -o cache_dir=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_pytest/field_analysis_test/.cache --junit-xml=/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml --junit-prefix=centerline_extraction
+1: ============================= test session starts ==============================
+1: platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+1: cachedir: build/centerline_extraction/ament_cmake_pytest/field_analysis_test/.cache
+1: rootdir: /home/wheeltec/agribot/agribot_ws
+1: plugins: ament-copyright-0.12.15, launch-testing-ros-0.19.13, ament-xmllint-0.12.15, launch-testing-1.0.14, ament-pep257-0.12.15, ament-flake8-0.12.15, ament-lint-0.12.15, cov-3.0.0, colcon-core-0.21.0
+1: collected 8 items
+1: 
+1: ../../src/centerline_extraction/test/test_field_analysis.py ........     [100%]
+1: 
+1: - generated xml file: /home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml -
+1: ============================== 8 passed in 0.04s ===============================
+1: -- run_test.py: return code 0
+1: -- run_test.py: verify result file '/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/test_results/centerline_extraction/field_analysis_test.xunit.xml'
+1/1 Test #1: field_analysis_test ..............   Passed    1.03 sec
+
+The following tests passed:
+	field_analysis_test
+
+100% tests passed, 0 tests failed out of 1
+
+Label Time Summary:
+pytest    =   1.03 sec*proc (1 test)
+
+Total Test time (real) =   1.03 sec

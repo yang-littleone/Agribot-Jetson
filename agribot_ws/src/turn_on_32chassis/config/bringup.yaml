@@ -30,6 +30,8 @@ turn_on_32chassis_node:
     odom_frame_id: odom             # 原始轮速里程计的父坐标系
     robot_frame_id: base_footprint  # 地面投影处的车体坐标系
     gyro_frame_id: imu_link         # 底盘板载IMU消息坐标系
+    # 收到过速度指令后，超过该时间未收到新cmd_vel就直接向STM32发送零速度；0表示关闭。
+    cmd_vel_timeout: 0.5
 
 yesense_pub:
   ros__parameters:

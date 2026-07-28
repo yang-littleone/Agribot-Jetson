@@ -116,6 +116,8 @@ install(PROGRAMS
   scripts/pid_tracking_evaluator.py
   scripts/field_trial_logger.py
   scripts/analyze_field_trials.py
+  scripts/prepare_ground_truth.py
+  scripts/record_field_bag.sh
   DESTINATION lib/${PROJECT_NAME}
 )
 

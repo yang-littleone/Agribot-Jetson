@@ -1,0 +1,4 @@
+3:flake8
+4:lint_cmake
+5:pep257
+6:uncrustify

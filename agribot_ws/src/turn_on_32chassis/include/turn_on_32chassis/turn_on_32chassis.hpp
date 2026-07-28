@@ -3,6 +3,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include <serial/serial.h>
+#include <chrono>
 #include <iostream>
 #include <string>
 
@@ -124,9 +125,15 @@ private:
     void Publish_Voltage();
 
     void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);
+    void enforce_cmd_vel_timeout();
+    bool send_stop_command();
     string port_name_ = "/dev/agribot_serial";
 
     int baud_rate_ = 115200;
+    double cmd_vel_timeout_ = 0.5;
+    std::chrono::steady_clock::time_point last_cmd_vel_time_;
+    bool has_received_cmd_vel_ = false;
+    bool watchdog_stop_sent_ = false;
 
     // Initialize the topic publisher //初始化话题发布者
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher;

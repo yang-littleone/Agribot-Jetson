@@ -4,7 +4,7 @@
   tests="10"
   failures="10"
   errors="0"
-  time="0.866"
+  time="0.753"
 >
   <testcase
     name="include/centerline_extraction/corn_row_detector_projection.hpp"
@@ -465,12 +465,12 @@
     name="include/centerline_extraction/pid_controller.hpp"
     classname="centerline_extraction.uncrustify"
   >
-      <failure message="Diff with 403 lines"><![CDATA[--- include/centerline_extraction/pid_controller.hpp
+      <failure message="Diff with 405 lines"><![CDATA[--- include/centerline_extraction/pid_controller.hpp
 +++ include/centerline_extraction/pid_controller.hpp.uncrustify
 @@ -17 +17 @@
 -    PIDController();
 +  PIDController();
-@@ -20,198 +20,199 @@
+@@ -20,199 +20,200 @@
 -    enum class NavigationMode
 -    {
 -        ROW_FOLLOW,
@@ -487,6 +487,7 @@
 -
 -    // 核心控制函数
 -    geometry_msgs::msg::PointStamped find_target_point();
+-    double compute_lateral_error_to_path() const;
 -    geometry_msgs::msg::Twist calculate_control_command();
 -    double limit_angular_command(
 -        double desired_angular_speed, double angular_speed_limit, double dt);
@@ -685,6 +686,7 @@
 +
 +  // 核心控制函数
 +  geometry_msgs::msg::PointStamped find_target_point();
++  double compute_lateral_error_to_path() const;
 +  geometry_msgs::msg::Twist calculate_control_command();
 +  double limit_angular_command(
 +    double desired_angular_speed, double angular_speed_limit, double dt);
@@ -959,7 +961,7 @@
     name="src/corn_row_detector_projection.cpp"
     classname="centerline_extraction.uncrustify"
   >
-      <failure message="Diff with 4187 lines"><![CDATA[--- src/corn_row_detector_projection.cpp
+      <failure message="Diff with 4189 lines"><![CDATA[--- src/corn_row_detector_projection.cpp
 +++ src/corn_row_detector_projection.cpp.uncrustify
 @@ -22,270 +22,263 @@
 -CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector_projection")
@@ -4313,7 +4315,7 @@
 +  msg.layout.dim[0].stride = msg.data.size();
 +  detection_diagnostics_pub_->publish(msg);
 +  publish_headland_detection(valid, left_points, right_points, path_points);
-@@ -1799,29 +1716,26 @@
+@@ -1799,30 +1716,27 @@
 -    bool valid,
 -    int left_points,
 -    int right_points,
@@ -4326,6 +4328,7 @@
 -        std::min(left_points, right_points) < headland_min_side_points_;
 -    const bool low_confidence =
 -        last_corridor_confidence_ < headland_low_confidence_threshold_;
+-    // 路径、单侧点数或置信度任一项退化，均视为地头候选。
 -    const bool candidate =
 -        enable_headland_detection_ &&
 -        (invalid_or_short_path || weak_side_support || low_confidence);
@@ -4355,6 +4358,7 @@
 +    std::min(left_points, right_points) < headland_min_side_points_;
 +  const bool low_confidence =
 +    last_corridor_confidence_ < headland_low_confidence_threshold_;
++  // 路径、单侧点数或置信度任一项退化，均视为地头候选。
 +  const bool candidate =
 +    enable_headland_detection_ &&
 +    (invalid_or_short_path || weak_side_support || low_confidence);
@@ -4369,7 +4373,7 @@
 +  msg.data = enable_headland_detection_ &&
 +    headland_candidate_count_ >= headland_candidate_frames_;
 +  headland_detected_pub_->publish(msg);
-@@ -1831,390 +1745,135 @@
+@@ -1832,390 +1746,135 @@
 -    PointCloudXYZPtr left_cloud,
 -    PointCloudXYZPtr right_cloud,
 -    const std::pair<float, float> &left_line,
@@ -4895,7 +4899,7 @@
 +  }
 +
 +  if (total_sections == 0) {
-@@ -2229,2 +1888,248 @@
+@@ -2230,2 +1889,248 @@
 -    publish_detection_diagnostics(false, 0, 0, 0.0f, 0.0f, {0.0f, 0.0f}, {0.0f, 0.0f}, 0);
 -}
 +    return transform_path_to_output_frame(center_base);
@@ -5390,7 +5394,7 @@
     name="src/pid_controller.cpp"
     classname="centerline_extraction.uncrustify"
   >
-      <failure message="Diff with 2942 lines"><![CDATA[--- src/pid_controller.cpp
+      <failure message="Diff with 3050 lines"><![CDATA[--- src/pid_controller.cpp
 +++ src/pid_controller.cpp.uncrustify
 @@ -8,119 +8,607 @@
 -PIDController::PIDController() : Node("pid_controller"), has_center_line_(false), first_run_(true)
@@ -6119,7 +6123,7 @@
 +      return;
 +    }
 +  } else {
-@@ -129,41 +617,158 @@
+@@ -129,41 +617,217 @@
 -    corridor_confidence_ = 1.0;
 -    corridor_safety_margin_ = safety_margin_high_;
 -    has_corridor_confidence_ = false;
@@ -6309,6 +6313,65 @@
 +  return target_point;
 +}
 +
++double PIDController::compute_lateral_error_to_path() const
++{
++  if (center_line_.poses.empty()) {
++    return 0.0;
++  }
++  if (center_line_.poses.size() == 1) {
++    const auto & point = center_line_.poses.front().pose.position;
++    const double dx = point.x - current_x_;
++    const double dy = point.y - current_y_;
++    return dx * -std::sin(target_path_heading_) +
++           dy * std::cos(target_path_heading_);
++  }
++
++  double best_distance_squared = std::numeric_limits<double>::infinity();
++  double best_lateral_error = 0.0;
++  for (size_t index = 0; index + 1 < center_line_.poses.size(); ++index) {
++    const auto & start = center_line_.poses[index].pose.position;
++    const auto & end = center_line_.poses[index + 1].pose.position;
++    const double segment_x = end.x - start.x;
++    const double segment_y = end.y - start.y;
++    const double segment_length_squared =
++      segment_x * segment_x + segment_y * segment_y;
++    if (segment_length_squared < 1e-12) {
++      continue;
++    }
++
++    const double projection_fraction = std::clamp(
++      ((current_x_ - start.x) * segment_x +
++      (current_y_ - start.y) * segment_y) /
++      segment_length_squared,
++      0.0,
++      1.0);
++    const double projection_x =
++      start.x + projection_fraction * segment_x;
++    const double projection_y =
++      start.y + projection_fraction * segment_y;
++    const double path_from_vehicle_x = projection_x - current_x_;
++    const double path_from_vehicle_y = projection_y - current_y_;
++    const double distance_squared =
++      path_from_vehicle_x * path_from_vehicle_x +
++      path_from_vehicle_y * path_from_vehicle_y;
++    if (distance_squared >= best_distance_squared) {
++      continue;
++    }
++
++    const double inverse_segment_length =
++      1.0 / std::sqrt(segment_length_squared);
++    const double left_normal_x =
++      -segment_y * inverse_segment_length;
++    const double left_normal_y =
++      segment_x * inverse_segment_length;
++    best_distance_squared = distance_squared;
++    best_lateral_error =
++      path_from_vehicle_x * left_normal_x +
++      path_from_vehicle_y * left_normal_y;
++  }
++  return best_lateral_error;
++}
++
 +double PIDController::limit_angular_command(
 +  double desired_angular_speed, double angular_speed_limit, double dt)
 +{
@@ -6319,7 +6382,7 @@
 +  }
 +
 +  if (!has_last_angular_command_) {
-@@ -172,74 +777,80 @@
+@@ -172,74 +836,80 @@
 -
 -    RCLCPP_INFO(this->get_logger(), "PID控制器初始化完成（目标距离: %.2f米）", target_distance_);
 -    RCLCPP_INFO(this->get_logger(), "置信度/安全裕度控制: %s",
@@ -6403,9 +6466,9 @@
 +      last_angular_command_ - max_delta,
 +      last_angular_command_ + max_delta);
 +  }
-+  if (std::abs(desired_angular_speed) < angular_command_deadband_) {
-+    desired_angular_speed = 0.0;
-+  }
++  // 死区只作用于 PID 的目标指令，不能再次作用于角加速度限幅后的中间值。
++  // 否则在高频控制下，当 max_angular_acceleration * dt 小于死区时，
++  // 每一帧刚建立的角速度都会被清零，车辆将永远无法开始转向。
 +  desired_angular_speed = std::clamp(
 +    desired_angular_speed, -angular_speed_limit, angular_speed_limit);
 +  last_angular_command_ = desired_angular_speed;
@@ -6474,7 +6537,7 @@
 +    if (!use_quality_aware_control_ ||
 +      !headland_turn_use_safety_margin_speed_ ||
 +      !has_corridor_safety_margin_)
-@@ -247,713 +858,10 @@
+@@ -247,776 +917,10 @@
 -        headland_row_spacing_ = 0.87;
 -    }
 -    if (headland_turn_radius_ <= 0.0)
@@ -7042,6 +7105,70 @@
 -    return target_point;
 -}
 -
+-double PIDController::compute_lateral_error_to_path() const
+-{
+-    if (center_line_.poses.empty())
+-    {
+-        return 0.0;
+-    }
+-    if (center_line_.poses.size() == 1)
+-    {
+-        const auto &point = center_line_.poses.front().pose.position;
+-        const double dx = point.x - current_x_;
+-        const double dy = point.y - current_y_;
+-        return dx * -std::sin(target_path_heading_) +
+-               dy * std::cos(target_path_heading_);
+-    }
+-
+-    double best_distance_squared = std::numeric_limits<double>::infinity();
+-    double best_lateral_error = 0.0;
+-    for (size_t index = 0; index + 1 < center_line_.poses.size(); ++index)
+-    {
+-        const auto &start = center_line_.poses[index].pose.position;
+-        const auto &end = center_line_.poses[index + 1].pose.position;
+-        const double segment_x = end.x - start.x;
+-        const double segment_y = end.y - start.y;
+-        const double segment_length_squared =
+-            segment_x * segment_x + segment_y * segment_y;
+-        if (segment_length_squared < 1e-12)
+-        {
+-            continue;
+-        }
+-
+-        const double projection_fraction = std::clamp(
+-            ((current_x_ - start.x) * segment_x +
+-             (current_y_ - start.y) * segment_y) /
+-                segment_length_squared,
+-            0.0,
+-            1.0);
+-        const double projection_x =
+-            start.x + projection_fraction * segment_x;
+-        const double projection_y =
+-            start.y + projection_fraction * segment_y;
+-        const double path_from_vehicle_x = projection_x - current_x_;
+-        const double path_from_vehicle_y = projection_y - current_y_;
+-        const double distance_squared =
+-            path_from_vehicle_x * path_from_vehicle_x +
+-            path_from_vehicle_y * path_from_vehicle_y;
+-        if (distance_squared >= best_distance_squared)
+-        {
+-            continue;
+-        }
+-
+-        const double inverse_segment_length =
+-            1.0 / std::sqrt(segment_length_squared);
+-        const double left_normal_x =
+-            -segment_y * inverse_segment_length;
+-        const double left_normal_y =
+-            segment_x * inverse_segment_length;
+-        best_distance_squared = distance_squared;
+-        best_lateral_error =
+-            path_from_vehicle_x * left_normal_x +
+-            path_from_vehicle_y * left_normal_y;
+-    }
+-    return best_lateral_error;
+-}
+-
 -double PIDController::limit_angular_command(
 -    double desired_angular_speed, double angular_speed_limit, double dt)
 -{
@@ -7066,10 +7193,9 @@
 -            last_angular_command_ - max_delta,
 -            last_angular_command_ + max_delta);
 -    }
--    if (std::abs(desired_angular_speed) < angular_command_deadband_)
--    {
--        desired_angular_speed = 0.0;
--    }
+-    // 死区只作用于 PID 的目标指令，不能再次作用于角加速度限幅后的中间值。
+-    // 否则在高频控制下，当 max_angular_acceleration * dt 小于死区时，
+-    // 每一帧刚建立的角速度都会被清零，车辆将永远无法开始转向。
 -    desired_angular_speed = std::clamp(
 -        desired_angular_speed, -angular_speed_limit, angular_speed_limit);
 -    last_angular_command_ = desired_angular_speed;
@@ -7198,7 +7324,7 @@
 +    }
 +    if (corridor_safety_margin_ < safety_margin_high_) {
 +      return 0.75;
-@@ -961,0 +870,24 @@
+@@ -1024,0 +929,24 @@
 +  }
 +
 +  if (navigation_mode_ == NavigationMode::NEXT_ROW_REACQUIRE) {
@@ -7223,7 +7349,7 @@
 +    return 0.6;
 +  }
 +  return 1.0;
-@@ -966,9 +898,9 @@
+@@ -1029,9 +957,9 @@
 -    if (navigation_mode_ == NavigationMode::U_TURN ||
 -        navigation_mode_ == NavigationMode::NEXT_ROW_REACQUIRE)
 -    {
@@ -7242,7 +7368,7 @@
 +  return use_quality_aware_control_ &&
 +         has_corridor_safety_margin_ &&
 +         corridor_safety_margin_ < safety_margin_stop_;
-@@ -979,11 +911,9 @@
+@@ -1042,11 +970,9 @@
 -    if (!use_quality_aware_control_ || !require_quality_metrics_)
 -    {
 -        return false;
@@ -7263,7 +7389,7 @@
 +  const rclcpp::Time now = this->now();
 +  return (now - last_confidence_time_).seconds() > quality_timeout_ ||
 +         (now - last_safety_margin_time_).seconds() > quality_timeout_;
-@@ -994,5 +924,4 @@
+@@ -1057,5 +983,4 @@
 -    if (!has_centerline_timestamp_)
 -    {
 -        return true;
@@ -7273,7 +7399,7 @@
 +    return true;
 +  }
 +  return (this->now() - last_centerline_time_).seconds() > centerline_timeout_;
-@@ -1003,10 +932,9 @@
+@@ -1066,10 +991,9 @@
 -    if (!trial_started_ || navigation_mode_ != NavigationMode::ROW_FOLLOW)
 -    {
 -        return false;
@@ -7293,7 +7419,7 @@
 +    max_row_follow_time_ > 0.0 &&
 +    (this->now() - trial_start_time_).seconds() >= max_row_follow_time_;
 +  return distance_reached || time_reached;
-@@ -1017,9 +945,7 @@
+@@ -1080,9 +1004,7 @@
 -    while (angle > M_PI)
 -    {
 -        angle -= 2.0 * M_PI;
@@ -7310,7 +7436,7 @@
 +    angle += 2.0 * M_PI;
 +  }
 +  return angle;
-@@ -1030,7 +956,7 @@
+@@ -1093,7 +1015,7 @@
 -    lateral_integral_ = 0.0;
 -    lateral_previous_error_ = 0.0;
 -    heading_integral_ = 0.0;
@@ -7325,7 +7451,7 @@
 +  last_angular_command_ = 0.0;
 +  has_last_angular_command_ = true;
 +  first_run_ = true;
-@@ -1041,13 +967 @@
+@@ -1104,13 +1026 @@
 -    if (!has_previous_odom_)
 -    {
 -        previous_odom_x_ = x;
@@ -7340,7 +7466,7 @@
 -        distance_since_last_turn_ += step;
 -    }
 +  if (!has_previous_odom_) {
-@@ -1056,2 +970,131 @@
+@@ -1119,2 +1029,131 @@
 -
 -    if (trial_started_ && navigation_mode_ == NavigationMode::ROW_FOLLOW)
 +    has_previous_odom_ = true;
@@ -7474,7 +7600,7 @@
 +  const double ly = std::cos(current_yaw_);
 +
 +  auto push_pose = [&path](double x, double y, double yaw)
-@@ -1059,137 +1102,9 @@
+@@ -1122,137 +1161,9 @@
 -        if (!has_trial_previous_odom_)
 -        {
 -            trial_previous_x_ = x;
@@ -7621,7 +7747,7 @@
 +      q.setRPY(0.0, 0.0, yaw);
 +      pose.pose.orientation = tf2::toMsg(q);
 +      path.poses.push_back(pose);
-@@ -1198,75 +1113,67 @@
+@@ -1261,75 +1172,67 @@
 -    for (double d = 0.0; d <= headland_exit_distance_ + 1e-6; d += step)
 -    {
 -        push_pose(current_x_ + tx * d, current_y_ + ty * d, current_yaw_);
@@ -7764,7 +7890,7 @@
 +  }
 +
 +  return path;
-@@ -1277,25 +1184,24 @@
+@@ -1340,25 +1243,24 @@
 -    nav_msgs::msg::Path path;
 -    path.header.frame_id = "odom";
 -    path.header.stamp = this->now();
@@ -7814,7 +7940,7 @@
 +  }
 +
 +  return path;
-@@ -1305,66 +1211,58 @@
+@@ -1368,66 +1270,58 @@
 -    const nav_msgs::msg::Path &predicted_path,
 -    const nav_msgs::msg::Path &measured_path,
 -    double measured_weight) const
@@ -7939,7 +8065,7 @@
 +  }
 +
 +  return blended_path;
-@@ -1375,15 +1273,13 @@
+@@ -1438,15 +1332,13 @@
 -    if (!has_corridor_confidence_)
 -    {
 -        return 0.0;
@@ -7968,10 +8094,10 @@
 +    (corridor_confidence_ - headland_reacquire_track_confidence_) / denominator,
 +    0.0,
 +    1.0);
-@@ -1394 +1290 @@
+@@ -1457 +1349 @@
 -    return std::hypot(current_x_ - reacquire_start_x_, current_y_ - reacquire_start_y_);
 +  return std::hypot(current_x_ - reacquire_start_x_, current_y_ - reacquire_start_y_);
-@@ -1399,17 +1295,15 @@
+@@ -1462,17 +1354,15 @@
 -    if (!headland_turn_path_.poses.empty())
 -    {
 -        headland_turn_path_.header.stamp = this->now();
@@ -8004,7 +8130,7 @@
 +  nav_msgs::msg::Path output_path = path;
 +  output_path.header.stamp = this->now();
 +  reacquire_reference_path_pub_->publish(output_path);
-@@ -1420,16 +1314,15 @@
+@@ -1483,16 +1373,15 @@
 -    std_msgs::msg::String msg;
 -    msg.data = navigation_mode_name();
 -    navigation_mode_pub_->publish(msg);
@@ -8036,24 +8162,24 @@
 +    last_control_state_ = state;
 +    RCLCPP_INFO(this->get_logger(), "控制安全状态: %s", state.c_str());
 +  }
-@@ -1440,3 +1333,3 @@
+@@ -1503,3 +1392,3 @@
 -    std_msgs::msg::Float32 msg;
 -    msg.data = static_cast<float>(std::clamp(factor, 0.0, 1.0));
 -    quality_factor_pub_->publish(msg);
 +  std_msgs::msg::Float32 msg;
 +  msg.data = static_cast<float>(std::clamp(factor, 0.0, 1.0));
 +  quality_factor_pub_->publish(msg);
-@@ -1447,2 +1340 @@
+@@ -1510,2 +1399 @@
 -    switch (navigation_mode_)
 -    {
 +  switch (navigation_mode_) {
-@@ -1450 +1342 @@
+@@ -1513 +1401 @@
 -        return "ROW_FOLLOW";
 +      return "ROW_FOLLOW";
-@@ -1452 +1344 @@
+@@ -1515 +1403 @@
 -        return "U_TURN";
 +      return "U_TURN";
-@@ -1454,25 +1346,25 @@
+@@ -1517,25 +1405,25 @@
 -        return "NEXT_ROW_REACQUIRE";
 -    }
 -    return "UNKNOWN";
@@ -8104,7 +8230,7 @@
 +  marker.color.a = 1.0;
 +  marker.lifetime = rclcpp::Duration::from_seconds(0.2);
 +  target_marker_pub_->publish(marker);
-@@ -1483,97 +1375,95 @@
+@@ -1546,90 +1434,88 @@
 -    geometry_msgs::msg::Twist cmd_vel;
 -
 -    // 调试模式：输出固定速度测试转向
@@ -8137,18 +8263,11 @@
 -    }
 -    last_time_ = current_time;
 -
--    // 3. 将目标点转换到小车坐标系
--    double dx = target_point_.point.x - current_x_;
--    double dy = target_point_.point.y - current_y_;
+-    // 3. 横向误差使用车辆到最近路径线段投影点的有符号垂距。
+-    //    不能使用车辆到前视点切线的距离，否则曲线路径会产生反向假误差。
+-    const double lateral_error = compute_lateral_error_to_path();
 -
--    // 4. 横向误差是车辆到目标点处中心线切线的有符号垂距。
--    //    路径位于车辆左侧时为正，与ROS逆时针角速度为正的约定一致。
--    const double path_left_normal_x = -std::sin(target_path_heading_);
--    const double path_left_normal_y = std::cos(target_path_heading_);
--    const double lateral_error =
--        dx * path_left_normal_x + dy * path_left_normal_y;
--
--    // 5. 航向误差必须来自中心线切线，而不是再次使用目标点方位角。
+-    // 4. 航向误差来自前视目标点处的中心线切线。
 -    const double heading_error =
 -        normalize_angle(target_path_heading_ - current_yaw_);
 -
@@ -8230,18 +8349,11 @@
 +  }
 +  last_time_ = current_time;
 +
-+  // 3. 将目标点转换到小车坐标系
-+  double dx = target_point_.point.x - current_x_;
-+  double dy = target_point_.point.y - current_y_;
++  // 3. 横向误差使用车辆到最近路径线段投影点的有符号垂距。
++  //    不能使用车辆到前视点切线的距离，否则曲线路径会产生反向假误差。
++  const double lateral_error = compute_lateral_error_to_path();
 +
-+  // 4. 横向误差是车辆到目标点处中心线切线的有符号垂距。
-+  //    路径位于车辆左侧时为正，与ROS逆时针角速度为正的约定一致。
-+  const double path_left_normal_x = -std::sin(target_path_heading_);
-+  const double path_left_normal_y = std::cos(target_path_heading_);
-+  const double lateral_error =
-+    dx * path_left_normal_x + dy * path_left_normal_y;
-+
-+  // 5. 航向误差必须来自中心线切线，而不是再次使用目标点方位角。
++  // 4. 航向误差来自前视目标点处的中心线切线。
 +  const double heading_error =
 +    normalize_angle(target_path_heading_ - current_yaw_);
 +
@@ -8297,7 +8409,7 @@
 +  if (linear_speed > 1e-6) {
 +    const double quality_min_speed = min_linear_speed_ * std::min(confidence_factor, safety_factor);
 +    linear_speed = std::max(linear_speed, quality_min_speed);
-@@ -1581,19 +1471,15 @@
+@@ -1637,19 +1523,15 @@
 -    if (linear_speed > 1e-6)
 -    {
 -        const double quality_min_speed = min_linear_speed_ * std::min(confidence_factor, safety_factor);

@@ -2,56 +2,60 @@
 # plant_safety_clearance；摸底试验完成后复制本文件并锁定，不得边测试边调参。
 corn_row_detector_projection:
   ros__parameters:
-    point_cloud_topic: /livox/lidar
-    base_frame: base_link
-    output_frame: odom
+    point_cloud_topic: /livox/lidar  # 输入三维点云话题
+    base_frame: base_link            # 点云裁剪、分行和拟合使用的车体坐标系
+    output_frame: odom               # 发布给控制器的中心线目标坐标系
 
-    z_min: 0.00
-    z_max: 0.80
-    voxel_size: 0.025
-    x_min: 0.10
-    x_max: 2.20
-    y_min: -0.60
-    y_max: 0.60
-    path_length: 2.00
-    path_step: 0.10
+    # base_frame下的点云感兴趣区域和降采样参数，单位均为m。
+    z_min: 0.00                      # 保留点云的最低高度
+    z_max: 0.20                      # 保留点云的最高高度
+    voxel_size: 0.025                # 体素降采样叶边长
+    x_min: 0.10                      # 车体前方ROI起点
+    x_max: 2.20                      # 车体前方ROI终点
+    y_min: -1.40                     # ROI右侧边界（车体y负方向）
+    y_max: 1.40                      # ROI左侧边界（车体y正方向）
+    path_length: 2.00                # 向前生成中心线和边界的长度
+    path_step: 0.10                  # 中心线、边界离散点间距
 
     # 示例起始值，不是实测值。安全阈值定义：
     # error_budget = row_width/2 - platform_width/2 - plant_safety_clearance
-    platform_width: 0.22
-    desired_row_separation: 0.60
-    plant_safety_clearance: 0.05
-    min_row_separation: 0.42
-    max_row_separation: 0.82
+    platform_width: 0.22             # 小车最大外廓宽度
+    desired_row_separation: 0.60     # 期望左右植株行间距
+    plant_safety_clearance: 0.05     # 车体外缘到植株的期望最小间隙
+    min_row_separation: 0.32         # 接受双行模型的最小行距
+    max_row_separation: 0.72         # 接受双行模型的最大行距
 
-    section_width: 0.25
-    min_section_points: 3
-    robust_fit_residual_threshold: 0.12
-    min_cluster_size: 10
-    innermost_bin_width: 0.20
-    innermost_row_band_width: 0.18
-    innermost_quantile: 0.20
-    min_innermost_seeds: 4
+    # 分段观测、内侧植株行提取和稳健拟合。
+    section_width: 0.25              # 每个路径采样点统计点云的前后窗口宽度
+    min_section_points: 3            # 单侧分段形成有效观测所需的最少点数
+    robust_fit_residual_threshold: 0.12  # 稳健直线拟合保留内点的最大横向残差
+    min_cluster_size: 10             # 单侧内行可用于中心线拟合的最少总点数
+    innermost_bin_width: 0.20        # 沿前进方向选取内侧种子的分箱宽度
+    innermost_row_band_width: 0.18   # 保留内侧拟合直线周围点的横向带宽
+    innermost_quantile: 0.20         # 每个分箱选内侧横向分位数，范围限制为0～0.5
+    min_innermost_seeds: 4           # 拟合一侧内行所需的最少分箱种子数
 
-    enable_innermost_row_extraction: true
-    enable_robust_refinement: true
-    use_parallel_row_model: true
-    enable_temporal_tracking: true
-    enable_quality_evaluation: true
-    use_row_yaw_estimation: true
-    line_filter_alpha: 0.25
-    max_line_lateral_jump: 0.18
-    max_row_width_jump: 0.20
-    max_row_yaw_jump: 0.35
-    max_line_lost_frames: 5
-    time_window_size: 3
+    # 方法开关用于正式方法和离线消融，正式试验开始后不得临时切换。
+    enable_innermost_row_extraction: true  # 是否先提取左右最近的内侧植株行
+    enable_robust_refinement: true         # 是否按残差剔除离群点后重新拟合
+    use_parallel_row_model: true           # 是否用共享斜率约束左右行为平行模型
+    enable_temporal_tracking: true         # 是否使用上一帧模型约束和短时保持
+    enable_quality_evaluation: true        # 是否计算并发布质量置信度；false时发布1
+    use_row_yaw_estimation: true           # 是否估计行方向并旋转到行坐标系处理
+    line_filter_alpha: 0.25                # 新测直线/行航向的滤波权重，越大响应越快
+    max_line_lateral_jump: 0.18            # 相邻帧单侧直线允许的最大横向跳变
+    max_row_width_jump: 0.20               # 相邻帧实际行距允许的最大跳变
+    max_row_yaw_jump: 0.35                 # 相邻帧行航向允许的最大跳变（rad）
+    max_line_lost_frames: 5                # 测量失效后继续保持历史双行模型的最大帧数
+    time_window_size: 3                    # 发布路径参与时序平均的历史帧窗口长度
 
-    quality_support_weight: 0.30
-    quality_observation_weight: 0.20
-    quality_width_weight: 0.20
-    quality_residual_weight: 0.15
-    quality_safety_weight: 0.15
-    quality_observation_fallback_score: 0.45
+    # 五个质量分量的融合权重；源码会将非负权重自动归一化。
+    quality_support_weight: 0.30           # 双侧分段点数支持度权重
+    quality_observation_weight: 0.20       # 双侧观测完整性权重
+    quality_width_weight: 0.20             # 实际行距与期望行距一致性权重
+    quality_residual_weight: 0.15          # 分段观测与拟合直线残差权重
+    quality_safety_weight: 0.15            # 车体安全裕度权重
+    quality_observation_fallback_score: 0.45  # 分段缺少完整实测而用拟合值时的观测得分
 
     # 地头检测：路径无效/过短、任一侧点数不足或置信度过低，
     # 任一条件连续约0.6 s成立后确认。
@@ -64,43 +68,43 @@ corn_row_detector_projection:
 pid_controller:
   ros__parameters:
     # 摸底起点：较长前视距离降低局部中心线小幅跳动对转向的放大。
-    target_distance: 0.3
+    target_distance: 0.20              # 行间跟踪时从最近路径点向前选取目标的距离（m）
     # 摸底试验确认0.10 m/s不足以克服实车低速死区，正式名义速度锁定为0.18 m/s。
     # field_path_tracking.launch.py 无参数启动时仍会安全覆盖为0.05 m/s。
-    max_linear_speed: 0.18
-    min_linear_speed: 0.03
-    max_angular_speed: 0.60
-    max_angular_acceleration: 0.80
-    angular_command_deadband: 0.02
-    lateral_kp: 1.05
-    lateral_ki: 0.00
-    lateral_kd: 0.00
-    heading_kp: 1.05
-    heading_ki: 0.00
-    heading_kd: 0.00
+    max_linear_speed: 0.18             # 正常直行名义线速度上限（m/s）
+    min_linear_speed: 0.03             # 非停车状态下经质量缩放后的基础最低线速度（m/s）
+    max_angular_speed: 0.60            # PID角速度绝对值上限（rad/s）
+    max_angular_acceleration: 0.80     # 相邻控制周期角速度变化率上限（rad/s²）
+    angular_command_deadband: 0.02     # 小于该值的PID目标角速度置零（rad/s）
+    lateral_kp: 1.00                   # 横向误差PID比例增益
+    lateral_ki: 0.00                   # 横向误差PID积分增益
+    lateral_kd: 0.10                   # 横向误差PID微分增益
+    heading_kp: 1.00                   # 航向误差PID比例增益
+    heading_ki: 0.00                   # 航向误差PID积分增益
+    heading_kd: 0.00                   # 航向误差PID微分增益
 
-    use_quality_aware_control: true
-    require_quality_metrics: true
-    confidence_high_threshold: 0.75
-    confidence_low_threshold: 0.45
-    confidence_stop_threshold: 0.25
-    confidence_min_speed_factor: 0.20
-    max_low_confidence_duration: 0.50
-    centerline_timeout: 0.50
-    quality_timeout: 0.50
+    use_quality_aware_control: true     # true让置信度和安全裕度参与调速、限转及停车
+    require_quality_metrics: true       # true时未收到置信度或安全裕度即保持停车
+    confidence_high_threshold: 0.75    # 高置信度参考阈值；当前PID流程读取但未直接使用
+    confidence_low_threshold: 0.45     # 低于该值进入历史中心线短时恢复逻辑
+    confidence_stop_threshold: 0.25    # 低于该值不允许历史中心线恢复，立即停车
+    confidence_min_speed_factor: 0.20  # 质量调速时置信度速度因子的下限
+    max_low_confidence_duration: 0.50  # 历史中心线允许维持的最长低置信度时间（s）
+    centerline_timeout: 0.50           # 中心线超过该时间未更新则停车（s）
+    quality_timeout: 0.50              # 质量指标超过该时间未更新则停车（s）
 
     # 下面三项须依据实测车宽、行距和安全间隙在摸底试验中锁定。
-    safety_margin_high: 0.15
-    safety_margin_mid: 0.125
-    safety_margin_stop: 0.10
+    safety_margin_high: 0.15           # 低于该裕度开始轻度降速和降低角速度上限（m）
+    safety_margin_mid: 0.125           # 低于该裕度进一步降速和降低角速度上限（m）
+    safety_margin_stop: 0.10           # 行间跟踪低于该裕度立即停车（m）
 
     # 0表示不按里程计累计距离自动停车；5 m场地终点由人工停车/急停控制。
-    max_row_follow_distance: 0.0
-    max_row_follow_time: 180.0
-    stop_at_path_end: false
+    max_row_follow_distance: 0.0       # 本次行间跟踪累计距离上限（m），0表示禁用
+    max_row_follow_time: 180.0         # 从首条有效中心线起计的运行时间上限（s），0禁用
+    stop_at_path_end: false            # 是否按局部中心线最后一点自动停车，田间应保持false
 
     # 地头U形换行。当前配置用于5 m、0.60 m行距模拟场地的单次左转摸底。
-    enable_headland_turn: true                 # 是否允许收到地头信号后自动掉头
+    enable_headland_turn: false                 # 是否允许收到地头信号后自动掉头
     headland_min_follow_distance: 1.50         # 每次掉头前必须完成的最小行间行驶距离（m）
     headland_row_spacing: 0.60                 # 相邻两行中心线间距（m）
     # <=0时源码自动采用 headland_row_spacing / 2，即当前为0.30 m。
@@ -132,11 +136,11 @@ pid_controller:
     headland_reacquire_prediction_length: 1.50 # 掉头后生成的预测中心线长度（m）
     headland_reacquire_frames: 5               # 连续满足高置信度的帧数达到该值才恢复行间跟踪
 
-    debug_mode: false
+    debug_mode: false                  # true时忽略PID并固定发布0.1 m/s直行，仅限架空调试
 
 field_trial_logger:
   ros__parameters:
-    sample_period: 0.05
-    controller_node: /pid_controller
-    detector_node: /corn_row_detector_projection
-    output_dir: field_trial_results
+    sample_period: 0.05                 # CSV记录周期（s），0.05对应约20 Hz
+    controller_node: /pid_controller    # 读取并保存控制器参数快照的节点名
+    detector_node: /corn_row_detector_projection  # 读取并保存感知参数快照的节点名
+    output_dir: field_trial_results      # 默认结果根目录；田间launch通常会自动覆盖为U盘

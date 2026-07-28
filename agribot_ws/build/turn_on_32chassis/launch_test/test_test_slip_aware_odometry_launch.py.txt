@@ -1,28 +1,28 @@
 -- run_test.py: invoking following command in '/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis':
  - /usr/bin/python3 -m launch_testing.launch_test /home/wheeltec/agribot/agribot_ws/src/turn_on_32chassis/test/test_slip_aware_odometry_launch.py --junit-xml=/home/wheeltec/agribot/agribot_ws/build/turn_on_32chassis/test_results/turn_on_32chassis/test_test_slip_aware_odometry_launch.py.xunit.xml --package-name=turn_on_32chassis
 
-[INFO] [launch]: All log files can be found below /home/wheeltec/.ros/log/2026-07-23-22-27-11-246319-wheeltec-53537
+[INFO] [launch]: All log files can be found below /home/wheeltec/.ros/log/2026-07-27-14-47-27-573695-wheeltec-16050
 [INFO] [launch]: Default logging verbosity is set to INFO
-test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry) ... [INFO] [slip_aware_odometry_node-1]: process started with pid [53545]
-[slip_aware_odometry_node-1] [INFO] [1784816831.396558527] [slip_aware_odometry_test]: Slip-aware odometry: wheel=/test/wheel lio=/test/lio_raw fused=/test/fused final=/test/final
-[slip_aware_odometry_node-1] [INFO] [1784816831.742777026] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
-[slip_aware_odometry_node-1] [INFO] [1784816833.469802081] [slip_aware_odometry_test]: Holding stationary odometry at x=0.310 y=0.000
-[slip_aware_odometry_node-1] [WARN] [1784816834.058654553] [slip_aware_odometry_test]: Ignoring out-of-order FAST-LIO odometry
-[slip_aware_odometry_node-1] [WARN] [1784816834.149234984] [slip_aware_odometry_test]: Ignoring invalid or degraded FAST-LIO odometry
-[slip_aware_odometry_node-1] [WARN] [1784816834.239419690] [slip_aware_odometry_test]: Wheel trust state changed 0 -> 1 (translation residual 0.101 m, yaw residual 0.000 rad)
-[slip_aware_odometry_node-1] [WARN] [1784816834.418998446] [slip_aware_odometry_test]: Wheel trust state changed 1 -> 2 (translation residual 0.050 m, yaw residual 0.000 rad)
-[slip_aware_odometry_node-1] [ERROR] [1784816835.516805954] [slip_aware_odometry_test]: FAST-LIO timed out after 0.318 s; freezing final odometry
-[slip_aware_odometry_node-1] [INFO] [1784816836.129028902] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
-[slip_aware_odometry_node-1] [INFO] [1784816836.129282384] [slip_aware_odometry_test]: FAST-LIO recovered; continuing from the frozen odom pose
+test_synthetic_slip_timeout_and_bad_lio (turn_on_32chassis.TestSlipAwareOdometry) ... [INFO] [slip_aware_odometry_node-1]: process started with pid [16076]
+[slip_aware_odometry_node-1] [INFO] [1785134847.785081973] [slip_aware_odometry_test]: Slip-aware odometry: wheel=/test/wheel lio=/test/lio_raw fused=/test/fused final=/test/final
+[slip_aware_odometry_node-1] [INFO] [1785134848.186120250] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
+[slip_aware_odometry_node-1] [INFO] [1785134849.918304131] [slip_aware_odometry_test]: Holding stationary odometry at x=0.310 y=0.000
+[slip_aware_odometry_node-1] [WARN] [1785134850.507172400] [slip_aware_odometry_test]: Ignoring out-of-order FAST-LIO odometry
+[slip_aware_odometry_node-1] [WARN] [1785134850.597692605] [slip_aware_odometry_test]: Ignoring invalid or degraded FAST-LIO odometry
+[slip_aware_odometry_node-1] [WARN] [1785134850.687592153] [slip_aware_odometry_test]: Wheel trust state changed 0 -> 1 (translation residual 0.101 m, yaw residual 0.000 rad)
+[slip_aware_odometry_node-1] [WARN] [1785134850.867995457] [slip_aware_odometry_test]: Wheel trust state changed 1 -> 2 (translation residual 0.050 m, yaw residual 0.000 rad)
+[slip_aware_odometry_node-1] [ERROR] [1785134851.965483921] [slip_aware_odometry_test]: FAST-LIO timed out after 0.318 s; freezing final odometry
+[slip_aware_odometry_node-1] [INFO] [1785134852.577651923] [slip_aware_odometry_test]: Aligned FAST-LIO local frame to odom
+[slip_aware_odometry_node-1] [INFO] [1785134852.577929353] [slip_aware_odometry_test]: FAST-LIO recovered; continuing from the frozen odom pose
 ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 4.914s
+Ran 1 test in 5.025s
 
 OK
 [INFO] [slip_aware_odometry_node-1]: sending signal 'SIGINT' to process[slip_aware_odometry_node-1]
-[slip_aware_odometry_node-1] [INFO] [1784816836.234078738] [rclcpp]: signal_handler(SIGINT/SIGTERM)
-[INFO] [slip_aware_odometry_node-1]: process has finished cleanly [pid 53545]
+[slip_aware_odometry_node-1] [INFO] [1785134852.682539548] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [slip_aware_odometry_node-1]: process has finished cleanly [pid 16076]
 
 ----------------------------------------------------------------------
 Ran 0 tests in 0.000s

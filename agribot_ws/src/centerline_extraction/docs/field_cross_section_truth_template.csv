@@ -1,0 +1,1 @@
+trial_id,station_id,station_m,left_row_x_m,left_row_y_m,right_row_x_m,right_row_y_m,trace_x_m,trace_y_m,d_left_m,d_right_m,row_spacing_m,lateral_error_m,vehicle_heading_deg,row_heading_deg,heading_error_deg,matched_time_s,matched_ros_time_s,true_center_offset_m,true_row_yaw_deg,plant_contact,intervention,completed,measurement_repeat,observer,valid,notes

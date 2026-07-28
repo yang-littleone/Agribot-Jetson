@@ -1,0 +1,1 @@
+/home/wheeltec/agribot/agribot_ws/src/centerline_extraction/scripts/prepare_ground_truth.py

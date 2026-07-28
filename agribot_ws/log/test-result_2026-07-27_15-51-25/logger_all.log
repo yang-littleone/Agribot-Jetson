@@ -1,0 +1,17 @@
+[0.211s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'test-result', '--verbose']
+[0.211s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test-result', test_result_base='build', all=False, result_files_only=False, verbose=True, delete=False, delete_yes=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff83e66c50>, verb_extension=<colcon_test_result.verb.test_result.TestResultVerb object at 0xffff83e659c0>, main=<bound method TestResultVerb.main of <colcon_test_result.verb.test_result.TestResultVerb object at 0xffff83e659c0>>)
+[0.229s] Level 1:colcon.colcon_test_result.test_result:get_test_results(ctest)
+[0.283s] Level 1:colcon.colcon_test_result.test_result:get_test_results(xunit)
+[0.301s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/centerline_extraction/Testing/20260726-1010/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.308s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/centerline_extraction/Testing/20260727-0312/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.314s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/centerline_extraction/Testing/20260727-0751/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.341s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1247/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.342s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1250/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.344s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1256/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.345s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1322/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.346s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1333/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.347s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1353/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.348s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1355/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.350s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260723-1427/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.350s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_32chassis/Testing/20260727-0647/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.354s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/turn_on_agribot/Testing/20260723-1256/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'

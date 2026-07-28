@@ -96,6 +96,8 @@ class FieldTrialLogger(Node):
         quality_aware = bool(self.declare_parameter('quality_aware', True).value)
         output_dir = Path(str(self.declare_parameter(
             'output_dir', 'field_trial_results').value)).expanduser()
+        fallback_output_dir = Path(str(self.declare_parameter(
+            'fallback_output_dir', 'field_trial_results').value)).expanduser()
         self.sample_period = max(
             0.01, float(self.declare_parameter('sample_period', 0.05).value))
         controller_node = str(self.declare_parameter(
@@ -107,10 +109,12 @@ class FieldTrialLogger(Node):
         safe_trial_id = ''.join(
             character if character.isalnum() or character in '-_' else '_'
             for character in trial_id)
-        self.run_dir = output_dir / f'{stamp}_{safe_trial_id}'
-        self.run_dir.mkdir(parents=True, exist_ok=False)
-        self.csv_file = (self.run_dir / 'timeseries.csv').open(
-            'w', newline='', encoding='utf-8')
+        self.run_basename = f'{stamp}_{safe_trial_id}'
+        self.requested_output_dir = output_dir
+        self.fallback_output_dir = fallback_output_dir
+        self.storage_fallback_active = False
+        self.csv_file = None
+        self.writer = None
 
         self.fieldnames = [
             'trial_id', 'experiment_type', 'scenario', 'perception_method',
@@ -122,6 +126,10 @@ class FieldTrialLogger(Node):
             'cmd_linear_mps', 'cmd_angular_rps', 'path_points',
             'path_first_x_m', 'path_first_y_m', 'path_mid_x_m', 'path_mid_y_m',
             'path_last_x_m', 'path_last_y_m', 'corridor_width_m',
+            'local_path_points',
+            'local_path_first_x_m', 'local_path_first_y_m',
+            'local_path_mid_x_m', 'local_path_mid_y_m',
+            'local_path_last_x_m', 'local_path_last_y_m',
             'safety_margin_m', 'error_budget_m', 'published_confidence',
             'control_quality_factor', 'headland_detected', 'navigation_mode',
             'navigation_safety_state',
@@ -133,10 +141,6 @@ class FieldTrialLogger(Node):
                 'error_budget_m', 'published_confidence',
             }
         ]
-        self.writer = csv.DictWriter(self.csv_file, fieldnames=self.fieldnames)
-        self.writer.writeheader()
-        self.csv_file.flush()
-
         self.identity = {
             'trial_id': trial_id,
             'experiment_type': experiment_type,
@@ -153,14 +157,33 @@ class FieldTrialLogger(Node):
                 'row_width/2 - platform_width/2 - plant_safety_clearance'),
             'data_file': 'timeseries.csv',
             'parameter_snapshots': {},
+            'requested_output_dir': str(output_dir),
+            'fallback_output_dir': str(fallback_output_dir),
+            'storage_failovers': [],
         }
-        self.metadata_path = self.run_dir / 'metadata.json'
+        try:
+            self.activate_storage(output_dir)
+        except OSError as error:
+            if output_dir.resolve() == fallback_output_dir.resolve():
+                raise
+            self.storage_fallback_active = True
+            self.metadata['storage_failovers'].append({
+                'at_local': datetime.now().isoformat(timespec='seconds'),
+                'from': str(output_dir),
+                'to': str(fallback_output_dir),
+                'reason': f'initial_open_failed: {error}',
+            })
+            self.get_logger().warn(
+                f'U盘记录目录不可用，改用工作空间: {error}')
+            self.activate_storage(
+                fallback_output_dir, suffix='_workspace_fallback')
         self.write_metadata()
 
         self.start_time = self.get_clock().now()
         self.latest_odom = None
         self.latest_cmd = Twist()
         self.latest_path = None
+        self.latest_local_path = None
         self.metrics = {
             'corridor_width_m': math.nan,
             'safety_margin_m': math.nan,
@@ -182,6 +205,9 @@ class FieldTrialLogger(Node):
         self.create_subscription(Twist, '/cmd_vel', self.cmd_callback, 20)
         self.create_subscription(
             PathMsg, '/corn_row_center_line', self.path_callback, 10)
+        self.create_subscription(
+            PathMsg, '/corn_row_center_line_viz',
+            self.local_path_callback, 10)
         self.create_subscription(
             Float32, '/corridor_width',
             lambda msg: self.set_metric('corridor_width_m', msg.data), 10)
@@ -226,10 +252,66 @@ class FieldTrialLogger(Node):
             detector_node, self.DETECTOR_PARAMETERS, 'detector')
         self.get_logger().info(f'田间试验记录目录: {self.run_dir}')
 
+    def activate_storage(self, root, suffix=''):
+        root = Path(root).expanduser()
+        candidate = root / f'{self.run_basename}{suffix}'
+        duplicate_index = 1
+        while candidate.exists():
+            candidate = root / (
+                f'{self.run_basename}{suffix}_{duplicate_index}')
+            duplicate_index += 1
+        candidate.mkdir(parents=True, exist_ok=False)
+        csv_file = (candidate / 'timeseries.csv').open(
+            'w', newline='', encoding='utf-8')
+        writer = csv.DictWriter(csv_file, fieldnames=self.fieldnames)
+        writer.writeheader()
+        csv_file.flush()
+        self.run_dir = candidate
+        self.csv_file = csv_file
+        self.writer = writer
+        self.metadata_path = candidate / 'metadata.json'
+        self.metadata['active_run_dir'] = str(candidate)
+
+    def switch_to_workspace_fallback(self, error):
+        if self.storage_fallback_active:
+            return False
+        if (self.run_dir.parent.resolve() ==
+                self.fallback_output_dir.resolve()):
+            self.storage_fallback_active = True
+            return False
+
+        previous_run_dir = self.run_dir
+        try:
+            self.csv_file.close()
+        except OSError:
+            pass
+        self.metadata['storage_failovers'].append({
+            'at_local': datetime.now().isoformat(timespec='seconds'),
+            'from': str(previous_run_dir),
+            'to': str(self.fallback_output_dir),
+            'reason': f'runtime_write_failed: {error}',
+        })
+        try:
+            self.activate_storage(
+                self.fallback_output_dir, suffix='_workspace_continued')
+        except OSError as fallback_error:
+            self.get_logger().error(
+                f'U盘写入失败且工作空间续写也失败: {fallback_error}')
+            return False
+        self.storage_fallback_active = True
+        self.get_logger().error(
+            f'U盘写入失败，CSV已转到工作空间续写: {self.run_dir}')
+        return True
+
     def write_metadata(self):
-        self.metadata_path.write_text(
-            json.dumps(self.metadata, ensure_ascii=False, indent=2),
-            encoding='utf-8')
+        payload = json.dumps(self.metadata, ensure_ascii=False, indent=2)
+        try:
+            self.metadata_path.write_text(payload, encoding='utf-8')
+        except OSError as error:
+            if not self.switch_to_workspace_fallback(error):
+                raise
+            payload = json.dumps(self.metadata, ensure_ascii=False, indent=2)
+            self.metadata_path.write_text(payload, encoding='utf-8')
 
     def request_parameter_snapshot(self, node_name, names, key):
         client = self.create_client(GetParameters, f'{node_name}/get_parameters')
@@ -272,6 +354,9 @@ class FieldTrialLogger(Node):
     def path_callback(self, msg):
         self.latest_path = msg
 
+    def local_path_callback(self, msg):
+        self.latest_local_path = msg
+
     def diagnostics_callback(self, msg):
         names = self.DIAGNOSTIC_NAMES
         if msg.layout.dim and msg.layout.dim[0].label:
@@ -291,26 +376,36 @@ class FieldTrialLogger(Node):
                 self.travel_distance += step
         self.previous_xy = xy
 
-    def path_values(self):
+    @staticmethod
+    def selected_path_values(path, prefix):
         values = {
-            'path_points': 0,
-            'path_first_x_m': math.nan, 'path_first_y_m': math.nan,
-            'path_mid_x_m': math.nan, 'path_mid_y_m': math.nan,
-            'path_last_x_m': math.nan, 'path_last_y_m': math.nan,
+            f'{prefix}_points': 0,
+            f'{prefix}_first_x_m': math.nan,
+            f'{prefix}_first_y_m': math.nan,
+            f'{prefix}_mid_x_m': math.nan,
+            f'{prefix}_mid_y_m': math.nan,
+            f'{prefix}_last_x_m': math.nan,
+            f'{prefix}_last_y_m': math.nan,
         }
-        if self.latest_path is None or not self.latest_path.poses:
+        if path is None or not path.poses:
             return values
-        poses = self.latest_path.poses
+        poses = path.poses
         selected = {
             'first': poses[0].pose.position,
             'mid': poses[len(poses) // 2].pose.position,
             'last': poses[-1].pose.position,
         }
-        values['path_points'] = len(poses)
+        values[f'{prefix}_points'] = len(poses)
         for label, point in selected.items():
-            values[f'path_{label}_x_m'] = point.x
-            values[f'path_{label}_y_m'] = point.y
+            values[f'{prefix}_{label}_x_m'] = point.x
+            values[f'{prefix}_{label}_y_m'] = point.y
         return values
+
+    def path_values(self):
+        return {
+            **self.selected_path_values(self.latest_path, 'path'),
+            **self.selected_path_values(self.latest_local_path, 'local_path'),
+        }
 
     def sample(self):
         if self.latest_odom is None:
@@ -355,18 +450,39 @@ class FieldTrialLogger(Node):
             'navigation_safety_state': self.navigation_safety_state,
             **self.diagnostics,
         }
-        self.writer.writerow({
+        output_row = {
             field: row.get(field, math.nan) for field in self.fieldnames
-        })
-        self.csv_file.flush()
+        }
+        try:
+            self.writer.writerow(output_row)
+            self.csv_file.flush()
+        except OSError as error:
+            if not self.switch_to_workspace_fallback(error):
+                raise
+            self.writer.writerow(output_row)
+            self.csv_file.flush()
+            self.write_metadata()
 
     def destroy_node(self):
-        if not self.csv_file.closed:
-            self.csv_file.flush()
-            self.csv_file.close()
+        try:
+            if self.csv_file is not None and not self.csv_file.closed:
+                self.csv_file.flush()
+                self.csv_file.close()
+        except OSError as error:
+            self.switch_to_workspace_fallback(error)
         self.metadata['ended_at_local'] = datetime.now().isoformat(timespec='seconds')
         self.metadata['logged_distance_m'] = self.travel_distance
-        self.write_metadata()
+        try:
+            self.write_metadata()
+        except OSError as error:
+            self.get_logger().error(f'最终参数快照写入失败: {error}')
+        finally:
+            try:
+                if self.csv_file is not None and not self.csv_file.closed:
+                    self.csv_file.flush()
+                    self.csv_file.close()
+            except OSError as error:
+                self.get_logger().error(f'最终CSV关闭失败: {error}')
         return super().destroy_node()
 
 

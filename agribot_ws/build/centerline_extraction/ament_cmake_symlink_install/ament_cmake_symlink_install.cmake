@@ -318,8 +318,8 @@ message(STATUS "Execute custom install script")
 # install("TARGETS" "cornfield_navigation_node" "corn_row_detector_projection" "test_path_publisher" "DESTINATION" "lib/centerline_extraction")
 include("/home/wheeltec/agribot/agribot_ws/build/centerline_extraction/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(PROGRAMS "scripts/pid_tracking_evaluator.py" "scripts/field_trial_logger.py" "scripts/analyze_field_trials.py" "DESTINATION" "lib/centerline_extraction")
-ament_cmake_symlink_install_programs("/home/wheeltec/agribot/agribot_ws/src/centerline_extraction" PROGRAMS "scripts/pid_tracking_evaluator.py" "scripts/field_trial_logger.py" "scripts/analyze_field_trials.py" "DESTINATION" "lib/centerline_extraction")
+# install(PROGRAMS "scripts/pid_tracking_evaluator.py" "scripts/field_trial_logger.py" "scripts/analyze_field_trials.py" "scripts/prepare_ground_truth.py" "scripts/record_field_bag.sh" "DESTINATION" "lib/centerline_extraction")
+ament_cmake_symlink_install_programs("/home/wheeltec/agribot/agribot_ws/src/centerline_extraction" PROGRAMS "scripts/pid_tracking_evaluator.py" "scripts/field_trial_logger.py" "scripts/analyze_field_trials.py" "scripts/prepare_ground_truth.py" "scripts/record_field_bag.sh" "DESTINATION" "lib/centerline_extraction")
 
 # install(DIRECTORY "include" "DESTINATION" "include/")
 ament_cmake_symlink_install_directory("/home/wheeltec/agribot/agribot_ws/src/centerline_extraction" DIRECTORY "include" "DESTINATION" "include/")

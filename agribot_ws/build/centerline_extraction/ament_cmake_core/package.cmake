@@ -5,7 +5,7 @@ set(centerline_extraction_BUILD_DEPENDS "rclcpp" "std_msgs" "sensor_msgs" "nav_m
 set(centerline_extraction_BUILDTOOL_DEPENDS "ament_cmake")
 set(centerline_extraction_BUILD_EXPORT_DEPENDS "rclcpp" "std_msgs" "sensor_msgs" "nav_msgs" "geometry_msgs" "rcl_interfaces" "visualization_msgs" "tf2" "tf2_ros" "tf2_geometry_msgs" "pcl_conversions" "PCL" "pcl_ros")
 set(centerline_extraction_BUILDTOOL_EXPORT_DEPENDS )
-set(centerline_extraction_EXEC_DEPENDS "turn_on_agribot" "rclcpp" "std_msgs" "sensor_msgs" "nav_msgs" "geometry_msgs" "rcl_interfaces" "visualization_msgs" "tf2" "tf2_ros" "tf2_geometry_msgs" "pcl_conversions" "PCL" "pcl_ros")
+set(centerline_extraction_EXEC_DEPENDS "turn_on_agribot" "rosbag2_transport" "rclcpp" "std_msgs" "sensor_msgs" "nav_msgs" "geometry_msgs" "rcl_interfaces" "visualization_msgs" "tf2" "tf2_ros" "tf2_geometry_msgs" "pcl_conversions" "PCL" "pcl_ros")
 set(centerline_extraction_TEST_DEPENDS "ament_lint_auto" "ament_lint_common" "ament_cmake_pytest")
 set(centerline_extraction_GROUP_DEPENDS )
 set(centerline_extraction_MEMBER_OF_GROUPS )

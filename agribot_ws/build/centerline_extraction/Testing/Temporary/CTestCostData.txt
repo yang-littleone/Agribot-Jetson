@@ -1,12 +1,8 @@
-field_analysis_test 1 1.43704
-cppcheck 1 0.43241
+field_analysis_test 4 0.257954
+cppcheck 3 0.13357
 flake8 0 0
 lint_cmake 0 0
 pep257 0 0
 uncrustify 0 0
-xmllint 1 2.58915
+xmllint 3 0.832999
 ---
-flake8
-lint_cmake
-pep257
-uncrustify

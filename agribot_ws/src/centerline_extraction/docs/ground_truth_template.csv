@@ -1,1 +1,1 @@
-trial_id,time_s,lateral_error_m,heading_error_deg,plant_contact,intervention,completed
+trial_id,time_s,ros_time_s,lateral_error_m,heading_error_deg,true_center_offset_m,true_row_yaw_deg,plant_contact,intervention,completed

@@ -44,7 +44,7 @@ ros2 launch centerline_extraction field_system_with_perception.launch.py
 ros2 launch centerline_extraction field_path_tracking.launch.py \
   trial_id:=complex_qaware_v018_r1 scenario:=complex \
   quality_aware:=true max_linear_speed:=0.18 max_distance:=0.0 \
-  repeat_index:=1 output_dir:=field_trial_results
+  repeat_index:=1
 ```
 
 `quality_aware:=false` 是固定名义速度 PID 对照；两组使用相同PID增益和终端1中
@@ -58,18 +58,19 @@ ros2 launch centerline_extraction field_path_tracking.launch.py \
 最终置信度、控制质量因子、独立横向/航向控制误差、里程计与中心线数据年龄及停车
 状态，不能只保留最终置信度。
 
-建议另行录制原始数据，至少包括：
+每次正式试验另开一个终端运行录包脚本，`trial_id` 必须与路径跟踪启动命令
+完全一致：
 
 ```bash
-ros2 bag record -o BAG_NAME \
-  /livox/lidar /odometry/filtered /tf /tf_static \
-  /corn_row_center_line /under_canopy_left_boundary /under_canopy_right_boundary \
-  /corridor_width /corridor_safety_margin /corridor_error_budget \
-  /corridor_confidence /centerline_detection_diagnostics \
-  /cmd_vel /control_quality_factor \
-  /controller_lateral_error /controller_heading_error \
-  /navigation_safety_state /navigation_mode
+ros2 run centerline_extraction record_field_bag.sh complex_qaware_v018_r1
 ```
+
+脚本将原始点云、IMU、轮速/LIO/融合里程计、中心线、质量分量、控制输出和地头
+状态优先保存到已挂载U盘的
+`agribot_field_data/field_trial_bags/日期时间_trial_id/`。U盘未插入、不可写或
+剩余空间小于1 GiB时自动使用工作空间的 `field_trial_bags/`；U盘在录制中写满或
+异常断开时，脚本在工作空间建立 `continued_after_usb` 目录续录。按 `Ctrl+C`
+正常结束后，对终端打印出的实际目录执行 `ros2 bag info "实际目录"` 检查消息数。
 
 成熟期玉米冠层下不要求外部视频覆盖全程。20～50 m精度试验段采用高于冠层的
 RTK天线、自动跟踪全站仪，或每隔2～5 m测量车辆中心轨迹相对双行中心的离散真值；
@@ -108,7 +109,7 @@ ros2 launch centerline_extraction perception_ablation.launch.py \
 正常行和独立复杂行（缺株/遮挡/杂草）各测试：
 
 - 固定名义速度 PID、质量约束 PID；
-- 正式名义速度统一为 0.18 m/s；
+- 核心矩阵最大线速度统一为 0.18 m/s；
 - 每一组合至少 5 次。
 
 摸底试验表明 0.10 m/s 不足以克服实车低速死区，车辆不能形成稳定连续运动，因此
@@ -116,6 +117,11 @@ ros2 launch centerline_extraction perception_ablation.launch.py \
 闭环试验量为 `2 行况 × 2 控制 × 1 速度 × 5 次 = 20 次`。交替或随机化运行顺序，
 避免电池电量、土壤变化和光照时间与某一控制方法绑定。试验段、起始位置、轮胎
 气压和载荷保持一致。
+
+如需要验证速度适应性，在核心20次之外增加0.40 m/s最大线速度的同结构矩阵，
+完整增强试验量为40次。质量约束会降低实际速度，因此论文必须把0.18/0.40 m/s
+称为最大速度设置，并报告实际 `/cmd_vel` 和里程计速度。完整现场步骤以
+`docs/real_corn_field_paper_experiment_guide.md` 为准。
 
 ## 5. 离线统计
 

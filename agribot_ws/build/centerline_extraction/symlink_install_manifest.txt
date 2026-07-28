@@ -4,6 +4,8 @@
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/pid_tracking_evaluator.py
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/field_trial_logger.py
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/analyze_field_trials.py
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/prepare_ground_truth.py
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/lib/centerline_extraction/record_field_bag.sh
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/corn_row_detector_projection.hpp
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/obstacle_detector.hpp
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/include//include/centerline_extraction/pid_controller.hpp
@@ -14,8 +16,13 @@
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/launch/pid_path_test.launch.py
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/config/field_row_follow.yaml
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/config/pid_path_test.yaml
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/field_accuracy_measurement_annotated.png
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/field_cross_section_truth_template.csv
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/field_event_log_template.csv
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/field_experiment_protocol.md
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/field_trial_register_template.csv
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/ground_truth_template.csv
+/home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/docs/real_corn_field_paper_experiment_guide.md
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/package_run_dependencies/centerline_extraction
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/ament_index/resource_index/parent_prefix_path/centerline_extraction
 /home/wheeltec/agribot/agribot_ws/install/centerline_extraction/share/centerline_extraction/environment/ament_prefix_path.sh

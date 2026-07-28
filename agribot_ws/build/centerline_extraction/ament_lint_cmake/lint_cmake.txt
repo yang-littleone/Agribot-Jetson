@@ -7,7 +7,7 @@ CMakeLists.txt:55: Line ends in whitespace [whitespace/eol]
 CMakeLists.txt:56: Line ends in whitespace [whitespace/eol]
 CMakeLists.txt:59: Line ends in whitespace [whitespace/eol]
 CMakeLists.txt:60: Line ends in whitespace [whitespace/eol]
-CMakeLists.txt:122: Line ends in whitespace [whitespace/eol]
+CMakeLists.txt:123: Line ends in whitespace [whitespace/eol]
 
 
 7 errors

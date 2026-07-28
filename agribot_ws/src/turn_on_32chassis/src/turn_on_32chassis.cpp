@@ -31,12 +31,19 @@ TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
     this->declare_parameter<std::string>("odom_frame_id", "odom");
     this->declare_parameter<std::string>("robot_frame_id", "base_footprint");
     this->declare_parameter<std::string>("gyro_frame_id", "imu_link");
+    this->declare_parameter<double>("cmd_vel_timeout", 0.5);
 
     this->get_parameter<std::string>("port_name", port_name_);
     this->get_parameter<int>("baud_rate", baud_rate_);
     this->get_parameter("odom_frame_id", odom_frame_id);   // The odometer topic corresponds to the parent TF coordinate //里程计话题对应父TF坐标
     this->get_parameter("robot_frame_id", robot_frame_id); // The odometer topic corresponds to sub-TF coordinates //里程计话题对应子TF坐标
     this->get_parameter("gyro_frame_id", gyro_frame_id);   // IMU topics correspond to TF coordinates //IMU话题对应TF坐标
+    this->get_parameter("cmd_vel_timeout", cmd_vel_timeout_);
+    if (cmd_vel_timeout_ < 0.0)
+    {
+        cmd_vel_timeout_ = 0.0;
+    }
+    last_cmd_vel_time_ = std::chrono::steady_clock::now();
 
     odom_publisher = create_publisher<nav_msgs::msg::Odometry>("wheel/odom", 2); // Create the raw wheel odometry publisher //创建原始轮式里程计发布者
     imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2); // Create an IMU topic publisher //创建IMU话题发布者
@@ -78,6 +85,17 @@ TurnOn32Chassis::TurnOn32Chassis() : rclcpp::Node("TurnOn32Chassis")
     else
     {
         RCLCPP_ERROR(this->get_logger(), "Failed to open serial port");
+    }
+
+    if (cmd_vel_timeout_ > 0.0)
+    {
+        RCLCPP_INFO(this->get_logger(),
+                    "cmd_vel watchdog enabled: %.2f s without a command sends zero velocity",
+                    cmd_vel_timeout_);
+    }
+    else
+    {
+        RCLCPP_WARN(this->get_logger(), "cmd_vel watchdog disabled");
     }
 }
 
@@ -268,6 +286,9 @@ void TurnOn32Chassis::Publish_ImuSensor()
 void TurnOn32Chassis::Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux)
 {
     short transition; // intermediate variable //中间变量
+    last_cmd_vel_time_ = std::chrono::steady_clock::now();
+    has_received_cmd_vel_ = true;
+    watchdog_stop_sent_ = false;
 
     send_data_.buffer[0] = FRAME_HEADER; // frame head 0x7B //帧头0X7B
     send_data_.buffer[1] = 0;            // set aside //预留位
@@ -306,6 +327,66 @@ void TurnOn32Chassis::Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPt
     catch (serial::IOException &e)
     {
         RCLCPP_ERROR(this->get_logger(), ("Unable to send data through serial port")); // If sending data fails, an error message is printed //如果发送数据失败，打印错误信息
+    }
+}
+
+bool TurnOn32Chassis::send_stop_command()
+{
+    if (!STM32_Serial.isOpen())
+    {
+        RCLCPP_ERROR_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+                              "Cannot send watchdog stop: serial port is not open");
+        return false;
+    }
+
+    uint8_t tx_data[11] = {
+        0x7B, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0X7D};
+    tx_data[9] = check_sum(tx_data, 9);
+
+    try
+    {
+        const size_t written = STM32_Serial.write(tx_data, sizeof(tx_data));
+        if (written != sizeof(tx_data))
+        {
+            RCLCPP_ERROR_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+                                  "Incomplete watchdog stop frame: wrote %zu/%zu bytes",
+                                  written, sizeof(tx_data));
+            return false;
+        }
+        return true;
+    }
+    catch (const serial::IOException &e)
+    {
+        RCLCPP_ERROR_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+                              "Unable to send watchdog stop through serial port: %s",
+                              e.what());
+        return false;
+    }
+}
+
+void TurnOn32Chassis::enforce_cmd_vel_timeout()
+{
+    if (cmd_vel_timeout_ <= 0.0 ||
+        !has_received_cmd_vel_ ||
+        watchdog_stop_sent_)
+    {
+        return;
+    }
+
+    const double elapsed = std::chrono::duration<double>(
+        std::chrono::steady_clock::now() - last_cmd_vel_time_).count();
+    if (elapsed < cmd_vel_timeout_)
+    {
+        return;
+    }
+
+    if (send_stop_command())
+    {
+        watchdog_stop_sent_ = true;
+        RCLCPP_WARN(this->get_logger(),
+                    "cmd_vel timed out for %.3f s (limit %.3f s); zero velocity sent to STM32",
+                    elapsed, cmd_vel_timeout_);
     }
 }
 
@@ -350,6 +431,7 @@ void TurnOn32Chassis::run()
             }
 
             rclcpp::spin_some(this->get_node_base_interface());
+            enforce_cmd_vel_timeout();
         }
         catch (const rclcpp::exceptions::RCLError &e)
         {
@@ -362,9 +444,9 @@ TurnOn32Chassis::~TurnOn32Chassis()
 {
     RCLCPP_INFO(this->get_logger(), "TurnOn32Chassis::~TurnOn32Chassis");
 
-    uint8_t tx_data[11] = {0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0X7D};
-    tx_data[9] = check_sum(tx_data, 9);
-    STM32_Serial.write(tx_data, sizeof(tx_data));
-
-    STM32_Serial.close();
+    send_stop_command();
+    if (STM32_Serial.isOpen())
+    {
+        STM32_Serial.close();
+    }
 }

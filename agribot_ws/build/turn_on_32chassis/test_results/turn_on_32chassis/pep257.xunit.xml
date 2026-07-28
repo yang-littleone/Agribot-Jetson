@@ -4,7 +4,7 @@
   tests="2"
   errors="0"
   failures="0"
-  time="0.086"
+  time="0.082"
 >
   <testcase
     name="./launch/turn_on_32chassis.launch.py"
