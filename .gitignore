@@ -1,0 +1,3 @@
+# Local field-test data. Keep these outside version control.
+agribot_ws/field_trial_bags/
+agribot_ws/field_trial_results/
