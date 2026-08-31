@@ -8,7 +8,7 @@ usage() {
   echo
   echo "U盘可写且剩余空间充足时，优先保存到U盘的 agribot_field_data/field_trial_bags/。"
   echo "未插U盘、空间不足或U盘录制异常时，保存/续录到工作空间的 field_trial_bags/。"
-  echo "按 Ctrl+C 正常结束录制并写入 rosbag 元数据。"
+  echo "按 Ctrl+C 正常结束录制、写入rosbag元数据并自动验收bag、CSV和参数快照。"
 }
 
 if [[ $# -ne 1 || "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
@@ -236,6 +236,12 @@ record_bag() {
     "${topics[@]}"
 }
 
+interrupted_by_user=0
+handle_interrupt() {
+  interrupted_by_user=1
+}
+trap handle_interrupt INT
+
 write_manifest() {
   local output_dir="$1"
   local backend="$2"
@@ -287,7 +293,35 @@ fi
 
 if [[ -d "$final_bag_dir" ]]; then
   echo "录制结束: $final_bag_dir"
-  echo "检查命令: ros2 bag info \"$final_bag_dir\""
+  trap - INT
+  validator="$workspace_root/src/centerline_extraction/scripts/validate_field_trial.py"
+  validation_status=1
+  if [[ -f "$validator" ]]; then
+    validation_args=(
+      --bag "$final_bag_dir"
+      --trial-id "$trial_id"
+      --workspace-root "$workspace_root"
+    )
+    if [[ -n "$usb_mount" ]]; then
+      validation_args+=(--usb-mount "$usb_mount")
+    fi
+    python3 "$validator" "${validation_args[@]}"
+    validation_status=$?
+    {
+      echo "validation_exit_status=$validation_status"
+      echo "validation_report=$final_bag_dir/field_validation_report.json"
+    } >> "$final_bag_dir/field_recording_manifest.txt" 2>/dev/null || true
+  else
+    echo "警告: 找不到自动验收程序: $validator" >&2
+    echo "人工检查命令: ros2 bag info \"$final_bag_dir\""
+  fi
 fi
 
+if [[ "${validation_status:-1}" -ne 0 ]]; then
+  exit "$validation_status"
+fi
+if [[ "$interrupted_by_user" -eq 1 &&
+      ( "$record_status" -eq 130 || "$record_status" -eq 143 ) ]]; then
+  exit 0
+fi
 exit "$record_status"

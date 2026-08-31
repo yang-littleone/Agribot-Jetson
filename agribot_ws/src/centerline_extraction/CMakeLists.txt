@@ -117,7 +117,13 @@ install(PROGRAMS
   scripts/field_trial_logger.py
   scripts/analyze_field_trials.py
   scripts/prepare_ground_truth.py
+  scripts/pointcloud_centerline_annotator.py
+  scripts/rviz_centerline_annotator.py
+  scripts/start_pointcloud_annotation.sh
+  scripts/start_rviz_centerline_annotation.sh
   scripts/record_field_bag.sh
+  scripts/validate_field_trial.py
+  scripts/benchmark_centerline_runtime.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -136,6 +142,8 @@ if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   find_package(ament_cmake_pytest REQUIRED)
   ament_add_pytest_test(field_analysis_test test/test_field_analysis.py)
+  ament_add_pytest_test(
+    pointcloud_annotator_test test/test_pointcloud_annotator.py)
   # the following line skips the linter which checks for copyrights
   # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)

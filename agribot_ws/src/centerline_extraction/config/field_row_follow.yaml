@@ -7,8 +7,8 @@ corn_row_detector_projection:
     output_frame: odom               # 发布给控制器的中心线目标坐标系
 
     # base_frame下的点云感兴趣区域和降采样参数，单位均为m。
-    z_min: 0.00                      # 保留点云的最低高度
-    z_max: 0.20                      # 保留点云的最高高度
+    z_min: 0.10                      # 去除包3中占主导的近地面扫描弧线
+    z_max: 0.50                      # 保留低位茎秆回波，避免高位叶片大量混入
     voxel_size: 0.025                # 体素降采样叶边长
     x_min: 0.10                      # 车体前方ROI起点
     x_max: 2.20                      # 车体前方ROI终点
@@ -20,10 +20,10 @@ corn_row_detector_projection:
     # 示例起始值，不是实测值。安全阈值定义：
     # error_budget = row_width/2 - platform_width/2 - plant_safety_clearance
     platform_width: 0.22             # 小车最大外廓宽度
-    desired_row_separation: 0.60     # 期望左右植株行间距
+    desired_row_separation: 0.62     # 包3现场卷尺测得的左右植株行近似行距
     plant_safety_clearance: 0.05     # 车体外缘到植株的期望最小间隙
-    min_row_separation: 0.32         # 接受双行模型的最小行距
-    max_row_separation: 0.72         # 接受双行模型的最大行距
+    min_row_separation: 0.50         # 0.62 m实测行距下拒绝把相邻植株误配成过窄通道
+    max_row_separation: 0.75         # 接受双行模型的最大行距
 
     # 分段观测、内侧植株行提取和稳健拟合。
     section_width: 0.25              # 每个路径采样点统计点云的前后窗口宽度
@@ -34,6 +34,18 @@ corn_row_detector_projection:
     innermost_row_band_width: 0.18   # 保留内侧拟合直线周围点的横向带宽
     innermost_quantile: 0.20         # 每个分箱选内侧横向分位数，范围限制为0～0.5
     min_innermost_seeds: 4           # 拟合一侧内行所需的最少分箱种子数
+    use_constrained_row_pair: true   # 用行距约束联合选择左右高密度带，避免内外行被地面/叶片粘连
+    row_histogram_bin_width: 0.025   # 双行搜索的横向直方图分辨率
+    row_peak_half_width: 0.055       # 双峰确定后保留的单侧横向半带宽
+    row_yaw_search_step: 0.01        # 联合搜索行方向的角度步长（rad）
+    row_pair_width_penalty: 80.0     # 候选行距偏离期望行距时的评分惩罚系数
+    max_row_alignment_yaw: 0.70      # 允许恢复的最大车体/作物行夹角，约40°，超过即拒绝识别
+    row_yaw_prior_tolerance: 0.15    # 已锁定全局行方向后，局部航向搜索的半窗口（rad）
+    row_coverage_bin_width: 0.25     # 沿前进方向评价植株行连续覆盖的分箱宽度
+    row_coverage_min_points: 3       # 一个纵向分箱被视为有效支撑所需的最少点数
+    row_min_coverage_ratio: 0.35     # 单侧植株行最少有效纵向分箱比例
+    row_min_longitudinal_span: 1.00  # 单侧候选至少覆盖的前向长度，抑制两株横向误配
+    row_coverage_score_weight: 50.0  # 候选评分中纵向覆盖率的奖励权重
 
     # 方法开关用于正式方法和离线消融，正式试验开始后不得临时切换。
     enable_innermost_row_extraction: true  # 是否先提取左右最近的内侧植株行

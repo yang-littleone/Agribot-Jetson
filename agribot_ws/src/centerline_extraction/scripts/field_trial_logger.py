@@ -53,7 +53,8 @@ class FieldTrialLogger(Node):
         'observed_valid_ratio', 'raw_confidence', 'error_budget_m',
         'support_weight', 'observation_weight', 'width_weight',
         'residual_weight', 'safety_weight', 'innermost_enabled', 'robust_enabled',
-        'temporal_enabled', 'parallel_enabled',
+        'temporal_enabled', 'parallel_enabled', 'left_longitudinal_coverage',
+        'right_longitudinal_coverage',
     )
     CONTROLLER_PARAMETERS = (
         'target_distance', 'max_linear_speed', 'min_linear_speed',

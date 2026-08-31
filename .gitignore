@@ -1,3 +1,10 @@
 # Local field-test data. Keep these outside version control.
 agribot_ws/field_trial_bags/
 agribot_ws/field_trial_results/
+agribot_ws/field_ground_truth
+*.db3
+*.db3.zstd
+agribot_ws/h30_test_01_static_fastlio/
+agribot_ws/h30_test_01_static/
+agribot_ws/field_trial_bags/
+__pycache__/

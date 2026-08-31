@@ -9,6 +9,7 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Transform.h>
 #include <cmath>
+#include <chrono>
 #include <numeric>
 #include <vector>
 #include <algorithm>
@@ -18,6 +19,56 @@
 // define point cloud type
 using PointCloudXYZ = pcl::PointCloud<pcl::PointXYZ>;
 using PointCloudXYZPtr = pcl::PointCloud<pcl::PointXYZ>::Ptr;
+
+namespace
+{
+class PointCloudCallbackTimer
+{
+public:
+    PointCloudCallbackTimer(
+        bool enabled,
+        const builtin_interfaces::msg::Time &input_stamp,
+        const rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr &publisher)
+        : enabled_(enabled), input_stamp_(input_stamp), publisher_(publisher),
+          start_(std::chrono::steady_clock::now())
+    {
+    }
+
+    ~PointCloudCallbackTimer()
+    {
+        if (!enabled_ || !publisher_)
+        {
+            return;
+        }
+        const auto end = std::chrono::steady_clock::now();
+        const double start_seconds =
+            std::chrono::duration<double>(start_.time_since_epoch()).count();
+        const double end_seconds =
+            std::chrono::duration<double>(end.time_since_epoch()).count();
+
+        std_msgs::msg::Float64MultiArray metrics;
+        metrics.layout.dim.resize(1);
+        metrics.layout.dim[0].label =
+            "input_stamp_sec,input_stamp_nanosec,callback_start_steady_s,"
+            "callback_end_steady_s,callback_duration_ms";
+        metrics.data = {
+            static_cast<double>(input_stamp_.sec),
+            static_cast<double>(input_stamp_.nanosec),
+            start_seconds,
+            end_seconds,
+            (end_seconds - start_seconds) * 1000.0};
+        metrics.layout.dim[0].size = metrics.data.size();
+        metrics.layout.dim[0].stride = metrics.data.size();
+        publisher_->publish(metrics);
+    }
+
+private:
+    bool enabled_;
+    builtin_interfaces::msg::Time input_stamp_;
+    rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr publisher_;
+    std::chrono::steady_clock::time_point start_;
+};
+}  // namespace
 
 CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector_projection")
 {
@@ -41,6 +92,7 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     corridor_error_budget_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_error_budget", 10);
     corridor_confidence_pub_ = this->create_publisher<std_msgs::msg::Float32>("corridor_confidence", 10);
     detection_diagnostics_pub_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("centerline_detection_diagnostics", 10);
+    performance_metrics_pub_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("centerline_performance", 10);
     headland_detected_pub_ = this->create_publisher<std_msgs::msg::Bool>("headland_detected", 10);
 
     tf_buffer_ = std::make_shared<tf2_ros::Buffer>(this->get_clock());
@@ -79,6 +131,17 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->declare_parameter<int>("max_line_lost_frames", 30);
     this->declare_parameter<float>("line_fit_x_min", 0.20);
     this->declare_parameter<bool>("use_simple_inner_row_mode", true);
+    this->declare_parameter<bool>("use_constrained_row_pair", false);
+    this->declare_parameter<float>("row_histogram_bin_width", 0.025);
+    this->declare_parameter<float>("row_peak_half_width", 0.055);
+    this->declare_parameter<float>("row_yaw_search_step", 0.01);
+    this->declare_parameter<float>("row_pair_width_penalty", 80.0);
+    this->declare_parameter<float>("row_yaw_prior_tolerance", 0.15);
+    this->declare_parameter<float>("row_coverage_bin_width", 0.25);
+    this->declare_parameter<int>("row_coverage_min_points", 3);
+    this->declare_parameter<float>("row_min_coverage_ratio", 0.35);
+    this->declare_parameter<float>("row_min_longitudinal_span", 1.0);
+    this->declare_parameter<float>("row_coverage_score_weight", 50.0);
     this->declare_parameter<bool>("use_row_yaw_estimation", true);
     this->declare_parameter<bool>("use_parallel_row_model", true);
     this->declare_parameter<bool>("enable_innermost_row_extraction", true);
@@ -106,6 +169,7 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->declare_parameter<int>("headland_min_side_points", 80);
     this->declare_parameter<int>("headland_min_path_points", 5);
     this->declare_parameter<int>("headland_candidate_frames", 6);
+    this->declare_parameter<bool>("enable_performance_metrics", false);
 
     // get parameters
     this->get_parameter("z_min", z_min_);
@@ -140,6 +204,17 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->get_parameter("max_line_lost_frames", max_line_lost_frames_);
     this->get_parameter("line_fit_x_min", line_fit_x_min_);
     this->get_parameter("use_simple_inner_row_mode", use_simple_inner_row_mode_);
+    this->get_parameter("use_constrained_row_pair", use_constrained_row_pair_);
+    this->get_parameter("row_histogram_bin_width", row_histogram_bin_width_);
+    this->get_parameter("row_peak_half_width", row_peak_half_width_);
+    this->get_parameter("row_yaw_search_step", row_yaw_search_step_);
+    this->get_parameter("row_pair_width_penalty", row_pair_width_penalty_);
+    this->get_parameter("row_yaw_prior_tolerance", row_yaw_prior_tolerance_);
+    this->get_parameter("row_coverage_bin_width", row_coverage_bin_width_);
+    this->get_parameter("row_coverage_min_points", row_coverage_min_points_);
+    this->get_parameter("row_min_coverage_ratio", row_min_coverage_ratio_);
+    this->get_parameter("row_min_longitudinal_span", row_min_longitudinal_span_);
+    this->get_parameter("row_coverage_score_weight", row_coverage_score_weight_);
     this->get_parameter("use_row_yaw_estimation", use_row_yaw_estimation_);
     this->get_parameter("use_parallel_row_model", use_parallel_row_model_);
     this->get_parameter("enable_innermost_row_extraction", enable_innermost_row_extraction_);
@@ -167,6 +242,7 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     this->get_parameter("headland_min_side_points", headland_min_side_points_);
     this->get_parameter("headland_min_path_points", headland_min_path_points_);
     this->get_parameter("headland_candidate_frames", headland_candidate_frames_);
+    this->get_parameter("enable_performance_metrics", enable_performance_metrics_);
 
     quality_support_weight_ = std::max(0.0f, quality_support_weight_);
     quality_observation_weight_ = std::max(0.0f, quality_observation_weight_);
@@ -276,6 +352,16 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
     {
         line_fit_x_min_ = 0.0f;
     }
+    row_histogram_bin_width_ = std::max(row_histogram_bin_width_, 0.005f);
+    row_peak_half_width_ = std::max(row_peak_half_width_, row_histogram_bin_width_);
+    row_yaw_search_step_ = std::max(row_yaw_search_step_, 0.002f);
+    row_pair_width_penalty_ = std::max(row_pair_width_penalty_, 0.0f);
+    row_yaw_prior_tolerance_ = std::max(row_yaw_prior_tolerance_, row_yaw_search_step_);
+    row_coverage_bin_width_ = std::max(row_coverage_bin_width_, 0.05f);
+    row_coverage_min_points_ = std::max(row_coverage_min_points_, 1);
+    row_min_coverage_ratio_ = std::clamp(row_min_coverage_ratio_, 0.0f, 1.0f);
+    row_min_longitudinal_span_ = std::max(row_min_longitudinal_span_, 0.0f);
+    row_coverage_score_weight_ = std::max(row_coverage_score_weight_, 0.0f);
     headland_low_confidence_threshold_ = std::clamp(headland_low_confidence_threshold_, 0.0f, 1.0f);
     if (headland_min_side_points_ < 0)
     {
@@ -294,6 +380,9 @@ CornRowDetectorProjection::CornRowDetectorProjection() : Node("corn_row_detector
 // callback function
 void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
+    PointCloudCallbackTimer callback_timer(
+        enable_performance_metrics_, msg->header.stamp, performance_metrics_pub_);
+
     // convert pointcloud2 to pcl
     PointCloudXYZPtr cloud(new PointCloudXYZ());
     pcl::fromROSMsg(*msg, *cloud);
@@ -308,7 +397,69 @@ void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::Poi
     // projection point cloud
     PointCloudXYZPtr projection_cloud = this->projection_point_cloud(preprocessed_cloud);
     float row_yaw = 0.0f;
-    if (use_row_yaw_estimation_)
+    PointCloudXYZPtr left_inner(new PointCloudXYZ());
+    PointCloudXYZPtr right_inner(new PointCloudXYZ());
+    PointCloudXYZPtr left_row_cloud(new PointCloudXYZ());
+    PointCloudXYZPtr right_row_cloud(new PointCloudXYZ());
+    geometry_msgs::msg::TransformStamped output_from_base;
+    bool has_output_from_base = false;
+    float robot_yaw = 0.0f;
+
+    if (use_constrained_row_pair_)
+    {
+        has_output_from_base = this->lookup_output_from_base_transform(output_from_base);
+        if (has_output_from_base)
+        {
+            const tf2::Quaternion q(
+                output_from_base.transform.rotation.x,
+                output_from_base.transform.rotation.y,
+                output_from_base.transform.rotation.z,
+                output_from_base.transform.rotation.w);
+            double roll = 0.0;
+            double pitch = 0.0;
+            double yaw = 0.0;
+            tf2::Matrix3x3(q).getRPY(roll, pitch, yaw);
+            robot_yaw = static_cast<float>(yaw);
+        }
+
+        float search_center_yaw = 0.0f;
+        float search_half_range = use_row_yaw_estimation_
+                                      ? max_row_alignment_yaw_
+                                      : 0.0f;
+        if (use_row_yaw_estimation_ &&
+            has_output_from_base &&
+            has_tracked_global_row_yaw_)
+        {
+            search_center_yaw = this->normalize_axis_angle(
+                tracked_global_row_yaw_ - robot_yaw);
+            if (std::abs(search_center_yaw) > max_row_alignment_yaw_)
+            {
+                RCLCPP_WARN_THROTTLE(
+                    this->get_logger(), *this->get_clock(), 1000,
+                    "Expected local row yaw %.3f exceeds safe search limit %.3f; "
+                    "reject point-cloud row pair",
+                    search_center_yaw, max_row_alignment_yaw_);
+                publish_empty_path(base_header);
+                return;
+            }
+            search_half_range = row_yaw_prior_tolerance_;
+        }
+
+        if (!this->extract_constrained_row_pair(
+                projection_cloud,
+                search_center_yaw,
+                search_half_range,
+                row_yaw,
+                left_inner,
+                right_inner))
+        {
+            RCLCPP_WARN(this->get_logger(),
+                        "No constrained left/right row pair found in current point cloud");
+            publish_empty_path(base_header);
+            return;
+        }
+    }
+    else if (use_row_yaw_estimation_)
     {
         geometry_msgs::msg::TransformStamped output_from_base;
         if (this->lookup_output_from_base_transform(output_from_base))
@@ -336,20 +487,26 @@ void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::Poi
         has_tracked_row_yaw_ = true;
         tracked_row_yaw_ = 0.0f;
     }
-    PointCloudXYZPtr row_frame_cloud = (std::abs(row_yaw) > 1e-5f)
-                                           ? this->rotate_cloud_to_row_frame(projection_cloud, row_yaw)
-                                           : projection_cloud;
 
-    // split point cloud to left and right rows
-    auto [left_row_cloud, right_row_cloud] = this->split_left_right_rows(row_frame_cloud);
+    if (!use_constrained_row_pair_)
+    {
+        PointCloudXYZPtr row_frame_cloud = (std::abs(row_yaw) > 1e-5f)
+                                               ? this->rotate_cloud_to_row_frame(projection_cloud, row_yaw)
+                                               : projection_cloud;
 
-    // 从每侧点集合中提取最内侧一行（用于多行场景）
-    PointCloudXYZPtr left_inner = enable_innermost_row_extraction_
-                                      ? this->extract_innermost_row(left_row_cloud, true)
-                                      : left_row_cloud;
-    PointCloudXYZPtr right_inner = enable_innermost_row_extraction_
-                                       ? this->extract_innermost_row(right_row_cloud, false)
-                                       : right_row_cloud;
+        // split point cloud to left and right rows
+        const auto split_rows = this->split_left_right_rows(row_frame_cloud);
+        left_row_cloud = split_rows.first;
+        right_row_cloud = split_rows.second;
+
+        // 从每侧点集合中提取最内侧一行（用于多行场景）
+        left_inner = enable_innermost_row_extraction_
+                         ? this->extract_innermost_row(left_row_cloud, true)
+                         : left_row_cloud;
+        right_inner = enable_innermost_row_extraction_
+                          ? this->extract_innermost_row(right_row_cloud, false)
+                          : right_row_cloud;
+    }
 
     // 如果提取后点数过少，复杂模式下可回退为整侧点；简单模式下不能回退，否则会混入外侧行。
     if (left_inner->size() < static_cast<size_t>(min_cluster_size_))
@@ -438,6 +595,14 @@ void CornRowDetectorProjection::point_cloud_callback(const sensor_msgs::msg::Poi
         RCLCPP_WARN(this->get_logger(), "No stable row model available; skip this frame");
         publish_empty_path(base_header);
         return;
+    }
+
+    if (use_constrained_row_pair_ &&
+        has_output_from_base &&
+        line_lost_count_ == 0)
+    {
+        this->filter_global_row_yaw(
+            this->normalize_axis_angle(robot_yaw + row_yaw));
     }
 
     const float row_separation = std::abs(stable_left_line.second - stable_right_line.second);
@@ -668,15 +833,24 @@ float CornRowDetectorProjection::normalize_axis_angle(float angle) const
     return angle;
 }
 
-void CornRowDetectorProjection::reset_tracking_state(const std::string &reason)
+void CornRowDetectorProjection::reset_tracking_state(
+    const std::string &reason,
+    bool preserve_global_row_yaw)
 {
     has_tracked_lines_ = false;
     has_tracked_row_yaw_ = false;
-    has_tracked_global_row_yaw_ = false;
+    if (!preserve_global_row_yaw)
+    {
+        has_tracked_global_row_yaw_ = false;
+    }
     line_lost_count_ = 0;
     headland_candidate_count_ = 0;
     path_history_.clear();
-    RCLCPP_WARN(this->get_logger(), "Reset centerline tracking state: %s", reason.c_str());
+    RCLCPP_WARN(
+        this->get_logger(),
+        "Reset centerline tracking state: %s (preserve_global_row_yaw=%s)",
+        reason.c_str(),
+        preserve_global_row_yaw ? "true" : "false");
 }
 
 bool CornRowDetectorProjection::lookup_output_from_base_transform(
@@ -1387,6 +1561,292 @@ PointCloudXYZPtr CornRowDetectorProjection::extract_innermost_row(PointCloudXYZP
     return result;
 }
 
+bool CornRowDetectorProjection::extract_constrained_row_pair(
+    PointCloudXYZPtr cloud,
+    float search_center_yaw,
+    float search_half_range,
+    float &row_yaw,
+    PointCloudXYZPtr &left_row,
+    PointCloudXYZPtr &right_row)
+{
+    left_row.reset(new PointCloudXYZ());
+    right_row.reset(new PointCloudXYZ());
+    last_left_longitudinal_coverage_ = 0.0f;
+    last_right_longitudinal_coverage_ = 0.0f;
+
+    if (cloud->size() < static_cast<size_t>(2 * min_cluster_size_))
+    {
+        return false;
+    }
+
+    const float histogram_min = y_min_;
+    const float histogram_max = y_max_;
+    const int bin_count = std::max(
+        1,
+        static_cast<int>(std::ceil(
+            (histogram_max - histogram_min) / row_histogram_bin_width_)));
+    const int coverage_bin_count = std::max(
+        1,
+        static_cast<int>(std::ceil(
+            (x_max_ - x_min_) / row_coverage_bin_width_)));
+    const float yaw_limit = use_row_yaw_estimation_ ? max_row_alignment_yaw_ : 0.0f;
+    const float yaw_step = use_row_yaw_estimation_
+                               ? row_yaw_search_step_
+                               : 1.0f;
+    search_center_yaw = use_row_yaw_estimation_
+                            ? std::clamp(search_center_yaw, -yaw_limit, yaw_limit)
+                            : 0.0f;
+    search_half_range = use_row_yaw_estimation_
+                            ? std::max(search_half_range, yaw_step)
+                            : 0.0f;
+
+    float best_score = -std::numeric_limits<float>::infinity();
+    float best_yaw = 0.0f;
+    float best_left_center = 0.0f;
+    float best_right_center = 0.0f;
+    int best_left_support = 0;
+    int best_right_support = 0;
+    float best_left_coverage = 0.0f;
+    float best_right_coverage = 0.0f;
+
+    const float yaw_start = use_row_yaw_estimation_
+                                ? std::max(-yaw_limit, search_center_yaw - search_half_range)
+                                : 0.0f;
+    const float yaw_end = use_row_yaw_estimation_
+                              ? std::min(yaw_limit, search_center_yaw + search_half_range)
+                              : 0.0f;
+    for (float candidate_yaw = yaw_start;
+         candidate_yaw <= yaw_end + 0.5f * yaw_step;
+         candidate_yaw += yaw_step)
+    {
+        const float c = std::cos(candidate_yaw);
+        const float s = std::sin(candidate_yaw);
+        std::vector<int> histogram(static_cast<size_t>(bin_count), 0);
+        std::vector<int> coverage_histogram(
+            static_cast<size_t>(bin_count * coverage_bin_count), 0);
+
+        for (const auto &point : cloud->points)
+        {
+            const float row_x = c * point.x + s * point.y;
+            const float row_y = -s * point.x + c * point.y;
+            if (row_x < x_min_ || row_x > x_max_ ||
+                row_y < histogram_min || row_y >= histogram_max)
+            {
+                continue;
+            }
+
+            const int bin = static_cast<int>(
+                std::floor((row_y - histogram_min) / row_histogram_bin_width_));
+            if (bin >= 0 && bin < bin_count)
+            {
+                histogram[static_cast<size_t>(bin)]++;
+                const int coverage_bin = std::clamp(
+                    static_cast<int>(std::floor(
+                        (row_x - x_min_) / row_coverage_bin_width_)),
+                    0,
+                    coverage_bin_count - 1);
+                const size_t coverage_index =
+                    static_cast<size_t>(coverage_bin * bin_count + bin);
+                coverage_histogram[coverage_index]++;
+            }
+        }
+
+        // A short triangular kernel turns each narrow plant-row band into one peak
+        // without joining the inner and outer rows across sparse leaf/ground points.
+        std::vector<int> smoothed(static_cast<size_t>(bin_count), 0);
+        constexpr int kernel[5] = {1, 2, 3, 2, 1};
+        for (int bin = 0; bin < bin_count; ++bin)
+        {
+            int score = 0;
+            for (int k = -2; k <= 2; ++k)
+            {
+                const int source_bin = bin + k;
+                if (source_bin >= 0 && source_bin < bin_count)
+                {
+                    score += kernel[k + 2] *
+                             histogram[static_cast<size_t>(source_bin)];
+                }
+            }
+            smoothed[static_cast<size_t>(bin)] = score;
+        }
+
+        struct PeakStats
+        {
+            int bin = 0;
+            int support = 0;
+            float center = 0.0f;
+            float coverage_ratio = 0.0f;
+            float longitudinal_span = 0.0f;
+        };
+        std::vector<PeakStats> left_peaks;
+        std::vector<PeakStats> right_peaks;
+        const int minimum_peak_score = 2 * min_cluster_size_;
+        for (int bin = 1; bin + 1 < bin_count; ++bin)
+        {
+            const int score = smoothed[static_cast<size_t>(bin)];
+            if (score < minimum_peak_score ||
+                score < smoothed[static_cast<size_t>(bin - 1)] ||
+                score < smoothed[static_cast<size_t>(bin + 1)])
+            {
+                continue;
+            }
+
+            const float center =
+                histogram_min + (static_cast<float>(bin) + 0.5f) *
+                                    row_histogram_bin_width_;
+            int valid_coverage_bins = 0;
+            int first_valid_bin = -1;
+            int last_valid_bin = -1;
+            for (int x_bin = 0; x_bin < coverage_bin_count; ++x_bin)
+            {
+                int lateral_band_points = 0;
+                for (int lateral_bin = 0; lateral_bin < bin_count; ++lateral_bin)
+                {
+                    const float lateral_center =
+                        histogram_min +
+                        (static_cast<float>(lateral_bin) + 0.5f) *
+                            row_histogram_bin_width_;
+                    if (std::abs(lateral_center - center) > row_peak_half_width_)
+                    {
+                        continue;
+                    }
+                    const size_t coverage_index =
+                        static_cast<size_t>(x_bin * bin_count + lateral_bin);
+                    lateral_band_points += coverage_histogram[coverage_index];
+                }
+
+                if (lateral_band_points >= row_coverage_min_points_)
+                {
+                    valid_coverage_bins++;
+                    if (first_valid_bin < 0)
+                    {
+                        first_valid_bin = x_bin;
+                    }
+                    last_valid_bin = x_bin;
+                }
+            }
+
+            PeakStats peak;
+            peak.bin = bin;
+            peak.support = score;
+            peak.center = center;
+            peak.coverage_ratio =
+                static_cast<float>(valid_coverage_bins) /
+                static_cast<float>(coverage_bin_count);
+            peak.longitudinal_span =
+                (first_valid_bin >= 0)
+                    ? std::min(
+                          x_max_ - x_min_,
+                          static_cast<float>(last_valid_bin - first_valid_bin + 1) *
+                              row_coverage_bin_width_)
+                    : 0.0f;
+            if (peak.coverage_ratio < row_min_coverage_ratio_ ||
+                peak.longitudinal_span < row_min_longitudinal_span_)
+            {
+                continue;
+            }
+
+            if (center > 0.0f)
+            {
+                left_peaks.push_back(peak);
+            }
+            else if (center < 0.0f)
+            {
+                right_peaks.push_back(peak);
+            }
+        }
+
+        for (const auto &left_peak : left_peaks)
+        {
+            const float left_center = left_peak.center;
+            for (const auto &right_peak : right_peaks)
+            {
+                const float right_center = right_peak.center;
+                const float width = left_center - right_center;
+                if (width < min_row_separation_ || width > max_row_separation_)
+                {
+                    continue;
+                }
+
+                const int left_support = left_peak.support;
+                const int right_support = right_peak.support;
+                const float score =
+                    static_cast<float>(left_support + right_support) -
+                    row_pair_width_penalty_ *
+                        std::abs(width - desired_row_separation_) +
+                    row_coverage_score_weight_ *
+                        (left_peak.coverage_ratio + right_peak.coverage_ratio);
+                if (score > best_score)
+                {
+                    best_score = score;
+                    best_yaw = candidate_yaw;
+                    best_left_center = left_center;
+                    best_right_center = right_center;
+                    best_left_support = left_support;
+                    best_right_support = right_support;
+                    best_left_coverage = left_peak.coverage_ratio;
+                    best_right_coverage = right_peak.coverage_ratio;
+                }
+            }
+        }
+    }
+
+    if (!std::isfinite(best_score))
+    {
+        return false;
+    }
+
+    const float c = std::cos(best_yaw);
+    const float s = std::sin(best_yaw);
+    for (const auto &point : cloud->points)
+    {
+        pcl::PointXYZ row_point;
+        row_point.x = c * point.x + s * point.y;
+        row_point.y = -s * point.x + c * point.y;
+        row_point.z = point.z;
+        if (row_point.x < x_min_ || row_point.x > x_max_)
+        {
+            continue;
+        }
+        if (std::abs(row_point.y - best_left_center) <= row_peak_half_width_)
+        {
+            left_row->points.push_back(row_point);
+        }
+        else if (std::abs(row_point.y - best_right_center) <= row_peak_half_width_)
+        {
+            right_row->points.push_back(row_point);
+        }
+    }
+
+    left_row->width = left_row->points.size();
+    left_row->height = 1;
+    left_row->is_dense = true;
+    right_row->width = right_row->points.size();
+    right_row->height = 1;
+    right_row->is_dense = true;
+    row_yaw = best_yaw;
+    last_left_longitudinal_coverage_ = best_left_coverage;
+    last_right_longitudinal_coverage_ = best_right_coverage;
+
+    RCLCPP_DEBUG(
+        this->get_logger(),
+        "Constrained row pair: yaw=%.3f left=%.3f right=%.3f "
+        "points=%zu/%zu peak_support=%d/%d coverage=%.2f/%.2f score=%.1f",
+        best_yaw,
+        best_left_center,
+        best_right_center,
+        left_row->size(),
+        right_row->size(),
+        best_left_support,
+        best_right_support,
+        best_left_coverage,
+        best_right_coverage,
+        best_score);
+
+    return left_row->size() >= static_cast<size_t>(min_cluster_size_) &&
+           right_row->size() >= static_cast<size_t>(min_cluster_size_);
+}
+
 std::pair<float, float> CornRowDetectorProjection::fit_line(PointCloudXYZPtr cloud)
 {
     if (cloud->points.size() < 5)
@@ -1756,7 +2216,8 @@ void CornRowDetectorProjection::publish_detection_diagnostics(
         "observation_score,width_score,residual_score,safety_score,observed_valid_ratio,"
         "raw_confidence,error_budget_m,support_weight,observation_weight,width_weight,"
         "residual_weight,safety_weight,innermost_enabled,robust_enabled,"
-        "temporal_enabled,parallel_enabled";
+        "temporal_enabled,parallel_enabled,left_longitudinal_coverage,"
+        "right_longitudinal_coverage";
     msg.data = {
         valid ? 1.0f : 0.0f,
         static_cast<float>(left_points),
@@ -1788,7 +2249,9 @@ void CornRowDetectorProjection::publish_detection_diagnostics(
         enable_innermost_row_extraction_ ? 1.0f : 0.0f,
         enable_robust_refinement_ ? 1.0f : 0.0f,
         enable_temporal_tracking_ ? 1.0f : 0.0f,
-        use_parallel_row_model_ ? 1.0f : 0.0f};
+        use_parallel_row_model_ ? 1.0f : 0.0f,
+        last_left_longitudinal_coverage_,
+        last_right_longitudinal_coverage_};
     msg.layout.dim[0].size = msg.data.size();
     msg.layout.dim[0].stride = msg.data.size();
     detection_diagnostics_pub_->publish(msg);
@@ -2195,7 +2658,12 @@ void CornRowDetectorProjection::publish_empty_path(const std_msgs::msg::Header &
         line_lost_count_++;
         if (line_lost_count_ > max_line_lost_frames_)
         {
-            reset_tracking_state("empty detection exceeded max_line_lost_frames");
+            // Perception loss must not erase the established global crop-row axis.
+            // Otherwise the next dense transverse structure can blindly initialize
+            // a new, incompatible row direction after the vehicle has stopped.
+            reset_tracking_state(
+                "empty detection exceeded max_line_lost_frames",
+                true);
         }
     }
 

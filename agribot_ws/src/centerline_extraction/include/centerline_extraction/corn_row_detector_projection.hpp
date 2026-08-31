@@ -6,6 +6,7 @@
 #include "std_msgs/msg/bool.hpp"
 #include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/float32_multi_array.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "nav_msgs/msg/path.hpp"
 #include "pcl/point_cloud.h" // provide pcl point cloud type
@@ -37,6 +38,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_error_budget_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr corridor_confidence_pub_;
     rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr detection_diagnostics_pub_;
+    rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr performance_metrics_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr headland_detected_pub_;
     std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
     std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
@@ -72,6 +74,17 @@ private:
     int max_line_lost_frames_ = 30;
     float line_fit_x_min_ = 0.20;
     bool use_simple_inner_row_mode_ = true;
+    bool use_constrained_row_pair_ = false;
+    float row_histogram_bin_width_ = 0.025;
+    float row_peak_half_width_ = 0.055;
+    float row_yaw_search_step_ = 0.01;
+    float row_pair_width_penalty_ = 80.0;
+    float row_yaw_prior_tolerance_ = 0.15;
+    float row_coverage_bin_width_ = 0.25;
+    int row_coverage_min_points_ = 3;
+    float row_min_coverage_ratio_ = 0.35;
+    float row_min_longitudinal_span_ = 1.0;
+    float row_coverage_score_weight_ = 50.0;
     bool use_row_yaw_estimation_ = true;
     bool use_parallel_row_model_ = true;
     bool enable_innermost_row_extraction_ = true;
@@ -128,6 +141,9 @@ private:
     float last_quality_residual_score_ = 0.0f;
     float last_quality_safety_score_ = 0.0f;
     float last_quality_observed_valid_ratio_ = 0.0f;
+    float last_left_longitudinal_coverage_ = 0.0f;
+    float last_right_longitudinal_coverage_ = 0.0f;
+    bool enable_performance_metrics_ = false;
 
 public:
     CornRowDetectorProjection();
@@ -154,7 +170,9 @@ private:
     bool lookup_output_from_base_transform(geometry_msgs::msg::TransformStamped &output_from_base);
     float normalize_angle(float angle) const;
     float normalize_axis_angle(float angle) const;
-    void reset_tracking_state(const std::string &reason);
+    void reset_tracking_state(
+        const std::string &reason,
+        bool preserve_global_row_yaw = false);
     PointCloudXYZPtr rotate_cloud_to_row_frame(PointCloudXYZPtr cloud, float row_yaw);
     PointCloudXYZPtr rotate_cloud_to_base_frame(PointCloudXYZPtr cloud, float row_yaw);
 
@@ -163,6 +181,15 @@ private:
 
     // extract innermost row from side cloud (when multiple parallel rows exist)
     PointCloudXYZPtr extract_innermost_row(PointCloudXYZPtr cloud, bool left);
+
+    // Jointly find the nearest left/right density peaks under row-spacing constraints.
+    bool extract_constrained_row_pair(
+        PointCloudXYZPtr cloud,
+        float search_center_yaw,
+        float search_half_range,
+        float &row_yaw,
+        PointCloudXYZPtr &left_row,
+        PointCloudXYZPtr &right_row);
 
     // fit line for point cloud
     std::pair<float, float> fit_line(PointCloudXYZPtr cloud);
