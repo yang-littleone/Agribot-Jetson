@@ -191,9 +191,12 @@ topics=(
   /livox/lidar
   /livox/imu
   /imu/data_h30
+  /imu/selected
   /wheel/odom
+  /wheel/odom_validated
   /Odometry
   /lio/odom
+  /odometry/fused_internal
   /odometry/filtered
   /tf
   /tf_static
@@ -215,6 +218,8 @@ topics=(
   /reacquire_reference_path
   /navigation_safety_state
   /navigation_mode
+  /indoor_test_stage
+  /indoor_test_finished
   /parameter_events
   /rosout
 )

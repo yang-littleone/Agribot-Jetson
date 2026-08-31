@@ -1,0 +1,52 @@
+frozen_code:
+  tag: small-paper-complete-20260831
+  commit: fe136784aae94e3fb8c53ce0d73d915cf7742495
+  base_parameter_file: src/centerline_extraction/config/field_row_follow.yaml
+
+common:
+  odometry_mode: fastlio
+  imu_source: h30
+  quality_aware: true
+  row_follow_max_linear_speed_mps: 0.18
+  headland_turn_linear_speed_mps: 0.15
+  headland_row_spacing_m: 0.60
+  required_next_row_follow_distance_m: 5.0
+
+modes:
+  detection:
+    enable_headland_turn: false
+    max_headland_turns: 1
+    initial_turn_direction: left
+  turn_left:
+    enable_headland_turn: true
+    max_headland_turns: 1
+    initial_turn_direction: left
+  turn_right:
+    enable_headland_turn: true
+    max_headland_turns: 1
+    initial_turn_direction: right
+  multirow_left:
+    enable_headland_turn: true
+    max_headland_turns: 4
+    initial_turn_direction: left
+  multirow_right:
+    enable_headland_turn: true
+    max_headland_turns: 4
+    initial_turn_direction: right
+
+formal_repetitions:
+  positive_headland_passes: 15
+  negative_headland_passes: 15
+  turn_left: 5
+  turn_right: 5
+  multirow_missions: 5
+  turns_per_multirow_mission: 4
+  fault_repetitions_per_condition: 3
+
+software_limits_to_report_not_claim_as_accuracy:
+  turn_goal_tolerance_m: 0.20
+  turn_heading_tolerance_rad: 0.35
+  reacquire_max_distance_m: 1.20
+  reacquire_max_time_s: 8.0
+  reacquire_confidence: 0.70
+  reacquire_required_frames: 5

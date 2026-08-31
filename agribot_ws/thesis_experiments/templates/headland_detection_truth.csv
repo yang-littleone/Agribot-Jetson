@@ -1,0 +1,1 @@
+trial_id,location_id,true_headland,true_end_x_m,true_end_y_m,true_end_station_m,detection_x_m,detection_y_m,detection_station_m,trigger_position_error_m,detected,false_triggers,measurement_method,notes

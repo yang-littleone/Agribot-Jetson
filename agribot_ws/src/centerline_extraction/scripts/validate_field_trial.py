@@ -16,11 +16,33 @@ import yaml
 
 REQUIRED_BAG_TOPICS = (
     '/livox/lidar',
+    '/imu/selected',
+    '/wheel/odom_validated',
+    '/odometry/fused_internal',
     '/odometry/filtered',
     '/corn_row_center_line',
     '/corn_row_center_line_viz',
     '/centerline_detection_diagnostics',
     '/corridor_confidence',
+)
+
+CLOSED_LOOP_REQUIRED_TOPICS = (
+    '/cmd_vel',
+    '/controller_lateral_error',
+    '/controller_heading_error',
+    '/navigation_mode',
+    '/navigation_safety_state',
+)
+
+HEADLAND_CONTINUOUS_TOPICS = (
+    '/headland_detected',
+)
+
+# These topics are event-driven. Zero messages can be a valid record of a
+# failed detection/turn, so absence is a warning rather than data corruption.
+HEADLAND_EVENT_TOPICS = (
+    '/headland_turn_path',
+    '/reacquire_reference_path',
 )
 
 
@@ -277,10 +299,12 @@ def run_validation(args):
 
     cmd_count = topic_counts.get('/cmd_vel', 0)
     if is_closed_loop:
-        validation.add(
-            'topic:/cmd_vel',
-            'PASS' if cmd_count > 0 else 'FAIL',
-            f'消息数={cmd_count}（闭环试验必须大于0）')
+        for topic in CLOSED_LOOP_REQUIRED_TOPICS:
+            count = topic_counts.get(topic, 0)
+            validation.add(
+                f'topic:{topic}',
+                'PASS' if count > 0 else 'FAIL',
+                f'消息数={count}（闭环试验必须大于0）')
     else:
         validation.add(
             'topic:/cmd_vel', 'PASS',
@@ -321,6 +345,33 @@ def run_validation(args):
             f'parameter_snapshot:{component}',
             'PASS' if isinstance(snapshot, dict) and snapshot else 'FAIL',
             f'参数数={len(snapshot) if isinstance(snapshot, dict) else 0}')
+
+    controller_snapshot = snapshots.get('controller', {})
+    headland_turn_enabled = (
+        isinstance(controller_snapshot, dict)
+        and controller_snapshot.get('enable_headland_turn') is True)
+    if headland_turn_enabled:
+        for topic in HEADLAND_CONTINUOUS_TOPICS:
+            count = topic_counts.get(topic, 0)
+            validation.add(
+                f'topic:{topic}',
+                'PASS' if count > 0 else 'FAIL',
+                f'消息数={count}（掉头试验必须持续记录）')
+        for topic in HEADLAND_EVENT_TOPICS:
+            count = topic_counts.get(topic, 0)
+            validation.add(
+                f'topic:{topic}',
+                'PASS' if count > 0 else 'WARN',
+                (f'消息数={count}；该话题仅在对应状态触发后发布，'
+                 '若本次掉头失败则允许为0，但必须保留该次试验'))
+
+    if result_metadata.get('perception_method') == 'indoor_synthetic_rows':
+        for topic in ('/indoor_test_stage', '/indoor_test_finished'):
+            count = topic_counts.get(topic, 0)
+            validation.add(
+                f'topic:{topic}',
+                'PASS' if count > 0 else 'FAIL',
+                f'消息数={count}（室内模拟试验必须记录）')
 
     csv_path = result_dir / 'timeseries.csv'
     if not csv_path.is_file():
