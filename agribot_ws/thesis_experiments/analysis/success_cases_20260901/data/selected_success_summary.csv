@@ -1,0 +1,2 @@
+﻿selected_success_cases_n,measured_entry_offset_mean_m,measured_entry_offset_std_m,entry_distance_mean_m,entry_distance_std_m,entry_duration_mean_s,entry_duration_std_s,entry_lateral_mae_mean_m,entry_lateral_mae_std_m,entry_heading_mae_mean_deg,entry_heading_mae_std_deg
+4,0.625042,0.016294,1.827993,1.164478,14.835851,6.168518,0.054982,0.006544,13.346825,5.314820

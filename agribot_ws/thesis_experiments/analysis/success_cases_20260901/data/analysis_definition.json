@@ -1,0 +1,14 @@
+{
+  "included_cases": [
+    "20260901_120247_F_TR_P01_v40_R01",
+    "20260901_120813_F_TR_P01_v40_R02",
+    "20260901_121452_F_TR_P01_v40_R03",
+    "20260901_123302_F_TR_P01_v40_R04"
+  ],
+  "scope": "physically successful adjacent-row entries only",
+  "entry_lateral_tolerance_m": 0.15,
+  "entry_heading_tolerance_deg": 35.0,
+  "entry_sample_gap_s": 0.15,
+  "field_nominal_row_spacing_m": 0.6,
+  "warning": "The selected-case set is not a denominator for an overall success rate. Only R03 completed the full navigation state sequence."
+}
