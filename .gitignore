@@ -1,10 +1,14 @@
 # Local field-test data. Keep these outside version control.
 agribot_ws/field_trial_bags/
 agribot_ws/field_trial_results/
-agribot_ws/field_ground_truth
+agribot_ws/field_ground_truth/
+agribot_ws/h30_test_*/
+
+# ROS 1/ROS 2 bag payloads. Store them locally or on removable media.
+*.bag
 *.db3
 *.db3.zstd
-agribot_ws/h30_test_01_static_fastlio/
-agribot_ws/h30_test_01_static/
-agribot_ws/field_trial_bags/
+*.mcap
+*.mcap.zstd
+
 __pycache__/
